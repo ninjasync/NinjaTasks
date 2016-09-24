@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <color name="start">#00AC14</color>
+  <color name="stop">#E20000</color>
+
+  <color name="actionbar_text">#000080</color>
+  <drawable name="actionbar_background">#FEF5D9</drawable>
+
+  <!-- general styles for the action bar -->
+  <style name="MyActionBar" parent="@android:style/Widget.ActionBar">
+      <item name="android:titleTextStyle">@style/TitleTextStyle</item>
+      <item name="android:background">@drawable/actionbar_background</item>
+      <item name="android:backgroundStacked">@drawable/actionbar_background</item>
+      <item name="android:backgroundSplit">@drawable/actionbar_background</item>
+    </style>
+
+    <!-- action bar title text -->
+  <style name="TitleTextStyle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+      <item name="android:textColor">@color/actionbar_text</item>
+    </style>
+
+    <!-- action bar tab text -->
+    <style name="TabTextStyle" parent="@android:style/Widget.ActionBar.TabText">
+      <item name="android:textColor">@color/actionbar_text</item>
+    </style>
+  
+  <style name="ThemeNinjaTasks" parent="@android:style/Theme.Holo.Light">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+
+    <!--item name="android:actionBarStyle">@style/MyActionBar</item>
+    <item name="android:actionBarTabTextStyle">@style/TabTextStyle</item>
+    <item name="android:actionMenuTextColor">@color/actionbar_text</item-->
+
+  </style>
+  
+  <style name="ThemeSplash" parent="android:Theme.Light">
+    <item name="android:windowBackground">@drawable/splash</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+</resources>

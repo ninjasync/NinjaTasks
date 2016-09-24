@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<My.ClickThroughDrawerLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/drawerLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" >
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <!-- The navigation area -->
+  <My.CtrlTaskListsList
+        android:id="@+id/taskLists"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/japanese_paper_tiled"
+        local:MvxBind="ViewModel Lists"
+    />
+
+  <!-- a separator -->
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="#FFA0A0A0"
+      />
+
+    <uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ptrLayout"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+       
+        android:layout_height="match_parent" >
+
+      <!-- The main content view -->
+      <My.CtrlTaskList
+          android:id="@+id/taskList"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          local:MvxBind="ViewModel SelectedList"
+          />
+    </uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>
+
+    </LinearLayout>
+  
+  
+
+  <My.CtrlTaskDetails
+          android:id="@+id/taskDetails"
+          android:layout_width="320dp"
+          android:layout_height="match_parent"
+          android:background="@android:color/white"
+          android:layout_gravity="end"
+          android:clickable="true"
+          local:MvxBind="ViewModel SelectedList.SelectedPrimaryTask"
+        />
+
+</My.ClickThroughDrawerLayout>

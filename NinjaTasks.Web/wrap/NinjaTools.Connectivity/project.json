@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "wrappedProject": "../../../NinjaTools.Connectivity/NinjaTools.Connectivity.csproj",
+      "bin": {
+        "assembly": "../../../NinjaTools.Connectivity/obj/{configuration}/NinjaTools.Connectivity.dll",
+        "pdb": "../../../NinjaTools.Connectivity/obj/{configuration}/NinjaTools.Connectivity.pdb"
+      },
+      "dependencies": {
+        "NinjaTools.PCL": "1.0.0-*"
+      }
+    }
+  }
+}

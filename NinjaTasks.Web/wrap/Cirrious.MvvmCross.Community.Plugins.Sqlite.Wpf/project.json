@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnx451": {
+      "bin": {
+        "assembly": "../../../NinjaTools/3rdParty/MvvmCross/Wpf/Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf.dll",
+		"pdb": "../../../NinjaTools/3rdParty/MvvmCross/Wpf/Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf.pdb"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "wrappedProject": "../../../NinjaTools/NinjaTools/NinjaTools.csproj",
+      "bin": {
+        "assembly": "../../../NinjaTools/NinjaTools/obj/{configuration}/NinjaTools.PCL.dll",
+        "pdb": "../../../NinjaTools/NinjaTools/obj/{configuration}/NinjaTools.PCL.pdb"
+      }
+    }
+  }
+}

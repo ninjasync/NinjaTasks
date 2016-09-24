@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/editList"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content" 
+  android:paddingTop="16dp"
+  android:paddingBottom="16dp"
+  >
+
+  <!-- The main content view -->
+  <EditText
+      android:id="@+id/editText"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:singleLine="true"
+      android:hint="enter list name..."
+      local:MvxBind="Text Description"
+      />
+
+  <!-- The navigation drawer -->
+  <ImageButton
+          android:id="@+id/delete"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_gravity="end|center_vertical"
+          android:layout_marginLeft="16dp"
+          android:layout_marginRight="16dp"
+          android:src="?btn_delete"
+          android:alpha="0.3"
+          android:background="@android:color/transparent"
+          local:MvxBind="Click Delete;Visibility IsNewList,Converter=TrueToVisibilityGone"
+    />
+</LinearLayout>

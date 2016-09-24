@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Play";
+}
+<div id="bodyContainer" ng-app="QuizApp">
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="flip-container text-center col-md-12" ng-controller="QuizCtrl" ng-init="nextQuestion()">
+                    <div class="back" ng-class="{flip: answered, correct: correctAnswer, incorrect:!correctAnswer}">
+                        <p class="lead">{{answer()}}</p>
+                        <p>
+                            <button class="btn btn-info btn-lg next option" ng-click="nextQuestion()" ng-disabled="working">Next Question</button>
+                        </p>
+                    </div>
+                    <div class="front" ng-class="{flip: answered}">
+                        <p class="lead">{{title}}</p>
+                        <div class="row text-center">
+                            <button class="btn btn-info btn-lg option" ng-repeat="option in options" ng-click="sendAnswer(option)" ng-disabled="working">{{option.title}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section stylesheets{
+    <link rel="stylesheet" href="~/css/Flip.css"/>
+    <script src="~/lib/angular/angular.js"></script>
+}
+
+@section scripts {
+    <script src="~/js/quiz.js"></script>
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <PreferenceScreen android:title="Information" >
+    <intent
+        android:targetPackage="org.ninjatasks.droid"
+        android:targetClass="NinjaTasks.App.Droid.Views.AppView"
+        android:action="ACTION_VIEW" />
+  </PreferenceScreen>
+  
+  <PreferenceCategory android:title="General Settings" >
+
+    <!-- this somehow crashes the settings dialog. don't know why; might be a xamarin bug.-->
+    <Preference
+        android:key="account_settings"
+        android:title="To edit the Account"
+        android:summary="click on 'add account' and select NinjaTasks.">
+      <!--<intent
+          android:action="ACTION_VIEW"
+          android:targetPackage="org.ninjatasks.droid"
+          android:targetClass="NinjaTasks.App.Droid.Views.TaskWarriorAccountView"
+          />-->
+    </Preference>
+  </PreferenceCategory>
+  
+</PreferenceScreen>

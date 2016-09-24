@@ -1,0 +1,9 @@
+<resources>
+  <dimen name="one">1px</dimen>
+  <dimen name="two">2px</dimen>
+  <dimen name="three">3px</dimen>
+  <dimen name="four">4px</dimen>
+  <dimen name="five">5px</dimen>
+  <dimen name="six">6px</dimen>
+  <dimen name="minus_three">-3px</dimen>
+</resources>

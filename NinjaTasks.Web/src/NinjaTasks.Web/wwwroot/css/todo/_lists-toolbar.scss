@@ -1,0 +1,120 @@
+@import "__defs.scss";
+
+#list-toolbar {
+	position:relative;
+	height:45px;
+	min-height:45px;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+}
+.background-01 #list-toolbar {
+	background:#733e27
+}
+.background-02 #list-toolbar {
+	background:#537f70
+}
+.background-03 #list-toolbar {
+	background:#53617f
+}
+.background-04 #list-toolbar {
+	background:#478f8a
+}
+.background-05 #list-toolbar {
+	background:#a86d43
+}
+.background-06 #list-toolbar {
+	background:#668964
+}
+.background-07 #list-toolbar {
+	background:#669844
+}
+.background-08 #list-toolbar {
+	background:#0483b7
+}
+.background-09 #list-toolbar {
+	background:#2a6c88
+}
+.background-10 #list-toolbar {
+	background:#683757
+}
+.background-11 #list-toolbar {
+	background:#334e83
+}
+.background-12 #list-toolbar {
+	background:#3a7173
+}
+.background-13 #list-toolbar {
+	background:#5e8c9c
+}
+.background-14 #list-toolbar {
+	background:#2f6676
+}
+.background-15 #list-toolbar {
+	background:#71af8c
+}
+.background-16 #list-toolbar {
+	background:#bc4a3a
+}
+.background-17 #list-toolbar {
+	background:#595959
+}
+.background-18 #list-toolbar {
+	background:#575757
+}
+.background-19 #list-toolbar {
+	background:#b86d82
+}
+.background-20 #list-toolbar {
+	background:#603739
+}
+.background-21 #list-toolbar {
+	background:#a65541
+}
+.background-22 #list-toolbar {
+	background:#3a7f93
+}
+.background-23 #list-toolbar {
+	background:#574033
+}
+.background-24 #list-toolbar {
+	background:#bdae88
+}
+.background-25 #list-toolbar {
+	background:#0e91c5
+}
+.background-26 #list-toolbar {
+	background:#765a98
+}
+.background-27 #list-toolbar {
+	background:#c15b3d
+}
+.background-28 #list-toolbar {
+	background:#a57e88
+}
+.background-29 #list-toolbar {
+	background:#bf7555
+}
+.background-30 #list-toolbar {
+	background:#055feb
+}
+#list-toolbar h1 {
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-o-box-flex:1;
+	box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+	font-size:20px;
+	color:#fff;
+	padding:10px 14px;
+	font-weight:200;
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis
+}

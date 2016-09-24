@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <LinearGradientBrush x:Key="ListFocusedItemBackground" StartPoint="0,0" EndPoint="1,0" >
+        <GradientStop Color="#FFD500"  Offset="0"/>
+        <GradientStop Color="#FFE000"  Offset="0.15"/>
+        <GradientStop Color="#FFED00"  Offset=".5"/>
+        <GradientStop Color="#FFE000"  Offset="0.15"/>
+        <GradientStop Color="#FFD500"  Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ListSelectedItemBackground" StartPoint="0,0" EndPoint="1,0" >
+        <GradientStop Color="#BBFFD500"  Offset="0"/>
+        <GradientStop Color="#BBFFE000"  Offset="0.15"/>
+        <GradientStop Color="#BBFFED00"  Offset=".5"/>
+        <GradientStop Color="#BBFFE000"  Offset="0.15"/>
+        <GradientStop Color="#BBFFD500"  Offset="1"/>
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="ListSelectedItemDisabledBackground" StartPoint="0,0" EndPoint="1,0" >
+        <GradientStop Color="#D5D5D5"  Offset="0"/>
+        <GradientStop Color="#E0E0E0"  Offset="0.10"/>
+        <GradientStop Color="#EDEDED"  Offset=".5"/>
+        <GradientStop Color="#E0E0E0"  Offset="0.10"/>
+        <GradientStop Color="#D5D5D5"  Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ListHotItemBackground" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#60FFD500"  Offset="0"/>
+        <GradientStop Color="#60FFE000"  Offset="0.25"/>
+        <GradientStop Color="#60FFED00"  Offset=".5"/>
+        <GradientStop Color="#60FFE000"  Offset="0.75"/>
+        <GradientStop Color="#60FFD500"  Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalRulerOpacityMask" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#10FFFFFF" Offset="0"/>
+        <GradientStop Color="#FFFFFFFF" Offset="0.5"/>
+        <GradientStop Color="#10FFFFFF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalRulerBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#EAEBEB" Offset="0"/>
+        <GradientStop Color="#EAEBEB" Offset="0.1"/>
+        <GradientStop Color="#B4B5B5" Offset="0.1"/>
+        <GradientStop Color="#00B4B5B5" Offset="0.5"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalRulerBrushInverse" StartPoint="0,1" EndPoint="0,0">
+        <GradientStop Color="#EAEBEB" Offset="0"/>
+        <GradientStop Color="#EAEBEB" Offset="0.1"/>
+        <GradientStop Color="#B4B5B5" Offset="0.1"/>
+        <GradientStop Color="#00B4B5B5" Offset="0.5"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalRulerSharpInverseBrush" StartPoint="0,1" EndPoint="0,0">
+        <GradientStop Color="#B4B5B5" Offset="0.0"/>
+        <GradientStop Color="#00B4B5B5" Offset="0.5"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="TitleBarBackground" StartPoint="0,0" EndPoint="0,1" >
+        <GradientStop Color="#C5C5C5"  Offset="0"/>
+        <GradientStop Color="#D0D0D0"  Offset="0.50"/>
+        <GradientStop Color="#B5B5B5"  Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="TitleBarInactiveBackground" Color="#FFEEEEEE" />
+
+    <RadialGradientBrush x:Key="MainBackgroundBrush" GradientOrigin="0.5,0.5"  Center="0.5,0.5" RadiusX="0.5" RadiusY="0.8"
+                         SpreadMethod="Pad" 
+                         >
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="#FFFFFF" Offset="0" />
+            <!--GradientStop Color="#EDEDED" Offset="0.8" /-->
+            <GradientStop Color="#CFD0D0" Offset="1.0" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+</ResourceDictionary>

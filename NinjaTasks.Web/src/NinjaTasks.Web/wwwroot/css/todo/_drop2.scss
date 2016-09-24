@@ -1,0 +1,47 @@
+@import "__defs.scss";
+
+.drop-message {
+	width:120px;
+	height:120px;
+	position:absolute;
+	top:1px;
+	left:0;
+	background:rgba(0,0,0,0.5);
+	display:none;
+}
+.drop-message span {
+	text-align:center;
+	display:block;
+	margin-top:50px;
+	color:#fff;
+	opacity:1;
+	-ms-filter:none;
+	filter:none
+}
+.message {
+	display:block
+}
+.choose.drop .drop-message {
+	display:block
+}
+.choose.loading .spinner {
+	@include animation(rotate .8s linear infinite);
+	display:block;
+	position:absolute !important;
+	left:50%;
+	top:50%;
+	margin-left:-10px;
+	margin-top:-10px;
+	width:19px !important;
+	height:19px !important;
+	background:url(#{$imageBaseUrl}/loading.png);
+	@include opacity(.5)
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5) {
+	#ninjatasks-base .avatar-upload.loading span {
+		background:url(#{$imageBaseUrl}/loading@2x.png);
+		-webkit-background-size:19px;
+		-moz-background-size:19px;
+		background-size:19px
+	}
+}

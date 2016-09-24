@@ -1,0 +1,226 @@
+@import "__defs.scss";
+
+.actionBar {
+	opacity:1;
+	-ms-filter:none;
+	filter:none;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0 !important;
+    @include transition(opacity 200ms ease-in);
+	position:relative;
+}
+.actionBar.expanded .actionBar-top ul.active {
+	z-index:1;
+}
+.actionBar.expanded .actionBar-top ul.active li {
+	opacity:1;
+	-ms-filter:none;
+	filter:none
+}
+.actionBar.expanded .actionBar-bottom a {
+    @include opacity(0.6);
+}
+.actionBar.expanded .actionBar-bottom a.active {
+    @include opaque;
+}
+.actionBar-top {
+	position:absolute;
+	top:45px;
+	width:250px;
+    @include transition(height 120ms linear);
+	z-index:2;
+	overflow:hidden;
+}
+.background-01 .actionBar-top {
+	background:#733e27
+}
+.background-02 .actionBar-top {
+	background:#537f70
+}
+.background-03 .actionBar-top {
+	background:#53617f
+}
+.background-04 .actionBar-top {
+	background:#478f8a
+}
+.background-05 .actionBar-top {
+	background:#a86d43
+}
+.background-06 .actionBar-top {
+	background:#668964
+}
+.background-07 .actionBar-top {
+	background:#669844
+}
+.background-08 .actionBar-top {
+	background:#0483b7
+}
+.background-09 .actionBar-top {
+	background:#2a6c88
+}
+.background-10 .actionBar-top {
+	background:#683757
+}
+.background-11 .actionBar-top {
+	background:#334e83
+}
+.background-12 .actionBar-top {
+	background:#3a7173
+}
+.background-13 .actionBar-top {
+	background:#5e8c9c
+}
+.background-14 .actionBar-top {
+	background:#2f6676
+}
+.background-15 .actionBar-top {
+	background:#71af8c
+}
+.background-16 .actionBar-top {
+	background:#bc4a3a
+}
+.background-17 .actionBar-top {
+	background:#595959
+}
+.background-18 .actionBar-top {
+	background:#575757
+}
+.background-19 .actionBar-top {
+	background:#b86d82
+}
+.background-20 .actionBar-top {
+	background:#603739
+}
+.background-21 .actionBar-top {
+	background:#a65541
+}
+.background-22 .actionBar-top {
+	background:#3a7f93
+}
+.background-23 .actionBar-top {
+	background:#574033
+}
+.background-24 .actionBar-top {
+	background:#bdae88
+}
+.background-25 .actionBar-top {
+	background:#0e91c5
+}
+.background-26 .actionBar-top {
+	background:#765a98
+}
+.background-27 .actionBar-top {
+	background:#c15b3d
+}
+.background-28 .actionBar-top {
+	background:#a57e88
+}
+.background-29 .actionBar-top {
+	background:#bf7555
+}
+.background-30 .actionBar-top {
+	background:#055feb
+}
+.actionBar-top ul {
+	position:absolute;
+	z-index:0;
+	top:0;
+	left:0;
+	right:0;
+	overflow:hidden;
+}
+.actionBar-top ul.active li.disabled {
+    @include opacity-important(.4);
+}
+.actionBar-top ul.active li.disabled a {
+	cursor:default
+}
+.actionBar-top li {
+	position:relative;
+	padding:1px 2px 2px 2px;
+    @include transparent;
+    @include transition(opacity 200ms linear);
+}
+.actionBar-top li:focus a {
+	background:rgba(255,255,255,0.1);
+	color:#fff;
+}
+.actionBar-top li:focus a svg {
+	fill:#fff
+}
+.actionBar-top li a {
+	display:block;
+	padding:7px;
+	padding-left:34px;
+	color:#fff;
+}
+.actionBar-top li a.disabled {
+	cursor:default;
+    @include opacity-important(.4);
+}
+.actionBar-top li a svg {
+	fill:#fff;
+	position:absolute;
+	top:7px
+}
+.actionBar-top li a .status-label {
+	font-size:85%;
+	text-transform:uppercase;
+	padding:1px;
+	display:none;
+	color:#b2b2b2;
+}
+.actionBar-top li a .status-label.active {
+	display:block
+}
+.actionBar-top li:focus .status-label {
+	color:#fff !important
+}
+.actionBar-bottom {
+	text-align:center;
+	font-size:0;
+	padding-top:0;
+	height:45px;
+}
+.actionBar-bottom a {
+	display:inline-block;
+	min-width:40px;
+	padding:6px;
+}
+.actionBar-bottom a:focus {
+	background:rgba(255,255,255,0.1)
+}
+.actionBar-bottom a.disabled {
+    @include opacity(.5);
+	cursor:default
+}
+.actionBar-bottom a svg {
+	fill:#fff;
+}
+.actionBar-bottom a svg.disabled span {
+	color:#b2b2b2 !important
+}
+.actionBar-bottom a .tab-text {
+	font-size:10px;
+	color:#fff;
+	display:block;
+	text-align:center
+}
+html[dir=ltr] .actionBar-top {
+	right:0;
+}
+html[dir=ltr] .actionBar-top li a svg {
+	left:8px
+}
+html[dir=rtl] .actionBar-top {
+	left:0;
+}
+html[dir=rtl] .actionBar-top li a {
+	padding-right:34px;
+	padding-left:7px;
+}
+html[dir=rtl] .actionBar-top li a svg {
+	right:8px
+}

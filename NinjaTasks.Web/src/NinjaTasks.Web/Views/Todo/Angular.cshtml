@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Todo Lists";
+}
+
+@section stylesheets {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/todo/todo.css"/>
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/angular/angular-ui-router.js"></script>
+    </environment>
+    <!--environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/todo/todo.css"/>
+    </environment-->
+}
+
+<div ng-app="ninjaTasksApp">
+    <div ui-view></div>
+</div>
+
+
+@section scripts {
+    <environment names="Development">
+        <script src="~/js/ninjaTasksAngular.js"></script>
+    </environment>
+    <!--environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/todo/todo.css"/>
+    </environment-->
+}

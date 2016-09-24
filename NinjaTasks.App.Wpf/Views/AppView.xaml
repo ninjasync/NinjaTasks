@@ -1,0 +1,186 @@
+﻿<views:BaseView x:Class="NinjaTasks.App.Wpf.Views.AppView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:ccl="clr-namespace:CustomChromeLibrary;assembly=CustomChromeLibrary"
+                xmlns:ninja="http://schemas.ninjatools.org/winfx/xaml/wpf"
+                xmlns:viewModels="clr-namespace:NinjaTasks.Core.ViewModels;assembly=NinjaTasks.Core.PCL"
+                xmlns:views="clr-namespace:NinjaTasks.App.Wpf.Views"
+                xmlns:controls="clr-namespace:NinjaTasks.App.Wpf.Controls"
+                mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500" 
+             d:DataContext="{d:DesignInstance viewModels:AppViewModel}"
+             cal:Message.Attach="[Shortcut F5]=[Sync]"    
+                 >
+    
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/Basics.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <ImageBrush 
+                x:Key="PaperBrush"
+                ImageSource="/Images/JapanesePaperYellow.png" 
+                        TileMode="Tile"
+                        ViewportUnits="Absolute"
+                        Viewport="0,0,170,170" 
+                        AlignmentX="Left" AlignmentY="Top"
+                            
+                        >
+            </ImageBrush>
+
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+
+    <Grid Margin="{Binding WindowMargin, RelativeSource={RelativeSource FindAncestor,AncestorType=ccl:CustomChromeWindow}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--title bar-->
+        <Grid Grid.Row="0">
+            <Border 
+                    CornerRadius="8,8,0,0" 
+                    BorderThickness="1,1,1,1" 
+                    BorderBrush="DarkGray"
+                >
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Background" Value="{StaticResource TitleBarBackground}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsActive,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                         Value="False">
+                                <Setter Property="Background" Value="{StaticResource TitleBarInactiveBackground}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                    <!--Title Bar-->
+                    <DockPanel >
+                        <!--left part part-->
+                        <StackPanel Orientation="Horizontal" Margin="0" DockPanel.Dock="Left">
+                        <Grid Margin="8" Width="16" Height="16" >
+                            <ccl:WindowIcon Background="DarkGray" />
+                            <!--<Image Source="/Images/Icon.ico" Height="16" Width="16" IsHitTestVisible="False"/>-->
+                            <controls:CircularBusyIndicator Width="14" Height="14"
+                                IsHitTestVisible="false"
+                                Visibility="{Binding IsSynching, Converter={StaticResource BoolToVisibility}}"
+                                />
+                        </Grid>
+                        
+                                <ninja:ButtonMenu Content="_Synchronize..." Padding="0" 
+                                            Background="Transparent" Foreground="#FF555555" MinWidth="20"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            cal:Action.TargetWithoutContext="{Binding}"
+                                                Height="28"
+                                            >
+                                <ninja:ButtonMenu.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="Border"
+                                                BorderThickness="0" BorderBrush="DarkGray" 
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                Height="{TemplateBinding Height}"
+                                                >
+                                            <ContentPresenter Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"
+                                                              RecognizesAccessKey="True"
+                                                              />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="SteelBlue"/>
+                                                <Setter TargetName="Border" Property="TextBlock.Foreground" Value="White"/>
+                                        </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </ninja:ButtonMenu.Template>
+                               
+                            <ContextMenu cal:Action.TargetWithoutContext="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget.(cal:Action.TargetWithoutContext)}">
+                                <MenuItem Header="_Synchronize now..." cal:Message.Attach="Sync"/>
+                                <Separator/>
+                                <MenuItem Header="_Import tasks (.ics, todo.txt)..." cal:Message.Attach="Import"/>
+                                <MenuItem Header="_Export tasks..." cal:Message.Attach="Export"/>
+                                <Separator/>
+                                <MenuItem Header="Configure Synchronization..." cal:Message.Attach="SetupSync"/>
+                            </ContextMenu>
+                            </ninja:ButtonMenu>
+
+                            <TextBlock Text="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}"
+                                       Margin="16,0" FontSize="14"  FontWeight="DemiBold" Foreground="SteelBlue"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                    <!--min/max/close buttons & right part-->
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Right"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
+                                DockPanel.Dock="Right"
+                                >
+                        <StackPanel Orientation="Horizontal" Height="20" Margin="0,1,0,0">
+
+                            <ninja:SearchTextBox Width="100" Margin="10,0"
+                                    Text="{Binding SearchViewModel.SearchText, UpdateSourceTrigger=Default}"
+                                    SearchEventTimeDelay="00:00:00.15"
+                                    SearchMode="Instant"
+                                    
+                                    cal:Message.Attach="[Search]=[Search]"
+                                    cal:Action.TargetWithoutContext="{Binding SearchViewModel}"
+                                    
+                                    />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" 
+                                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                                    Margin="0,-1,-1,0"
+                                    >
+                            <ccl:MinimizeButton/>
+                            <ccl:MaximizeButton/>
+                            <ccl:CloseButton CornerRadius="0,8,0,0"/>
+                        </StackPanel>
+                            
+                    </StackPanel>
+
+                </DockPanel>
+            </Border>
+            <!-- controls in header --><!--
+            <ProgressBar VerticalAlignment="Bottom"
+                                         Value="{Binding Progress.Progress}" 
+                                         Maximum="1" Minimum="0"
+                                         Height="4"
+                                         Visibility="{Binding IsSynching, Converter={StaticResource BoolToVisibility}}"
+                                         />-->
+        </Grid>
+        
+        <!-- content -->
+        <Border BorderThickness="1,0,1,1" BorderBrush="DarkGray"  CornerRadius="0,0,8,8" 
+                Grid.Row="1"
+                >
+            <Grid Background="{StaticResource PaperBrush}" SizeChanged="OnContentGridSizeChanged">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220" MinWidth="120"/>
+                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="*" MinWidth="255"/>
+                </Grid.ColumnDefinitions>
+
+                <views:TodoListsView DataContext="{Binding Lists}" 
+                                      Grid.Column="0" 
+                                 />
+                
+                <GridSplitter Grid.Column="1" Background="DarkGray" 
+                              VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              />
+                    
+                <views:TaskListView  DataContext="{Binding SelectedList}" 
+                                 Grid.Column="2" 
+                                 />
+
+            </Grid>
+        </Border>
+    </Grid>
+</views:BaseView>

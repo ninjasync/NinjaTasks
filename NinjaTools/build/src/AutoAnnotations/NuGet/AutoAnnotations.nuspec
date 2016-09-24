@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AutoAnnotations.Fody</id>
+    <version>$version$</version>
+    <title>AutoAnnotations.Fody</title>
+    <authors>NinjaTools contributors</authors>
+    <owners>NinjaTools contributors</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>http://github.com/Fody/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.github.com/Fody/BasicFodyAddin/master/Icons/package_icon.png</iconUrl>
+    <description>Annotates an assembly based on a description file with specified attributes for
+                 for usage with e.g. SmartAssembly or Dot42.
+    </description>
+    <summary />
+    <language>en-US</language>
+    <tags>ILWeaving, Fody, Cecil</tags>
+    <dependencies>
+      <dependency id="Fody"/>
+    </dependencies>
+  </metadata>
+</package>

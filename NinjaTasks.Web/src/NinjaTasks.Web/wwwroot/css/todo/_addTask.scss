@@ -1,0 +1,290 @@
+@import "__defs.scss";
+
+#ninjatasks-base .addTask {
+	overflow:hidden;
+	position:relative;
+	margin:14px 0;
+	padding:0 12px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+.background-01#ninjatasks-base .addTask {
+	background:rgba(115,62,39,0.75)
+}
+.background-02#ninjatasks-base .addTask {
+	background:rgba(83,127,112,0.75)
+}
+.background-03#ninjatasks-base .addTask {
+	background:rgba(83,97,127,0.75)
+}
+.background-04#ninjatasks-base .addTask {
+	background:rgba(71,143,138,0.75)
+}
+.background-05#ninjatasks-base .addTask {
+	background:rgba(168,109,67,0.75)
+}
+.background-06#ninjatasks-base .addTask {
+	background:rgba(102,137,100,0.75)
+}
+.background-07#ninjatasks-base .addTask {
+	background:rgba(102,152,68,0.75)
+}
+.background-08#ninjatasks-base .addTask {
+	background:rgba(4,131,183,0.75)
+}
+.background-09#ninjatasks-base .addTask {
+	background:rgba(42,108,136,0.75)
+}
+.background-10#ninjatasks-base .addTask {
+	background:rgba(104,55,87,0.75)
+}
+.background-11#ninjatasks-base .addTask {
+	background:rgba(51,78,131,0.75)
+}
+.background-12#ninjatasks-base .addTask {
+	background:rgba(58,113,115,0.75)
+}
+.background-13#ninjatasks-base .addTask {
+	background:rgba(94,140,156,0.75)
+}
+.background-14#ninjatasks-base .addTask {
+	background:rgba(47,102,118,0.75)
+}
+.background-15#ninjatasks-base .addTask {
+	background:rgba(113,175,140,0.75)
+}
+.background-16#ninjatasks-base .addTask {
+	background:rgba(188,74,58,0.75)
+}
+.background-17#ninjatasks-base .addTask {
+	background:rgba(89,89,89,0.75)
+}
+.background-18#ninjatasks-base .addTask {
+	background:rgba(87,87,87,0.75)
+}
+.background-19#ninjatasks-base .addTask {
+	background:rgba(184,109,130,0.75)
+}
+.background-20#ninjatasks-base .addTask {
+	background:rgba(96,55,57,0.75)
+}
+.background-21#ninjatasks-base .addTask {
+	background:rgba(166,85,65,0.75)
+}
+.background-22#ninjatasks-base .addTask {
+	background:rgba(58,127,147,0.75)
+}
+.background-23#ninjatasks-base .addTask {
+	background:rgba(87,64,51,0.75)
+}
+.background-24#ninjatasks-base .addTask {
+	background:rgba(189,174,136,0.75)
+}
+.background-25#ninjatasks-base .addTask {
+	background:rgba(14,145,197,0.75)
+}
+.background-26#ninjatasks-base .addTask {
+	background:rgba(118,90,152,0.75)
+}
+.background-27#ninjatasks-base .addTask {
+	background:rgba(193,91,61,0.75)
+}
+.background-28#ninjatasks-base .addTask {
+	background:rgba(165,126,136,0.75)
+}
+.background-29#ninjatasks-base .addTask {
+	background:rgba(191,117,85,0.75)
+}
+.background-30#ninjatasks-base .addTask {
+	background:rgba(5,95,235,0.75)
+}
+#ninjatasks-base .addTask .wundercon {
+	color:rgba(255,255,255,0.8)
+}
+#ninjatasks-base .addTask .addTask-input,#ninjatasks-base .addTask .nlp-feedback {
+	font-size:16px;
+	padding:13px 60px 14px 0;
+}
+#ninjatasks-base .addTask .addTask-input.is-assignable,#ninjatasks-base .addTask .nlp-feedback.is-assignable {
+	padding-right:100px
+}
+#ninjatasks-base .addTask .addTask-input {
+	color:#fff;
+}
+#ninjatasks-base .addTask .addTask-input::-webkit-input-placeholder {
+	color:rgba(255,255,255,0.6)
+}
+#ninjatasks-base .addTask .addTask-input:-moz-placeholder {
+	color:rgba(255,255,255,0.6)
+}
+#ninjatasks-base .addTask .addTask-input:-ms-input-placeholder {
+	color:rgba(255,255,255,0.6)
+}
+#ninjatasks-base .addTask .nlp-feedback {
+	position:absolute;
+	top:0;
+	color:rgba(255,255,255,0);
+	pointer-events:none;
+	white-space:pre;
+}
+#ninjatasks-base .addTask .nlp-feedback .highlight {
+	border-bottom:1px solid #fff
+}
+#ninjatasks-base .addTask .addTask-meta {
+	position:absolute;
+	top:12px;
+	right:0;
+    @include transparent;
+}
+#ninjatasks-base .addTask .addTask-meta .addTask-meta-nlp {
+	overflow:hidden;
+	white-space:nowrap;
+	color:#fff;
+	font-weight:bold;
+	text-shadow:0 1px 2px rgba(0,0,0,0.8);
+	padding-top:1px
+}
+#ninjatasks-base .addTask .addTask-meta .addTask-meta-star,#ninjatasks-base .addTask .addTask-meta .addTask-meta-assign,#ninjatasks-base .addTask .addTask-meta .addTask-meta-date {
+    @include opacity(.7);
+	color:#fff;
+}
+#ninjatasks-base .addTask .addTask-meta .addTask-meta-star svg,#ninjatasks-base .addTask .addTask-meta .addTask-meta-assign svg,#ninjatasks-base .addTask .addTask-meta .addTask-meta-date svg {
+	fill:#fff
+}
+#ninjatasks-base .addTask .addTask-meta .addTask-meta-star.starred,#ninjatasks-base .addTask .addTask-meta .addTask-meta-assign.assigned,#ninjatasks-base .addTask .addTask-meta .addTask-meta-date.dated {
+    @include opaque;
+}
+#ninjatasks-base .addTask .addTask-meta a {
+	cursor:default
+}
+#ninjatasks-base .addTask .addTask-meta-star {
+	margin-right:9px;
+}
+#ninjatasks-base .addTask .addTask-meta-star.starred svg path:last-child {
+    @include opaque;
+}
+#ninjatasks-base .addTask .addTask-meta-date {
+	margin-right:15px;
+	position:relative;
+}
+#ninjatasks-base .addTask .addTask-meta-date .addTask-meta-date-label {
+	position:absolute;
+	top:7px;
+	left:0;
+	height:10px;
+	width:20px;
+	color:#fff;
+	font-size:8px;
+	font-weight:bold;
+	text-align:center
+}
+#ninjatasks-base .addTask .addTask-meta-date .input-assign-delete {
+	position:absolute;
+	display:none;
+	top:-8px;
+	right:-8px;
+	z-index:102
+}
+#ninjatasks-base .addTask .addTask-meta-date.dated:hover .input-assign-delete {
+	display:block
+}
+#ninjatasks-base .addTask .addTask-meta-assign {
+	position:relative;
+	margin-right:15px;
+}
+#ninjatasks-base .addTask .addTask-meta-assign .avatar,#ninjatasks-base .addTask .addTask-meta-assign .input-assign-frame,#ninjatasks-base .addTask .addTask-meta-assign .input-assign-delete {
+	position:absolute;
+	display:none
+}
+#ninjatasks-base .addTask .addTask-meta-assign .input-assign-frame {
+	top:-3px;
+	left:-2px;
+	z-index:101
+}
+#ninjatasks-base .addTask .addTask-meta-assign .input-assign-delete {
+	top:-8px;
+	right:-8px;
+	z-index:102
+}
+#ninjatasks-base .addTask .addTask-meta-assign .avatar {
+	top:0;
+	left:0
+}
+#ninjatasks-base .addTask .addTask-meta-assign.assigned .wundercon.assigned {
+    @include transparent;
+}
+#ninjatasks-base .addTask .addTask-meta-assign.assigned .avatar,#ninjatasks-base .addTask .addTask-meta-assign.assigned svg {
+	display:block
+}
+#ninjatasks-base .addTask .addTask-meta-assign.assigned .input-assign-delete {
+	display:none
+}
+#ninjatasks-base .addTask .addTask-meta-assign.assigned:hover .input-assign-delete {
+	display:block
+}
+#ninjatasks-base .addTask .speech-wrapper,#ninjatasks-base .addTask .plus-wrapper {
+	display:block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	top:13px;
+	
+    @include opacity(0.7);
+}
+#ninjatasks-base .addTask .speech-wrapper svg,#ninjatasks-base .addTask .plus-wrapper svg {
+	fill:#fff
+}
+#ninjatasks-base .addTask .speech-wrapper:hover,#ninjatasks-base .addTask .plus-wrapper:hover {
+    @include opacity(0.8);
+}
+#ninjatasks-base .addTask .speech-wrapper.stop,#ninjatasks-base .addTask .plus-wrapper.stop {
+    @include opaque;
+}
+#ninjatasks-base .addTask .plus-wrapper {
+	top:14px
+}
+#ninjatasks-base .addTask .addTask-input,#ninjatasks-base .addTask .nlp-feedback {
+	padding-left:28px;
+    @include transition(none);
+}
+#ninjatasks-base .focus .addTask-meta {
+    @include opaque;
+}
+#ninjatasks-base .focus .addTask-meta a {
+	cursor:pointer
+}
+#ninjatasks-base .speech-wrapper {
+	display:none;
+}
+#ninjatasks-base .speech-wrapper.stop {
+    @include opaque;
+}
+html[dir=ltr] #ninjatasks-base .addTask .speech-wrapper,html[dir=ltr] #ninjatasks-base .addTask .plus-wrapper {
+	left:10px
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .speech-wrapper,html[dir=rtl] #ninjatasks-base #tasks .addTask .plus-wrapper {
+	right:10px
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-input {
+	padding-right:28px;
+	padding-left:60px
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta {
+	left:0;
+	right:initial
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta-star,html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta-date,html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta-assign {
+	margin-right:initial
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta-star {
+	margin-left:9px
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta-date {
+	margin-left:15px
+}
+html[dir=rtl] #ninjatasks-base #tasks .addTask .addTask-meta-assign {
+	margin-left:15px
+}
+#ninjatasks-base.msie .addTask .addTask-input {
+	text-shadow:none
+}

@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "wrappedProject": "../../../NinjaSync/NinjaSync.csproj",
+      "bin": {
+        "assembly": "../../../NinjaSync/obj/{configuration}/NinjaSync.dll",
+        "pdb": "../../../NinjaSync/obj/{configuration}/NinjaSync.pdb"
+      },
+      "dependencies": {
+        "Fody": "1.26.4",
+        "PropertyChanged.Fody": "1.49.0",
+        "NinjaTools.Connectivity": "1.0.0-*",
+        "NinjaTools.PCL": "1.0.0-*",
+        "Cirrious.MvvmCross.Community.Plugins.Sqlite": "1.0.0-*",
+        "Newtonsoft.Json": "1.0.0-*"
+      }
+    }
+  }
+}

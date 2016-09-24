@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02D092B0-3995-4639-BB42-637921261081}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaTasks.Tests</RootNamespace>
+    <AssemblyName>NinjaTasks.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\3rdParty\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\3rdParty\nuget\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\3rdParty\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\NinjaTasks.Model\Properties\AssemblyInfoNinjaTasks.cs">
+      <Link>Properties\AssemblyInfoNinjaTasks.cs</Link>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="MirrorSetupFactory.cs" />
+    <Compile Include="P2P\TestP2PSyncFactory.cs" />
+    <Compile Include="TestGetterSetterPerformance.cs" />
+    <Compile Include="TestReflection.cs" />
+    <Compile Include="TestStorage.cs" />
+    <Compile Include="TestSync.cs" />
+    <Compile Include="TestTaskWarrior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\3rdParty\sqlite\x64\sqlite3.dll">
+      <Link>x64\sqlite3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\3rdParty\sqlite\x86\sqlite3.dll">
+      <Link>x86\sqlite3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Olaf.taskdconfig">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PublicOlaf.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaSync.Storage.MvxSqlite\NinjaSync.Storage.MvxSqlite.csproj">
+      <Project>{f19e717d-4d67-4fc4-be14-db7583331454}</Project>
+      <Name>NinjaSync.Storage.MvxSqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj">
+      <Project>{2c47e154-1e5d-4801-97aa-aace064dde48}</Project>
+      <Name>NinjaSync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.App.Wpf\NinjaTasks.App.Wpf.csproj">
+      <Project>{7FED5C05-20A6-4EDF-8266-3D9C86CC63CE}</Project>
+      <Name>NinjaTasks.App.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Core\NinjaTasks.Core.csproj">
+      <Project>{747706F4-ECBF-4D50-8D72-B0DDCC18395C}</Project>
+      <Name>NinjaTasks.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Db.MvxSqlite\NinjaTasks.Db.MvxSqlite.csproj">
+      <Project>{12082999-e512-4fbb-9adb-cab3c8fe9f46}</Project>
+      <Name>NinjaTasks.Db.MvxSqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Sync\NinjaTasks.Sync.csproj">
+      <Project>{94C51F89-EA81-4028-9103-3FEC0BBD9752}</Project>
+      <Name>NinjaTasks.Sync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj">
+      <Project>{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}</Project>
+      <Name>NinjaTools.Connectivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
+      <Project>{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}</Project>
+      <Name>NinjaTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Model\NinjaTasks.Model.csproj">
+      <Project>{A38FBCE8-FDD3-4765-BA22-16E0A6C5CCA3}</Project>
+      <Name>NinjaTasks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Sync.ImportExport\NinjaTasks.Sync.ImportExport.csproj">
+      <Project>{6686368a-c6a2-4d4a-b94a-51c6f0bf146e}</Project>
+      <Name>NinjaTasks.Sync.ImportExport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskWarriorLib\TaskWarriorLib.csproj">
+      <Project>{BEEC9C42-CC15-4304-A420-F69BC7A94534}</Project>
+      <Name>TaskWarriorLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

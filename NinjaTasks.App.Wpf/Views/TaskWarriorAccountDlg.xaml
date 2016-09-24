@@ -1,0 +1,134 @@
+﻿<views:BaseWindowView x:Class="NinjaTasks.App.Wpf.Views.TaskWarriorAccountDlg"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:cal="http://www.caliburnproject.org"
+                      xmlns:ninja="http://schemas.ninjatools.org/winfx/xaml/wpf"
+                      xmlns:viewModels="clr-namespace:NinjaTasks.Core.ViewModels;assembly=NinjaTasks.Core.PCL"
+                      xmlns:views="clr-namespace:NinjaTasks.App.Wpf.Views"
+                      xmlns:controls="clr-namespace:NinjaTasks.App.Wpf.Controls"
+                      xmlns:wpfAutoGrid="clr-namespace:WpfAutoGrid;assembly=WpfAutoGrid"
+                      xmlns:sync="clr-namespace:NinjaTasks.Core.ViewModels.Sync;assembly=NinjaTasks.Core.PCL"
+                      mc:Ignorable="d" 
+            SizeToContent="WidthAndHeight"
+            Title="Task Warrior Account Settings"
+            ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+            Icon="/Images/Icon.ico" 
+            ShowInTaskbar="False"
+            d:DataContext="{d:DesignInstance sync:TaskWarriorAccountViewModel, IsDesignTimeCreatable=false}" 
+    >
+    <FrameworkElement.Resources>
+        <controls:SwitchConverter x:Key="SeverityBackgroundConverter">
+            <controls:SwitchConverterCase When="Error" Then="Firebrick" />
+            <controls:SwitchConverterCase When="Warn" Then="Yellow" />
+            <controls:SwitchConverterCase Then="White" />
+        </controls:SwitchConverter>
+        <controls:SwitchConverter x:Key="SeverityForegroundConverter">
+            <controls:SwitchConverterCase When="Error" Then="White" />
+            <controls:SwitchConverterCase Then="Black" />
+        </controls:SwitchConverter>
+    </FrameworkElement.Resources>
+
+    <StackPanel>
+        <TabControl>
+            <TabItem Header="Account Details">
+                <wpfAutoGrid:AutoGrid Width="400" 
+                                      Columns="Auto,*,30" RowCount="15" 
+                                      ChildVerticalAlignment="Center" ChildMargin="1">
+                    <FrameworkElement/>
+                    <Button Margin="1,4,4,0" Content="Import from .taskdconfig..." 
+                            HorizontalAlignment="Left"
+                            Click="SelectImportTaskdConfig"
+                            />
+                    
+                    <FrameworkElement/>
+                    
+                    <Label Content="Servername or IP:" />
+                    <TextBox Text="{Binding Account.ServerHostname}" 
+                             ninja:WatermarkService.Watermark="my.server.com" />
+                    <FrameworkElement/>
+                    
+                    <Label Content="Port:" />
+                    <TextBox Text="{Binding ServerPort, TargetNullValue=''}" 
+                             ninja:WatermarkService.Watermark="e.g. 8020" />
+                    <FrameworkElement/>
+                    
+                    <Border Margin="4" BorderThickness="0"/>
+                    <FrameworkElement/>
+                    <FrameworkElement/>
+                    
+                    <Label Content="Organization (Org): " />
+                    <TextBox Text="{Binding Account.Org}" 
+                             ninja:WatermarkService.Watermark="Public"  />
+                    <FrameworkElement/>
+                    
+                    <Label Content="Username: "  />
+                    <TextBox Text="{Binding Account.User}" 
+                             ninja:WatermarkService.Watermark="(your user name)" />
+                    <FrameworkElement/>
+
+                    <Label Content="Key: " />
+                    <TextBox Text="{Binding Account.Key}" 
+                             ninja:WatermarkService.Watermark="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
+                    <FrameworkElement/>
+                    
+                    <Border Margin="4" BorderThickness="0"/>
+                    <FrameworkElement/>
+                    <FrameworkElement/>
+                    
+                    <Label Content="Client Certificate / Key: "/>
+                    <TextBox Text="{Binding ClientCertificateAndKeyPfxFile,UpdateSourceTrigger=PropertyChanged}" 
+                             ninja:WatermarkService.Watermark="client.pfx" 
+                             x:Name="ClientCertificateFileName" />
+                    <Button Content="..." Height="18" Margin="2"
+                            Click="SelectClientCertificateFilename"/>
+
+                    <Label Content="Server Root Authority: " />
+                    <TextBox Text="{Binding ServerCertificateCrtFile,UpdateSourceTrigger=PropertyChanged}" 
+                             ninja:WatermarkService.Watermark="server.crt (leave empty to not verify server)" 
+                             x:Name="ServerCertificateFileName"/>
+                    <Button Content="..." Height="18" Margin="2"
+                            Click="SelectServerCertificateFilename"/>
+
+                    <FrameworkElement/>
+                    <TextBlock Foreground="Crimson"  Text="Note: Taskwarrior has not notions of first class lists. When synchronizing with Taskwarrior, the order of your lists will not be preserved across devices." TextWrapping="Wrap" TextAlignment="Justify"/>
+                    <FrameworkElement/>
+                </wpfAutoGrid:AutoGrid>
+            </TabItem>
+            <!--<TabItem Header="Check Account">
+                <DockPanel Width="400" Height="400">
+                    <StackPanel DockPanel.Dock="Top" >
+                        <Button Content="Test Synchonizing..."
+                                cal:Message.Attach="Sync"
+                                Width="100" HorizontalAlignment="Left"
+                                Margin="5"
+                                />
+                        <Label Content="Log:"/>
+                    </StackPanel>
+                    
+                    <ListBox VirtualizingStackPanel.IsVirtualizing="True" 
+                             ItemsSource="{Binding Log}"
+                             VerticalAlignment="Stretch"
+                             >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Line}" 
+                                           Background="{Binding Level, Converter={StaticResource SeverityBackgroundConverter}}"
+                                           Foreground="{Binding Level, Converter={StaticResource SeverityForegroundConverter}}"
+                                           />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </TabItem>-->
+        </TabControl>
+        
+        <ninja:UniformStackPanel HorizontalAlignment="Right" Margin="0,10,32,5">
+            <Button Content="Ok" cal:Message.Attach="Save" MinWidth="80"
+                                             IsDefault="True"/>
+            <Button Content="Cancel" IsCancel="True"
+                                />
+        </ninja:UniformStackPanel>
+    </StackPanel>
+</views:BaseWindowView>

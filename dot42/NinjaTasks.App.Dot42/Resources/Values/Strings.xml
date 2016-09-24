@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">NinjaTasks</string>
+  <string name="account_type">org.ninjatasks.account</string>
+
+  <string name="ok">OK</string>
+
+  <string name="menu_toggle_completed">Toggle show completed tasks</string>
+  <string name="menu_createlist">Start a new list</string>
+  <string name="menu_preferences">Settings</string>
+  <string name="menu_share">Share</string>
+  
+  <string name="settings_general">General settings</string>
+  <string name="settings_debug">Debug settings</string>
+  <string name="settings_edit_accounts">Edit Account...</string>
+  <string name="settings_network_logging">Log network traffic</string>
+  <string name="settings_network_logging_enabled">All network traffic is being logged verbosely (debug mode)</string>
+  <string name="settings_network_logging_disabled">Network traffic is not being logged</string>
+  
+  <string name="editaccount_servername">Host Name</string>
+  <string name="editaccount_serverport">Port</string>
+</resources>

@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "wrappedProject": "../../../NinjaTasks.Model/NinjaTasks.Model.csproj",
+      "bin": {
+        "assembly": "../../../NinjaTasks.Model/obj/{configuration}/NinjaTasks.Model.PCL.dll",
+        "pdb": "../../../NinjaTasks.Model/obj/{configuration}/NinjaTasks.Model.PCL.pdb"
+      },
+      "dependencies": {
+        "NinjaSync": "1.0.0-*",
+        "NinjaTools.PCL": "1.0.0-*",
+        "Cirrious.MvvmCross.Community.Plugins.Sqlite": "1.0.0-*"
+      }
+    }
+  }
+}

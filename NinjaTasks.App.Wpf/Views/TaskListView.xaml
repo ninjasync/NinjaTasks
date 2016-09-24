@@ -1,0 +1,198 @@
+﻿<views:BaseView x:Class="NinjaTasks.App.Wpf.Views.TaskListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cal="http://www.caliburnproject.org"
+                xmlns:dragDrop="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             xmlns:views="clr-namespace:NinjaTasks.App.Wpf.Views"
+             xmlns:controls="clr-namespace:NinjaTasks.App.Wpf.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" 
+             d:DataContext="{d:DesignInstance views:MockTaskListViewModel, IsDesignTimeCreatable=true}"
+     >
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/StarToggleButton.xaml"/>
+                <ResourceDictionary Source="../Themes/TaskListListBoxStyle.xaml"/>
+                <ResourceDictionary Source="../Themes/CheckboxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- keep collection source, so that IsLiveXXX can be activated. -->
+            <CollectionViewSource x:Key="TasksCollectionViewSource" 
+                                  Source="{Binding Path=Tasks}"
+                                  IsLiveGroupingRequested="True"
+                                  IsLiveSortingRequested="True"
+                                  >
+                <!-- note: this values are actually overwritten in code when the view is loaded -->
+                <CollectionViewSource.GroupDescriptions>
+                    <PropertyGroupDescription PropertyName="IsCompleted" />
+                </CollectionViewSource.GroupDescriptions>
+            </CollectionViewSource>
+
+            <ControlTemplate TargetType="{x:Type GroupItem}" x:Key="ListNameHeaderTemplate">
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" Margin="0,4,0,2"
+                               Foreground="White"  FontSize="14" FontWeight="Bold"
+                              />
+                    <ItemsPresenter/>
+                </StackPanel>
+            </ControlTemplate>
+
+            <ControlTemplate TargetType="{x:Type GroupItem}" x:Key="EmptyHeaderTemplate">
+                <ItemsPresenter />
+            </ControlTemplate>
+            
+            <ControlTemplate TargetType="{x:Type GroupItem}" x:Key="CompletedHeaderTemplate">
+                <Expander IsExpanded="False" 
+                          FlowDirection="RightToLeft" 
+                          HorizontalAlignment="Stretch" 
+                          Margin="0,4,12,0"
+                          
+                          >
+                    <Expander.Header>
+                        <DockPanel FlowDirection="LeftToRight" Margin="-34,0,0,0"
+                                   Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Expander}}, Path=ActualWidth}"
+                                   Opacity="0.8"
+                                   TextBlock.Foreground="White" 
+                                   >
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}"/>
+                            <TextBlock FontWeight="Bold" Text=" completed task(s)"/>
+                        </DockPanel>
+                    </Expander.Header>
+                    <Expander.Content>
+                        <ItemsPresenter FlowDirection="LeftToRight" Margin="-12,0,0,0"/>
+                    </Expander.Content>
+            </Expander>
+        </ControlTemplate>
+
+
+        <TextDecorationCollection x:Key="StrikethroughTextDecoration">
+                <TextDecoration Location="Strikethrough">
+                    <TextDecoration.Pen>
+                        <Pen Brush="#FF000000" />
+                    </TextDecoration.Pen>
+                </TextDecoration>
+            </TextDecorationCollection>
+
+        </ResourceDictionary>
+
+    </FrameworkElement.Resources>
+    <DockPanel>
+        <views:NewTaskControl DockPanel.Dock="Top" Margin="14,10,15,10"
+                              Visibility="{Binding AllowAddItem, Converter={StaticResource BoolToVisibility}}"
+                              />
+        
+        <!--SelectedItemsList="{Binding SelectedTasks}"-->
+        <controls:MultiSelectListBox x:Name="List" Margin="4,0,0,0" 
+                  ItemsSource="{Binding Source={StaticResource TasksCollectionViewSource}}" 
+                  
+                  SelectedItem="{Binding SelectedPrimaryTask}"
+                  SelectedItemsList="{Binding SelectedTasks}"
+                  SelectionMode="Extended"
+                  
+                  HorizontalContentAlignment="Stretch"
+                  Background="Transparent"
+                  BorderThickness="0"
+                  
+                  dragDrop:DragDrop.IsDragSource="True"
+                  dragDrop:DragDrop.IsDropTarget="True"
+                  dragDrop:DragDrop.DropHandler="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=views:TaskListView}}"
+                                     
+                  cal:Message.Attach="[Shortcut F2]=[ToggleEditDescription];[Shortcut Delete]=[DeleteSelectedTasks]"
+                  cal:Action.TargetWithoutContext="{Binding}"      
+                  Style="{StaticResource TasksListBox}"
+                                    
+                  PreviewKeyDown="OnPreviewKeyDown"
+                  KeyDown="OnKeyDown"
+                  >
+            <ItemsControl.ItemContainerStyle>
+                <!-- make the item party transparent when completed -->
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource TaskListItemContainerStyle}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsCompleted}" Value="True">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+             <!-- grouping -->
+            <ItemsControl.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template" Value="{StaticResource ListNameHeaderTemplate}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Name}" Value="true">
+                                    <Setter Property="Template" Value="{StaticResource CompletedHeaderTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Name}" Value="false">
+                                    <Setter Property="Template" Value="{StaticResource EmptyHeaderTemplate}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ItemsControl.GroupStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="32" Tag="{Binding ElementName=List, Path=DataContext}" 
+                          Background="Transparent" x:Name="PART_ContentHost">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <FrameworkElement.ContextMenu>
+                            <ContextMenu cal:Action.TargetWithoutContext="{Binding Path=PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+                                <MenuItem Header="Delete" cal:Message.Attach="DeleteSelectedTasks"/>
+                            </ContextMenu>
+                        </FrameworkElement.ContextMenu>
+
+                        <CheckBox x:Name="PART_Check" Grid.Column="0" Margin="8,0"
+                                  Background="Transparent" VerticalAlignment="Center"
+                                  Opacity="0.8"
+                                  IsChecked="{Binding IsCompleted}"
+                                  Style="{StaticResource MyCheckboxStyle}"
+                                          />
+                        <Border Margin="0,4,4,4" Width="1" Background="#40000000" Grid.Column="1"/>
+
+                        <controls:EditableLabel x:Name="PART_Description"  Grid.Column="2"
+                                                Text="{Binding Task.Description}" 
+                                                    VerticalAlignment="Center"
+                                                    FontWeight="Bold"
+                                                    IsEditing="{Binding IsEditingDescription}"
+                                                Margin="0,0,-5,0"
+                                                TextTrimming="CharacterEllipsis"
+                                                />
+                        <ToggleButton   x:Name="PART_Priority" Grid.Column="3" Margin="2,0,8,0"
+                                        VerticalAlignment="Stretch"
+                                        Style="{StaticResource StarToggleButton}"
+                                        IsChecked="{Binding IsPriority}"
+                                          />
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=PART_Check}" Value="True">
+                            <Setter TargetName="PART_Description" Property="IsReadOnly" Value="True" />
+                            <Setter TargetName="PART_Priority" Property="IsEnabled" Value="False" />
+                            <Setter TargetName="PART_Description" Property="TextBlock.TextDecorations" Value="{StaticResource StrikethroughTextDecoration}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsPressed, ElementName=PART_Check}" Value="True">
+                            <Setter TargetName="PART_Description" Property="TextBlock.TextDecorations" Value="{StaticResource StrikethroughTextDecoration}" />
+                        </DataTrigger>
+                        
+                        <DataTrigger Binding="{Binding DataContext.IsMultipleSelection,RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" Value="True">
+                            <Setter TargetName="PART_Description" Property="IsReadOnly" Value="True" />
+                        </DataTrigger>        
+                    </DataTemplate.Triggers>
+
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </controls:MultiSelectListBox>
+    </DockPanel>
+</views:BaseView>

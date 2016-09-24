@@ -1,0 +1,2844 @@
+@import "__defs.scss";
+
+@media print {
+	@page {
+		margin:2.5cm
+	}
+	* {
+		margin:0;
+		padding:0;
+		background:none;
+		-webkit-box-shadow:none !important;
+		box-shadow:none !important;
+		outline:none !important
+	}
+	body {
+		margin:1px
+	}
+	body,.main-interface {
+		color:#1a1919;
+		height:auto !important;
+		position:relative !important;
+		overflow:visible !important;
+		display:block !important;
+	}
+	body:before,.main-interface:before {
+		display:none
+	}
+	body:after,.main-interface:after {
+		display:none
+	}
+	#ninjatasks-base.chrome.packaged .mac-titlebar {
+		display:none
+	}
+	#ninjatasks-base.chrome.packaged .main-interface {
+		top:0 !important
+	}
+	#modals,#detail,#lists,#tasks,.popover,.context-menu {
+		display:none !important
+	}
+	#print {
+		display:block !important;
+		width:100%;
+	}
+	#print.fullscreen-note ul.subtasks {
+		display:none !important
+	}
+	#print h1 {
+		font-size:18px !important;
+		border-bottom:1px solid #000;
+		padding-bottom:12px;
+		margin-bottom:8px;
+		font-weight:600 !important;
+	}
+	#print h1.smartlist {
+		border:none;
+	}
+	#print h1.smartlist + div h2 {
+		margin-top:-8px
+	}
+	#print h1 span {
+		position:absolute;
+		font-size:8px;
+		left:3px;
+		width:10px;
+		text-align:center;
+		top:8px
+	}
+	#print h1:before {
+		font-family:'Wundercon-Pictograms','Arial';
+		content:'K';
+		margin-right:8px
+	}
+	#print h1.inbox:before {
+		content:'A'
+	}
+	#print h1.starred:before {
+		content:'D'
+	}
+	#print h1.today:before {
+		content:'E'
+	}
+	#print h1.week:before {
+		content:'F'
+	}
+	#print h1.all:before {
+		content:'G'
+	}
+	#print h1.completed:before {
+		content:'d'
+	}
+	#print h1.task:before {
+		content:'K'
+	}
+	#print h1.assigned:before {
+		content:'B'
+	}
+	#print h1.conversations:before {
+		content:'I'
+	}
+	#print h2 {
+		position:relative;
+		font-size:10px;
+		text-align:center;
+		border-bottom:1px solid #777;
+		height:0;
+		margin:8px 0;
+	}
+	#print h2 span {
+		font-weight:normal;
+		position:relative;
+		background:#fff;
+		padding:0 5px;
+		top:-7px
+	}
+	#print .note {
+		font-size:11px !important;
+		width:66%;
+		padding:5px 0 10px 0;
+		white-space:pre-wrap;
+		font-family:Georgia;
+		line-height:150%;
+		position:relative;
+		border:none
+	}
+	#print ul {
+		border:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+	}
+	#print ul li {
+		padding:5px 0 5px 24px !important;
+		border-bottom:1px dotted #777;
+		position:relative;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+	}
+	#print ul li:before {
+		font-size:16px;
+		content:'';
+		width:8px;
+		height:8px;
+		border:2px solid #000;
+		-webkit-border-radius:2px;
+		border-radius:2px;
+		position:absolute;
+		left:2px;
+		top:9px
+	}
+	#print ul li.done:before {
+		border:none;
+		font-family:'Wundercon-Pictograms','Arial';
+		content:'d'
+	}
+	#print ul li:last-child {
+		border-bottom:none !important
+	}
+	#print ul li .title {
+		font-size:14px !important;
+		line-height:1.5em
+	}
+	#print ul li .task-checkbox,#print ul li .recurrence-wrapper,#print ul li .attachment,#print ul li .task-assign {
+		display:none
+	}
+	#print ul li .duedate,#print ul li .assignee {
+		float:right;
+		font-size:9px !important;
+		margin-top:4px
+	}
+	#print ul li .duedate {
+		margin-left:10px
+	}
+	#print ul li span.task-starred {
+		display:block !important;
+		background:none;
+		float:right;
+		margin-left:10px;
+		height:auto;
+		width:auto;
+	}
+	#print ul li span.task-starred:before {
+		font-size:16px;
+		font-family:'Wundercon-Pictograms','Arial';
+		content:'D'
+	}
+	#print ul ul.subtasks {
+		border:none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+	}
+	#print ul ul.subtasks li {
+		border-bottom:none;
+		padding:2px 0 2px 18px !important;
+		font-size:11px !important;
+		line-height:1.5em;
+		font-weight:400 !important;
+	}
+	#print ul ul.subtasks li:after {
+		display:none
+	}
+	#print ul ul.subtasks li:before {
+		content:'';
+		width:8px;
+		height:8px;
+		border:2px solid #000;
+		-webkit-border-radius:2px;
+		border-radius:2px;
+		position:absolute;
+		left:2px;
+		top:3px
+	}
+	#print ul ul.subtasks li:last-child {
+		margin-bottom:11px
+	}
+	#print ul ul.subtasks li.done {
+		color:#000;
+	}
+	#print ul ul.subtasks li.done:before {
+		border:none;
+		font-family:'Wundercon-Pictograms','Arial';
+		content:'d';
+		left:0;
+		top:3px
+	}
+	.emoji {
+		height:1em;
+		width:1em
+	}
+	.emoticon._1f4af {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4af.png)
+	}
+	.emoticon._1f522 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f522.png)
+	}
+	.emoticon._1f1e6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1e6.png)
+	}
+	.emoticon._1f1e7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1e7.png)
+	}
+	.emoticon._1f1e8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1e8.png)
+	}
+	.emoticon._1f1e9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1e9.png)
+	}
+	.emoticon._1f1ea {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ea.png)
+	}
+	.emoticon._1f1eb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1eb.png)
+	}
+	.emoticon._1f1ec {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ec.png)
+	}
+	.emoticon._1f1ed {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ed.png)
+	}
+	.emoticon._1f1ee {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ee.png)
+	}
+	.emoticon._1f1ef {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ef.png)
+	}
+	.emoticon._1f1f0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f0.png)
+	}
+	.emoticon._1f1f1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f1.png)
+	}
+	.emoticon._1f1f2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f2.png)
+	}
+	.emoticon._1f1f3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f3.png)
+	}
+	.emoticon._1f1f4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f4.png)
+	}
+	.emoticon._1f1f5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f5.png)
+	}
+	.emoticon._1f1f6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f6.png)
+	}
+	.emoticon._1f1f7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f7.png)
+	}
+	.emoticon._1f1f8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f8.png)
+	}
+	.emoticon._1f1f9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f9.png)
+	}
+	.emoticon._1f1fa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1fa.png)
+	}
+	.emoticon._1f1fb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1fb.png)
+	}
+	.emoticon._1f1fc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1fc.png)
+	}
+	.emoticon._1f1fd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1fd.png)
+	}
+	.emoticon._1f1fe {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1fe.png)
+	}
+	.emoticon._1f1ff {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ff.png)
+	}
+	.emoticon._1f320 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f320.png)
+	}
+	.emoticon._1f508 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f508.png)
+	}
+	.emoticon._1f68b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f68b.png)
+	}
+	.emoticon._23-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23-20e3.png)
+	}
+	.emoticon._30-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/30-20e3.png)
+	}
+	.emoticon._31-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/31-20e3.png)
+	}
+	.emoticon._32-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/32-20e3.png)
+	}
+	.emoticon._33-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/33-20e3.png)
+	}
+	.emoticon._34-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/34-20e3.png)
+	}
+	.emoticon._35-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/35-20e3.png)
+	}
+	.emoticon._36-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/36-20e3.png)
+	}
+	.emoticon._37-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/37-20e3.png)
+	}
+	.emoticon._38-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/38-20e3.png)
+	}
+	.emoticon._39-20e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/39-20e3.png)
+	}
+	.emoticon._1f3b1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b1.png)
+	}
+	.emoticon._1f170 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f170.png)
+	}
+	.emoticon._a9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/a9.png)
+	}
+	.emoticon._1f18e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f18e.png)
+	}
+	.emoticon._1f524 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f524.png)
+	}
+	.emoticon._1f521 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f521.png)
+	}
+	.emoticon._1f251 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f251.png)
+	}
+	.emoticon._ae {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/ae.png)
+	}
+	.emoticon._1f6a1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a1.png)
+	}
+	.emoticon._2708 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2708.png)
+	}
+	.emoticon._23f0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23f0.png)
+	}
+	.emoticon._1f47d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f47d.png)
+	}
+	.emoticon._1f691 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f691.png)
+	}
+	.emoticon._2693 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2693.png)
+	}
+	.emoticon._1f47c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f47c.png)
+	}
+	.emoticon._1f4a2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a2.png)
+	}
+	.emoticon._1f620 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f620.png)
+	}
+	.emoticon._1f627 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f627.png)
+	}
+	.emoticon._1f41c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f41c.png)
+	}
+	.emoticon._1f34e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f34e.png)
+	}
+	.emoticon._2652 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2652.png)
+	}
+	.emoticon._2648 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2648.png)
+	}
+	.emoticon._25c0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25c0.png)
+	}
+	.emoticon._23ec {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23ec.png)
+	}
+	.emoticon._23eb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23eb.png)
+	}
+	.emoticon._1f53d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f53d.png)
+	}
+	.emoticon._2b07 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b07.png)
+	}
+	.emoticon._25b6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25b6.png)
+	}
+	.emoticon._2935 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2935.png)
+	}
+	.emoticon._2934 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2934.png)
+	}
+	.emoticon._2b05 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b05.png)
+	}
+	.emoticon._2199 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2199.png)
+	}
+	.emoticon._2198 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2198.png)
+	}
+	.emoticon._21aa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/21aa.png)
+	}
+	.emoticon._27a1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/27a1.png)
+	}
+	.emoticon._2195 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2195.png)
+	}
+	.emoticon._1f53c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f53c.png)
+	}
+	.emoticon._2b06 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b06.png)
+	}
+	.emoticon._2196 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2196.png)
+	}
+	.emoticon._2197 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2197.png)
+	}
+	.emoticon._1f503 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f503.png)
+	}
+	.emoticon._1f504 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f504.png)
+	}
+	.emoticon._1f3a8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a8.png)
+	}
+	.emoticon._1f69b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f69b.png)
+	}
+	.emoticon._1f632 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f632.png)
+	}
+	.emoticon._1f45f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f45f.png)
+	}
+	.emoticon._1f3e7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e7.png)
+	}
+	.emoticon._1f171 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f171.png)
+	}
+	.emoticon._1f37c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f37c.png)
+	}
+	.emoticon._1f424 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f424.png)
+	}
+	.emoticon._1f6bc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6bc.png)
+	}
+	.emoticon._1f476 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f476.png)
+	}
+	.emoticon._1f519 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f519.png)
+	}
+	.emoticon._1f6c4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6c4.png)
+	}
+	.emoticon._1f388 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f388.png)
+	}
+	.emoticon._2611 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2611.png)
+	}
+	.emoticon._1f38d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f38d.png)
+	}
+	.emoticon._1f34c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f34c.png)
+	}
+	.emoticon._203c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/203c.png)
+	}
+	.emoticon._1f3e6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e6.png)
+	}
+	.emoticon._1f4ca {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ca.png)
+	}
+	.emoticon._1f488 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f488.png)
+	}
+	.emoticon._26be {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26be.png)
+	}
+	.emoticon._1f3c0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c0.png)
+	}
+	.emoticon._1f6c0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6c0.png)
+	}
+	.emoticon._1f6c1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6c1.png)
+	}
+	.emoticon._1f50b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f50b.png)
+	}
+	.emoticon._1f43b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f43b.png)
+	}
+	.emoticon._1f37a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f37a.png)
+	}
+	.emoticon._1f37b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f37b.png)
+	}
+	.emoticon._1f41e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f41e.png)
+	}
+	.emoticon._1f530 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f530.png)
+	}
+	.emoticon._1f514 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f514.png)
+	}
+	.emoticon._1f371 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f371.png)
+	}
+	.emoticon._1f6b4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b4.png)
+	}
+	.emoticon._1f6b2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b2.png)
+	}
+	.emoticon._1f459 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f459.png)
+	}
+	.emoticon._1f426 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f426.png)
+	}
+	.emoticon._1f382 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f382.png)
+	}
+	.emoticon._26ab {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26ab.png)
+	}
+	.emoticon._1f0cf {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f0cf.png)
+	}
+	.emoticon._2b1b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b1b.png)
+	}
+	.emoticon._25fe {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25fe.png)
+	}
+	.emoticon._25fc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25fc.png)
+	}
+	.emoticon._2712 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2712.png)
+	}
+	.emoticon._25aa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25aa.png)
+	}
+	.emoticon._1f532 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f532.png)
+	}
+	.emoticon._1f33c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f33c.png)
+	}
+	.emoticon._1f421 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f421.png)
+	}
+	.emoticon._1f4d8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d8.png)
+	}
+	.emoticon._1f699 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f699.png)
+	}
+	.emoticon._1f499 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f499.png)
+	}
+	.emoticon._1f60a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f60a.png)
+	}
+	.emoticon._1f417 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f417.png)
+	}
+	.emoticon._1f4a3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a3.png)
+	}
+	.emoticon._1f4d1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d1.png)
+	}
+	.emoticon._1f516 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f516.png)
+	}
+	.emoticon._1f4da {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4da.png)
+	}
+	.emoticon._1f462 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f462.png)
+	}
+	.emoticon._1f490 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f490.png)
+	}
+	.emoticon._1f647 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f647.png)
+	}
+	.emoticon._1f3b3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b3.png)
+	}
+	.emoticon._1f466 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f466.png)
+	}
+	.emoticon._1f35e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f35e.png)
+	}
+	.emoticon._1f470 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f470.png)
+	}
+	.emoticon._1f309 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f309.png)
+	}
+	.emoticon._1f4bc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4bc.png)
+	}
+	.emoticon._1f494 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f494.png)
+	}
+	.emoticon._1f41b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f41b.png)
+	}
+	.emoticon._1f4a1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a1.png)
+	}
+	.emoticon._1f685 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f685.png)
+	}
+	.emoticon._1f684 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f684.png)
+	}
+	.emoticon._1f68c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f68c.png)
+	}
+	.emoticon._1f68f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f68f.png)
+	}
+	.emoticon._1f464 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f464.png)
+	}
+	.emoticon._1f465 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f465.png)
+	}
+	.emoticon._1f335 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f335.png)
+	}
+	.emoticon._1f370 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f370.png)
+	}
+	.emoticon._1f4c6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c6.png)
+	}
+	.emoticon._1f4f2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f2.png)
+	}
+	.emoticon._1f42b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f42b.png)
+	}
+	.emoticon._1f4f7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f7.png)
+	}
+	.emoticon._264b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/264b.png)
+	}
+	.emoticon._1f36c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f36c.png)
+	}
+	.emoticon._1f520 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f520.png)
+	}
+	.emoticon._2651 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2651.png)
+	}
+	.emoticon._1f4c7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c7.png)
+	}
+	.emoticon._1f3a0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a0.png)
+	}
+	.emoticon._1f431 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f431.png)
+	}
+	.emoticon._1f408 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f408.png)
+	}
+	.emoticon._1f4bf {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4bf.png)
+	}
+	.emoticon._1f4c9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c9.png)
+	}
+	.emoticon._1f4c8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c8.png)
+	}
+	.emoticon._1f4b9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b9.png)
+	}
+	.emoticon._1f3c1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c1.png)
+	}
+	.emoticon._1f352 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f352.png)
+	}
+	.emoticon._1f338 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f338.png)
+	}
+	.emoticon._1f330 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f330.png)
+	}
+	.emoticon._1f414 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f414.png)
+	}
+	.emoticon._1f6b8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b8.png)
+	}
+	.emoticon._1f36b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f36b.png)
+	}
+	.emoticon._1f384 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f384.png)
+	}
+	.emoticon._26ea {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26ea.png)
+	}
+	.emoticon._1f3a6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a6.png)
+	}
+	.emoticon._1f3aa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3aa.png)
+	}
+	.emoticon._1f307 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f307.png)
+	}
+	.emoticon._1f306 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f306.png)
+	}
+	.emoticon._1f191 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f191.png)
+	}
+	.emoticon._1f44f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f44f.png)
+	}
+	.emoticon._1f3ac {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ac.png)
+	}
+	.emoticon._1f4cb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4cb.png)
+	}
+	.emoticon._1f550 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f550.png)
+	}
+	.emoticon._1f559 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f559.png)
+	}
+	.emoticon._1f565 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f565.png)
+	}
+	.emoticon._1f55a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f55a.png)
+	}
+	.emoticon._1f566 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f566.png)
+	}
+	.emoticon._1f55b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f55b.png)
+	}
+	.emoticon._1f567 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f567.png)
+	}
+	.emoticon._1f55c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f55c.png)
+	}
+	.emoticon._1f551 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f551.png)
+	}
+	.emoticon._1f55d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f55d.png)
+	}
+	.emoticon._1f552 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f552.png)
+	}
+	.emoticon._1f55e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f55e.png)
+	}
+	.emoticon._1f553 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f553.png)
+	}
+	.emoticon._1f55f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f55f.png)
+	}
+	.emoticon._1f554 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f554.png)
+	}
+	.emoticon._1f560 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f560.png)
+	}
+	.emoticon._1f555 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f555.png)
+	}
+	.emoticon._1f561 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f561.png)
+	}
+	.emoticon._1f556 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f556.png)
+	}
+	.emoticon._1f562 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f562.png)
+	}
+	.emoticon._1f557 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f557.png)
+	}
+	.emoticon._1f563 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f563.png)
+	}
+	.emoticon._1f558 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f558.png)
+	}
+	.emoticon._1f564 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f564.png)
+	}
+	.emoticon._1f4d5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d5.png)
+	}
+	.emoticon._1f510 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f510.png)
+	}
+	.emoticon._1f302 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f302.png)
+	}
+	.emoticon._2601 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2601.png)
+	}
+	.emoticon._2663 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2663.png)
+	}
+	.emoticon._1f1e8-1f1f3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1e8-1f1f3.png)
+	}
+	.emoticon._1f378 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f378.png)
+	}
+	.emoticon._2615 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2615.png)
+	}
+	.emoticon._1f630 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f630.png)
+	}
+	.emoticon._1f4a5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a5.png)
+	}
+	.emoticon._1f4bb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4bb.png)
+	}
+	.emoticon._1f38a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f38a.png)
+	}
+	.emoticon._1f616 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f616.png)
+	}
+	.emoticon._1f615 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f615.png)
+	}
+	.emoticon._3297 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/3297.png)
+	}
+	.emoticon._1f477 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f477.png)
+	}
+	.emoticon._1f6a7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a7.png)
+	}
+	.emoticon._1f3ea {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ea.png)
+	}
+	.emoticon._1f36a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f36a.png)
+	}
+	.emoticon._1f192 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f192.png)
+	}
+	.emoticon._1f46e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f46e.png)
+	}
+	.emoticon._1f33d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f33d.png)
+	}
+	.emoticon._1f491 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f491.png)
+	}
+	.emoticon._1f46b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f46b.png)
+	}
+	.emoticon._1f48f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f48f.png)
+	}
+	.emoticon._1f42e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f42e.png)
+	}
+	.emoticon._1f404 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f404.png)
+	}
+	.emoticon._1f4b3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b3.png)
+	}
+	.emoticon._1f319 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f319.png)
+	}
+	.emoticon._1f40a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f40a.png)
+	}
+	.emoticon._1f38c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f38c.png)
+	}
+	.emoticon._1f451 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f451.png)
+	}
+	.emoticon._1f622 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f622.png)
+	}
+	.emoticon._1f63f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f63f.png)
+	}
+	.emoticon._1f52e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f52e.png)
+	}
+	.emoticon._1f498 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f498.png)
+	}
+	.emoticon._27b0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/27b0.png)
+	}
+	.emoticon._1f4b1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b1.png)
+	}
+	.emoticon._1f35b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f35b.png)
+	}
+	.emoticon._1f36e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f36e.png)
+	}
+	.emoticon._1f6c3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6c3.png)
+	}
+	.emoticon._1f300 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f300.png)
+	}
+	.emoticon._1f483 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f483.png)
+	}
+	.emoticon._1f46f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f46f.png)
+	}
+	.emoticon._1f361 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f361.png)
+	}
+	.emoticon._1f3af {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3af.png)
+	}
+	.emoticon._1f4a8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a8.png)
+	}
+	.emoticon._1f4c5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c5.png)
+	}
+	.emoticon._1f1e9-1f1ea {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1e9-1f1ea.png)
+	}
+	.emoticon._1f333 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f333.png)
+	}
+	.emoticon._1f3ec {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ec.png)
+	}
+	.emoticon._1f4a0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a0.png)
+	}
+	.emoticon._2666 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2666.png)
+	}
+	.emoticon._1f625 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f625.png)
+	}
+	.emoticon._1f61e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f61e.png)
+	}
+	.emoticon._1f635 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f635.png)
+	}
+	.emoticon._1f4ab {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ab.png)
+	}
+	.emoticon._1f6af {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6af.png)
+	}
+	.emoticon._1f436 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f436.png)
+	}
+	.emoticon._1f415 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f415.png)
+	}
+	.emoticon._1f4b5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b5.png)
+	}
+	.emoticon._1f38e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f38e.png)
+	}
+	.emoticon._1f6aa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6aa.png)
+	}
+	.emoticon._1f369 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f369.png)
+	}
+	.emoticon._1f432 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f432.png)
+	}
+	.emoticon._1f409 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f409.png)
+	}
+	.emoticon._1f457 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f457.png)
+	}
+	.emoticon._1f42a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f42a.png)
+	}
+	.emoticon._1f4a7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a7.png)
+	}
+	.emoticon._1f4c0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c0.png)
+	}
+	.emoticon._1f4e7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e7.png)
+	}
+	.emoticon._e50a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/e50a.png)
+	}
+	.emoticon._1f33e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f33e.png)
+	}
+	.emoticon._1f442 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f442.png)
+	}
+	.emoticon._1f30d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f30d.png)
+	}
+	.emoticon._1f30e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f30e.png)
+	}
+	.emoticon._1f30f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f30f.png)
+	}
+	.emoticon._1f373 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f373.png)
+	}
+	.emoticon._1f346 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f346.png)
+	}
+	.emoticon._2734 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2734.png)
+	}
+	.emoticon._2733 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2733.png)
+	}
+	.emoticon._1f50c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f50c.png)
+	}
+	.emoticon._1f418 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f418.png)
+	}
+	.emoticon._1f51a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f51a.png)
+	}
+	.emoticon._1f4e9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e9.png)
+	}
+	.emoticon._2709 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2709.png)
+	}
+	.emoticon._1f1ea-1f1f8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ea-1f1f8.png)
+	}
+	.emoticon._1f4b6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b6.png)
+	}
+	.emoticon._1f3f0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3f0.png)
+	}
+	.emoticon._1f3e4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e4.png)
+	}
+	.emoticon._1f332 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f332.png)
+	}
+	.emoticon._1f611 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f611.png)
+	}
+	.emoticon._1f453 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f453.png)
+	}
+	.emoticon._1f440 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f440.png)
+	}
+	.emoticon._1f3ed {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ed.png)
+	}
+	.emoticon._1f342 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f342.png)
+	}
+	.emoticon._1f46a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f46a.png)
+	}
+	.emoticon._23e9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23e9.png)
+	}
+	.emoticon._1f4e0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e0.png)
+	}
+	.emoticon._1f628 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f628.png)
+	}
+	.emoticon._1f3a1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a1.png)
+	}
+	.emoticon._1f4c1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c1.png)
+	}
+	.emoticon._1f692 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f692.png)
+	}
+	.emoticon._1f525 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f525.png)
+	}
+	.emoticon._1f386 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f386.png)
+	}
+	.emoticon._1f31b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f31b.png)
+	}
+	.emoticon._1f313 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f313.png)
+	}
+	.emoticon._1f365 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f365.png)
+	}
+	.emoticon._1f41f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f41f.png)
+	}
+	.emoticon._1f3a3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a3.png)
+	}
+	.emoticon._270a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/270a.png)
+	}
+	.emoticon._1f38f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f38f.png)
+	}
+	.emoticon._1f526 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f526.png)
+	}
+	.emoticon._1f42c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f42c.png)
+	}
+	.emoticon._1f4be {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4be.png)
+	}
+	.emoticon._1f3b4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b4.png)
+	}
+	.emoticon._1f633 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f633.png)
+	}
+	.emoticon._1f301 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f301.png)
+	}
+	.emoticon._1f3c8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c8.png)
+	}
+	.emoticon._1f463 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f463.png)
+	}
+	.emoticon._1f374 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f374.png)
+	}
+	.emoticon._26f2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26f2.png)
+	}
+	.emoticon._1f340 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f340.png)
+	}
+	.emoticon._1f1eb-1f1f7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1eb-1f1f7.png)
+	}
+	.emoticon._1f193 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f193.png)
+	}
+	.emoticon._1f364 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f364.png)
+	}
+	.emoticon._1f35f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f35f.png)
+	}
+	.emoticon._1f438 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f438.png)
+	}
+	.emoticon._1f626 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f626.png)
+	}
+	.emoticon._26fd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26fd.png)
+	}
+	.emoticon._1f31d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f31d.png)
+	}
+	.emoticon._1f315 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f315.png)
+	}
+	.emoticon._1f3b2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b2.png)
+	}
+	.emoticon._1f48e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f48e.png)
+	}
+	.emoticon._264a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/264a.png)
+	}
+	.emoticon._1f47b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f47b.png)
+	}
+	.emoticon._1f49d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f49d.png)
+	}
+	.emoticon._1f381 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f381.png)
+	}
+	.emoticon._1f467 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f467.png)
+	}
+	.emoticon._1f310 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f310.png)
+	}
+	.emoticon._1f410 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f410.png)
+	}
+	.emoticon._26f3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26f3.png)
+	}
+	.emoticon._1f347 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f347.png)
+	}
+	.emoticon._1f34f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f34f.png)
+	}
+	.emoticon._1f4d7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d7.png)
+	}
+	.emoticon._1f49a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f49a.png)
+	}
+	.emoticon._2755 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2755.png)
+	}
+	.emoticon._2754 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2754.png)
+	}
+	.emoticon._1f62c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f62c.png)
+	}
+	.emoticon._1f601 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f601.png)
+	}
+	.emoticon._1f600 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f600.png)
+	}
+	.emoticon._1f482 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f482.png)
+	}
+	.emoticon._1f3b8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b8.png)
+	}
+	.emoticon._1f52b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f52b.png)
+	}
+	.emoticon._1f487 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f487.png)
+	}
+	.emoticon._1f354 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f354.png)
+	}
+	.emoticon._1f528 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f528.png)
+	}
+	.emoticon._1f439 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f439.png)
+	}
+	.emoticon._1f45c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f45c.png)
+	}
+	.emoticon._1f425 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f425.png)
+	}
+	.emoticon._1f423 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f423.png)
+	}
+	.emoticon._1f3a7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a7.png)
+	}
+	.emoticon._1f649 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f649.png)
+	}
+	.emoticon._1f49f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f49f.png)
+	}
+	.emoticon._1f63b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f63b.png)
+	}
+	.emoticon._1f60d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f60d.png)
+	}
+	.emoticon._2764 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2764.png)
+	}
+	.emoticon._1f493 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f493.png)
+	}
+	.emoticon._1f497 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f497.png)
+	}
+	.emoticon._2665 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2665.png)
+	}
+	.emoticon._2714 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2714.png)
+	}
+	.emoticon._2797 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2797.png)
+	}
+	.emoticon._1f4b2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b2.png)
+	}
+	.emoticon._2757 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2757.png)
+	}
+	.emoticon._2796 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2796.png)
+	}
+	.emoticon._2716 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2716.png)
+	}
+	.emoticon._2795 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2795.png)
+	}
+	.emoticon._1f681 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f681.png)
+	}
+	.emoticon._1f33f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f33f.png)
+	}
+	.emoticon._1f33a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f33a.png)
+	}
+	.emoticon._1f506 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f506.png)
+	}
+	.emoticon._1f460 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f460.png)
+	}
+	.emoticon._1f52a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f52a.png)
+	}
+	.emoticon._1f36f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f36f.png)
+	}
+	.emoticon._1f41d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f41d.png)
+	}
+	.emoticon._1f3c7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c7.png)
+	}
+	.emoticon._1f434 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f434.png)
+	}
+	.emoticon._1f3e5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e5.png)
+	}
+	.emoticon._1f3e8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e8.png)
+	}
+	.emoticon._2668 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2668.png)
+	}
+	.emoticon._23f3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23f3.png)
+	}
+	.emoticon._231b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/231b.png)
+	}
+	.emoticon._1f3e1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e1.png)
+	}
+	.emoticon._1f3e0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e0.png)
+	}
+	.emoticon._1f62f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f62f.png)
+	}
+	.emoticon._1f368 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f368.png)
+	}
+	.emoticon._1f366 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f366.png)
+	}
+	.emoticon._1f194 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f194.png)
+	}
+	.emoticon._1f250 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f250.png)
+	}
+	.emoticon._1f47f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f47f.png)
+	}
+	.emoticon._1f4e5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e5.png)
+	}
+	.emoticon._1f4e8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e8.png)
+	}
+	.emoticon._1f481 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f481.png)
+	}
+	.emoticon._2139 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2139.png)
+	}
+	.emoticon._1f607 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f607.png)
+	}
+	.emoticon._2049 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2049.png)
+	}
+	.emoticon._1f4f1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f1.png)
+	}
+	.emoticon._1f1ee-1f1f9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ee-1f1f9.png)
+	}
+	.emoticon._1f383 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f383.png)
+	}
+	.emoticon._1f5fe {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f5fe.png)
+	}
+	.emoticon._1f3ef {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ef.png)
+	}
+	.emoticon._1f47a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f47a.png)
+	}
+	.emoticon._1f479 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f479.png)
+	}
+	.emoticon._1f456 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f456.png)
+	}
+	.emoticon._1f639 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f639.png)
+	}
+	.emoticon._1f602 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f602.png)
+	}
+	.emoticon._1f1ef-1f1f5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ef-1f1f5.png)
+	}
+	.emoticon._1f511 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f511.png)
+	}
+	.emoticon._1f51f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f51f.png)
+	}
+	.emoticon._1f458 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f458.png)
+	}
+	.emoticon._1f48b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f48b.png)
+	}
+	.emoticon._1f63d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f63d.png)
+	}
+	.emoticon._1f61a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f61a.png)
+	}
+	.emoticon._1f618 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f618.png)
+	}
+	.emoticon._1f619 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f619.png)
+	}
+	.emoticon._1f617 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f617.png)
+	}
+	.emoticon._1f428 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f428.png)
+	}
+	.emoticon._1f201 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f201.png)
+	}
+	.emoticon._1f1f0-1f1f7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f0-1f1f7.png)
+	}
+	.emoticon._1f3ee {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ee.png)
+	}
+	.emoticon._1f535 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f535.png)
+	}
+	.emoticon._1f537 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f537.png)
+	}
+	.emoticon._1f536 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f536.png)
+	}
+	.emoticon._1f31c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f31c.png)
+	}
+	.emoticon._1f317 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f317.png)
+	}
+	.emoticon._1f343 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f343.png)
+	}
+	.emoticon._1f4d2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d2.png)
+	}
+	.emoticon._1f6c5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6c5.png)
+	}
+	.emoticon._2194 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2194.png)
+	}
+	.emoticon._21a9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/21a9.png)
+	}
+	.emoticon._1f34b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f34b.png)
+	}
+	.emoticon._264c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/264c.png)
+	}
+	.emoticon._1f406 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f406.png)
+	}
+	.emoticon._264e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/264e.png)
+	}
+	.emoticon._1f688 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f688.png)
+	}
+	.emoticon._1f517 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f517.png)
+	}
+	.emoticon._1f444 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f444.png)
+	}
+	.emoticon._1f484 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f484.png)
+	}
+	.emoticon._1f50f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f50f.png)
+	}
+	.emoticon._1f512 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f512.png)
+	}
+	.emoticon._1f36d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f36d.png)
+	}
+	.emoticon._27bf {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/27bf.png)
+	}
+	.emoticon._1f4e2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e2.png)
+	}
+	.emoticon._1f3e9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e9.png)
+	}
+	.emoticon._1f48c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f48c.png)
+	}
+	.emoticon._1f505 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f505.png)
+	}
+	.emoticon._24c2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/24c2.png)
+	}
+	.emoticon._1f50e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f50e.png)
+	}
+	.emoticon._1f50d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f50d.png)
+	}
+	.emoticon._1f004 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f004.png)
+	}
+	.emoticon._1f4ea {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ea.png)
+	}
+	.emoticon._1f4ec {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ec.png)
+	}
+	.emoticon._1f4ed {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ed.png)
+	}
+	.emoticon._1f4eb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4eb.png)
+	}
+	.emoticon._1f472 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f472.png)
+	}
+	.emoticon._1f473 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f473.png)
+	}
+	.emoticon._1f468 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f468.png)
+	}
+	.emoticon._1f341 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f341.png)
+	}
+	.emoticon._1f637 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f637.png)
+	}
+	.emoticon._1f486 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f486.png)
+	}
+	.emoticon._1f356 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f356.png)
+	}
+	.emoticon._1f4e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e3.png)
+	}
+	.emoticon._1f348 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f348.png)
+	}
+	.emoticon._1f6b9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b9.png)
+	}
+	.emoticon._1f687 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f687.png)
+	}
+	.emoticon._1f3a4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a4.png)
+	}
+	.emoticon._1f52c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f52c.png)
+	}
+	.emoticon._1f30c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f30c.png)
+	}
+	.emoticon._1f690 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f690.png)
+	}
+	.emoticon._1f4bd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4bd.png)
+	}
+	.emoticon._1f4f4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f4.png)
+	}
+	.emoticon._1f4b8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b8.png)
+	}
+	.emoticon._1f4b0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b0.png)
+	}
+	.emoticon._1f435 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f435.png)
+	}
+	.emoticon._1f412 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f412.png)
+	}
+	.emoticon._1f69d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f69d.png)
+	}
+	.emoticon._1f393 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f393.png)
+	}
+	.emoticon._1f5fb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f5fb.png)
+	}
+	.emoticon._1f6b5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b5.png)
+	}
+	.emoticon._1f6a0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a0.png)
+	}
+	.emoticon._1f69e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f69e.png)
+	}
+	.emoticon._1f42d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f42d.png)
+	}
+	.emoticon._1f401 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f401.png)
+	}
+	.emoticon._1f3a5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a5.png)
+	}
+	.emoticon._1f5ff {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f5ff.png)
+	}
+	.emoticon._1f4aa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4aa.png)
+	}
+	.emoticon._1f344 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f344.png)
+	}
+	.emoticon._1f3b9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b9.png)
+	}
+	.emoticon._1f3b5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b5.png)
+	}
+	.emoticon._1f3bc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3bc.png)
+	}
+	.emoticon._1f507 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f507.png)
+	}
+	.emoticon._1f485 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f485.png)
+	}
+	.emoticon._1f4db {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4db.png)
+	}
+	.emoticon._1f454 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f454.png)
+	}
+	.emoticon._274e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/274e.png)
+	}
+	.emoticon._1f610 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f610.png)
+	}
+	.emoticon._1f31a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f31a.png)
+	}
+	.emoticon._1f311 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f311.png)
+	}
+	.emoticon._1f195 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f195.png)
+	}
+	.emoticon._1f4f0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f0.png)
+	}
+	.emoticon._1f196 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f196.png)
+	}
+	.emoticon._1f515 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f515.png)
+	}
+	.emoticon._1f6b3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b3.png)
+	}
+	.emoticon._1f6ab {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6ab.png)
+	}
+	.emoticon._26d4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26d4.png)
+	}
+	.emoticon._1f645 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f645.png)
+	}
+	.emoticon._1f4f5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f5.png)
+	}
+	.emoticon._1f636 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f636.png)
+	}
+	.emoticon._1f6b7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b7.png)
+	}
+	.emoticon._1f6ad {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6ad.png)
+	}
+	.emoticon._1f6b1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b1.png)
+	}
+	.emoticon._1f443 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f443.png)
+	}
+	.emoticon._1f4d4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d4.png)
+	}
+	.emoticon._1f4d3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d3.png)
+	}
+	.emoticon._1f3b6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b6.png)
+	}
+	.emoticon._1f529 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f529.png)
+	}
+	.emoticon._2b55 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b55.png)
+	}
+	.emoticon._1f17e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f17e.png)
+	}
+	.emoticon._1f30a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f30a.png)
+	}
+	.emoticon._1f419 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f419.png)
+	}
+	.emoticon._1f362 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f362.png)
+	}
+	.emoticon._1f3e2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e2.png)
+	}
+	.emoticon._1f44c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f44c.png)
+	}
+	.emoticon._1f646 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f646.png)
+	}
+	.emoticon._1f197 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f197.png)
+	}
+	.emoticon._1f474 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f474.png)
+	}
+	.emoticon._1f475 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f475.png)
+	}
+	.emoticon._1f51b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f51b.png)
+	}
+	.emoticon._1f698 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f698.png)
+	}
+	.emoticon._1f68d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f68d.png)
+	}
+	.emoticon._1f694 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f694.png)
+	}
+	.emoticon._1f696 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f696.png)
+	}
+	.emoticon._1f4d6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d6.png)
+	}
+	.emoticon._1f4c2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c2.png)
+	}
+	.emoticon._1f450 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f450.png)
+	}
+	.emoticon._1f62e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f62e.png)
+	}
+	.emoticon._26ce {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26ce.png)
+	}
+	.emoticon._1f4d9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d9.png)
+	}
+	.emoticon._1f4e4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e4.png)
+	}
+	.emoticon._1f402 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f402.png)
+	}
+	.emoticon._1f4e6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e6.png)
+	}
+	.emoticon._1f4c4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c4.png)
+	}
+	.emoticon._1f4c3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4c3.png)
+	}
+	.emoticon._1f4df {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4df.png)
+	}
+	.emoticon._1f334 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f334.png)
+	}
+	.emoticon._1f43c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f43c.png)
+	}
+	.emoticon._1f4ce {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ce.png)
+	}
+	.emoticon._1f17f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f17f.png)
+	}
+	.emoticon._303d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/303d.png)
+	}
+	.emoticon._26c5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26c5.png)
+	}
+	.emoticon._1f6c2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6c2.png)
+	}
+	.emoticon._1f43e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f43e.png)
+	}
+	.emoticon._1f351 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f351.png)
+	}
+	.emoticon._1f350 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f350.png)
+	}
+	.emoticon._1f4dd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4dd.png)
+	}
+	.emoticon._270f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/270f.png)
+	}
+	.emoticon._1f427 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f427.png)
+	}
+	.emoticon._1f614 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f614.png)
+	}
+	.emoticon._1f3ad {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ad.png)
+	}
+	.emoticon._1f623 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f623.png)
+	}
+	.emoticon._1f64d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f64d.png)
+	}
+	.emoticon._1f471 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f471.png)
+	}
+	.emoticon._1f64e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f64e.png)
+	}
+	.emoticon._1f43d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f43d.png)
+	}
+	.emoticon._1f437 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f437.png)
+	}
+	.emoticon._1f416 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f416.png)
+	}
+	.emoticon._1f48a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f48a.png)
+	}
+	.emoticon._1f34d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f34d.png)
+	}
+	.emoticon._2653 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2653.png)
+	}
+	.emoticon._1f355 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f355.png)
+	}
+	.emoticon._1f447 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f447.png)
+	}
+	.emoticon._1f448 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f448.png)
+	}
+	.emoticon._1f449 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f449.png)
+	}
+	.emoticon._1f446 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f446.png)
+	}
+	.emoticon._261d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/261d.png)
+	}
+	.emoticon._1f693 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f693.png)
+	}
+	.emoticon._1f429 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f429.png)
+	}
+	.emoticon._1f4a9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a9.png)
+	}
+	.emoticon._1f3e3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3e3.png)
+	}
+	.emoticon._1f4ef {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ef.png)
+	}
+	.emoticon._1f4ee {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ee.png)
+	}
+	.emoticon._1f6b0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b0.png)
+	}
+	.emoticon._1f45d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f45d.png)
+	}
+	.emoticon._1f357 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f357.png)
+	}
+	.emoticon._1f4b7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b7.png)
+	}
+	.emoticon._1f63e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f63e.png)
+	}
+	.emoticon._1f64f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f64f.png)
+	}
+	.emoticon._1f478 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f478.png)
+	}
+	.emoticon._1f44a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f44a.png)
+	}
+	.emoticon._1f49c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f49c.png)
+	}
+	.emoticon._1f45b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f45b.png)
+	}
+	.emoticon._1f4cc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4cc.png)
+	}
+	.emoticon._1f6ae {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6ae.png)
+	}
+	.emoticon._2753 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2753.png)
+	}
+	.emoticon._1f430 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f430.png)
+	}
+	.emoticon._1f407 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f407.png)
+	}
+	.emoticon._1f40e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f40e.png)
+	}
+	.emoticon._1f518 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f518.png)
+	}
+	.emoticon._1f4fb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4fb.png)
+	}
+	.emoticon._1f621 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f621.png)
+	}
+	.emoticon._1f308 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f308.png)
+	}
+	.emoticon._270b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/270b.png)
+	}
+	.emoticon._1f64c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f64c.png)
+	}
+	.emoticon._1f64b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f64b.png)
+	}
+	.emoticon._1f40f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f40f.png)
+	}
+	.emoticon._1f35c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f35c.png)
+	}
+	.emoticon._1f400 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f400.png)
+	}
+	.emoticon._267b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/267b.png)
+	}
+	.emoticon._1f697 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f697.png)
+	}
+	.emoticon._1f534 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f534.png)
+	}
+	.emoticon._263a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/263a.png)
+	}
+	.emoticon._1f60c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f60c.png)
+	}
+	.emoticon._1f502 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f502.png)
+	}
+	.emoticon._1f501 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f501.png)
+	}
+	.emoticon._1f6bb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6bb.png)
+	}
+	.emoticon._1f49e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f49e.png)
+	}
+	.emoticon._23ea {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/23ea.png)
+	}
+	.emoticon._1f380 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f380.png)
+	}
+	.emoticon._1f359 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f359.png)
+	}
+	.emoticon._1f358 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f358.png)
+	}
+	.emoticon._1f391 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f391.png)
+	}
+	.emoticon._1f35a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f35a.png)
+	}
+	.emoticon._1f48d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f48d.png)
+	}
+	.emoticon._1f680 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f680.png)
+	}
+	.emoticon._1f3a2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a2.png)
+	}
+	.emoticon._1f413 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f413.png)
+	}
+	.emoticon._1f339 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f339.png)
+	}
+	.emoticon._1f6a8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a8.png)
+	}
+	.emoticon._1f4cd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4cd.png)
+	}
+	.emoticon._1f6a3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a3.png)
+	}
+	.emoticon._1f1f7-1f1fa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1f7-1f1fa.png)
+	}
+	.emoticon._1f3c9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c9.png)
+	}
+	.emoticon._1f3bd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3bd.png)
+	}
+	.emoticon._1f3c3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c3.png)
+	}
+	.emoticon._1f202 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f202.png)
+	}
+	.emoticon._2650 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2650.png)
+	}
+	.emoticon._26f5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26f5.png)
+	}
+	.emoticon._1f376 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f376.png)
+	}
+	.emoticon._1f461 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f461.png)
+	}
+	.emoticon._1f385 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f385.png)
+	}
+	.emoticon._1f4e1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4e1.png)
+	}
+	.emoticon._1f606 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f606.png)
+	}
+	.emoticon._1f3b7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b7.png)
+	}
+	.emoticon._1f392 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f392.png)
+	}
+	.emoticon._1f3eb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3eb.png)
+	}
+	.emoticon._2702 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2702.png)
+	}
+	.emoticon._264f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/264f.png)
+	}
+	.emoticon._1f640 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f640.png)
+	}
+	.emoticon._1f631 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f631.png)
+	}
+	.emoticon._1f4dc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4dc.png)
+	}
+	.emoticon._1f4ba {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ba.png)
+	}
+	.emoticon._3299 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/3299.png)
+	}
+	.emoticon._1f648 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f648.png)
+	}
+	.emoticon._1f331 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f331.png)
+	}
+	.emoticon._1f367 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f367.png)
+	}
+	.emoticon._1f411 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f411.png)
+	}
+	.emoticon._1f41a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f41a.png)
+	}
+	.emoticon._1f6a2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a2.png)
+	}
+	.emoticon._1f45e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f45e.png)
+	}
+	.emoticon._1f6bf {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6bf.png)
+	}
+	.emoticon._1f4f6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f6.png)
+	}
+	.emoticon._1f52f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f52f.png)
+	}
+	.emoticon._1f3bf {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3bf.png)
+	}
+	.emoticon._1f480 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f480.png)
+	}
+	.emoticon._1f634 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f634.png)
+	}
+	.emoticon._1f62a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f62a.png)
+	}
+	.emoticon._1f3b0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3b0.png)
+	}
+	.emoticon._1f539 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f539.png)
+	}
+	.emoticon._1f538 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f538.png)
+	}
+	.emoticon._1f53b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f53b.png)
+	}
+	.emoticon._1f53a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f53a.png)
+	}
+	.emoticon._1f638 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f638.png)
+	}
+	.emoticon._1f604 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f604.png)
+	}
+	.emoticon._1f63a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f63a.png)
+	}
+	.emoticon._1f603 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f603.png)
+	}
+	.emoticon._1f608 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f608.png)
+	}
+	.emoticon._1f63c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f63c.png)
+	}
+	.emoticon._1f60f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f60f.png)
+	}
+	.emoticon._1f6ac {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6ac.png)
+	}
+	.emoticon._1f40c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f40c.png)
+	}
+	.emoticon._1f40d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f40d.png)
+	}
+	.emoticon._1f3c2 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c2.png)
+	}
+	.emoticon._2744 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2744.png)
+	}
+	.emoticon._26c4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26c4.png)
+	}
+	.emoticon._1f62d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f62d.png)
+	}
+	.emoticon._26bd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26bd.png)
+	}
+	.emoticon._1f51c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f51c.png)
+	}
+	.emoticon._1f198 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f198.png)
+	}
+	.emoticon._1f509 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f509.png)
+	}
+	.emoticon._1f47e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f47e.png)
+	}
+	.emoticon._2660 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2660.png)
+	}
+	.emoticon._1f35d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f35d.png)
+	}
+	.emoticon._2747 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2747.png)
+	}
+	.emoticon._1f387 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f387.png)
+	}
+	.emoticon._2728 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2728.png)
+	}
+	.emoticon._1f496 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f496.png)
+	}
+	.emoticon._1f64a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f64a.png)
+	}
+	.emoticon._1f50a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f50a.png)
+	}
+	.emoticon._1f4ac {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ac.png)
+	}
+	.emoticon._1f6a4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a4.png)
+	}
+	.emoticon._2b50 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b50.png)
+	}
+	.emoticon._1f31f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f31f.png)
+	}
+	.emoticon._1f303 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f303.png)
+	}
+	.emoticon._1f689 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f689.png)
+	}
+	.emoticon._1f5fd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f5fd.png)
+	}
+	.emoticon._1f682 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f682.png)
+	}
+	.emoticon._1f372 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f372.png)
+	}
+	.emoticon._1f4cf {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4cf.png)
+	}
+	.emoticon._1f353 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f353.png)
+	}
+	.emoticon._1f61d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f61d.png)
+	}
+	.emoticon._1f61c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f61c.png)
+	}
+	.emoticon._1f61b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f61b.png)
+	}
+	.emoticon._1f31e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f31e.png)
+	}
+	.emoticon._1f33b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f33b.png)
+	}
+	.emoticon._1f60e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f60e.png)
+	}
+	.emoticon._2600 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2600.png)
+	}
+	.emoticon._1f304 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f304.png)
+	}
+	.emoticon._1f305 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f305.png)
+	}
+	.emoticon._1f3c4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c4.png)
+	}
+	.emoticon._1f363 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f363.png)
+	}
+	.emoticon._1f69f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f69f.png)
+	}
+	.emoticon._1f4a6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a6.png)
+	}
+	.emoticon._1f605 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f605.png)
+	}
+	.emoticon._1f613 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f613.png)
+	}
+	.emoticon._1f360 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f360.png)
+	}
+	.emoticon._1f3ca {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ca.png)
+	}
+	.emoticon._1f523 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f523.png)
+	}
+	.emoticon._1f489 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f489.png)
+	}
+	.emoticon._1f389 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f389.png)
+	}
+	.emoticon._1f38b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f38b.png)
+	}
+	.emoticon._1f34a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f34a.png)
+	}
+	.emoticon._2649 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2649.png)
+	}
+	.emoticon._1f695 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f695.png)
+	}
+	.emoticon._1f375 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f375.png)
+	}
+	.emoticon._1f4de {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4de.png)
+	}
+	.emoticon._260e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/260e.png)
+	}
+	.emoticon._1f52d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f52d.png)
+	}
+	.emoticon._1f3be {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3be.png)
+	}
+	.emoticon._26fa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26fa.png)
+	}
+	.emoticon._1f4ad {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ad.png)
+	}
+	.emoticon._1f44e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f44e.png)
+	}
+	.emoticon._1f44d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f44d.png)
+	}
+	.emoticon._1f3ab {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ab.png)
+	}
+	.emoticon._1f42f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f42f.png)
+	}
+	.emoticon._1f405 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f405.png)
+	}
+	.emoticon._1f62b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f62b.png)
+	}
+	.emoticon._2122 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2122.png)
+	}
+	.emoticon._1f6bd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6bd.png)
+	}
+	.emoticon._1f5fc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f5fc.png)
+	}
+	.emoticon._1f345 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f345.png)
+	}
+	.emoticon._1f445 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f445.png)
+	}
+	.emoticon._1f51d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f51d.png)
+	}
+	.emoticon._1f3a9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3a9.png)
+	}
+	.emoticon._1f69c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f69c.png)
+	}
+	.emoticon._1f6a5 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a5.png)
+	}
+	.emoticon._1f683 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f683.png)
+	}
+	.emoticon._1f686 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f686.png)
+	}
+	.emoticon._1f68a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f68a.png)
+	}
+	.emoticon._1f6a9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a9.png)
+	}
+	.emoticon._1f4d0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4d0.png)
+	}
+	.emoticon._1f531 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f531.png)
+	}
+	.emoticon._1f624 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f624.png)
+	}
+	.emoticon._1f68e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f68e.png)
+	}
+	.emoticon._1f3c6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3c6.png)
+	}
+	.emoticon._1f379 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f379.png)
+	}
+	.emoticon._1f420 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f420.png)
+	}
+	.emoticon._1f69a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f69a.png)
+	}
+	.emoticon._1f3ba {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ba.png)
+	}
+	.emoticon._1f455 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f455.png)
+	}
+	.emoticon._1f337 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f337.png)
+	}
+	.emoticon._1f422 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f422.png)
+	}
+	.emoticon._1f4fa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4fa.png)
+	}
+	.emoticon._1f500 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f500.png)
+	}
+	.emoticon._1f495 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f495.png)
+	}
+	.emoticon._1f46c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f46c.png)
+	}
+	.emoticon._1f46d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f46d.png)
+	}
+	.emoticon._1f239 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f239.png)
+	}
+	.emoticon._1f234 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f234.png)
+	}
+	.emoticon._1f23a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f23a.png)
+	}
+	.emoticon._1f22f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f22f.png)
+	}
+	.emoticon._1f237 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f237.png)
+	}
+	.emoticon._1f236 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f236.png)
+	}
+	.emoticon._1f235 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f235.png)
+	}
+	.emoticon._1f21a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f21a.png)
+	}
+	.emoticon._1f238 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f238.png)
+	}
+	.emoticon._1f232 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f232.png)
+	}
+	.emoticon._1f233 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f233.png)
+	}
+	.emoticon._1f1ec-1f1e7 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1ec-1f1e7.png)
+	}
+	.emoticon._2614 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2614.png)
+	}
+	.emoticon._1f612 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f612.png)
+	}
+	.emoticon._1f51e {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f51e.png)
+	}
+	.emoticon._1f513 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f513.png)
+	}
+	.emoticon._1f199 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f199.png)
+	}
+	.emoticon._1f1fa-1f1f8 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f1fa-1f1f8.png)
+	}
+	.emoticon._270c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/270c.png)
+	}
+	.emoticon._1f6a6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6a6.png)
+	}
+	.emoticon._1f4fc {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4fc.png)
+	}
+	.emoticon._1f4f3 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f3.png)
+	}
+	.emoticon._1f4f9 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4f9.png)
+	}
+	.emoticon._1f3ae {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3ae.png)
+	}
+	.emoticon._1f3bb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f3bb.png)
+	}
+	.emoticon._264d {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/264d.png)
+	}
+	.emoticon._1f30b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f30b.png)
+	}
+	.emoticon._1f19a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f19a.png)
+	}
+	.emoticon._1f6b6 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6b6.png)
+	}
+	.emoticon._1f318 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f318.png)
+	}
+	.emoticon._1f316 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f316.png)
+	}
+	.emoticon._26a0 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26a0.png)
+	}
+	.emoticon._231a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/231a.png)
+	}
+	.emoticon._1f403 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f403.png)
+	}
+	.emoticon._1f349 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f349.png)
+	}
+	.emoticon._1f44b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f44b.png)
+	}
+	.emoticon._3030 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/3030.png)
+	}
+	.emoticon._1f312 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f312.png)
+	}
+	.emoticon._1f314 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f314.png)
+	}
+	.emoticon._1f6be {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6be.png)
+	}
+	.emoticon._1f629 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f629.png)
+	}
+	.emoticon._1f492 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f492.png)
+	}
+	.emoticon._1f433 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f433.png)
+	}
+	.emoticon._1f40b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f40b.png)
+	}
+	.emoticon._267f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/267f.png)
+	}
+	.emoticon._2705 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2705.png)
+	}
+	.emoticon._26aa {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26aa.png)
+	}
+	.emoticon._1f4ae {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4ae.png)
+	}
+	.emoticon._2b1c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/2b1c.png)
+	}
+	.emoticon._25fd {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25fd.png)
+	}
+	.emoticon._25fb {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25fb.png)
+	}
+	.emoticon._25ab {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/25ab.png)
+	}
+	.emoticon._1f533 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f533.png)
+	}
+	.emoticon._1f390 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f390.png)
+	}
+	.emoticon._1f377 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f377.png)
+	}
+	.emoticon._1f609 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f609.png)
+	}
+	.emoticon._1f43a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f43a.png)
+	}
+	.emoticon._1f469 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f469.png)
+	}
+	.emoticon._1f45a {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f45a.png)
+	}
+	.emoticon._1f452 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f452.png)
+	}
+	.emoticon._1f6ba {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f6ba.png)
+	}
+	.emoticon._1f61f {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f61f.png)
+	}
+	.emoticon._1f527 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f527.png)
+	}
+	.emoticon._274c {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/274c.png)
+	}
+	.emoticon._1f49b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f49b.png)
+	}
+	.emoticon._1f4b4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4b4.png)
+	}
+	.emoticon._1f60b {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f60b.png)
+	}
+	.emoticon._26a1 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/26a1.png)
+	}
+	.emoticon._1f4a4 {
+		content:url(#{$imageBaseUrl}/twemoji/72x72/1f4a4.png)
+	}
+}

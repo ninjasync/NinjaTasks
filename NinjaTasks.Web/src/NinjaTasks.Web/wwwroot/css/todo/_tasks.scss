@@ -1,0 +1,208 @@
+@import "__defs.scss";
+
+#ninjatasks-base #tasks {
+	position:relative;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-o-box-flex:1;
+	box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	-o-box-orient:vertical;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+}
+#ninjatasks-base #tasks .tasks-scroll {
+	overflow-y:auto;
+	overflow-x:hidden;
+	margin-right:7px;
+	margin-left:7px;
+	padding-left:7px;
+	padding-right:7px;
+	-webkit-overflow-scrolling:touch;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-o-box-flex:1;
+	box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+}
+#ninjatasks-base #tasks .tasks-scroll .task-list {
+	padding-bottom:72px
+}
+#ninjatasks-base #tasks .grouped-tasks {
+	position:relative;
+}
+#ninjatasks-base #tasks .grouped-tasks.positionForDrop {
+	padding-top:60px;
+	margin-top:-60px;
+	padding-bottom:60px
+}
+#ninjatasks-base #tasks .heading {
+	margin-top:20px !important;
+	margin-bottom:10px;
+	word-wrap:break-word;
+	word-break:break-word;
+	font-size:11px;
+	color:#fff;
+	position:relative;
+}
+#ninjatasks-base #tasks .heading.active a {
+	background:rgba(50,138,214,0.75) !important
+}
+#ninjatasks-base #tasks .heading a {
+	color:#fff;
+	padding:3px 10px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	font-weight:400;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	line-height:16px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+.background-01#ninjatasks-base #tasks .heading a {
+	background:rgba(115,62,39,0.75)
+}
+.background-02#ninjatasks-base #tasks .heading a {
+	background:rgba(83,127,112,0.75)
+}
+.background-03#ninjatasks-base #tasks .heading a {
+	background:rgba(83,97,127,0.75)
+}
+.background-04#ninjatasks-base #tasks .heading a {
+	background:rgba(71,143,138,0.75)
+}
+.background-05#ninjatasks-base #tasks .heading a {
+	background:rgba(168,109,67,0.75)
+}
+.background-06#ninjatasks-base #tasks .heading a {
+	background:rgba(102,137,100,0.75)
+}
+.background-07#ninjatasks-base #tasks .heading a {
+	background:rgba(102,152,68,0.75)
+}
+.background-08#ninjatasks-base #tasks .heading a {
+	background:rgba(4,131,183,0.75)
+}
+.background-09#ninjatasks-base #tasks .heading a {
+	background:rgba(42,108,136,0.75)
+}
+.background-10#ninjatasks-base #tasks .heading a {
+	background:rgba(104,55,87,0.75)
+}
+.background-11#ninjatasks-base #tasks .heading a {
+	background:rgba(51,78,131,0.75)
+}
+.background-12#ninjatasks-base #tasks .heading a {
+	background:rgba(58,113,115,0.75)
+}
+.background-13#ninjatasks-base #tasks .heading a {
+	background:rgba(94,140,156,0.75)
+}
+.background-14#ninjatasks-base #tasks .heading a {
+	background:rgba(47,102,118,0.75)
+}
+.background-15#ninjatasks-base #tasks .heading a {
+	background:rgba(113,175,140,0.75)
+}
+.background-16#ninjatasks-base #tasks .heading a {
+	background:rgba(188,74,58,0.75)
+}
+.background-17#ninjatasks-base #tasks .heading a {
+	background:rgba(89,89,89,0.75)
+}
+.background-18#ninjatasks-base #tasks .heading a {
+	background:rgba(87,87,87,0.75)
+}
+.background-19#ninjatasks-base #tasks .heading a {
+	background:rgba(184,109,130,0.75)
+}
+.background-20#ninjatasks-base #tasks .heading a {
+	background:rgba(96,55,57,0.75)
+}
+.background-21#ninjatasks-base #tasks .heading a {
+	background:rgba(166,85,65,0.75)
+}
+.background-22#ninjatasks-base #tasks .heading a {
+	background:rgba(58,127,147,0.75)
+}
+.background-23#ninjatasks-base #tasks .heading a {
+	background:rgba(87,64,51,0.75)
+}
+.background-24#ninjatasks-base #tasks .heading a {
+	background:rgba(189,174,136,0.75)
+}
+.background-25#ninjatasks-base #tasks .heading a {
+	background:rgba(14,145,197,0.75)
+}
+.background-26#ninjatasks-base #tasks .heading a {
+	background:rgba(118,90,152,0.75)
+}
+.background-27#ninjatasks-base #tasks .heading a {
+	background:rgba(193,91,61,0.75)
+}
+.background-28#ninjatasks-base #tasks .heading a {
+	background:rgba(165,126,136,0.75)
+}
+.background-29#ninjatasks-base #tasks .heading a {
+	background:rgba(191,117,85,0.75)
+}
+.background-30#ninjatasks-base #tasks .heading a {
+	background:rgba(5,95,235,0.75)
+}
+#ninjatasks-base #tasks .heading a.no-hover:hover {
+	cursor:default !important
+}
+#ninjatasks-base #tasks .heading.no-results {
+	font-size:22px;
+	font-weight:bold;
+	text-transform:none
+}
+#ninjatasks-base #tasks .heading .spinner {
+	@include animation(rotate .8s linear infinite);
+	display:block;
+	position:absolute;
+	left:50%;
+	top:10px;
+	margin-left:-10px;
+	margin-top:-10px;
+	width:19px;
+	height:19px;
+	@include opacity(.6);
+	background:url(#{$imageBaseUrl}/loading_black@2x.png);
+	-webkit-background-size:19px;
+	-moz-background-size:19px;
+	background-size:19px
+}
+#ninjatasks-base #tasks .heading .delete-completed {
+	padding:3px 3px 0 3px;
+	height:22px;
+	cursor:pointer;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#ninjatasks-base #tasks .heading .delete-completed svg {
+	fill:#fff;
+	-webkit-filter:drop-shadow(0 1px 0 rgba(0,0,0,0.3));
+	width:16px;
+	height:16px
+}
+#ninjatasks-base #tasks .heading .delete-completed + a {
+	margin-right:32px
+}

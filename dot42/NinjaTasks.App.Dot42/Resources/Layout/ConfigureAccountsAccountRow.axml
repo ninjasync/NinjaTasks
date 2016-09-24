@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textSize="10dp"
+        local:MvxBind="Text Account.Type" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+        <ProgressBar
+            android:layout_height="24dp"
+            android:layout_width="24dp"
+            android:layout_marginLeft="12dp"
+            local:MvxBind="Visible IsSyncActive"
+            android:indeterminateOnly="true"
+            android:keepScreenOn="false"
+            android:layout_gravity="center_vertical" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            local:MvxBind="Text Name"
+            android:textSize="24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            local:MvxBind="Text Address"
+            android:layout_marginLeft="12dp"
+            android:textColor="#0000B0"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textSize="16dp"
+            local:MvxBind="Text LastSync"
+            android:textColor="#808080" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="12dp"
+            android:textSize="16dp"
+            local:MvxBind="Text LastSyncError"
+            android:textColor="#BB2222" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            local:MvxBind="IsChecked IsSyncOnDataChanged"
+            android:layout_weight="1"
+            android:textOn="Push enabled"
+            android:textOff="Push disabled"
+            android:layout_gravity="center_vertical" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            local:MvxBind="Click SyncAccount"
+            android:text="sync now"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical" />
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            local:MvxBind="Click Remove"
+            android:text="Delete"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:src="@android:drawable/divider_horizontal_bright" />
+</LinearLayout>

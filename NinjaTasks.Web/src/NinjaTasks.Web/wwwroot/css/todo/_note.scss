@@ -1,0 +1,31 @@
+@import "__defs.scss";
+
+.note.hasNote .section-icon svg {
+	fill:#e29600
+}
+.note .note-body,.note .note-edit {
+	height:auto;
+	border:none;
+	font-size:15px;
+	line-height:20px;
+	word-wrap:break-word;
+}
+.note .note-body .expandingArea textarea,.note .note-edit .expandingArea textarea,.note .note-body .expandingArea pre,.note .note-edit .expandingArea pre {
+	min-height:100px !important
+}
+.note .note-body.selectable div,.note .note-edit.selectable div,.note .note-body.selectable span,.note .note-edit.selectable span {
+	-webkit-user-select:text !important;
+	-moz-user-select:text !important;
+	-ms-user-select:text !important;
+	user-select:text !important
+}
+.note .open-fullscreen-note {
+	fill:#262626
+}
+.note textarea {
+	-webkit-box-shadow:none;
+	box-shadow:none
+}
+.note a {
+	color:#328ad6
+}

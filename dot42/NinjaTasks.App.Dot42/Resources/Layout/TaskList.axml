@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/japanese_paper_tiled" 
+    style="?ListMarginStyle"
+   >
+
+    <!-- the new task EditText -->
+  <FrameLayout
+      android:id="@+id/editTextHost"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="0"
+      android:layout_margin="8dp"
+      android:background="@drawable/darkening_rounded_corners"
+      android:layout_alignParentTop="true"
+      local:MvxBind="Visibility .,Converter=AddTaskVisibilityFromViewModel">
+
+    <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:shadowColor="@android:color/black"
+            android:background="@null"
+            android:padding="8dp"
+            android:hint="Add an entry..."
+            android:textColorHint="#fff6f6f6"
+            android:imeOptions="actionSend"
+            android:textCursorDrawable="@null"
+            android:inputType="textAutoComplete|textAutoCorrect"
+            local:MvxBind="Text NewTask.Task.Description;ImeAction AddTask"
+                />
+  </FrameLayout>
+
+    <!-- the tasks ListView -->
+  <!--<Mvx.MvxListView-->
+   <My.SelectionCheckedListView
+        android:id="@+id/theTaskList"
+        style="?TaskListStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/editTextHost"
+        android:layout_alignParentBottom="true"
+        android:choiceMode="singleChoice"
+        local:MvxBind="ItemsSource Tasks;SelectedItem SelectedPrimaryTask"
+        local:MvxItemTemplate="@layout/tasklistrow"
+         />
+    
+  
+</RelativeLayout>

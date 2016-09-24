@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD2BB36B-8C57-459C-99B0-801CD50FA66C}</ProjectGuid>
+    <ProjectTypeGuids>{337B7DB7-2D1E-448D-BEBF-17E887A46E37};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ActionBarPullToRefresh.Dot42</RootNamespace>
+    <AssemblyName>ActionBarPullToRefresh.Dot42</AssemblyName>
+    <TargetFrameworkIdentifier>Android</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <AndroidVersion>$(TargetFrameworkVersion)</AndroidVersion>
+    <SupportedCultures>
+    </SupportedCultures>
+    <ApkOutputs>false</ApkOutputs>
+    <GenerateAndroidManifest>false</GenerateAndroidManifest>
+    <ApkFilename>
+    </ApkFilename>
+    <PackageName>
+    </PackageName>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_CURRENT_USER\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <ApkCertificatePath>
+    </ApkCertificatePath>
+    <ApkCertificateThumbprint>
+    </ApkCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;DOT42</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;DOT42</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dot42" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <JarReference Include="..\ActionBar-PullToRefresh.jar">
+      <ImportCode>yes</ImportCode>
+    </JarReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo1.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo2.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo3.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo4.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo5.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo6.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo7.png" />
+    <None Include="res\drawable-hdpi\ptr_progressbar_indeterminate_holo8.png" />
+    <None Include="res\drawable-hdpi\ptr_progress_primary_holo.9.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo1.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo2.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo3.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo4.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo5.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo6.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo7.png" />
+    <None Include="res\drawable-xhdpi\ptr_progressbar_indeterminate_holo8.png" />
+    <None Include="res\drawable-xhdpi\ptr_progress_primary_holo.9.png" />
+    <None Include="res\drawable\ptr_progress_horizontal_holo_center.xml" />
+    <None Include="res\drawable\ptr_progress_indeterminate_horizontal_holo.xml" />
+    <None Include="res\layout\default_header.xml" />
+    <None Include="res\values-ar\pull_refresh_strings.xml" />
+    <None Include="res\values-cs\pull_refresh_strings.xml" />
+    <None Include="res\values-de\pull_refresh_strings.xml" />
+    <None Include="res\values-es\pull_refresh_strings.xml" />
+    <None Include="res\values-fi\pull_refresh_strings.xml" />
+    <None Include="res\values-fr\pull_refresh_strings.xml" />
+    <None Include="res\values-he\pull_refresh_strings.xml" />
+    <None Include="res\values-it\pull_refresh_strings.xml" />
+    <None Include="res\values-iw\pull_refresh_strings.xml" />
+    <None Include="res\values-ja\pull_refresh_strings.xml" />
+    <None Include="res\values-ko\pull_refresh_strings.xml" />
+    <None Include="res\values-nl\pull_refresh_strings.xml" />
+    <None Include="res\values-pl\pull_refresh_strings.xml" />
+    <None Include="res\values-pt-rBR\pull_refresh_strings.xml" />
+    <None Include="res\values-pt\pull_refresh_strings.xml" />
+    <None Include="res\values-ro\pull_refresh_strings.xml" />
+    <None Include="res\values-ru\pull_refresh_strings.xml" />
+    <None Include="res\values-sv\pull_refresh_strings.xml" />
+    <None Include="res\values-zh\pull_refresh_strings.xml" />
+    <None Include="res\values\attrs.xml" />
+    <None Include="res\values\ids.xml" />
+    <None Include="res\values\pull_refresh_strings.xml" />
+    <None Include="res\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PullToRefreshResInit.cs" />
+  </ItemGroup>
+  <Import Project="$(Dot42ExtensionsPath)\Dot42.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

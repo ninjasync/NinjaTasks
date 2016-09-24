@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<DistroPath>..\dist</DistroPath>
+		<InnoSetupScript>$(DistroPath)\NinjaTasks.iss</InnoSetupScript>
+		<InnoSetupPath>c:\Program Files (x86)\Inno Setup 5\iscc.exe</InnoSetupPath>
+	</PropertyGroup>
+
+  
+	<Target Name="InnoSetup" >
+		<Error Condition=" '$(InnoSetupScript)' == '' " Text="InnoSetupScript not specified"/>
+		<Exec Command="&quot;$(InnoSetupPath)&quot; &quot;$(InnoSetupScript)&quot; /q" />
+	</Target>
+
+</Project>

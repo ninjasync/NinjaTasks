@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ctrls="clr-namespace:NinjaTools.GUI.Wpf.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/NinjaTools.GUI.Wpf;component/Themes/SearchTextBoxStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type ctrls:ButtonMenu}" BasedOn="{StaticResource {x:Type Button}}" />
+</ResourceDictionary>

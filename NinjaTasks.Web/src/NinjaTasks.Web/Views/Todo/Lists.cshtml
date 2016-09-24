@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Todo Lists";
+}
+@model System.Collections.Generic.IEnumerable<NinjaTasks.Model.TodoListWithCount>
+
+@section stylesheets {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/todo/todo.css" />
+    </environment>
+    <!--environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/todo/todo.css"/>
+    </environment-->
+}
+
+<div id="ninjatasks-base" class="ninjatasks-app-parent background-30 firefox animate platform-windows application-main focus-browser ">
+    <div class="main-interface">
+        @await Html.PartialAsync("_TodoLists")
+        @await Html.PartialAsync("_TodoTasks", ViewData["Tasks"])
+    </div>
+</div>
+
+

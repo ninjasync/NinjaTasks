@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FED5C05-20A6-4EDF-8266-3D9C86CC63CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaTasks.App.Wpf</RootNamespace>
+    <AssemblyName>NinjaTasks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Anotar.NLog">
+      <HintPath>..\3rdParty\nuget\Anotar.Nlog.Fody.2.14.1\Lib\Anotar.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\3rdParty\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro, Version=2.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\Wpf\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\Wpf\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.CrossCore.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.BindingEx.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.BindingEx.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Wpf">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Plugins.Visibility.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomChromeLibrary">
+      <HintPath>..\3rdParty\Wpf\CustomChromeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="GongSolutions.Wpf.DragDrop, Version=0.1.4.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\Wpf\GongSolutions.Wpf.DragDrop.dll</HintPath>
+    </Reference>
+    <Reference Include="InTheHand.Net.Personal">
+      <HintPath>..\3rdParty\InTheHand.Net.Personal.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\nuget\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Wpf\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAutoGrid">
+      <HintPath>..\3rdParty\Wpf\WpfAutoGrid.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\NinjaTasks.Model\Properties\AssemblyInfoNinjaTasks.cs">
+      <Link>Properties\AssemblyInfoNinjaTasks.cs</Link>
+    </Compile>
+    <Compile Include="..\NinjaTools\NinjaTools.GUI.Wpf\UnhandledExceptionHandlers.cs">
+      <Link>Services\UnhandledExceptionHandlers.cs</Link>
+    </Compile>
+    <Compile Include="..\NinjaTools\NinjaTools\Logging\NinjaTools2NLog.cs">
+      <Link>Services\NinjaTools2NLog.cs</Link>
+    </Compile>
+    <Compile Include="Controls\OneTimeDateTimeFormatter.cs" />
+    <Compile Include="Controls\CircularBusyIndicator.xaml.cs">
+      <DependentUpon>CircularBusyIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdditionalElementListBox.cs" />
+    <Compile Include="Controls\EditableLabel.cs" />
+    <Compile Include="Controls\MultiSelectListBox.cs" />
+    <None Include="MvvmCross\CaliburnMicroWindowManager.cs" />
+    <Compile Include="Controls\SwitchConverter.cs" />
+    <Compile Include="MvvmCross\MvxToCaliburnMicroWpfViewsContainer.cs" />
+    <Compile Include="MvvmCross\MyWpfPresenter.cs" />
+    <Compile Include="MvvmCross\VisibleUserControlConductor.cs" />
+    <Compile Include="MvvmCross\VisibleAndCloseWindowConductor.cs" />
+    <Compile Include="Services\Bluetooth\BluetoothConnector.cs" />
+    <Compile Include="Services\Bluetooth\BluetoothFactory.cs" />
+    <Compile Include="Services\Bluetooth\BluetoothDiscoverRemoteDevicesService.cs" />
+    <Compile Include="Services\Bluetooth\BluetoothStreamListener.cs" />
+    <Compile Include="Services\NLogLogProviderFactory.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\TcpIp\TcpStreamFactory.cs" />
+    <Compile Include="Services\TcpIp\TslConnectionFactory.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Views\BaseView.cs" />
+    <Compile Include="Views\BaseWindowView.cs" />
+    <Compile Include="MvvmCross\IMvxNativeView.cs" />
+    <Compile Include="Views\NewTaskControl.xaml.cs">
+      <DependentUpon>NewTaskControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportExportDlg.xaml.cs">
+      <DependentUpon>ImportExportDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectRemoteDeviceNativeView.cs" />
+    <Compile Include="Views\ConfigureAccountsDlg.xaml.cs">
+      <DependentUpon>ConfigureAccountsDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectTcpIpHostDlg.xaml.cs">
+      <DependentUpon>SelectTcpIpHostDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskWarriorAccountDlg.xaml.cs">
+      <DependentUpon>TaskWarriorAccountDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskListView.xaml.cs">
+      <DependentUpon>TaskListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TodoListsView.xaml.cs">
+      <DependentUpon>TodoListsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AppView.xaml.cs">
+      <DependentUpon>AppView.xaml</DependentUpon>
+    </Compile>
+    <None Include="NLog-release.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Page Include="Controls\CircularBusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\rounded-star.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Themes\Basics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\CheckboxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadioButtonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TaskListListBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\StarToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ScrollViewerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ListBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ScrollbarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewTaskControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportExportDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConfigureAccountsDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectTcpIpHostDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskWarriorAccountDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TaskListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TodoListsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AppView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Resource Include="Images\list_ingredients-48.png" />
+    <Resource Include="Images\ListIngredients.ico" />
+    <Resource Include="Images\list_ingredients-32.png" />
+    <Resource Include="Images\plus_math-48.png" />
+    <Resource Include="Images\plus_math-32.png" />
+    <Resource Include="Images\star-32.png" />
+    <Resource Include="Images\list-32.png" />
+    <Resource Include="Images\filled_box-32.png" />
+    <Resource Include="Images\filled_box-48.png" />
+    <Resource Include="Images\checkmark-32.png" />
+    <Resource Include="Images\Icon_Star.ico" />
+    <Resource Include="Images\Icon.ico" />
+    <Content Include="..\3rdParty\sqlite\x64\sqlite3.dll">
+      <Link>x64\sqlite3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\3rdParty\sqlite\x86\sqlite3.dll">
+      <Link>x86\sqlite3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\BluetoothWorld.ico" />
+    <Resource Include="Images\64px-Taskwarrior_logo.png" />
+    <Resource Include="Images\TaskWarrior.ico" />
+    <Resource Include="Images\16px-Taskwarrior_logo.png" />
+    <Resource Include="Images\32px-Taskwarrior_logo.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\network.ico" />
+    <Resource Include="Images\network1.ico" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaSync.Storage.MvxSqlite\NinjaSync.Storage.MvxSqlite.csproj">
+      <Project>{f19e717d-4d67-4fc4-be14-db7583331454}</Project>
+      <Name>NinjaSync.Storage.MvxSqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj">
+      <Project>{2c47e154-1e5d-4801-97aa-aace064dde48}</Project>
+      <Name>NinjaSync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Db.MvxSqlite\NinjaTasks.Db.MvxSqlite.csproj">
+      <Project>{12082999-e512-4fbb-9adb-cab3c8fe9f46}</Project>
+      <Name>NinjaTasks.Db.MvxSqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Sync\NinjaTasks.Sync.csproj">
+      <Project>{94c51f89-ea81-4028-9103-3fec0bbd9752}</Project>
+      <Name>NinjaTasks.Sync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools.Connectivity.ViewModels\NinjaTools.Connectivity.ViewModels.csproj">
+      <Project>{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}</Project>
+      <Name>NinjaTools.Connectivity.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj">
+      <Project>{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}</Project>
+      <Name>NinjaTools.Connectivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj">
+      <Project>{50943d97-3b48-4660-bff7-57010c48d8ea}</Project>
+      <Name>NinjaTools.GUI.MVVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools.GUI.Wpf\NinjaTools.GUI.Wpf.csproj">
+      <Project>{688df946-6c84-4f7c-9d4e-7ad14972103c}</Project>
+      <Name>NinjaTools.GUI.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
+      <Project>{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}</Project>
+      <Name>NinjaTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Core\NinjaTasks.Core.csproj">
+      <Project>{747706f4-ecbf-4d50-8d72-b0ddcc18395c}</Project>
+      <Name>NinjaTasks.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Model\NinjaTasks.Model.csproj">
+      <Project>{a38fbce8-fdd3-4765-ba22-16e0a6c5cca3}</Project>
+      <Name>NinjaTasks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Sync.ImportExport\NinjaTasks.Sync.ImportExport.csproj">
+      <Project>{6686368a-c6a2-4d4a-b94a-51c6f0bf146e}</Project>
+      <Name>NinjaTasks.Sync.ImportExport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskWarriorLib\TaskWarriorLib.csproj">
+      <Project>{BEEC9C42-CC15-4304-A420-F69BC7A94534}</Project>
+      <Name>TaskWarriorLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+    <Resource Include="Images\list-48.png" />
+    <Resource Include="Images\JapanesePaper.jpg" />
+    <Resource Include="Images\JapanesePaperYellow.png" />
+    <Content Include="Sounds\DKLAND.WAV">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

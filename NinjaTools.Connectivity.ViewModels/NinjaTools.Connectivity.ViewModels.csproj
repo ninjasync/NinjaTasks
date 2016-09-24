@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaTools.Connectivity.ViewModels</RootNamespace>
+    <AssemblyName>NinjaTools.Connectivity.ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>3d2a80dc</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj">
+      <Project>{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}</Project>
+      <Name>NinjaTools.Connectivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj">
+      <Project>{50943d97-3b48-4660-bff7-57010c48d8ea}</Project>
+      <Name>NinjaTools.GUI.MVVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
+      <Project>{e894d40e-6f3d-45d8-9bbd-f0d09dfc32b4}</Project>
+      <Name>NinjaTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Messages\RemoteDeviceSelectedMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\Characteristic.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\characteristics\BatteryLevel.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\characteristics\BodySensorLocation.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\characteristics\HeartRateMeasurement.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\characteristics\ManufacturerNameString.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\Descriptor.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\Example.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\GattByteBuffer.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\GattUtils.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\Helper\EndianessAwareBitConverter.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\Helper\StringHelperClass.cs" />
+    <Compile Include="ThirdParty\SmartGattLib\Service.cs" />
+    <Compile Include="ViewModels\RemoteDeviceViewModel.cs" />
+    <Compile Include="ViewModels\BluetoothLeDeviceViewModelParameters.cs" />
+    <None Include="ViewModels\DeviceDetailsViewModel.cs" />
+    <Compile Include="ViewModels\SelectRemoteDeviceViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+    <None Include="ThirdParty\SmartGattLib\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Aktivieren Sie die Wiederherstellung von NuGet-Paketen, um die fehlende Datei herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="NinjaTasks.App.Wpf.Views.NewTaskControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:ninja="http://schemas.ninjatools.org/winfx/xaml/wpf"
+             xmlns:views="clr-namespace:NinjaTasks.App.Wpf.Views"
+             mc:Ignorable="d" 
+             d:DesignWidth="300" 
+             d:DataContext="{d:DesignInstance views:MockTaskListViewModel, IsDesignTimeCreatable=true}">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid Height="32">
+        <Border Background="#40000000" CornerRadius="6" 
+                    ClipToBounds="True">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="-2" CornerRadius="0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="10"
+                            />
+                </Border.Effect>
+            </Border>
+        </Border>
+        <AdornerDecorator Margin="10,0,15,0">
+            <ninja:EnterTextBox Text="{Binding NewTask.Task.Description}"
+                               cal:Message.Attach="[EnterPressed]=[AddTask]"
+                               cal:Action.TargetWithoutContext="{Binding}"
+                               HorizontalAlignment="Stretch"
+                               Background="Transparent"
+                               BorderThickness="0"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               
+                               VerticalAlignment="Center"
+                               CaretBrush="White"
+                               >
+                <ninja:WatermarkService.Watermark>
+                    <TextBlock Text="Add an entry..."
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   />
+                </ninja:WatermarkService.Watermark>
+            </ninja:EnterTextBox>
+        </AdornerDecorator>
+    </Grid>
+</UserControl>

@@ -1,0 +1,91 @@
+@import "__defs.scss";
+
+#lists {
+	width:280px;
+	background-color:#f7f7f7;
+	z-index:3;
+}
+#lists .lists-inner {
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	-o-box-orient:vertical;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+	height:100vh;
+	position:relative
+}
+#lists .lists-scroll {
+	overflow-y:auto;
+	overflow-x:hidden;
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-o-box-flex:1;
+	box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	-o-box-orient:vertical;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column
+}
+#lists .filters-collection,#lists .lists-collection,#lists .pending-invites-collection {
+	-webkit-flex-shrink:0;
+	flex-shrink:0
+}
+#lists {
+	-webkit-transition:width 100ms ease;
+	-moz-transition:width 100ms ease;
+	-o-transition:width 100ms ease;
+	-ms-transition:width 100ms ease;
+	transition:width 100ms ease;
+}
+#lists .moreButton {
+	display:none;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	height:38px;
+	padding-top:9px;
+	fill:#328ad6;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	text-align:center
+}
+#tasks {
+	-webkit-transition:left 100ms ease;
+	-moz-transition:left 100ms ease;
+	-o-transition:left 100ms ease;
+	-ms-transition:left 100ms ease;
+	transition:left 100ms ease
+}
+#lists.collapsed {
+	-webkit-flex-basis:42px;
+	flex-basis:42px;
+}
+#lists.collapsed #sync,#lists.collapsed .count,#lists.collapsed .folder-arrow,#lists.collapsed .folder-option,#lists.collapsed .lists-collection,#lists.collapsed .new-list-dropzone,#lists.collapsed .options,#lists.collapsed .overdue-count,#lists.collapsed .sidebarActions-label,#lists.collapsed .stream-counts,#lists.collapsed .tagCloud,#lists.collapsed .title,#lists.collapsed .user-arrow,#lists.collapsed .user-name,#lists.collapsed .foldersGuide {
+	display:none
+}
+#lists.collapsed #search-toolbar .search-icon {
+	display:none
+}
+#lists.collapsed .moreButton {
+	display:block
+}

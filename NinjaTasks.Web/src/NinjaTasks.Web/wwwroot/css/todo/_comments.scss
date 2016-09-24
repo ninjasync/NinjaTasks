@@ -1,0 +1,142 @@
+@import "__defs.scss";
+
+#ninjatasks-base .comments-bottom {
+	z-index:9003;
+	border-top:1px solid #ebebeb;
+	background:#fff;
+}
+#ninjatasks-base .comments-bottom .unread-count {
+	position:absolute;
+	display:none;
+	right:15px;
+	top:10px;
+	background:#d74e48;
+	color:#fff;
+	font-size:10px;
+	line-height:10px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	padding:2px 2px 3px 2px;
+	text-align:center;
+	min-width:11px
+}
+#ninjatasks-base .comments-bottom .button {
+	padding:9px 20px !important
+}
+#ninjatasks-base .comments-add {
+	padding:10px 10px 0 10px;
+}
+#ninjatasks-base .comments-add .input-fake {
+	min-height:32px;
+	padding:7px
+}
+#ninjatasks-base .last-comment li,#ninjatasks-base .comments-main li {
+	line-height:15px;
+}
+#ninjatasks-base .last-comment li .comment-author,#ninjatasks-base .comments-main li .comment-author {
+	font-weight:bold;
+	max-width:100px;
+	display:inline-block;
+	vertical-align:top;
+	height:16px;
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis
+}
+#ninjatasks-base .last-comment li .comment-time,#ninjatasks-base .comments-main li .comment-time {
+	color:#737272;
+	font-weight:normal
+}
+#ninjatasks-base .last-comment li .comment-text,#ninjatasks-base .comments-main li .comment-text {
+	line-height:18px;
+	word-break:break-word;
+	white-space:pre-wrap
+}
+#ninjatasks-base .last-comment li .comment-text,#ninjatasks-base .comments-main li .comment-text,#ninjatasks-base .last-comment li span.emoji,#ninjatasks-base .comments-main li span.emoji,#ninjatasks-base .last-comment li .linkout,#ninjatasks-base .comments-main li .linkout {
+	-webkit-user-select:text;
+	-moz-user-select:text;
+	-ms-user-select:text;
+	user-select:text;
+}
+#ninjatasks-base .last-comment li .comment-text a,#ninjatasks-base .comments-main li .comment-text a,#ninjatasks-base .last-comment li span.emoji a,#ninjatasks-base .comments-main li span.emoji a,#ninjatasks-base .last-comment li .linkout a,#ninjatasks-base .comments-main li .linkout a {
+	color:#328ad6 !important
+}
+#ninjatasks-base .last-comment {
+	z-index:2;
+	position:absolute;
+	right:0;
+	left:0;
+	top:-44px;
+	background:#fff;
+	padding:0;
+	border-top:1px solid #ebebeb;
+}
+#ninjatasks-base .last-comment li {
+	padding-top:10px !important;
+	cursor:pointer;
+}
+#ninjatasks-base .last-comment li .comment-text {
+	max-width:300px;
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	display:block
+}
+#ninjatasks-base .comments-main {
+	position:relative;
+}
+#ninjatasks-base .comments-main .spinner {
+	@include opacity(0);
+	height:0;
+	-webkit-transition:all 250ms ease;
+	-moz-transition:all 250ms ease;
+	-o-transition:all 250ms ease;
+	-ms-transition:all 250ms ease;
+	transition:all 250ms ease;
+	position:relative;
+}
+#ninjatasks-base .comments-main .spinner span {
+	top:0;
+	margin-top:10px
+}
+#ninjatasks-base .comments-main .spinner.spinning {
+	opacity:1;
+	-ms-filter:none;
+	filter:none;
+	height:32px
+}
+#ninjatasks-base .has-comments .unread-count {
+	display:block
+}
+#ninjatasks-base .has-comments li.update {
+	padding:0;
+	text-align:center;
+	height:4px;
+	margin-top:4px;
+}
+#ninjatasks-base .has-comments li.update .comment-text {
+	text-align:center;
+	position:absolute;
+	right:0;
+	left:0;
+	top:-8px;
+	color:#777;
+	font-size:12px;
+}
+#ninjatasks-base .has-comments li.update .comment-text:before {
+	background:url(#{$imageBaseUrl}/textures/divider.png) center top repeat-x;
+	content:'';
+	z-index:9995;
+	height:12px;
+	width:100%;
+	position:absolute;
+	top:44px;
+	left:0
+}
+#ninjatasks-base .has-comments li.update .comment-text span {
+	padding:0 5px;
+	z-index:9999;
+	position:relative
+}

@@ -1,0 +1,149 @@
+@import "__defs.scss";
+
+#ninjatasks-base #detail .smart-cards .smart-cards-content:empty + .smart-cards-footer {
+	display:none
+}
+#ninjatasks-base #detail .smart-cards .smart-card {
+	padding-top:8px;
+	padding-bottom:8px;
+}
+#ninjatasks-base #detail .smart-cards .smart-card .smart-card-footer {
+	display:none
+}
+#ninjatasks-base #detail .smart-cards .smart-card:last-child .smart-card-footer {
+	display:block
+}
+#ninjatasks-base #detail .smart-cards:empty {
+	display:none
+}
+#ninjatasks-base #detail .smart-cards .smart-card-content {
+	border:1px solid rgba(0,0,0,0.1);
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	background:#fff;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	-o-box-orient:vertical;
+	-webkit-flex-direction:column;
+	-ms-flex-direction:column;
+	flex-direction:column;
+	padding:10px 5px 10px 5px
+}
+#ninjatasks-base #detail .smart-cards .smart-card-header {
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex
+}
+#ninjatasks-base #detail .smart-cards .smart-card-footer {
+	padding-top:6px;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-footer svg {
+	width:12px;
+	height:12px
+}
+#ninjatasks-base #detail .smart-cards .smart-card-info,#ninjatasks-base #detail .smart-cards .smart-card-thumbnail {
+	margin:0 5px;
+	font-size:0;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-info img,#ninjatasks-base #detail .smart-cards .smart-card-thumbnail img {
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	max-width:75px;
+	height:auto
+}
+#ninjatasks-base #detail .smart-cards .smart-card-title {
+	font-size:15px;
+	color:#262626;
+	font-weight:bold
+}
+#ninjatasks-base #detail .smart-cards .smart-card-meta {
+	margin:5px 0;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-meta span {
+	color:#737272;
+	font-size:12px;
+	margin:3px 0;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-meta span:after {
+	content:' ∙ '
+}
+#ninjatasks-base #detail .smart-cards .smart-card-meta span:last-child:after {
+	content:''
+}
+#ninjatasks-base #detail .smart-cards .smart-card-actions {
+	margin:0 5px;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-actions .button {
+	margin-top:10px
+}
+#ninjatasks-base #detail .smart-cards .smart-card-description {
+	margin:10px 5px 0 5px;
+	color:#737272
+}
+#ninjatasks-base #detail .smart-cards .smart-card-url {
+	font-size:10px;
+	font-weight:normal;
+	margin:0;
+	margin-top:3px;
+	word-wrap:break-word;
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-url a {
+	color:#a3a3a2
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container {
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+	-webkit-box-orient:horizontal;
+	-moz-box-orient:horizontal;
+	-o-box-orient:horizontal;
+	-webkit-flex-direction:row;
+	-ms-flex-direction:row;
+	flex-direction:row;
+	font-size:12px;
+	color:#737272;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container .smart-card-rating-wrapper {
+	width:80px;
+	position:relative;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container .smart-card-rating-wrapper .smart-card-rating {
+	position:absolute;
+	overflow:hidden;
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container .smart-card-rating-wrapper .smart-card-rating svg {
+	height:14px;
+	width:14px;
+	fill:#ecab00
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container .smart-card-rating-wrapper .smart-card-rating .smart-card-rating-inner {
+	width:80px
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container .smart-card-rating-wrapper .smart-card-rating.bg svg {
+	fill:#ccc
+}
+#ninjatasks-base #detail .smart-cards .smart-card-rating-container .smart-card-rating-provider {
+	margin:0 5px
+}
+#ninjatasks-base #detail .smart-cards .smart-card-powered {
+	color:#737272;
+	font-size:10px;
+	text-transform:uppercase;
+	margin:0 5px
+}

@@ -1,0 +1,875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03238F58-9B64-4EAF-98C9-E285DA1D79AE}</ProjectGuid>
+    <ProjectTypeGuids>{337B7DB7-2D1E-448D-BEBF-17E887A46E37};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaTasks.App.Droid</RootNamespace>
+    <AssemblyName>NinjaTasks.App.Dot42</AssemblyName>
+    <TargetFrameworkIdentifier>Android</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <AndroidVersion>$(TargetFrameworkVersion)</AndroidVersion>
+    <SupportedCultures>
+    </SupportedCultures>
+    <ApkOutputs>true</ApkOutputs>
+    <GenerateAndroidManifest>true</GenerateAndroidManifest>
+    <ApkFilename>NinjaTasks.App.Dot42.apk</ApkFilename>
+    <PackageName>ninjaTasks.App.Dot42</PackageName>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_CURRENT_USER\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <Dot42ExtensionsPath Condition=" '$(Dot42ExtensionsPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\dot42\Android@ExtensionsPath)</Dot42ExtensionsPath>
+    <ApkCertificatePath>C:\Users\Olaf\Documents\KnutWG - Android-SelfSignedCertificate.pfx</ApkCertificatePath>
+    <ApkCertificateThumbprint>367EF983FCB50B5C4592B9807762EE42EF8D1E06</ApkCertificateThumbprint>
+    <TargetSdkAndroidVersion />
+    <GenerateWcfProxy>false</GenerateWcfProxy>
+    <GenerateSetNextInstructionCode>false</GenerateSetNextInstructionCode>
+    <EnableCompilerCache>true</EnableCompilerCache>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOT42;FEATURE_DIALOG_ICONS</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;DOT42;FEATURE_DIALOG_ICONS</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite.Dot42">
+      <HintPath>..\..\NinjaTools\3rdParty\MvvmCross\Dot42\Cirrious.MvvmCross.Community.Plugins.Sqlite.Dot42.dll</HintPath>
+    </Reference>
+    <Reference Include="Dot42" />
+    <Reference Include="dot42.AndroidSupportLibrary" />
+    <Reference Include="MvvmCross.Dot42">
+      <HintPath>..\..\NinjaTools\3rdParty\MvvmCross\Dot42\MvvmCross.Dot42.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Dot42.Fragging">
+      <HintPath>..\..\NinjaTools\3rdParty\MvvmCross\Dot42\MvvmCross.Dot42.Fragging.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Dot42">
+      <HintPath>..\..\3rdParty\Newtonsoft.Json.Dot42.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\NinjaTools\ninjatools.droid\services\DisplayMessageService.cs">
+      <Link>Services\DisplayMessageService.cs</Link>
+    </Compile>
+    <Compile Include="Resources3rdParty\PullToRefreshResInit.cs" />
+    <Compile Include="Views\Controls\ClickThroughDrawerLayout.cs" />
+    <Compile Include="Views\Controls\CtrlTaskListRow.cs" />
+    <Compile Include="Views\Controls\CtrlTaskDetails.cs" />
+    <Compile Include="Views\Controls\CtrlTaskListsList.cs" />
+    <Compile Include="Views\Controls\CtrlTaskListsListAdd.cs" />
+    <Compile Include="Views\Controls\DrawerLayout.cs" />
+    <Compile Include="Views\Controls\BindingFrameLayout.cs" />
+    <Compile Include="Views\Controls\TaskListFilteringAdapter.cs" />
+    <Compile Include="Views\Converters\TrueToVisibilityGoneConverter.cs" />
+    <Compile Include="Views\CustomBindings\TextViewPaintFlagsBinding.cs" />
+    <Compile Include="Views\CustomBindings\SelectionCheckedListViewSelectedItemTargetBinding.cs" />
+    <Compile Include="Views\EditListDialog.cs" />
+    <Compile Include="Views\Utils\EditOnClickController.cs" />
+    <Compile Include="Views\Utils\LifecycleViewModelActiveTracker.cs" />
+    <Compile Include="Views\Utils\BehaviourExtensions.cs" />
+    <Compile Include="Views\Utils\ViewDebug.cs" />
+    <MenuResource Include="..\..\ninjatasks.app.droid\resources\menu\SelectRemoteDeviceActions.axml">
+      <Link>Resources\Menu\SelectRemoteDeviceActions.axml</Link>
+    </MenuResource>
+    <Compile Include="..\..\NinjaTasks.Tests\MirrorSetupFactory.cs">
+      <Link>Tests\MirrorSetupFactory.cs</Link>
+    </Compile>
+    <Compile Include="AndroidServices\AccountAuthenticatorService.cs" />
+    <Compile Include="AndroidServices\AndroidForegroundSyncMangerService.cs" />
+    <Compile Include="AndroidServices\StubProvider.cs" />
+    <Compile Include="AndroidServices\SyncAdapter.cs" />
+    <Compile Include="AndroidServices\SyncService.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="RemoteStorages\NonsenseApps\NotePadRemoteStorage.cs" />
+    <Compile Include="RemoteStorages\NonsenseApps\NpContract.cs" />
+    <Compile Include="RemoteStorages\NonsenseApps\NpConverter.cs" />
+    <Compile Include="RemoteStorages\org.Tasks\OrgTasksRemoteStorage.cs" />
+    <Compile Include="RemoteStorages\org.Tasks\TasksContract.cs" />
+    <Compile Include="RemoteStorages\org.Tasks\TasksConverter.cs" />
+    <LayoutResource Include="Resources\Layout\TaskListsList.axml" />
+    <LayoutResource Include="Resources\Layout\TaskListRow.axml" />
+    <LayoutResource Include="Resources\Layout\TaskList.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+    <Compile Include="Services\AndroidAccountsStorageService.cs" />
+    <Compile Include="Services\AndroidBluetoothDiscoverRemoteDevicesService.cs" />
+    <Compile Include="Services\AndroidBluetoothFactory.cs" />
+    <Compile Include="Services\AndroidNinjaTasksConfiguration.cs" />
+    <Compile Include="Services\AndroidSyncOnContentProviderChanged.cs" />
+    <Compile Include="Services\AndroidNinjaTasksConfigurationService.cs" />
+    <Compile Include="Services\Dot42SyncServiceFactory.cs" />
+    <Compile Include="Services\GuardBasedScanContext.cs" />
+    <Compile Include="Services\JsonNetConverterService.cs" />
+    <Compile Include="Services\NinjaToolsLogCatLogProviderFactory.cs" />
+    <Compile Include="Services\NotImplementedTcpStreamFactory.cs" />
+    <Compile Include="Services\Tls\AndroidTslConnectionFactory.cs" />
+    <Compile Include="Services\Tls\TLSClient.cs" />
+    <Compile Include="Services\UnhandledExceptionHandlers.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="SyncApp.cs" />
+    <Compile Include="Views\BaseFragment.cs" />
+    <Compile Include="Views\BaseFragmentView.cs" />
+    <Compile Include="Views\Controls\BaseControlView.cs" />
+    <Compile Include="Views\Controls\BaseLifecycleTrackingControl.cs" />
+    <Compile Include="Views\Controls\SelectionCheckedListView.cs" />
+    <Compile Include="Views\Converters\AddTaskVisibilityFromViewModelConverter.cs" />
+    <Compile Include="Views\Converters\ListIconResourceIdConverter.cs" />
+    <Compile Include="Views\TaskListFragment.cs" />
+    <Compile Include="Views\CustomBindings\TextViewImeActionBinding.cs" />
+    <Compile Include="Views\CustomBindings\ImageViewImageResourceTargetBinding.cs" />
+    <Compile Include="Views\Controls\CtrlTaskList.cs" />
+    <Compile Include="Views\Utils\ActionBarStateAwareDrawerToggle.cs" />
+    <Compile Include="Views\AppView.cs" />
+    <Compile Include="Views\ConfigureAccountsView.cs" />
+    <Compile Include="Views\SelectRemoteDeviceView.cs" />
+    <Compile Include="Views\TaskWarriorAccountView.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
+    <Compile Include="Tests\TestNpcBinding.cs" />
+    <Compile Include="..\..\NinjaTasks.Tests\Helpers.cs">
+      <Link>Tests\Helpers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NinjaTasks.Tests\TestStorage.cs">
+      <Link>Tests\TestStorage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\NinjaTasks.Tests\TestSync.cs">
+      <Link>Tests\TestSync.cs</Link>
+    </Compile>
+    <Compile Include="MyAndroidAppDot42.cs" />
+    <LayoutResource Include="Resources\Layout\SplashScreen.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+    <None Include="RemoteStorages\Ideas.md" />
+    <LayoutResource Include="Resources\Layout\ConfigureAccountsAccountRow.axml" />
+    <LayoutResource Include="Resources\Layout\ConfigureAccounts.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+    <LayoutResource Include="Resources\Layout\LogEntry.axml" />
+    <LayoutResource Include="Resources\Layout\SelectRemoteDeviceItem.axml" />
+    <LayoutResource Include="Resources\Layout\SelectRemoteDeviceView.axml" />
+    <LayoutResource Include="Resources\Layout\TaskWarriorAccountView.axml" />
+    <LayoutResource Include="Resources\Layout\AppView.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+    <LayoutResource Include="Resources\Layout\TaskListsListRow.axml" />
+    <LayoutResource Include="Resources\Layout\AppView-w720dp.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+  </ItemGroup>
+  <ItemGroup>
+    <LayoutResource Include="MainLayout.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(ResourcesGeneratedCodePath)R.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\ActionBarPullToRefresh.Dot42.csproj">
+      <Project>{ad2bb36b-8c57-459c-99b0-801cd50fa66c}</Project>
+      <Name>ActionBarPullToRefresh.Dot42</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NinjaTools\NinjaTools.Dot42.MVVM\NinjaTools.Dot42.MVVM.csproj">
+      <Project>{968f3a95-8384-4bea-a378-4c9621cd2183}</Project>
+      <Name>NinjaTools.Dot42.MVVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NinjaTools\NinjaTools.Dot42\NinjaTools.Dot42.csproj">
+      <Project>{823d48fa-5126-4fd4-8a43-8bffb309834e}</Project>
+      <Name>NinjaTools.Dot42</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Core.Dot42\NinjaTasks.Dot42.Core.csproj">
+      <Project>{0F968BDB-B07C-4705-83B9-3AC4DADE9FC7}</Project>
+      <Name>NinjaTasks.Dot42.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.dot42.Libs\NinjaTasks.Dot42.Models.csproj">
+      <Project>{0116df77-716b-4449-81b3-059adcff1d08}</Project>
+      <Name>NinjaTasks.Dot42.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTasks.Storage.MvxSqlite.Dot42\NinjaTasks.Storage.MvxSqlite.Dot42.csproj">
+      <Project>{62e56f78-473d-4a36-8908-11ce80b6541a}</Project>
+      <Name>NinjaTasks.Storage.MvxSqlite.Dot42</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AnimationResource Include="Resources_NotePad\Anim\activity_slide_in_left.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\activity_slide_in_right.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\activity_slide_in_right_full.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\activity_slide_out_left.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\activity_slide_out_right.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\activity_slide_out_right_full.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\cycle_7.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\shake.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\slide_in_bottom.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\slide_in_top.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\slide_out_bottom.xml" />
+    <AnimationResource Include="Resources_NotePad\Anim\slide_out_top.xml" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_delete_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_error_outline_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_playlist_add_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_playlist_add_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_playlist_add_white_48dp_30.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_settings_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_settings_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_delete_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_error_outline_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_playlist_add_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_playlist_add_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_settings_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_settings_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_delete_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_error_outline_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_playlist_add_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_playlist_add_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_settings_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_delete_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_error_outline_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_playlist_add_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_playlist_add_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_settings_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_settings_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_delete_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_black_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_black_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_black_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_white_18dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_white_24dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_white_36dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_error_outline_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_playlist_add_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_playlist_add_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_settings_black_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_settings_white_48dp.png" />
+    <DrawableResource Include="Resources\Drawable\btn_delete_dark.xml" />
+    <ValuesResource Include="Resources\Values\dimens-w820dp.xml" />
+    <DrawableResource Include="Resources\Drawable\shadow_vertical.xml" />
+    <DrawableResource Include="Resources\Drawable\selected_item_background_rounded_70.xml" />
+    <DrawableResource Include="Resources\Drawable\selected_item_background_rounded.xml" />
+    <ValuesResource Include="Resources\Values\attr.xml">
+      <SubType>Designer</SubType>
+    </ValuesResource>
+    <DrawableResource Include="Resources\Drawable\btn_delete_light.xml" />
+    <DrawableResource Include="Resources\Drawable-NoDPI\divider_line3.png" />
+    <DrawableResource Include="Resources\Drawable-NoDPI\divider_line2.png" />
+    <DrawableResource Include="Resources\Drawable-NoDPI\selected_item_background_70.png" />
+    <DrawableResource Include="Resources\Drawable\tasklistslistrow_background.xml" />
+    <DrawableResource Include="Resources\Drawable-NoDPI\divider_line.png" />
+    <LayoutResource Include="Resources\Layout\TaskDetails.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+    <LayoutResource Include="Resources\Layout\TaskListsListAdd.axml" />
+    <LayoutResource Include="Resources\Layout\EditList.axml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
+    <None Include="Resources\Values\dimens-ldpi.xml" />
+    <DrawableResource Include="Resources\Drawable\tasklistrow_background.xml" />
+    <DrawableResource Include="Resources\Drawable\star_button_drawable.xml" />
+    <DrawableResource Include="Resources\Drawable\japanese_paper_tiled.xml" />
+    <DrawableResource Include="Resources\Drawable\darkening_rounded_corners.xml" />
+    <DrawableResource Include="Resources\Drawable\splash.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\taskwarrior_logo.png" />
+    <DrawableResource Include="Resources\Drawable-XHDPI\taskwarrior_logo.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\star_10.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\star_20.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\star_red.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\star_small_10.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\star_small_red.png" />
+    <DrawableResource Include="Resources\Drawable-NoDPI\selected_item_background.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\plus_math_10.png" />
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable\ptr_progress_horizontal_holo_center.xml">
+      <Link>Resources3rdParty\PullToRefresh\drawable\ptr_progress_horizontal_holo_center.xml</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable\ptr_progress_indeterminate_horizontal_holo.xml">
+      <Link>Resources3rdParty\PullToRefresh\drawable\ptr_progress_indeterminate_horizontal_holo.xml</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo1.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo1.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo2.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo2.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo3.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo3.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo4.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo4.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo5.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo5.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo6.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo6.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo7.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo7.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progressbar_indeterminate_holo8.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progressbar_indeterminate_holo8.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-hdpi\ptr_progress_primary_holo.9.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-hdpi\ptr_progress_primary_holo.9.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo1.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo1.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo2.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo2.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo3.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo3.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo4.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo4.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo5.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo5.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo6.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo6.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo7.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo7.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progressbar_indeterminate_holo8.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progressbar_indeterminate_holo8.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\drawable-xhdpi\ptr_progress_primary_holo.9.png">
+      <Link>Resources3rdParty\PullToRefresh\drawable-xhdpi\ptr_progress_primary_holo.9.png</Link>
+    </DrawableResource>
+    <LayoutResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\layout\default_header.xml">
+      <Link>Resources3rdParty\PullToRefresh\layout\default_header.xml</Link>
+    </LayoutResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values\attrs.xml">
+      <Link>Resources3rdParty\PullToRefresh\values\attrs.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values\ids.xml">
+      <Link>Resources3rdParty\PullToRefresh\values\ids.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values\styles.xml">
+      <Link>Resources3rdParty\PullToRefresh\values\styles.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-ar\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-ar\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-cs\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-cs\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-de\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-de\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-es\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-es\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-fi\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-fi\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-fr\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-fr\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-he\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-he\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-it\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-it\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-iw\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-iw\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-ja\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-ja\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-ko\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-ko\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-nl\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-nl\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-pl\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-pl\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-pt\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-pt\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-pt-rBR\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-pt-rBR\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-ro\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-ro\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-ru\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-ru\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-sv\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-sv\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <ValuesResource Include="..\..\3rdParty\Java\ActionBarPullToRefresh.Dot42\res\values-zh\pull_refresh_strings.xml">
+      <Link>Resources3rdParty\PullToRefresh\values-zh\pull_refresh_strings.xml</Link>
+    </ValuesResource>
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_playlist_add_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-hdpi\ic_settings_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_playlist_add_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-mdpi\ic_settings_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_playlist_add_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_settings_white_48dp.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xhdpi\ic_settings_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_playlist_add_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxhdpi\ic_settings_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_playlist_add_white_48dp_60.png" />
+    <DrawableResource Include="Resources3rdParty\MaterialDesign\drawable-xxxhdpi\ic_settings_white_48dp_60.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\ic_action_toggle_completed_dark.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\ic_action_toogle_completed_light.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\ic_action_toggle_completed_dark.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\ic_action_toogle_completed_light.png" />
+    <DrawableResource Include="Resources\Drawable-XHDPI\ic_action_toggle_completed_dark.png" />
+    <DrawableResource Include="Resources\Drawable-XHDPI\ic_action_toogle_completed_light.png" />
+    <Content Include="Resources\Drawable\BluetoothWorld.ico" />
+    <DrawableResource Include="Resources\Drawable-HDPI\checkmark.png" />
+    <DrawableResource Include="Resources\Drawable\delete.png" />
+    <DrawableResource Include="Resources\Drawable\JapanesePaper.jpg" />
+    <DrawableResource Include="Resources\Drawable\japanese_paper_yellow.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\filled_box_30.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\list_30.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\plus_math_30.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\filled_box_30.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\list_30.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\plus_math_30.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\star_30.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\star_black.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\plus_math_black.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\plus_math_black.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\list_black.png" />
+    <DrawableResource Include="Resources\Drawable-HDPI\filled_box_black.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\list_black.png" />
+    <DrawableResource Include="Resources\Drawable-MDPI\filled_box_black.png" />
+    <ValuesResource Include="Resources_NotePad\Values\NotePad_strings.xml" />
+    <MenuResource Include="Resources\Menu\activity_main.xml" />
+    <ValuesResource Include="Resources_NotePad\Values\NotePad_dimens.xml" />
+    <ValuesResource Include="Resources_NotePad\Values\NotePad_attr.xml" />
+    <ValuesResource Include="Resources_NotePad\Values\NotePad_attrs.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_about_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_help_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_search_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_search_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_settings_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_settings_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_toggle_completed_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\action_toogle_completed_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_check_off_pressed_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_check_off_pressed_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_check_on_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_check_on_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_check_on_pressed_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_check_on_pressed_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_default_disabled_focused_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_default_focused_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_default_pressed_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_toggle_off_normal.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_toggle_off_normal_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_toggle_off_pressed.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_toggle_off_pressed_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_toggle_on_normal.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\btn_toggle_on_pressed.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\card_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\card_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_copy_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_copy_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_discard_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_discard_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_new_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_new_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_paste_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_paste_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_remove_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\content_remove_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\device_access_alarms_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\device_access_brightness_medium_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\device_access_not_secure_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\device_access_not_secure_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\device_access_secure_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\device_access_secure_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\drawer_shadow_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\drawer_shadow_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\expander_close_disabled_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\expander_close_disabled_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\expander_close_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\expander_close_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\expander_open_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\expander_open_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_ab_back_holo_dark_am.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_add_list_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_add_list_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_big_expander_close_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_big_expander_close_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_big_expander_open_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_big_expander_open_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_device_access_sd_storage_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_list_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_list_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_list_prefs_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_share_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_action_share_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_add_alarm_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_alarm.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_alarm_add_blue.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_alarm_add_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_alarm_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_drawer_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_drawer_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_location.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_location_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_stat_notification_edit.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\ic_stat_snooze.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\list_arrow_activated_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\list_arrow_focused_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\list_arrow_pressed_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\list_arrow_selected_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\list_read_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\navigation_accept_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\navigation_accept_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\navigation_refresh_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\navigation_refresh_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\social_share_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-XHDPI\social_share_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-NoDPI\list_activated_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-NoDPI\list_divider_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-NoDPI\list_divider_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-NoDPI\list_pressed_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-NoDPI\preview_ori_portrait.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-NoDPI\transparent.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_about_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_help_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_search_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_search_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_settings_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_settings_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_toggle_completed_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\action_toogle_completed_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_off_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_off_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_off_pressed_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_off_pressed_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_on_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_on_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_on_pressed_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_check_on_pressed_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_default_disabled_focused_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_default_focused_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_default_pressed_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_toggle_off_normal.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_toggle_off_normal_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_toggle_off_pressed.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_toggle_off_pressed_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_toggle_on_normal.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\btn_toggle_on_pressed.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\card_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\card_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_copy_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_copy_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_discard_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_discard_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_new_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_new_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_paste_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_paste_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_remove_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\content_remove_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\device_access_alarms_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\device_access_brightness_medium_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\device_access_not_secure_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\device_access_not_secure_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\device_access_secure_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\device_access_secure_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\drawer_shadow_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\drawer_shadow_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\expander_close_disabled_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\expander_close_disabled_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\expander_close_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\expander_close_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\expander_open_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\expander_open_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_ab_back_holo_dark_am.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_add_list_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_add_list_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_big_expander_close_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_big_expander_close_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_big_expander_open_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_big_expander_open_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_device_access_sd_storage_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_list_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_list_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_list_prefs_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_share_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_action_share_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_add_alarm_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_alarm.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_alarm_add_blue.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_alarm_add_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_alarm_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_drawer_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_drawer_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_location.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_location_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_stat_notification_edit.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\ic_stat_snooze.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\navigation_accept_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\navigation_accept_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\navigation_refresh_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\navigation_refresh_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\social_share_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-MDPI\social_share_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-LDPI\card_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-LDPI\card_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-LDPI\ic_stat_notification_edit.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-LDPI\ic_stat_snooze.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_about_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_help_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_search_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_search_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_settings_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_settings_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_toggle_completed_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\action_toogle_completed_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_off_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_off_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_off_pressed_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_off_pressed_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_on_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_on_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_on_pressed_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_check_on_pressed_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_default_disabled_focused_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_default_focused_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_default_pressed_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_toggle_off_normal.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_toggle_off_normal_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_toggle_off_pressed.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_toggle_off_pressed_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_toggle_on_normal.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\btn_toggle_on_pressed.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\card_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\card_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_copy_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_copy_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_discard_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_discard_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_new_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_new_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_paste_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_paste_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_remove_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\content_remove_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\device_access_alarms_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\device_access_brightness_medium_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\device_access_not_secure_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\device_access_not_secure_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\device_access_secure_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\device_access_secure_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\drawer_shadow_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\drawer_shadow_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\expander_close_disabled_holo_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\expander_close_disabled_holo_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\expander_close_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\expander_close_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\expander_open_holo_dark.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\expander_open_holo_light.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_ab_back_holo_dark_am.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_add_list_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_add_list_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_big_expander_close_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_big_expander_close_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_big_expander_open_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_big_expander_open_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_device_access_sd_storage_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_list_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_list_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_list_prefs_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_share_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_action_share_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_add_alarm_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_alarm.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_alarm_add_blue.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_alarm_add_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_alarm_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_drawer_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_drawer_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_location.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_location_red.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_stat_notification_edit.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\ic_stat_snooze.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\list_arrow_activated_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\list_arrow_focused_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\list_arrow_pressed_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\list_arrow_selected_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\list_div_top_btm_gmail_widget_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\list_read_holo.9.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\navigation_accept_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\navigation_accept_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\navigation_refresh_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\navigation_refresh_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\social_share_dark.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable-HDPI\social_share_light.png" />
+    <DrawableResource Include="Resources_NotePad\Drawable\arrow_list_selector.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\background_holo_dark.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\btn_check_selector_dark.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\btn_check_selector_light.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\btn_default_selector_dark.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\btn_default_selector_light.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\btn_toggle.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\btn_toggle_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\check_selector_dark.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\dark_widget_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\dark_widget_header.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\greyable_toggle_off_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\greyable_toggle_on_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\img_default_selector_dark.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\img_default_selector_light.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\light_border.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\light_widget_header.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\search_padded.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\tasklist_item_blackclassic_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\tasklist_item_darkcard_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\tasklist_item_lightcard_bg.xml" />
+    <DrawableResource Include="Resources_NotePad\Drawable\tasklist_item_lightclassic_bg.xml" />
+    <ValuesResource Include="Resources_NotePad\Values\NotePad_color.xml">
+      <SubType>Designer</SubType>
+    </ValuesResource>
+    <ValuesResource Include="Resources_NotePad\Values\NotePad_styles.xml">
+      <SubType>Designer</SubType>
+    </ValuesResource>
+    <ValuesResource Include="Resources\Values\dimens.xml" />
+    <ValuesResource Include="Resources\Values\Strings.xml" />
+    <ValuesResource Include="Resources\Values\Themes.xml">
+      <SubType>Designer</SubType>
+    </ValuesResource>
+    <DrawableResource Include="..\..\ninjatasks.app.droid\resources\drawable\ic_launcher.png">
+      <Link>Resources\Drawable\ic_launcher.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\ninjatasks.app.droid\resources\drawable\splash_non_stretch.xml">
+      <Link>Resources\Drawable\splash_non_stretch.xml</Link>
+      <SubType>Designer</SubType>
+    </DrawableResource>
+    <DrawableResource Include="..\..\ninjatasks.app.droid\resources\drawable\ui_bluetooth_proxy.png">
+      <Link>Resources\Drawable\ui_bluetooth_proxy.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\ninjatasks.app.droid\resources\drawable\ui_refresh.png">
+      <Link>Resources\Drawable\ui_refresh.png</Link>
+    </DrawableResource>
+    <DrawableResource Include="..\..\ninjatasks.app.droid\resources\drawable-land\splash.png">
+      <Link>Resources\Drawable-Land\splash.png</Link>
+    </DrawableResource>
+    <XmlResource Include="..\..\ninjatasks.app.droid\resources\xml\account_authenticator.xml">
+      <Link>Resources\Xml\account_authenticator.xml</Link>
+      <SubType>Designer</SubType>
+    </XmlResource>
+    <XmlResource Include="..\..\ninjatasks.app.droid\resources\xml\account_prefs.xml">
+      <Link>Resources\Xml\account_prefs.xml</Link>
+      <SubType>Designer</SubType>
+    </XmlResource>
+    <XmlResource Include="..\..\ninjatasks.app.droid\resources\xml\general_settings.xml">
+      <Link>Resources\Xml\general_settings.xml</Link>
+      <SubType>Designer</SubType>
+    </XmlResource>
+    <XmlResource Include="..\..\ninjatasks.app.droid\resources\xml\sync_ninjatasks.xml">
+      <Link>Resources\Xml\sync_ninjatasks.xml</Link>
+    </XmlResource>
+    <XmlResource Include="..\..\ninjatasks.app.droid\resources\xml\sync_nonsenseapps_notepad.xml">
+      <Link>Resources\Xml\sync_nonsenseapps_notepad.xml</Link>
+    </XmlResource>
+    <Content Include="FodyWeavers.xml" />
+    <ValuesResource Include="Resources\Values\MvxBindingAttributes.xml" />
+  </ItemGroup>
+  <Import Project="..\..\3rdParty\Nuget\Fody.1.26.4\build\Fody.targets" />
+  <Import Project="$(Dot42ExtensionsPath)\Dot42.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

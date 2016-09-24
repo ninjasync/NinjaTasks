@@ -1,0 +1,35 @@
+﻿@using NinjaTasks.Model
+@model NinjaTasks.Model.TodoTask
+@{ bool isCompleted = Model.Status == Status.Completed;}
+
+<li draggable="true" aria-label="@Model.Description" class="taskItem @(isCompleted?"done":"")" tabindex="0">
+    <div class="taskItem-body">
+        <a class="taskItem-checkboxWrapper checkBox" tabindex="-1" aria-hidden="true" href="#">
+            @if (isCompleted)
+            {
+                <span>X</span>
+            }
+            else
+            {
+                <span>O</span>
+            }
+        </a>
+        <div class="taskItem-titleWrapper" tabindex="-1" aria-hidden="true">
+            <span class="taskItem-titleWrapper-title">@Model.Description</span>
+        </div>
+
+        <a class="taskItem-star" tabindex="-1" aria-hidden="true">
+            @if (Model.Priority != Priority.Normal)
+            {
+                <span>P</span>
+            }
+            else
+            {
+                <span>o</span>
+            }       
+        </a>
+        <div class="taskItem-progress transparent">
+            <span class="taskItem-progress-bar"></span>
+        </div>
+    </div>
+</li>

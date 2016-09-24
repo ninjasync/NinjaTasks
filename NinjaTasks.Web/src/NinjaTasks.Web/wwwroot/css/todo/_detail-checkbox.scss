@@ -1,0 +1,15 @@
+@import "__defs.scss";
+
+.checkBox .detail-check,.checkBox .task-check {
+	stroke:rgba(0,0,0,0.35)
+}
+.checkBox .detail-checked,.checkBox .task-checked {
+	fill:rgba(0,0,0,0.35);
+	display:none
+}
+.checkBox.checked .detail-check,.checkBox.checked .task-check {
+	display:none
+}
+.checkBox.checked .detail-checked,.checkBox.checked .task-checked {
+	display:block
+}

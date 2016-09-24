@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- expects to be merged into a frame layout -->
+<merge 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="#00FF00"
+             >
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="64dp"
+      android:orientation="horizontal">
+
+    <ImageView android:id="@+id/icon"
+               android:layout_width="64dp"
+               android:layout_height="64dp"
+               android:scaleType="center"
+               android:src="@drawable/plus_math_10"
+             />
+
+    <EditText
+          style="?TaskListsListRowStyle"
+          android:id="@+id/addEditText"
+          android:layout_height="0dp"
+          android:layout_width="wrap_content"
+          android:layout_weight="1"
+          android:layout_gravity="center_vertical"
+          android:inputType="textAutoComplete|textAutoCorrect"
+          android:background="@null"
+          android:hint="Add List..."
+           />
+    <!--android:fontFamily="sans-serif-light"-->
+
+  
+</LinearLayout>
+  
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="8dp"
+    android:layout_gravity="bottom"
+    android:background="@drawable/divider_line"
+    />
+
+</merge>

@@ -1,0 +1,48 @@
+@import "__defs.scss";
+
+.expandingArea {
+	position:relative;
+}
+.expandingArea pre {
+	margin:0;
+	padding:0 !important;
+	border:0 !important;
+	display:block;
+	visibility:hidden
+}
+.expandingArea textarea {
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	resize:none;
+	margin:0;
+	border:0;
+	padding:0
+}
+.explorer .body .expandingArea textarea {
+	top:-1px
+}
+.expandingArea textarea,.expandingArea pre {
+	font-family:"Lato","Geneva CY","Lucida Grande","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif;
+	padding:0;
+	background:transparent;
+	border:none;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	text-shadow:none !important
+}
+html:lang(ja_JP) .expandingArea textarea,html:lang(ja_JP) .expandingArea pre {
+	font-family:"Lato","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Microsoft Yahei","微软雅黑","STXihei","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(zh_CN) .expandingArea textarea,html:lang(zh_CN) .expandingArea pre {
+	font-family:"Lato","Microsoft Yahei","微软雅黑","STXihei","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(zh_TW) .expandingArea textarea,html:lang(zh_TW) .expandingArea pre {
+	font-family:"Lato","Microsoft Yahei","微软雅黑","STXihei","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}

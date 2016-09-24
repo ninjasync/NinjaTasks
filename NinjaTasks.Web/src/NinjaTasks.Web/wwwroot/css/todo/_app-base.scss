@@ -1,0 +1,3449 @@
+@import "__defs.scss";
+
+#ninjatasks-base li.background-01 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/01.jpg)
+}
+#ninjatasks-base li.background-02 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/02.jpg)
+}
+#ninjatasks-base li.background-04 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/04.jpg)
+}
+#ninjatasks-base li.background-05 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/05.jpg)
+}
+#ninjatasks-base li.background-06 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/06.jpg)
+}
+#ninjatasks-base li.background-07 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/07.jpg)
+}
+#ninjatasks-base li.background-08 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/08.jpg)
+}
+#ninjatasks-base li.background-09 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/09.jpg)
+}
+#ninjatasks-base li.background-10 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/10.jpg)
+}
+#ninjatasks-base li.background-11 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/11.jpg)
+}
+#ninjatasks-base li.background-12 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/12.jpg)
+}
+#ninjatasks-base li.background-13 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/13.jpg)
+}
+#ninjatasks-base li.background-14 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/14.jpg)
+}
+#ninjatasks-base li.background-15 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/15.jpg)
+}
+#ninjatasks-base li.background-16 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/16.jpg)
+}
+#ninjatasks-base li.background-17 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/17.jpg)
+}
+#ninjatasks-base li.background-18 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/18.jpg)
+}
+#ninjatasks-base li.background-19 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/19.jpg)
+}
+#ninjatasks-base li.background-20 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/20.jpg)
+}
+#ninjatasks-base li.background-21 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/21.jpg)
+}
+#ninjatasks-base li.background-22 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/22.jpg)
+}
+#ninjatasks-base li.background-23 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/23.jpg)
+}
+#ninjatasks-base li.background-24 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/24.jpg)
+}
+#ninjatasks-base li.background-25 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/25.jpg)
+}
+#ninjatasks-base li.background-26 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/26.jpg)
+}
+#ninjatasks-base li.background-27 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/27.jpg)
+}
+#ninjatasks-base li.background-28 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/28.jpg)
+}
+#ninjatasks-base li.background-29 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/29.jpg)
+}
+#ninjatasks-base li.background-30 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/thumbs/30.jpg)
+}
+@media all and (min-width:1025px) {
+	#ninjatasks-base.background-01:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/01.jpg) !important
+	}
+	#ninjatasks-base.background-02:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/02.jpg) !important
+	}
+	#ninjatasks-base.background-04:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/04.jpg) !important
+	}
+	#ninjatasks-base.background-05:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/05.jpg) !important
+	}
+	#ninjatasks-base.background-06:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/06.jpg) !important
+	}
+	#ninjatasks-base.background-07:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/07.jpg) !important
+	}
+	#ninjatasks-base.background-08:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/08.jpg) !important
+	}
+	#ninjatasks-base.background-09:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/09.jpg) !important
+	}
+	#ninjatasks-base.background-10:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/10.jpg) !important
+	}
+	#ninjatasks-base.background-11:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/11.jpg) !important
+	}
+	#ninjatasks-base.background-12:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/12.jpg) !important
+	}
+	#ninjatasks-base.background-13:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/13.jpg) !important
+	}
+	#ninjatasks-base.background-14:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/14.jpg) !important
+	}
+	#ninjatasks-base.background-15:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/15.jpg) !important
+	}
+	#ninjatasks-base.background-16:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/16.jpg) !important
+	}
+	#ninjatasks-base.background-17:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/17.jpg) !important
+	}
+	#ninjatasks-base.background-18:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/18.jpg) !important
+	}
+	#ninjatasks-base.background-19:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/19.jpg) !important
+	}
+	#ninjatasks-base.background-20:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/20.jpg) !important
+	}
+	#ninjatasks-base.background-21:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/21.jpg) !important
+	}
+	#ninjatasks-base.background-22:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/22.jpg) !important
+	}
+	#ninjatasks-base.background-23:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/23.jpg) !important
+	}
+	#ninjatasks-base.background-24:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/24.jpg) !important
+	}
+	#ninjatasks-base.background-25:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/25.jpg) !important
+	}
+	#ninjatasks-base.background-26:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/26.jpg) !important
+	}
+	#ninjatasks-base.background-27:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/27.jpg) !important
+	}
+	#ninjatasks-base.background-28:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/28.jpg) !important
+	}
+	#ninjatasks-base.background-29:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/29.jpg) !important
+	}
+	#ninjatasks-base.background-30:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2048/30.jpg) !important
+	}
+}
+@media all and (max-width:1024px) {
+	#ninjatasks-base.background-01:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/01.jpg) !important
+	}
+	#ninjatasks-base.background-02:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/02.jpg) !important
+	}
+	#ninjatasks-base.background-04:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/04.jpg) !important
+	}
+	#ninjatasks-base.background-05:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/05.jpg) !important
+	}
+	#ninjatasks-base.background-06:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/06.jpg) !important
+	}
+	#ninjatasks-base.background-07:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/07.jpg) !important
+	}
+	#ninjatasks-base.background-08:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/08.jpg) !important
+	}
+	#ninjatasks-base.background-09:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/09.jpg) !important
+	}
+	#ninjatasks-base.background-10:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/10.jpg) !important
+	}
+	#ninjatasks-base.background-11:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/11.jpg) !important
+	}
+	#ninjatasks-base.background-12:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/12.jpg) !important
+	}
+	#ninjatasks-base.background-13:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/13.jpg) !important
+	}
+	#ninjatasks-base.background-14:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/14.jpg) !important
+	}
+	#ninjatasks-base.background-15:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/15.jpg) !important
+	}
+	#ninjatasks-base.background-16:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/16.jpg) !important
+	}
+	#ninjatasks-base.background-17:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/17.jpg) !important
+	}
+	#ninjatasks-base.background-18:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/18.jpg) !important
+	}
+	#ninjatasks-base.background-19:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/19.jpg) !important
+	}
+	#ninjatasks-base.background-20:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/20.jpg) !important
+	}
+	#ninjatasks-base.background-21:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/21.jpg) !important
+	}
+	#ninjatasks-base.background-22:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/22.jpg) !important
+	}
+	#ninjatasks-base.background-23:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/23.jpg) !important
+	}
+	#ninjatasks-base.background-24:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/24.jpg) !important
+	}
+	#ninjatasks-base.background-25:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/25.jpg) !important
+	}
+	#ninjatasks-base.background-26:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/26.jpg) !important
+	}
+	#ninjatasks-base.background-27:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/27.jpg) !important
+	}
+	#ninjatasks-base.background-28:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/28.jpg) !important
+	}
+	#ninjatasks-base.background-29:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/29.jpg) !important
+	}
+	#ninjatasks-base.background-30:before {
+		background-image:url(#{$imageBaseUrl}/backgrounds/1024/30.jpg) !important
+	}
+}
+#ninjatasks-base.background-03:before,#ninjatasks-base li.background-03 {
+	background-image:url(#{$imageBaseUrl}/backgrounds/sources/03.jpg);
+	-webkit-background-size:128px 128px;
+	-moz-background-size:128px 128px;
+	background-size:128px 128px;
+	background-repeat:repeat
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5) {
+	#ninjatasks-base.background-03:before,#ninjatasks-base li.background-03 {
+		background-image:url(#{$imageBaseUrl}/backgrounds/2x/03.jpg)
+	}
+}
+html,input,textarea,button,select {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale
+}
+* {
+	padding:0;
+	margin:0;
+	text-decoration:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-moz-user-select:-moz-none;
+	-ms-touch-action:none;
+	text-rendering:optimizeLegibility
+}
+del {
+	text-decoration:line-through
+}
+html body {
+	font-family:"Lato","Geneva CY","Lucida Grande","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(ja_JP) body {
+	font-family:"Lato","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Microsoft Yahei","微软雅黑","STXihei","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(zh_CN) body {
+	font-family:"Lato","Microsoft Yahei","微软雅黑","STXihei","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(zh_TW) body {
+	font-family:"Lato","Microsoft Yahei","微软雅黑","STXihei","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+#ninjatasks-base {
+	color:#262626;
+	font-size:14px;
+	-webkit-touch-callout:none !important;
+	font-weight:500;
+}
+#ninjatasks-base.nodewebkit.platform-windows a:not(.linkout) {
+	cursor:default !important
+}
+#ninjatasks-base.ninjatasks-app-parent {
+	overflow:hidden
+}
+#ninjatasks-base.scroll,#ninjatasks-base.sandbox {
+	overflow:auto;
+	-ms-scroll-snap-points-x:snapInterval(0,187px);
+	-ms-scroll-snap-type:mandatory;
+	-ms-scroll-chaining:none
+}
+#ninjatasks-base.sandbox {
+	padding:0 20px
+}
+#ninjatasks-base:before {
+	content:'';
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center top;
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:-100
+}
+#ninjatasks-base:after {
+    @include transparent;
+}
+#ninjatasks-base input,#ninjatasks-base textarea {
+	-webkit-user-select:text;
+	-moz-user-select:text;
+	-ms-user-select:text;
+	user-select:text
+}
+#ninjatasks-base ul {
+	list-style:none
+}
+#ninjatasks-base a {
+	cursor:pointer
+}
+#ninjatasks-base :focus {
+	outline:none
+}
+#ninjatasks-base .right {
+	float:right
+}
+#ninjatasks-base .left {
+	float:left
+}
+#ninjatasks-base .text-right {
+	text-align:right
+}
+#ninjatasks-base .text-left {
+	text-align:left
+}
+#ninjatasks-base .center {
+	text-align:center
+}
+#ninjatasks-base .hidden {
+	display:none !important
+}
+#ninjatasks-base .disabled {
+	pointer-events:none
+}
+#ninjatasks-base .invisible {
+	visibility:hidden
+}
+#ninjatasks-base .transparent {
+	@include opacity-important(0);
+	pointer-events:none
+}
+#ninjatasks-base .hide-overflow {
+	overflow:hidden
+}
+#ninjatasks-base .mtop {
+	margin-top:6px
+}
+#ninjatasks-base .mleft {
+	margin-left:6px
+}
+#ninjatasks-base h1.blue {
+	color:#328ad6
+}
+#ninjatasks-base .cols {
+	font-size:0;
+	margin-left:-7px;
+	margin-right:-7px;
+}
+#ninjatasks-base .cols > div {
+	vertical-align:middle;
+	font-size:13px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0 7px
+}
+#ninjatasks-base .cols.top > div {
+	vertical-align:top
+}
+#ninjatasks-base .cols-center > div {
+	margin:0 auto 10px auto;
+}
+#ninjatasks-base .cols-center > div:last-child {
+	margin-bottom:0
+}
+#ninjatasks-base .col-03 {
+	width:3%
+}
+#ninjatasks-base .col-05 {
+	width:5%
+}
+#ninjatasks-base .col-06 {
+	width:6%
+}
+#ninjatasks-base .col-07 {
+	width:7%
+}
+#ninjatasks-base .col-10 {
+	width:10%
+}
+#ninjatasks-base .col-15 {
+	width:15%
+}
+#ninjatasks-base .col-16 {
+	width:16%
+}
+#ninjatasks-base .col-17 {
+	width:17%
+}
+#ninjatasks-base .col-20 {
+	width:20%
+}
+#ninjatasks-base .col-21 {
+	width:21%
+}
+#ninjatasks-base .col-23 {
+	width:23%
+}
+#ninjatasks-base .col-25 {
+	width:25%
+}
+#ninjatasks-base .col-27 {
+	width:27%
+}
+#ninjatasks-base .col-28 {
+	width:28%
+}
+#ninjatasks-base .col-29 {
+	width:29%
+}
+#ninjatasks-base .col-30 {
+	width:30%
+}
+#ninjatasks-base .col-31 {
+	width:31%
+}
+#ninjatasks-base .col-32 {
+	width:32%
+}
+#ninjatasks-base .col-33 {
+	width:33%
+}
+#ninjatasks-base .col-34 {
+	width:34%
+}
+#ninjatasks-base .col-35 {
+	width:35%
+}
+#ninjatasks-base .col-40 {
+	width:40%
+}
+#ninjatasks-base .col-41 {
+	width:41%
+}
+#ninjatasks-base .col-44 {
+	width:44%
+}
+#ninjatasks-base .col-49 {
+	width:49%
+}
+#ninjatasks-base .col-50 {
+	width:50%
+}
+#ninjatasks-base .col-51 {
+	width:51%
+}
+#ninjatasks-base .col-57 {
+	width:57%
+}
+#ninjatasks-base .col-60 {
+	width:60%
+}
+#ninjatasks-base .col-61 {
+	width:61%
+}
+#ninjatasks-base .col-65 {
+	width:65%
+}
+#ninjatasks-base .col-67 {
+	width:67%
+}
+#ninjatasks-base .col-68 {
+	width:68%
+}
+#ninjatasks-base .col-70 {
+	width:70%
+}
+#ninjatasks-base .col-75 {
+	width:75%
+}
+#ninjatasks-base .col-80 {
+	width:80%
+}
+#ninjatasks-base .col-82 {
+	width:82%
+}
+#ninjatasks-base .col-85 {
+	width:85%
+}
+#ninjatasks-base .col-90 {
+	width:90%
+}
+#ninjatasks-base .col-94 {
+	width:94%
+}
+#ninjatasks-base .col-95 {
+	width:95%
+}
+#ninjatasks-base .col-96 {
+	width:96%
+}
+#ninjatasks-base .col-100 {
+	width:100%
+}
+#ninjatasks-base .col-160 {
+	width:160px
+}
+#ninjatasks-base .main-interface {
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+	height:100vh;
+	will-change:width;
+}
+#ninjatasks-base .main-interface #detail {
+	width:0
+}
+#ninjatasks-base .main-interface.detail-visible #detail {
+	width:367px
+}
+#ninjatasks-base .main-interface #print {
+	display:none
+}
+#ninjatasks-base .main-interface #lists,#ninjatasks-base .main-interface #tasks,#ninjatasks-base .main-interface #detail {
+	overflow:hidden
+}
+#ninjatasks-base #desktop-notifications {
+	color:#262626;
+}
+#ninjatasks-base #desktop-notifications div.desktop-notification-text {
+	background:#fff;
+	margin:10px;
+	padding:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px
+}
+#ninjatasks-base #loading {
+	font-size:18px;
+	color:rgba(255,255,255,0.85);
+	text-shadow:0 1px 0 rgba(0,0,0,0.4);
+	position:absolute;
+	top:33%;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align:center
+}
+#ninjatasks-base #initial-loader {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:999999
+}
+#ninjatasks-base .select select::-ms-expand {
+	display:none
+}
+#ninjatasks-base *::-webkit-scrollbar {
+	width:6px !important
+}
+#ninjatasks-base *::-webkit-scrollbar-button:start:decrement,#ninjatasks-base *::-webkit-scrollbar-button:end:increment {
+	height:0;
+	background-color:transparent
+}
+#ninjatasks-base *::-webkit-scrollbar-corner {
+	background-color:transparent
+}
+#ninjatasks-base *::-webkit-scrollbar-thumb:vertical {
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	background-color:rgba(0,0,0,0.2)
+}
+#ninjatasks-base .tasks-scroll::-webkit-scrollbar-button:start:decrement,#ninjatasks-base .tasks-scroll::-webkit-scrollbar-button:end:increment {
+	height:13px;
+	display:block;
+	background-color:transparent
+}
+.background-01#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(155,83,53,0.75)
+}
+.background-02#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(83,127,112,0.75)
+}
+.background-03#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(95,111,145,0.75)
+}
+.background-04#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(71,143,138,0.75)
+}
+.background-05#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(168,109,67,0.75)
+}
+.background-06#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(102,137,100,0.75)
+}
+.background-07#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(102,152,68,0.75)
+}
+.background-08#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(4,131,183,0.75)
+}
+.background-09#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(42,108,136,0.75)
+}
+.background-10#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(104,55,87,0.75)
+}
+.background-11#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(51,78,131,0.75)
+}
+.background-12#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(58,113,115,0.75)
+}
+.background-13#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(94,140,156,0.75)
+}
+.background-14#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(47,102,118,0.75)
+}
+.background-15#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(113,175,140,0.75)
+}
+.background-16#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(188,74,58,0.75)
+}
+.background-17#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(89,89,89,0.75)
+}
+.background-18#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(87,87,87,0.75)
+}
+.background-19#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(184,109,130,0.75)
+}
+.background-20#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(96,55,57,0.75)
+}
+.background-21#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(166,85,65,0.75)
+}
+.background-22#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(58,127,147,0.75)
+}
+.background-23#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(110,81,65,0.75)
+}
+.background-24#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(189,174,136,0.75)
+}
+.background-25#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(14,145,197,0.75)
+}
+.background-26#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(118,90,152,0.75)
+}
+.background-27#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(193,91,61,0.75)
+}
+.background-28#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(165,126,136,0.75)
+}
+.background-29#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(191,117,85,0.75)
+}
+.background-30#ninjatasks-base .tasks-scroll::-webkit-scrollbar-thumb:vertical {
+	background-color:rgba(5,95,235,0.75)
+}
+.emoji {
+	height:16px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-top:-3px;
+	width:16px;
+	background-position:center;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	text-indent:-9999px
+}
+.emoticon._1f4af {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4af.png)
+}
+.emoticon._1f522 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f522.png)
+}
+.emoticon._1f1e6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1e6.png)
+}
+.emoticon._1f1e7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1e7.png)
+}
+.emoticon._1f1e8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1e8.png)
+}
+.emoticon._1f1e9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1e9.png)
+}
+.emoticon._1f1ea {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ea.png)
+}
+.emoticon._1f1eb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1eb.png)
+}
+.emoticon._1f1ec {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ec.png)
+}
+.emoticon._1f1ed {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ed.png)
+}
+.emoticon._1f1ee {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ee.png)
+}
+.emoticon._1f1ef {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ef.png)
+}
+.emoticon._1f1f0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f0.png)
+}
+.emoticon._1f1f1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f1.png)
+}
+.emoticon._1f1f2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f2.png)
+}
+.emoticon._1f1f3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f3.png)
+}
+.emoticon._1f1f4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f4.png)
+}
+.emoticon._1f1f5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f5.png)
+}
+.emoticon._1f1f6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f6.png)
+}
+.emoticon._1f1f7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f7.png)
+}
+.emoticon._1f1f8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f8.png)
+}
+.emoticon._1f1f9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f9.png)
+}
+.emoticon._1f1fa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1fa.png)
+}
+.emoticon._1f1fb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1fb.png)
+}
+.emoticon._1f1fc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1fc.png)
+}
+.emoticon._1f1fd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1fd.png)
+}
+.emoticon._1f1fe {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1fe.png)
+}
+.emoticon._1f1ff {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ff.png)
+}
+.emoticon._1f320 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f320.png)
+}
+.emoticon._1f508 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f508.png)
+}
+.emoticon._1f68b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f68b.png)
+}
+.emoticon._23-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23-20e3.png)
+}
+.emoticon._30-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/30-20e3.png)
+}
+.emoticon._31-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/31-20e3.png)
+}
+.emoticon._32-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/32-20e3.png)
+}
+.emoticon._33-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/33-20e3.png)
+}
+.emoticon._34-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/34-20e3.png)
+}
+.emoticon._35-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/35-20e3.png)
+}
+.emoticon._36-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/36-20e3.png)
+}
+.emoticon._37-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/37-20e3.png)
+}
+.emoticon._38-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/38-20e3.png)
+}
+.emoticon._39-20e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/39-20e3.png)
+}
+.emoticon._1f3b1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b1.png)
+}
+.emoticon._1f170 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f170.png)
+}
+.emoticon._a9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/a9.png)
+}
+.emoticon._1f18e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f18e.png)
+}
+.emoticon._1f524 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f524.png)
+}
+.emoticon._1f521 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f521.png)
+}
+.emoticon._1f251 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f251.png)
+}
+.emoticon._ae {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/ae.png)
+}
+.emoticon._1f6a1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a1.png)
+}
+.emoticon._2708 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2708.png)
+}
+.emoticon._23f0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23f0.png)
+}
+.emoticon._1f47d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f47d.png)
+}
+.emoticon._1f691 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f691.png)
+}
+.emoticon._2693 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2693.png)
+}
+.emoticon._1f47c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f47c.png)
+}
+.emoticon._1f4a2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a2.png)
+}
+.emoticon._1f620 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f620.png)
+}
+.emoticon._1f627 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f627.png)
+}
+.emoticon._1f41c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f41c.png)
+}
+.emoticon._1f34e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f34e.png)
+}
+.emoticon._2652 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2652.png)
+}
+.emoticon._2648 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2648.png)
+}
+.emoticon._25c0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25c0.png)
+}
+.emoticon._23ec {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23ec.png)
+}
+.emoticon._23eb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23eb.png)
+}
+.emoticon._1f53d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f53d.png)
+}
+.emoticon._2b07 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b07.png)
+}
+.emoticon._25b6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25b6.png)
+}
+.emoticon._2935 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2935.png)
+}
+.emoticon._2934 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2934.png)
+}
+.emoticon._2b05 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b05.png)
+}
+.emoticon._2199 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2199.png)
+}
+.emoticon._2198 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2198.png)
+}
+.emoticon._21aa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/21aa.png)
+}
+.emoticon._27a1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/27a1.png)
+}
+.emoticon._2195 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2195.png)
+}
+.emoticon._1f53c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f53c.png)
+}
+.emoticon._2b06 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b06.png)
+}
+.emoticon._2196 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2196.png)
+}
+.emoticon._2197 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2197.png)
+}
+.emoticon._1f503 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f503.png)
+}
+.emoticon._1f504 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f504.png)
+}
+.emoticon._1f3a8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a8.png)
+}
+.emoticon._1f69b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f69b.png)
+}
+.emoticon._1f632 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f632.png)
+}
+.emoticon._1f45f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f45f.png)
+}
+.emoticon._1f3e7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e7.png)
+}
+.emoticon._1f171 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f171.png)
+}
+.emoticon._1f37c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f37c.png)
+}
+.emoticon._1f424 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f424.png)
+}
+.emoticon._1f6bc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6bc.png)
+}
+.emoticon._1f476 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f476.png)
+}
+.emoticon._1f519 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f519.png)
+}
+.emoticon._1f6c4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6c4.png)
+}
+.emoticon._1f388 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f388.png)
+}
+.emoticon._2611 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2611.png)
+}
+.emoticon._1f38d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f38d.png)
+}
+.emoticon._1f34c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f34c.png)
+}
+.emoticon._203c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/203c.png)
+}
+.emoticon._1f3e6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e6.png)
+}
+.emoticon._1f4ca {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ca.png)
+}
+.emoticon._1f488 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f488.png)
+}
+.emoticon._26be {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26be.png)
+}
+.emoticon._1f3c0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c0.png)
+}
+.emoticon._1f6c0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6c0.png)
+}
+.emoticon._1f6c1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6c1.png)
+}
+.emoticon._1f50b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f50b.png)
+}
+.emoticon._1f43b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f43b.png)
+}
+.emoticon._1f37a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f37a.png)
+}
+.emoticon._1f37b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f37b.png)
+}
+.emoticon._1f41e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f41e.png)
+}
+.emoticon._1f530 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f530.png)
+}
+.emoticon._1f514 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f514.png)
+}
+.emoticon._1f371 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f371.png)
+}
+.emoticon._1f6b4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b4.png)
+}
+.emoticon._1f6b2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b2.png)
+}
+.emoticon._1f459 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f459.png)
+}
+.emoticon._1f426 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f426.png)
+}
+.emoticon._1f382 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f382.png)
+}
+.emoticon._26ab {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26ab.png)
+}
+.emoticon._1f0cf {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f0cf.png)
+}
+.emoticon._2b1b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b1b.png)
+}
+.emoticon._25fe {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25fe.png)
+}
+.emoticon._25fc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25fc.png)
+}
+.emoticon._2712 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2712.png)
+}
+.emoticon._25aa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25aa.png)
+}
+.emoticon._1f532 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f532.png)
+}
+.emoticon._1f33c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f33c.png)
+}
+.emoticon._1f421 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f421.png)
+}
+.emoticon._1f4d8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d8.png)
+}
+.emoticon._1f699 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f699.png)
+}
+.emoticon._1f499 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f499.png)
+}
+.emoticon._1f60a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f60a.png)
+}
+.emoticon._1f417 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f417.png)
+}
+.emoticon._1f4a3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a3.png)
+}
+.emoticon._1f4d1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d1.png)
+}
+.emoticon._1f516 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f516.png)
+}
+.emoticon._1f4da {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4da.png)
+}
+.emoticon._1f462 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f462.png)
+}
+.emoticon._1f490 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f490.png)
+}
+.emoticon._1f647 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f647.png)
+}
+.emoticon._1f3b3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b3.png)
+}
+.emoticon._1f466 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f466.png)
+}
+.emoticon._1f35e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f35e.png)
+}
+.emoticon._1f470 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f470.png)
+}
+.emoticon._1f309 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f309.png)
+}
+.emoticon._1f4bc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4bc.png)
+}
+.emoticon._1f494 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f494.png)
+}
+.emoticon._1f41b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f41b.png)
+}
+.emoticon._1f4a1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a1.png)
+}
+.emoticon._1f685 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f685.png)
+}
+.emoticon._1f684 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f684.png)
+}
+.emoticon._1f68c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f68c.png)
+}
+.emoticon._1f68f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f68f.png)
+}
+.emoticon._1f464 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f464.png)
+}
+.emoticon._1f465 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f465.png)
+}
+.emoticon._1f335 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f335.png)
+}
+.emoticon._1f370 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f370.png)
+}
+.emoticon._1f4c6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c6.png)
+}
+.emoticon._1f4f2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f2.png)
+}
+.emoticon._1f42b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f42b.png)
+}
+.emoticon._1f4f7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f7.png)
+}
+.emoticon._264b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/264b.png)
+}
+.emoticon._1f36c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f36c.png)
+}
+.emoticon._1f520 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f520.png)
+}
+.emoticon._2651 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2651.png)
+}
+.emoticon._1f4c7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c7.png)
+}
+.emoticon._1f3a0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a0.png)
+}
+.emoticon._1f431 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f431.png)
+}
+.emoticon._1f408 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f408.png)
+}
+.emoticon._1f4bf {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4bf.png)
+}
+.emoticon._1f4c9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c9.png)
+}
+.emoticon._1f4c8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c8.png)
+}
+.emoticon._1f4b9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b9.png)
+}
+.emoticon._1f3c1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c1.png)
+}
+.emoticon._1f352 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f352.png)
+}
+.emoticon._1f338 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f338.png)
+}
+.emoticon._1f330 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f330.png)
+}
+.emoticon._1f414 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f414.png)
+}
+.emoticon._1f6b8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b8.png)
+}
+.emoticon._1f36b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f36b.png)
+}
+.emoticon._1f384 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f384.png)
+}
+.emoticon._26ea {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26ea.png)
+}
+.emoticon._1f3a6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a6.png)
+}
+.emoticon._1f3aa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3aa.png)
+}
+.emoticon._1f307 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f307.png)
+}
+.emoticon._1f306 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f306.png)
+}
+.emoticon._1f191 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f191.png)
+}
+.emoticon._1f44f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f44f.png)
+}
+.emoticon._1f3ac {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ac.png)
+}
+.emoticon._1f4cb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4cb.png)
+}
+.emoticon._1f550 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f550.png)
+}
+.emoticon._1f559 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f559.png)
+}
+.emoticon._1f565 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f565.png)
+}
+.emoticon._1f55a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f55a.png)
+}
+.emoticon._1f566 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f566.png)
+}
+.emoticon._1f55b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f55b.png)
+}
+.emoticon._1f567 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f567.png)
+}
+.emoticon._1f55c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f55c.png)
+}
+.emoticon._1f551 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f551.png)
+}
+.emoticon._1f55d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f55d.png)
+}
+.emoticon._1f552 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f552.png)
+}
+.emoticon._1f55e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f55e.png)
+}
+.emoticon._1f553 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f553.png)
+}
+.emoticon._1f55f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f55f.png)
+}
+.emoticon._1f554 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f554.png)
+}
+.emoticon._1f560 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f560.png)
+}
+.emoticon._1f555 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f555.png)
+}
+.emoticon._1f561 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f561.png)
+}
+.emoticon._1f556 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f556.png)
+}
+.emoticon._1f562 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f562.png)
+}
+.emoticon._1f557 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f557.png)
+}
+.emoticon._1f563 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f563.png)
+}
+.emoticon._1f558 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f558.png)
+}
+.emoticon._1f564 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f564.png)
+}
+.emoticon._1f4d5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d5.png)
+}
+.emoticon._1f510 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f510.png)
+}
+.emoticon._1f302 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f302.png)
+}
+.emoticon._2601 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2601.png)
+}
+.emoticon._2663 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2663.png)
+}
+.emoticon._1f1e8-1f1f3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1e8-1f1f3.png)
+}
+.emoticon._1f378 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f378.png)
+}
+.emoticon._2615 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2615.png)
+}
+.emoticon._1f630 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f630.png)
+}
+.emoticon._1f4a5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a5.png)
+}
+.emoticon._1f4bb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4bb.png)
+}
+.emoticon._1f38a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f38a.png)
+}
+.emoticon._1f616 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f616.png)
+}
+.emoticon._1f615 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f615.png)
+}
+.emoticon._3297 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/3297.png)
+}
+.emoticon._1f477 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f477.png)
+}
+.emoticon._1f6a7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a7.png)
+}
+.emoticon._1f3ea {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ea.png)
+}
+.emoticon._1f36a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f36a.png)
+}
+.emoticon._1f192 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f192.png)
+}
+.emoticon._1f46e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f46e.png)
+}
+.emoticon._1f33d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f33d.png)
+}
+.emoticon._1f491 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f491.png)
+}
+.emoticon._1f46b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f46b.png)
+}
+.emoticon._1f48f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f48f.png)
+}
+.emoticon._1f42e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f42e.png)
+}
+.emoticon._1f404 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f404.png)
+}
+.emoticon._1f4b3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b3.png)
+}
+.emoticon._1f319 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f319.png)
+}
+.emoticon._1f40a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f40a.png)
+}
+.emoticon._1f38c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f38c.png)
+}
+.emoticon._1f451 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f451.png)
+}
+.emoticon._1f622 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f622.png)
+}
+.emoticon._1f63f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f63f.png)
+}
+.emoticon._1f52e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f52e.png)
+}
+.emoticon._1f498 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f498.png)
+}
+.emoticon._27b0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/27b0.png)
+}
+.emoticon._1f4b1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b1.png)
+}
+.emoticon._1f35b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f35b.png)
+}
+.emoticon._1f36e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f36e.png)
+}
+.emoticon._1f6c3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6c3.png)
+}
+.emoticon._1f300 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f300.png)
+}
+.emoticon._1f483 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f483.png)
+}
+.emoticon._1f46f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f46f.png)
+}
+.emoticon._1f361 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f361.png)
+}
+.emoticon._1f3af {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3af.png)
+}
+.emoticon._1f4a8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a8.png)
+}
+.emoticon._1f4c5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c5.png)
+}
+.emoticon._1f1e9-1f1ea {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1e9-1f1ea.png)
+}
+.emoticon._1f333 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f333.png)
+}
+.emoticon._1f3ec {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ec.png)
+}
+.emoticon._1f4a0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a0.png)
+}
+.emoticon._2666 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2666.png)
+}
+.emoticon._1f625 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f625.png)
+}
+.emoticon._1f61e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f61e.png)
+}
+.emoticon._1f635 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f635.png)
+}
+.emoticon._1f4ab {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ab.png)
+}
+.emoticon._1f6af {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6af.png)
+}
+.emoticon._1f436 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f436.png)
+}
+.emoticon._1f415 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f415.png)
+}
+.emoticon._1f4b5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b5.png)
+}
+.emoticon._1f38e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f38e.png)
+}
+.emoticon._1f6aa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6aa.png)
+}
+.emoticon._1f369 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f369.png)
+}
+.emoticon._1f432 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f432.png)
+}
+.emoticon._1f409 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f409.png)
+}
+.emoticon._1f457 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f457.png)
+}
+.emoticon._1f42a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f42a.png)
+}
+.emoticon._1f4a7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a7.png)
+}
+.emoticon._1f4c0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c0.png)
+}
+.emoticon._1f4e7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e7.png)
+}
+.emoticon._e50a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/e50a.png)
+}
+.emoticon._1f33e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f33e.png)
+}
+.emoticon._1f442 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f442.png)
+}
+.emoticon._1f30d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f30d.png)
+}
+.emoticon._1f30e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f30e.png)
+}
+.emoticon._1f30f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f30f.png)
+}
+.emoticon._1f373 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f373.png)
+}
+.emoticon._1f346 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f346.png)
+}
+.emoticon._2734 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2734.png)
+}
+.emoticon._2733 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2733.png)
+}
+.emoticon._1f50c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f50c.png)
+}
+.emoticon._1f418 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f418.png)
+}
+.emoticon._1f51a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f51a.png)
+}
+.emoticon._1f4e9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e9.png)
+}
+.emoticon._2709 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2709.png)
+}
+.emoticon._1f1ea-1f1f8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ea-1f1f8.png)
+}
+.emoticon._1f4b6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b6.png)
+}
+.emoticon._1f3f0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3f0.png)
+}
+.emoticon._1f3e4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e4.png)
+}
+.emoticon._1f332 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f332.png)
+}
+.emoticon._1f611 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f611.png)
+}
+.emoticon._1f453 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f453.png)
+}
+.emoticon._1f440 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f440.png)
+}
+.emoticon._1f3ed {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ed.png)
+}
+.emoticon._1f342 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f342.png)
+}
+.emoticon._1f46a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f46a.png)
+}
+.emoticon._23e9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23e9.png)
+}
+.emoticon._1f4e0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e0.png)
+}
+.emoticon._1f628 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f628.png)
+}
+.emoticon._1f3a1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a1.png)
+}
+.emoticon._1f4c1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c1.png)
+}
+.emoticon._1f692 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f692.png)
+}
+.emoticon._1f525 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f525.png)
+}
+.emoticon._1f386 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f386.png)
+}
+.emoticon._1f31b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f31b.png)
+}
+.emoticon._1f313 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f313.png)
+}
+.emoticon._1f365 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f365.png)
+}
+.emoticon._1f41f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f41f.png)
+}
+.emoticon._1f3a3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a3.png)
+}
+.emoticon._270a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/270a.png)
+}
+.emoticon._1f38f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f38f.png)
+}
+.emoticon._1f526 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f526.png)
+}
+.emoticon._1f42c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f42c.png)
+}
+.emoticon._1f4be {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4be.png)
+}
+.emoticon._1f3b4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b4.png)
+}
+.emoticon._1f633 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f633.png)
+}
+.emoticon._1f301 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f301.png)
+}
+.emoticon._1f3c8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c8.png)
+}
+.emoticon._1f463 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f463.png)
+}
+.emoticon._1f374 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f374.png)
+}
+.emoticon._26f2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26f2.png)
+}
+.emoticon._1f340 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f340.png)
+}
+.emoticon._1f1eb-1f1f7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1eb-1f1f7.png)
+}
+.emoticon._1f193 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f193.png)
+}
+.emoticon._1f364 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f364.png)
+}
+.emoticon._1f35f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f35f.png)
+}
+.emoticon._1f438 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f438.png)
+}
+.emoticon._1f626 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f626.png)
+}
+.emoticon._26fd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26fd.png)
+}
+.emoticon._1f31d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f31d.png)
+}
+.emoticon._1f315 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f315.png)
+}
+.emoticon._1f3b2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b2.png)
+}
+.emoticon._1f48e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f48e.png)
+}
+.emoticon._264a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/264a.png)
+}
+.emoticon._1f47b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f47b.png)
+}
+.emoticon._1f49d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f49d.png)
+}
+.emoticon._1f381 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f381.png)
+}
+.emoticon._1f467 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f467.png)
+}
+.emoticon._1f310 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f310.png)
+}
+.emoticon._1f410 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f410.png)
+}
+.emoticon._26f3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26f3.png)
+}
+.emoticon._1f347 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f347.png)
+}
+.emoticon._1f34f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f34f.png)
+}
+.emoticon._1f4d7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d7.png)
+}
+.emoticon._1f49a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f49a.png)
+}
+.emoticon._2755 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2755.png)
+}
+.emoticon._2754 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2754.png)
+}
+.emoticon._1f62c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f62c.png)
+}
+.emoticon._1f601 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f601.png)
+}
+.emoticon._1f600 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f600.png)
+}
+.emoticon._1f482 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f482.png)
+}
+.emoticon._1f3b8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b8.png)
+}
+.emoticon._1f52b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f52b.png)
+}
+.emoticon._1f487 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f487.png)
+}
+.emoticon._1f354 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f354.png)
+}
+.emoticon._1f528 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f528.png)
+}
+.emoticon._1f439 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f439.png)
+}
+.emoticon._1f45c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f45c.png)
+}
+.emoticon._1f425 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f425.png)
+}
+.emoticon._1f423 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f423.png)
+}
+.emoticon._1f3a7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a7.png)
+}
+.emoticon._1f649 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f649.png)
+}
+.emoticon._1f49f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f49f.png)
+}
+.emoticon._1f63b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f63b.png)
+}
+.emoticon._1f60d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f60d.png)
+}
+.emoticon._2764 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2764.png)
+}
+.emoticon._1f493 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f493.png)
+}
+.emoticon._1f497 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f497.png)
+}
+.emoticon._2665 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2665.png)
+}
+.emoticon._2714 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2714.png)
+}
+.emoticon._2797 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2797.png)
+}
+.emoticon._1f4b2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b2.png)
+}
+.emoticon._2757 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2757.png)
+}
+.emoticon._2796 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2796.png)
+}
+.emoticon._2716 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2716.png)
+}
+.emoticon._2795 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2795.png)
+}
+.emoticon._1f681 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f681.png)
+}
+.emoticon._1f33f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f33f.png)
+}
+.emoticon._1f33a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f33a.png)
+}
+.emoticon._1f506 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f506.png)
+}
+.emoticon._1f460 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f460.png)
+}
+.emoticon._1f52a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f52a.png)
+}
+.emoticon._1f36f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f36f.png)
+}
+.emoticon._1f41d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f41d.png)
+}
+.emoticon._1f3c7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c7.png)
+}
+.emoticon._1f434 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f434.png)
+}
+.emoticon._1f3e5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e5.png)
+}
+.emoticon._1f3e8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e8.png)
+}
+.emoticon._2668 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2668.png)
+}
+.emoticon._23f3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23f3.png)
+}
+.emoticon._231b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/231b.png)
+}
+.emoticon._1f3e1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e1.png)
+}
+.emoticon._1f3e0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e0.png)
+}
+.emoticon._1f62f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f62f.png)
+}
+.emoticon._1f368 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f368.png)
+}
+.emoticon._1f366 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f366.png)
+}
+.emoticon._1f194 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f194.png)
+}
+.emoticon._1f250 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f250.png)
+}
+.emoticon._1f47f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f47f.png)
+}
+.emoticon._1f4e5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e5.png)
+}
+.emoticon._1f4e8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e8.png)
+}
+.emoticon._1f481 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f481.png)
+}
+.emoticon._2139 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2139.png)
+}
+.emoticon._1f607 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f607.png)
+}
+.emoticon._2049 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2049.png)
+}
+.emoticon._1f4f1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f1.png)
+}
+.emoticon._1f1ee-1f1f9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ee-1f1f9.png)
+}
+.emoticon._1f383 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f383.png)
+}
+.emoticon._1f5fe {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f5fe.png)
+}
+.emoticon._1f3ef {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ef.png)
+}
+.emoticon._1f47a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f47a.png)
+}
+.emoticon._1f479 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f479.png)
+}
+.emoticon._1f456 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f456.png)
+}
+.emoticon._1f639 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f639.png)
+}
+.emoticon._1f602 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f602.png)
+}
+.emoticon._1f1ef-1f1f5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ef-1f1f5.png)
+}
+.emoticon._1f511 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f511.png)
+}
+.emoticon._1f51f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f51f.png)
+}
+.emoticon._1f458 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f458.png)
+}
+.emoticon._1f48b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f48b.png)
+}
+.emoticon._1f63d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f63d.png)
+}
+.emoticon._1f61a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f61a.png)
+}
+.emoticon._1f618 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f618.png)
+}
+.emoticon._1f619 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f619.png)
+}
+.emoticon._1f617 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f617.png)
+}
+.emoticon._1f428 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f428.png)
+}
+.emoticon._1f201 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f201.png)
+}
+.emoticon._1f1f0-1f1f7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f0-1f1f7.png)
+}
+.emoticon._1f3ee {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ee.png)
+}
+.emoticon._1f535 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f535.png)
+}
+.emoticon._1f537 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f537.png)
+}
+.emoticon._1f536 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f536.png)
+}
+.emoticon._1f31c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f31c.png)
+}
+.emoticon._1f317 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f317.png)
+}
+.emoticon._1f343 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f343.png)
+}
+.emoticon._1f4d2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d2.png)
+}
+.emoticon._1f6c5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6c5.png)
+}
+.emoticon._2194 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2194.png)
+}
+.emoticon._21a9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/21a9.png)
+}
+.emoticon._1f34b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f34b.png)
+}
+.emoticon._264c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/264c.png)
+}
+.emoticon._1f406 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f406.png)
+}
+.emoticon._264e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/264e.png)
+}
+.emoticon._1f688 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f688.png)
+}
+.emoticon._1f517 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f517.png)
+}
+.emoticon._1f444 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f444.png)
+}
+.emoticon._1f484 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f484.png)
+}
+.emoticon._1f50f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f50f.png)
+}
+.emoticon._1f512 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f512.png)
+}
+.emoticon._1f36d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f36d.png)
+}
+.emoticon._27bf {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/27bf.png)
+}
+.emoticon._1f4e2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e2.png)
+}
+.emoticon._1f3e9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e9.png)
+}
+.emoticon._1f48c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f48c.png)
+}
+.emoticon._1f505 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f505.png)
+}
+.emoticon._24c2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/24c2.png)
+}
+.emoticon._1f50e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f50e.png)
+}
+.emoticon._1f50d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f50d.png)
+}
+.emoticon._1f004 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f004.png)
+}
+.emoticon._1f4ea {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ea.png)
+}
+.emoticon._1f4ec {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ec.png)
+}
+.emoticon._1f4ed {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ed.png)
+}
+.emoticon._1f4eb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4eb.png)
+}
+.emoticon._1f472 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f472.png)
+}
+.emoticon._1f473 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f473.png)
+}
+.emoticon._1f468 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f468.png)
+}
+.emoticon._1f341 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f341.png)
+}
+.emoticon._1f637 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f637.png)
+}
+.emoticon._1f486 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f486.png)
+}
+.emoticon._1f356 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f356.png)
+}
+.emoticon._1f4e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e3.png)
+}
+.emoticon._1f348 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f348.png)
+}
+.emoticon._1f6b9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b9.png)
+}
+.emoticon._1f687 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f687.png)
+}
+.emoticon._1f3a4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a4.png)
+}
+.emoticon._1f52c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f52c.png)
+}
+.emoticon._1f30c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f30c.png)
+}
+.emoticon._1f690 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f690.png)
+}
+.emoticon._1f4bd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4bd.png)
+}
+.emoticon._1f4f4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f4.png)
+}
+.emoticon._1f4b8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b8.png)
+}
+.emoticon._1f4b0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b0.png)
+}
+.emoticon._1f435 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f435.png)
+}
+.emoticon._1f412 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f412.png)
+}
+.emoticon._1f69d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f69d.png)
+}
+.emoticon._1f393 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f393.png)
+}
+.emoticon._1f5fb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f5fb.png)
+}
+.emoticon._1f6b5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b5.png)
+}
+.emoticon._1f6a0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a0.png)
+}
+.emoticon._1f69e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f69e.png)
+}
+.emoticon._1f42d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f42d.png)
+}
+.emoticon._1f401 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f401.png)
+}
+.emoticon._1f3a5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a5.png)
+}
+.emoticon._1f5ff {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f5ff.png)
+}
+.emoticon._1f4aa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4aa.png)
+}
+.emoticon._1f344 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f344.png)
+}
+.emoticon._1f3b9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b9.png)
+}
+.emoticon._1f3b5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b5.png)
+}
+.emoticon._1f3bc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3bc.png)
+}
+.emoticon._1f507 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f507.png)
+}
+.emoticon._1f485 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f485.png)
+}
+.emoticon._1f4db {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4db.png)
+}
+.emoticon._1f454 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f454.png)
+}
+.emoticon._274e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/274e.png)
+}
+.emoticon._1f610 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f610.png)
+}
+.emoticon._1f31a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f31a.png)
+}
+.emoticon._1f311 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f311.png)
+}
+.emoticon._1f195 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f195.png)
+}
+.emoticon._1f4f0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f0.png)
+}
+.emoticon._1f196 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f196.png)
+}
+.emoticon._1f515 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f515.png)
+}
+.emoticon._1f6b3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b3.png)
+}
+.emoticon._1f6ab {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6ab.png)
+}
+.emoticon._26d4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26d4.png)
+}
+.emoticon._1f645 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f645.png)
+}
+.emoticon._1f4f5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f5.png)
+}
+.emoticon._1f636 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f636.png)
+}
+.emoticon._1f6b7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b7.png)
+}
+.emoticon._1f6ad {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6ad.png)
+}
+.emoticon._1f6b1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b1.png)
+}
+.emoticon._1f443 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f443.png)
+}
+.emoticon._1f4d4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d4.png)
+}
+.emoticon._1f4d3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d3.png)
+}
+.emoticon._1f3b6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b6.png)
+}
+.emoticon._1f529 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f529.png)
+}
+.emoticon._2b55 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b55.png)
+}
+.emoticon._1f17e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f17e.png)
+}
+.emoticon._1f30a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f30a.png)
+}
+.emoticon._1f419 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f419.png)
+}
+.emoticon._1f362 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f362.png)
+}
+.emoticon._1f3e2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e2.png)
+}
+.emoticon._1f44c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f44c.png)
+}
+.emoticon._1f646 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f646.png)
+}
+.emoticon._1f197 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f197.png)
+}
+.emoticon._1f474 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f474.png)
+}
+.emoticon._1f475 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f475.png)
+}
+.emoticon._1f51b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f51b.png)
+}
+.emoticon._1f698 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f698.png)
+}
+.emoticon._1f68d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f68d.png)
+}
+.emoticon._1f694 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f694.png)
+}
+.emoticon._1f696 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f696.png)
+}
+.emoticon._1f4d6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d6.png)
+}
+.emoticon._1f4c2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c2.png)
+}
+.emoticon._1f450 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f450.png)
+}
+.emoticon._1f62e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f62e.png)
+}
+.emoticon._26ce {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26ce.png)
+}
+.emoticon._1f4d9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d9.png)
+}
+.emoticon._1f4e4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e4.png)
+}
+.emoticon._1f402 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f402.png)
+}
+.emoticon._1f4e6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e6.png)
+}
+.emoticon._1f4c4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c4.png)
+}
+.emoticon._1f4c3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4c3.png)
+}
+.emoticon._1f4df {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4df.png)
+}
+.emoticon._1f334 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f334.png)
+}
+.emoticon._1f43c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f43c.png)
+}
+.emoticon._1f4ce {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ce.png)
+}
+.emoticon._1f17f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f17f.png)
+}
+.emoticon._303d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/303d.png)
+}
+.emoticon._26c5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26c5.png)
+}
+.emoticon._1f6c2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6c2.png)
+}
+.emoticon._1f43e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f43e.png)
+}
+.emoticon._1f351 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f351.png)
+}
+.emoticon._1f350 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f350.png)
+}
+.emoticon._1f4dd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4dd.png)
+}
+.emoticon._270f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/270f.png)
+}
+.emoticon._1f427 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f427.png)
+}
+.emoticon._1f614 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f614.png)
+}
+.emoticon._1f3ad {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ad.png)
+}
+.emoticon._1f623 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f623.png)
+}
+.emoticon._1f64d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f64d.png)
+}
+.emoticon._1f471 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f471.png)
+}
+.emoticon._1f64e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f64e.png)
+}
+.emoticon._1f43d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f43d.png)
+}
+.emoticon._1f437 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f437.png)
+}
+.emoticon._1f416 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f416.png)
+}
+.emoticon._1f48a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f48a.png)
+}
+.emoticon._1f34d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f34d.png)
+}
+.emoticon._2653 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2653.png)
+}
+.emoticon._1f355 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f355.png)
+}
+.emoticon._1f447 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f447.png)
+}
+.emoticon._1f448 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f448.png)
+}
+.emoticon._1f449 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f449.png)
+}
+.emoticon._1f446 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f446.png)
+}
+.emoticon._261d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/261d.png)
+}
+.emoticon._1f693 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f693.png)
+}
+.emoticon._1f429 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f429.png)
+}
+.emoticon._1f4a9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a9.png)
+}
+.emoticon._1f3e3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3e3.png)
+}
+.emoticon._1f4ef {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ef.png)
+}
+.emoticon._1f4ee {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ee.png)
+}
+.emoticon._1f6b0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b0.png)
+}
+.emoticon._1f45d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f45d.png)
+}
+.emoticon._1f357 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f357.png)
+}
+.emoticon._1f4b7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b7.png)
+}
+.emoticon._1f63e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f63e.png)
+}
+.emoticon._1f64f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f64f.png)
+}
+.emoticon._1f478 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f478.png)
+}
+.emoticon._1f44a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f44a.png)
+}
+.emoticon._1f49c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f49c.png)
+}
+.emoticon._1f45b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f45b.png)
+}
+.emoticon._1f4cc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4cc.png)
+}
+.emoticon._1f6ae {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6ae.png)
+}
+.emoticon._2753 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2753.png)
+}
+.emoticon._1f430 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f430.png)
+}
+.emoticon._1f407 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f407.png)
+}
+.emoticon._1f40e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f40e.png)
+}
+.emoticon._1f518 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f518.png)
+}
+.emoticon._1f4fb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4fb.png)
+}
+.emoticon._1f621 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f621.png)
+}
+.emoticon._1f308 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f308.png)
+}
+.emoticon._270b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/270b.png)
+}
+.emoticon._1f64c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f64c.png)
+}
+.emoticon._1f64b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f64b.png)
+}
+.emoticon._1f40f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f40f.png)
+}
+.emoticon._1f35c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f35c.png)
+}
+.emoticon._1f400 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f400.png)
+}
+.emoticon._267b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/267b.png)
+}
+.emoticon._1f697 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f697.png)
+}
+.emoticon._1f534 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f534.png)
+}
+.emoticon._263a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/263a.png)
+}
+.emoticon._1f60c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f60c.png)
+}
+.emoticon._1f502 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f502.png)
+}
+.emoticon._1f501 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f501.png)
+}
+.emoticon._1f6bb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6bb.png)
+}
+.emoticon._1f49e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f49e.png)
+}
+.emoticon._23ea {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/23ea.png)
+}
+.emoticon._1f380 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f380.png)
+}
+.emoticon._1f359 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f359.png)
+}
+.emoticon._1f358 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f358.png)
+}
+.emoticon._1f391 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f391.png)
+}
+.emoticon._1f35a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f35a.png)
+}
+.emoticon._1f48d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f48d.png)
+}
+.emoticon._1f680 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f680.png)
+}
+.emoticon._1f3a2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a2.png)
+}
+.emoticon._1f413 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f413.png)
+}
+.emoticon._1f339 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f339.png)
+}
+.emoticon._1f6a8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a8.png)
+}
+.emoticon._1f4cd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4cd.png)
+}
+.emoticon._1f6a3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a3.png)
+}
+.emoticon._1f1f7-1f1fa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1f7-1f1fa.png)
+}
+.emoticon._1f3c9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c9.png)
+}
+.emoticon._1f3bd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3bd.png)
+}
+.emoticon._1f3c3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c3.png)
+}
+.emoticon._1f202 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f202.png)
+}
+.emoticon._2650 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2650.png)
+}
+.emoticon._26f5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26f5.png)
+}
+.emoticon._1f376 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f376.png)
+}
+.emoticon._1f461 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f461.png)
+}
+.emoticon._1f385 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f385.png)
+}
+.emoticon._1f4e1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4e1.png)
+}
+.emoticon._1f606 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f606.png)
+}
+.emoticon._1f3b7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b7.png)
+}
+.emoticon._1f392 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f392.png)
+}
+.emoticon._1f3eb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3eb.png)
+}
+.emoticon._2702 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2702.png)
+}
+.emoticon._264f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/264f.png)
+}
+.emoticon._1f640 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f640.png)
+}
+.emoticon._1f631 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f631.png)
+}
+.emoticon._1f4dc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4dc.png)
+}
+.emoticon._1f4ba {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ba.png)
+}
+.emoticon._3299 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/3299.png)
+}
+.emoticon._1f648 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f648.png)
+}
+.emoticon._1f331 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f331.png)
+}
+.emoticon._1f367 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f367.png)
+}
+.emoticon._1f411 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f411.png)
+}
+.emoticon._1f41a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f41a.png)
+}
+.emoticon._1f6a2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a2.png)
+}
+.emoticon._1f45e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f45e.png)
+}
+.emoticon._1f6bf {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6bf.png)
+}
+.emoticon._1f4f6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f6.png)
+}
+.emoticon._1f52f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f52f.png)
+}
+.emoticon._1f3bf {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3bf.png)
+}
+.emoticon._1f480 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f480.png)
+}
+.emoticon._1f634 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f634.png)
+}
+.emoticon._1f62a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f62a.png)
+}
+.emoticon._1f3b0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3b0.png)
+}
+.emoticon._1f539 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f539.png)
+}
+.emoticon._1f538 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f538.png)
+}
+.emoticon._1f53b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f53b.png)
+}
+.emoticon._1f53a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f53a.png)
+}
+.emoticon._1f638 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f638.png)
+}
+.emoticon._1f604 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f604.png)
+}
+.emoticon._1f63a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f63a.png)
+}
+.emoticon._1f603 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f603.png)
+}
+.emoticon._1f608 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f608.png)
+}
+.emoticon._1f63c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f63c.png)
+}
+.emoticon._1f60f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f60f.png)
+}
+.emoticon._1f6ac {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6ac.png)
+}
+.emoticon._1f40c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f40c.png)
+}
+.emoticon._1f40d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f40d.png)
+}
+.emoticon._1f3c2 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c2.png)
+}
+.emoticon._2744 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2744.png)
+}
+.emoticon._26c4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26c4.png)
+}
+.emoticon._1f62d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f62d.png)
+}
+.emoticon._26bd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26bd.png)
+}
+.emoticon._1f51c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f51c.png)
+}
+.emoticon._1f198 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f198.png)
+}
+.emoticon._1f509 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f509.png)
+}
+.emoticon._1f47e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f47e.png)
+}
+.emoticon._2660 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2660.png)
+}
+.emoticon._1f35d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f35d.png)
+}
+.emoticon._2747 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2747.png)
+}
+.emoticon._1f387 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f387.png)
+}
+.emoticon._2728 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2728.png)
+}
+.emoticon._1f496 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f496.png)
+}
+.emoticon._1f64a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f64a.png)
+}
+.emoticon._1f50a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f50a.png)
+}
+.emoticon._1f4ac {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ac.png)
+}
+.emoticon._1f6a4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a4.png)
+}
+.emoticon._2b50 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b50.png)
+}
+.emoticon._1f31f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f31f.png)
+}
+.emoticon._1f303 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f303.png)
+}
+.emoticon._1f689 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f689.png)
+}
+.emoticon._1f5fd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f5fd.png)
+}
+.emoticon._1f682 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f682.png)
+}
+.emoticon._1f372 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f372.png)
+}
+.emoticon._1f4cf {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4cf.png)
+}
+.emoticon._1f353 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f353.png)
+}
+.emoticon._1f61d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f61d.png)
+}
+.emoticon._1f61c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f61c.png)
+}
+.emoticon._1f61b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f61b.png)
+}
+.emoticon._1f31e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f31e.png)
+}
+.emoticon._1f33b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f33b.png)
+}
+.emoticon._1f60e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f60e.png)
+}
+.emoticon._2600 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2600.png)
+}
+.emoticon._1f304 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f304.png)
+}
+.emoticon._1f305 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f305.png)
+}
+.emoticon._1f3c4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c4.png)
+}
+.emoticon._1f363 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f363.png)
+}
+.emoticon._1f69f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f69f.png)
+}
+.emoticon._1f4a6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a6.png)
+}
+.emoticon._1f605 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f605.png)
+}
+.emoticon._1f613 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f613.png)
+}
+.emoticon._1f360 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f360.png)
+}
+.emoticon._1f3ca {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ca.png)
+}
+.emoticon._1f523 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f523.png)
+}
+.emoticon._1f489 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f489.png)
+}
+.emoticon._1f389 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f389.png)
+}
+.emoticon._1f38b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f38b.png)
+}
+.emoticon._1f34a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f34a.png)
+}
+.emoticon._2649 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2649.png)
+}
+.emoticon._1f695 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f695.png)
+}
+.emoticon._1f375 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f375.png)
+}
+.emoticon._1f4de {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4de.png)
+}
+.emoticon._260e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/260e.png)
+}
+.emoticon._1f52d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f52d.png)
+}
+.emoticon._1f3be {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3be.png)
+}
+.emoticon._26fa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26fa.png)
+}
+.emoticon._1f4ad {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ad.png)
+}
+.emoticon._1f44e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f44e.png)
+}
+.emoticon._1f44d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f44d.png)
+}
+.emoticon._1f3ab {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ab.png)
+}
+.emoticon._1f42f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f42f.png)
+}
+.emoticon._1f405 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f405.png)
+}
+.emoticon._1f62b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f62b.png)
+}
+.emoticon._2122 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2122.png)
+}
+.emoticon._1f6bd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6bd.png)
+}
+.emoticon._1f5fc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f5fc.png)
+}
+.emoticon._1f345 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f345.png)
+}
+.emoticon._1f445 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f445.png)
+}
+.emoticon._1f51d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f51d.png)
+}
+.emoticon._1f3a9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3a9.png)
+}
+.emoticon._1f69c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f69c.png)
+}
+.emoticon._1f6a5 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a5.png)
+}
+.emoticon._1f683 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f683.png)
+}
+.emoticon._1f686 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f686.png)
+}
+.emoticon._1f68a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f68a.png)
+}
+.emoticon._1f6a9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a9.png)
+}
+.emoticon._1f4d0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4d0.png)
+}
+.emoticon._1f531 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f531.png)
+}
+.emoticon._1f624 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f624.png)
+}
+.emoticon._1f68e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f68e.png)
+}
+.emoticon._1f3c6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3c6.png)
+}
+.emoticon._1f379 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f379.png)
+}
+.emoticon._1f420 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f420.png)
+}
+.emoticon._1f69a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f69a.png)
+}
+.emoticon._1f3ba {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ba.png)
+}
+.emoticon._1f455 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f455.png)
+}
+.emoticon._1f337 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f337.png)
+}
+.emoticon._1f422 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f422.png)
+}
+.emoticon._1f4fa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4fa.png)
+}
+.emoticon._1f500 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f500.png)
+}
+.emoticon._1f495 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f495.png)
+}
+.emoticon._1f46c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f46c.png)
+}
+.emoticon._1f46d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f46d.png)
+}
+.emoticon._1f239 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f239.png)
+}
+.emoticon._1f234 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f234.png)
+}
+.emoticon._1f23a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f23a.png)
+}
+.emoticon._1f22f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f22f.png)
+}
+.emoticon._1f237 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f237.png)
+}
+.emoticon._1f236 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f236.png)
+}
+.emoticon._1f235 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f235.png)
+}
+.emoticon._1f21a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f21a.png)
+}
+.emoticon._1f238 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f238.png)
+}
+.emoticon._1f232 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f232.png)
+}
+.emoticon._1f233 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f233.png)
+}
+.emoticon._1f1ec-1f1e7 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1ec-1f1e7.png)
+}
+.emoticon._2614 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2614.png)
+}
+.emoticon._1f612 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f612.png)
+}
+.emoticon._1f51e {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f51e.png)
+}
+.emoticon._1f513 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f513.png)
+}
+.emoticon._1f199 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f199.png)
+}
+.emoticon._1f1fa-1f1f8 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f1fa-1f1f8.png)
+}
+.emoticon._270c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/270c.png)
+}
+.emoticon._1f6a6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6a6.png)
+}
+.emoticon._1f4fc {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4fc.png)
+}
+.emoticon._1f4f3 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f3.png)
+}
+.emoticon._1f4f9 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4f9.png)
+}
+.emoticon._1f3ae {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3ae.png)
+}
+.emoticon._1f3bb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f3bb.png)
+}
+.emoticon._264d {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/264d.png)
+}
+.emoticon._1f30b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f30b.png)
+}
+.emoticon._1f19a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f19a.png)
+}
+.emoticon._1f6b6 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6b6.png)
+}
+.emoticon._1f318 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f318.png)
+}
+.emoticon._1f316 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f316.png)
+}
+.emoticon._26a0 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26a0.png)
+}
+.emoticon._231a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/231a.png)
+}
+.emoticon._1f403 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f403.png)
+}
+.emoticon._1f349 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f349.png)
+}
+.emoticon._1f44b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f44b.png)
+}
+.emoticon._3030 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/3030.png)
+}
+.emoticon._1f312 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f312.png)
+}
+.emoticon._1f314 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f314.png)
+}
+.emoticon._1f6be {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6be.png)
+}
+.emoticon._1f629 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f629.png)
+}
+.emoticon._1f492 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f492.png)
+}
+.emoticon._1f433 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f433.png)
+}
+.emoticon._1f40b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f40b.png)
+}
+.emoticon._267f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/267f.png)
+}
+.emoticon._2705 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2705.png)
+}
+.emoticon._26aa {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26aa.png)
+}
+.emoticon._1f4ae {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4ae.png)
+}
+.emoticon._2b1c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/2b1c.png)
+}
+.emoticon._25fd {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25fd.png)
+}
+.emoticon._25fb {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25fb.png)
+}
+.emoticon._25ab {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/25ab.png)
+}
+.emoticon._1f533 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f533.png)
+}
+.emoticon._1f390 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f390.png)
+}
+.emoticon._1f377 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f377.png)
+}
+.emoticon._1f609 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f609.png)
+}
+.emoticon._1f43a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f43a.png)
+}
+.emoticon._1f469 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f469.png)
+}
+.emoticon._1f45a {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f45a.png)
+}
+.emoticon._1f452 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f452.png)
+}
+.emoticon._1f6ba {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f6ba.png)
+}
+.emoticon._1f61f {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f61f.png)
+}
+.emoticon._1f527 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f527.png)
+}
+.emoticon._274c {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/274c.png)
+}
+.emoticon._1f49b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f49b.png)
+}
+.emoticon._1f4b4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4b4.png)
+}
+.emoticon._1f60b {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f60b.png)
+}
+.emoticon._26a1 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/26a1.png)
+}
+.emoticon._1f4a4 {
+	background-image:url(#{$imageBaseUrl}/twemoji/72x72/1f4a4.png)
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5) {
+	#tasks,#lists,#detail {
+		-webkit-transition:none;
+		-moz-transition:none;
+		-o-transition:none;
+		-ms-transition:none;
+		transition:none
+	}
+}
+@media all and (max-width:1000px) {
+	#ninjatasks-base #detail {
+		position:absolute;
+		z-index:1
+	}
+	html[dir=ltr] #ninjatasks-base #detail {
+		right:0
+	}
+	html[dir=rtl] #ninjatasks-base #detail {
+		left:0
+	}
+	html[dir=rtl].chrome.packaged .main-interface {
+		min-width:0
+	}
+}
+@media all and (max-width:550px) {
+	#ninjatasks-base .main-interface #tasks {
+		position:absolute;
+		top:0;
+		bottom:0
+	}
+	#ninjatasks-base .main-interface #detail {
+		position:absolute;
+		left:0;
+		right:0;
+		width:100% !important;
+		z-index:100
+	}
+	#ninjatasks-base .main-interface.detail-visible #detail {
+		-webkit-transform:translateX(0) !important;
+		-moz-transform:translateX(0) !important;
+		-o-transform:translateX(0) !important;
+		-ms-transform:translateX(0) !important;
+		transform:translateX(0) !important
+	}
+	html[dir=ltr] #ninjatasks-base .main-interface #detail {
+		-webkit-transform:translateX(100%);
+		-moz-transform:translateX(100%);
+		-o-transform:translateX(100%);
+		-ms-transform:translateX(100%);
+		transform:translateX(100%)
+	}
+	html[dir=ltr] #ninjatasks-base .main-interface #tasks {
+		right:0;
+		left:42px
+	}
+	html[dir=rtl] #ninjatasks-base .main-interface #detail {
+		-webkit-transform:translateX(-100%);
+		-moz-transform:translateX(-100%);
+		-o-transform:translateX(-100%);
+		-ms-transform:translateX(-100%);
+		transform:translateX(-100%)
+	}
+	html[dir=rtl] #ninjatasks-base .main-interface #tasks {
+		left:0;
+		right:42px
+	}
+}
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform:rotate(0)
+	}
+	100% {
+		-webkit-transform:rotate(360deg)
+	}
+}
+@-moz-keyframes rotate {
+	0% {
+		-moz-transform:rotate(0)
+	}
+	100% {
+		-moz-transform:rotate(360deg)
+	}
+}
+@keyframes rotate {
+	0% {
+		-webkit-transform:rotate(0);
+		-moz-transform:rotate(0);
+		-o-transform:rotate(0);
+		-ms-transform:rotate(0);
+		transform:rotate(0)
+	}
+	100% {
+		-webkit-transform:rotate(360deg);
+		-moz-transform:rotate(360deg);
+		-o-transform:rotate(360deg);
+		-ms-transform:rotate(360deg);
+		transform:rotate(360deg)
+	}
+}

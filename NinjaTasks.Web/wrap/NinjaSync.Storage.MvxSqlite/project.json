@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "wrappedProject": "../../../NinjaSync.Storage.MvxSqlite/NinjaSync.Storage.MvxSqlite.csproj",
+      "bin": {
+        "assembly": "../../../NinjaSync.Storage.MvxSqlite/obj/{configuration}/NinjaSync.Storage.MvxSqlite.dll",
+        "pdb": "../../../NinjaSync.Storage.MvxSqlite/obj/{configuration}/NinjaSync.Storage.MvxSqlite.pdb"
+      },
+      "dependencies": {
+        "NinjaSync": "1.0.0-*",
+        "NinjaTools.PCL": "1.0.0-*",
+        "AutoMapper": "1.0.0-*",
+        "Cirrious.MvvmCross.Community.Plugins.Sqlite": "1.0.0-*"
+      }
+    }
+  }
+}

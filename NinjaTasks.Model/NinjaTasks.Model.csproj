@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A38FBCE8-FDD3-4765-BA22-16E0A6C5CCA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaTasks.Model</RootNamespace>
+    <AssemblyName>NinjaTasks.Model.PCL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImportExport\IFileImportExport.cs" />
+    <Compile Include="ImportExport\IImportExportFactory.cs" />
+    <Compile Include="ImportExport\ITasksSerializer.cs" />
+    <Compile Include="ITodoRemoteStorage.cs" />
+    <Compile Include="Storage\SimplePropertyCopier.cs" />
+    <Compile Include="Storage\TodoRemoteSlaveWithFakeListsStorageWrapper.cs" />
+    <Compile Include="Storage\TodoSyncStorages.cs" />
+    <Compile Include="TodoListWithCount.cs" />
+    <Compile Include="TodoTaskWithListName.cs" />
+    <Compile Include="NinjaTasksConfiguration.cs" />
+    <Compile Include="Storage\Mocks\MockAccountsStorage.cs" />
+    <Compile Include="Storage\Mocks\MockTodoStorage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\IAccountsStorage.cs" />
+    <Compile Include="Storage\TodoListLookup.cs" />
+    <Compile Include="Sync\SyncAccount.cs" />
+    <Compile Include="Sync\TaskWarriorAccount.cs" />
+    <Compile Include="Storage\ITodoStorage.cs" />
+    <Compile Include="Properties\AssemblyInfoNinjaTasks.cs" />
+    <Compile Include="TodoList.cs" />
+    <Compile Include="TodoTask.cs" />
+    <Compile Include="Storage\TrackableStorageExtensions2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj">
+      <Project>{2c47e154-1e5d-4801-97aa-aace064dde48}</Project>
+      <Name>NinjaSync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
+      <Project>{e894d40e-6f3d-45d8-9bbd-f0d09dfc32b4}</Project>
+      <Name>NinjaTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

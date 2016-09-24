@@ -1,0 +1,363 @@
+@import "__defs.scss";
+
+#ninjatasks-base .button,#ninjatasks-base button {
+	position:relative;
+	cursor:pointer;
+	color:#737272;
+	font-weight:bold;
+	font-size:13px;
+	line-height:13px;
+	padding:8px 12px;
+	background:#fafafa;
+	-webkit-box-shadow:inset 0 0 0 1px #d6d6d6;
+	box-shadow:inset 0 0 0 1px #d6d6d6;
+	border:none;
+	margin-right:7px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+#ninjatasks-base .button.disabled,#ninjatasks-base button.disabled {
+	@include opacity(.5);
+}
+#ninjatasks-base .button.disabled:hover,#ninjatasks-base button.disabled:hover {
+	cursor:default
+}
+#ninjatasks-base .button.disabled:active,#ninjatasks-base button.disabled:active {
+	@include opacity(.5);
+}
+
+#ninjatasks-base .button:hover,#ninjatasks-base button:hover,#ninjatasks-base .button
+{
+    background-color:#e0e0e0;
+}
+
+#ninjatasks-base button
+{
+    background-color:#e0e0e0;
+	text-decoration:none !important;
+}
+
+#ninjatasks-base .button:focus,#ninjatasks-base button:focus {
+	-webkit-box-shadow:inset 0 0 0 1px rgba(50,138,214,0.8);
+	box-shadow:inset 0 0 0 1px rgba(50,138,214,0.8);
+}
+#ninjatasks-base .button:active,#ninjatasks-base button:active {
+	background-color:#f0f0f0;
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,0),inset 0 0 0 1px rgba(0,0,0,0.15);
+	box-shadow:0 1px 1px rgba(0,0,0,0),inset 0 0 0 1px rgba(0,0,0,0.15);
+}
+#ninjatasks-base .button.mini,#ninjatasks-base button.mini {
+	padding:3px 10px;
+}
+#ninjatasks-base .button.small,#ninjatasks-base button.small {
+	padding:3px 9px;
+	font-weight:500;
+}
+#ninjatasks-base .button.rounded,#ninjatasks-base button.rounded {
+	padding:2px 12px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+#ninjatasks-base .button.circle,#ninjatasks-base button.circle {
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	padding:7px;
+	margin:0;
+}
+#ninjatasks-base .button.wide,#ninjatasks-base button.wide {
+	padding-left:15px;
+	padding-right:15px
+}
+#ninjatasks-base .button.wider,#ninjatasks-base button.wider {
+	padding-left:20px;
+	padding-right:20px
+}
+#ninjatasks-base .button.big,#ninjatasks-base button.big {
+	display:block;
+	float:none;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	text-align:center;
+	font-size:16px;
+	width:100%;
+	padding:12px 20px
+}
+#ninjatasks-base .button.bigger,#ninjatasks-base button.bigger {
+	padding:9px 14px;
+	font-size:14px;
+}
+#ninjatasks-base .button.bigger.login,#ninjatasks-base button.bigger.login {
+	margin-top:-3px;
+	padding:11px
+}
+#ninjatasks-base .button.full,#ninjatasks-base button.full {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	float:none;
+	text-align:center;
+	width:100%;
+	display:inline-block;
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	margin:0
+}
+#ninjatasks-base .button.bluetext,#ninjatasks-base button.bluetext {
+	font-size:11px;
+	color:#2b88d9 !important
+}
+#ninjatasks-base .button.greentext,#ninjatasks-base button.greentext {
+	color:#67ae2b;
+	-webkit-box-shadow:none;
+	box-shadow:none
+}
+#ninjatasks-base .button.selected,#ninjatasks-base button.selected,#ninjatasks-base .button.blue,#ninjatasks-base button.blue {
+	-webkit-box-shadow:inset 0 0 0 1px #328ad6;
+	box-shadow:inset 0 0 0 1px #328ad6;
+	background-color:#328ad6;
+	color:#fff;
+}
+#ninjatasks-base .button.selected:hover,#ninjatasks-base button.selected:hover,#ninjatasks-base .button.blue:hover,#ninjatasks-base button.blue:hover,#ninjatasks-base .button.selected:focus,#ninjatasks-base button.selected:focus,#ninjatasks-base .button.blue:focus,#ninjatasks-base button.blue:focus {
+	background-color:#5ba1de
+}
+#ninjatasks-base .button.selected:active,#ninjatasks-base button.selected:active,#ninjatasks-base .button.blue:active,#ninjatasks-base button.blue:active,#ninjatasks-base .button.selected.active,#ninjatasks-base button.selected.active,#ninjatasks-base .button.blue.active,#ninjatasks-base button.blue.active {
+	background-color:#328ad6
+}
+#ninjatasks-base .button.green,#ninjatasks-base button.green {
+	-webkit-box-shadow:inset 0 0 0 1px #67ae2b;
+	box-shadow:inset 0 0 0 1px #67ae2b;
+	color:#fff;
+	font-weight:bold;
+	background-color:#67ae2b;
+}
+#ninjatasks-base .button.green strong,#ninjatasks-base button.green strong,#ninjatasks-base .button.green b,#ninjatasks-base button.green b {
+	font-weight:bold;
+	color:#fff
+}
+#ninjatasks-base .button.green:hover,#ninjatasks-base button.green:hover,#ninjatasks-base .button.green:focus,#ninjatasks-base button.green:focus {
+	background-color:#84d143
+}
+#ninjatasks-base .button.green:active,#ninjatasks-base button.green:active {
+	background-color:#67ae2b;
+}
+#ninjatasks-base .button.green:active span.light,#ninjatasks-base button.green:active span.light {
+	display:inline;
+	color:#c0daa7
+}
+#ninjatasks-base .button.red,#ninjatasks-base button.red {
+	-webkit-box-shadow:inset 0 0 0 1px #d74e48;
+	box-shadow:inset 0 0 0 1px #d74e48;
+	background-color:#d74e48;
+	color:#fff;
+}
+#ninjatasks-base .button.red:hover,#ninjatasks-base button.red:hover,#ninjatasks-base .button.red:focus,#ninjatasks-base button.red:focus,#ninjatasks-base .button.red:active,#ninjatasks-base button.red:active {
+	background-color:#e07672
+}
+#ninjatasks-base .button.outlined,#ninjatasks-base button.outlined {
+	background:none;
+	color:#328ad6;
+	-webkit-box-shadow:0 0 0 1px #328ad6;
+	box-shadow:0 0 0 1px #328ad6
+}
+#ninjatasks-base .button.external,#ninjatasks-base button.external {
+	float:none;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	display:inline-block;
+	padding-left:40px;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	font-size:14px;
+	width:100%;
+	height:40px;
+}
+#ninjatasks-base .button.external .icon,#ninjatasks-base button.external .icon,#ninjatasks-base .button.external .icon-login,#ninjatasks-base button.external .icon-login {
+	position:absolute;
+	top:7px;
+	left:50%;
+	margin-left:-12px;
+}
+#ninjatasks-base .button.external .icon.facebook-btn,#ninjatasks-base button.external .icon.facebook-btn,#ninjatasks-base .button.external .icon-login.facebook-btn,#ninjatasks-base button.external .icon-login.facebook-btn {
+	left:3px
+}
+#ninjatasks-base .button.external .icon.big,#ninjatasks-base button.external .icon.big,#ninjatasks-base .button.external .icon-login.big,#ninjatasks-base button.external .icon-login.big {
+	top:7px;
+	left:7px;
+	margin:0
+}
+#ninjatasks-base .button.facebook,#ninjatasks-base button.facebook {
+	color:#46649a
+}
+#ninjatasks-base .button.google,#ninjatasks-base button.google {
+	color:#d94b42
+}
+#ninjatasks-base .button.twitter,#ninjatasks-base button.twitter {
+	color:#00aeed
+}
+#ninjatasks-base .button.withArrow,#ninjatasks-base button.withArrow {
+	float:none;
+	text-align:center;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	margin-left:7px;
+	display:inline-block;
+}
+#ninjatasks-base .button.withArrow:after,#ninjatasks-base button.withArrow:after,#ninjatasks-base .button.withArrow:before,#ninjatasks-base button.withArrow:before {
+	position:absolute;
+	border-width:4px;
+	border-style:solid;
+	border-color:transparent;
+	left:-7px;
+	width:0;
+	height:0;
+	z-index:100;
+	content:"";
+	top:10px
+}
+#ninjatasks-base .button.withArrow:after,#ninjatasks-base button.withArrow:after {
+	border-right-color:#f6f6f6
+}
+#ninjatasks-base .button.withArrow:before,#ninjatasks-base button.withArrow:before {
+	border-right-color:#333
+}
+#ninjatasks-base .button.left,#ninjatasks-base button.left {
+	float:left;
+	width:auto
+}
+#ninjatasks-base .button.right,#ninjatasks-base button.right {
+	float:right;
+	margin-right:0;
+	margin-left:10px
+}
+#ninjatasks-base .button.nofloat,#ninjatasks-base button.nofloat {
+	display:inline-block;
+	float:none;
+	vertical-align:top;
+	margin:0
+}
+#ninjatasks-base .button.choose,#ninjatasks-base button.choose {
+	width:136px
+}
+#ninjatasks-base .button.accepted,#ninjatasks-base button.accepted {
+	height:16px;
+	padding:2px 0 !important;
+	font-weight:500;
+	margin-left:-5px;
+	color:#0d7fe7;
+}
+#ninjatasks-base .button.accepted span.icon,#ninjatasks-base button.accepted span.icon {
+	display:inline-block;
+	margin-top:-2px
+}
+#ninjatasks-base .button span,#ninjatasks-base button span,#ninjatasks-base .state span {
+	display:none;
+}
+#ninjatasks-base .button span.icon,#ninjatasks-base button span.icon,#ninjatasks-base .state span.icon,#ninjatasks-base .button span.wundercon,#ninjatasks-base button span.wundercon,#ninjatasks-base .state span.wundercon {
+	display:block
+}
+#ninjatasks-base .button span.wundercon,#ninjatasks-base button span.wundercon,#ninjatasks-base .state span.wundercon {
+	margin:-4px 0
+}
+#ninjatasks-base .button.loading,#ninjatasks-base button.loading,#ninjatasks-base .state.loading {
+	color:transparent !important;
+}
+#ninjatasks-base .button.loading text,#ninjatasks-base button.loading text,#ninjatasks-base .state.loading text,#ninjatasks-base .button.loading b,#ninjatasks-base button.loading b,#ninjatasks-base .state.loading b {
+	color:transparent !important
+}
+#ninjatasks-base .button.loading text,#ninjatasks-base button.loading text,#ninjatasks-base .state.loading text {
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis
+}
+#ninjatasks-base .button.loading span,#ninjatasks-base button.loading span,#ninjatasks-base .state.loading span {
+	@include animation(rotate .8s linear infinite);
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-10px;
+	margin-top:-10px;
+	width:19px;
+	height:19px;
+	background:url(#{$imageBaseUrl}/loading.png);
+}
+#ninjatasks-base .button.loading span.dark,#ninjatasks-base button.loading span.dark,#ninjatasks-base .state.loading span.dark {
+	@include opacity(.6);
+	background:url(#{$imageBaseUrl}/loading_black.png)
+}
+#ninjatasks-base .buttonbar {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+#ninjatasks-base .buttonbar .button,#ninjatasks-base .buttonbar button {
+	margin:0;
+	float:left;
+}
+#ninjatasks-base .buttonbar .button:first-child,#ninjatasks-base .buttonbar button:first-child {
+	-webkit-border-radius:4px 0 0 4px;
+	border-radius:4px 0 0 4px
+}
+#ninjatasks-base .buttonbar .button:last-child,#ninjatasks-base .buttonbar button:last-child {
+	-webkit-border-radius:0 4px 4px 0;
+	border-radius:0 4px 4px 0
+}
+#ninjatasks-base .buttonbar .button.selected + *,#ninjatasks-base .buttonbar button.selected + * {
+	border-left:none
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5) {
+	#ninjatasks-base .facebook-button {
+		background-image:url(#{$imageBaseUrl}/login/ninjatasks-login@2x.png);
+		-webkit-background-size:964px 480px;
+		-moz-background-size:964px 480px;
+		background-size:964px 480px
+	}
+	#ninjatasks-base button.loading span,#ninjatasks-base .button.loading span {
+		background-image:url(#{$imageBaseUrl}/loading@2x.png);
+		-webkit-background-size:19px;
+		-moz-background-size:19px;
+		background-size:19px;
+	}
+	#ninjatasks-base button.loading span.dark,#ninjatasks-base .button.loading span.dark {
+		background:url(#{$imageBaseUrl}/loading_black@2x.png)
+	}
+}
+html[dir=rtl] #ninjatasks-base .button,html[dir=rtl] #ninjatasks-base button {
+	margin-left:7px;
+	margin-right:initial;
+}
+html[dir=rtl] #ninjatasks-base .button.withArrow,html[dir=rtl] #ninjatasks-base button.withArrow {
+	margin-left:intial;
+	margin-right:7px;
+}
+html[dir=rtl] #ninjatasks-base .button.withArrow:after,html[dir=rtl] #ninjatasks-base button.withArrow:after,html[dir=rtl] #ninjatasks-base .button.withArrow:before,html[dir=rtl] #ninjatasks-base button.withArrow:before {
+	left:initial;
+	right:-7px;
+	border-right-color:transparent
+}
+html[dir=rtl] #ninjatasks-base .button.withArrow:after,html[dir=rtl] #ninjatasks-base button.withArrow:after {
+	border-left-color:#f6f6f6
+}
+html[dir=rtl] #ninjatasks-base .button.withArrow:before,html[dir=rtl] #ninjatasks-base button.withArrow:before {
+	border-left-color:#333
+}
+html .button,html button {
+	font-family:"Lato","Geneva CY","Lucida Grande","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(ja_JP) .button,html:lang(ja_JP) button {
+	font-family:"Lato","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Microsoft Yahei","微软雅黑","STXihei","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(zh_CN) .button,html:lang(zh_CN) button {
+	font-family:"Lato","Microsoft Yahei","微软雅黑","STXihei","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}
+html:lang(zh_TW) .button,html:lang(zh_TW) button {
+	font-family:"Lato","Microsoft Yahei","微软雅黑","STXihei","Meiryo UI","Meiryo","メイリオ","ＭＳ Ｐゴシック","MS PGothic","Hiragino Kaku Gothic Pro","Arial Unicode MS","Helvetica Neue","Helvetica","Arial",sans-serif
+}

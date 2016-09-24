@@ -1,0 +1,30 @@
+@import "__defs.scss";
+
+.dropTarget {
+	display:none
+}
+.drop .dropTarget {
+	display:block
+}
+#detail .inner.drop > .dropTarget {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:9999
+}
+.section-files.hasFiles .section-icon svg {
+	fill:#63b4be
+}
+.section-files.offline .add-sound,.section-files.notSynced .add-sound {
+	display:none
+}
+.section-files.offline span,.section-files.notSynced span {
+	fill:#737272;
+	display:inline-block;
+	padding:5px;
+}
+.section-files.offline span:hover,.section-files.notSynced span:hover {
+	fill:#262626
+}

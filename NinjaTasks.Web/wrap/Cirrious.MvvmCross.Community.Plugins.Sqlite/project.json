@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "bin": {
+        "assembly": "../../../NinjaTools/3rdParty/MvvmCross/Portable/Cirrious.MvvmCross.Community.Plugins.Sqlite.dll",
+        "pdb": "../../../NinjaTools/3rdParty/MvvmCross/Portable/Cirrious.MvvmCross.Community.Plugins.Sqlite.pdb"
+      },
+      "dependencies": {
+        "Cirrious.CrossCore": "1.0.0-*"
+      }
+    }
+  }
+}

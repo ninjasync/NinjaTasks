@@ -1,0 +1,124 @@
+@import "__defs.scss";
+
+#search-toolbar {
+	height:45px;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:box;
+	display:flex;
+}
+.background-01 #search-toolbar {
+	background:#603421
+}
+.background-02 #search-toolbar {
+	background:#497062
+}
+.background-03 #search-toolbar {
+	background:#495570
+}
+.background-04 #search-toolbar {
+	background:#3f7e7a
+}
+.background-05 #search-toolbar {
+	background:#96613c
+}
+.background-06 #search-toolbar {
+	background:#5b7a59
+}
+.background-07 #search-toolbar {
+	background:#5a863c
+}
+.background-08 #search-toolbar {
+	background:#03719e
+}
+.background-09 #search-toolbar {
+	background:#245d75
+}
+.background-10 #search-toolbar {
+	background:#572e49
+}
+.background-11 #search-toolbar {
+	background:#2c4371
+}
+.background-12 #search-toolbar {
+	background:#316062
+}
+.background-13 #search-toolbar {
+	background:#547e8c
+}
+.background-14 #search-toolbar {
+	background:#285664
+}
+.background-15 #search-toolbar {
+	background:#61a67f
+}
+.background-16 #search-toolbar {
+	background:#a94234
+}
+.background-17 #search-toolbar {
+	background:#4c4c4c
+}
+.background-18 #search-toolbar {
+	background:#4a4a4a
+}
+.background-19 #search-toolbar {
+	background:#b05c73
+}
+.background-20 #search-toolbar {
+	background:#502e2f
+}
+.background-21 #search-toolbar {
+	background:#944c3a
+}
+.background-22 #search-toolbar {
+	background:#336f81
+}
+.background-23 #search-toolbar {
+	background:#47342a
+}
+.background-24 #search-toolbar {
+	background:#b4a378
+}
+.background-25 #search-toolbar {
+	background:#0c7fad
+}
+.background-26 #search-toolbar {
+	background:#6a5188
+}
+.background-27 #search-toolbar {
+	background:#ae5237
+}
+.background-28 #search-toolbar {
+	background:#9b6f7a
+}
+.background-29 #search-toolbar {
+	background:#b66745
+}
+.background-30 #search-toolbar {
+	background:#0455d2
+}
+#search-toolbar .search-input-wrapper {
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-o-box-flex:1;
+	box-flex:1;
+	-webkit-flex:1;
+	-ms-flex:1;
+	flex:1
+}
+#search-toolbar .search-input[type=text] {
+	font-size:18px;
+	color:#fff;
+	height:45px;
+	-webkit-app-region:no-drag
+}
+#search-toolbar .search-icon-wrapper,#search-toolbar .list-toggle {
+	width:20px;
+	height:20px;
+	fill:#fff;
+	padding:13px 11px 12px 11px;
+	-webkit-flex-shrink:0;
+	flex-shrink:0
+}

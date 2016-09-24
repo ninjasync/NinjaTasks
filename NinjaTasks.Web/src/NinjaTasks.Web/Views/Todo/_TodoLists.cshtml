@@ -1,0 +1,27 @@
+﻿@model System.Collections.Generic.IEnumerable<NinjaTasks.Model.TodoListWithCount>
+
+<div id="lists" role="navigation">
+    <div class="lists-inner">
+        @await Html.PartialAsync("_SearchBar")
+
+        <div id="user-toolbar">
+            <a class="user" data-path="me" role="button" tabindex="0" aria-label="Peter Pettersson Nutzermenü" aria-expanded="false" aria-haspopup="true">
+                <span class="user-avatar">(User )</span>
+            </a>
+        </div>
+
+        <ul clas="lists-collection">
+            @foreach (var list in Model)
+            {
+                <li class="sidebarItem list draggable owner @(list.Id == (string) ViewData["SelectedList"] ? "active" : "")" role="menuitem" tabindex="0" draggable="true">
+                    <a asp-route-id="@list.Id">
+                        <span class="list-icon"></span>
+                        <span class="title">@(string.IsNullOrEmpty(@list.Description) ? "Inbox" : @list.Description)</span>
+                        <span class="count">@(list.PendingTasksCount == 0 ? "" : list.PendingTasksCount.ToString())</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+

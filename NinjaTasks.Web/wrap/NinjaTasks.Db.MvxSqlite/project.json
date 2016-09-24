@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10": {
+      "wrappedProject": "../../../NinjaTasks.Db.MvxSqlite/NinjaTasks.Db.MvxSqlite.csproj",
+      "bin": {
+        "assembly": "../../../NinjaTasks.Db.MvxSqlite/obj/{configuration}/NinjaTasks.Db.MvxSqlite.dll",
+        "pdb": "../../../NinjaTasks.Db.MvxSqlite/obj/{configuration}/NinjaTasks.Db.MvxSqlite.pdb"
+      },
+      "dependencies": {
+        "NinjaSync.Storage.MvxSqlite": "1.0.0-*",
+        "NinjaSync": "1.0.0-*",
+        "NinjaTasks.Model.PCL": "1.0.0-*",
+        "NinjaTools.PCL": "1.0.0-*",
+        "AutoMapper": "1.0.0-*",
+        "Cirrious.MvvmCross.Community.Plugins.Sqlite": "1.0.0-*"
+      }
+    }
+  }
+}

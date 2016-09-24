@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AutoAnnotator>$(MSBuildThisFileDirectory)AutoAnnotations\AutoAnnotations.exe</AutoAnnotator>
+    <AnnAssemblyFile>$(IntermediateOutputPath)$(AssemblyName)$(TargetExt)</AnnAssemblyFile>
+  </PropertyGroup>
+
+  <Target Name="AutoAnnotate"
+		      AfterTargets="AfterCompile"
+          DependsOnTargets="ResolveAssemblyReferences"
+          >
+    <ItemGroup>
+      <_AnnInputDependencies Include="$(MSBuildProjectDirectory)\**\*.autoannotations"/>
+     
+    </ItemGroup>
+
+    <CreateItem Include="%(ReferencePath.RootDir)%(ReferencePath.Directory)">
+      <Output TaskParameter="Include"
+              ItemName="_DependencyPaths"/>
+    </CreateItem>
+
+    <Message Importance="low"
+             Text="Dependencies: %(ReferencePath.Filename)%(ReferencePath.Extension)" />
+    <Message Importance="low"
+             Text="DependencyPaths: %(ReferencePath.RootDir)%(ReferencePath.Directory)" />
+
+    <ItemGroup>
+      <AnnArgs Include="-i &quot;$(AnnAssemblyFile)&quot;"/>
+      <AnnArgs Include="-p &quot;$(MSBuildProjectFullPath)&quot;"/>
+    </ItemGroup>
+
+    <Exec Command="&quot;$(AutoAnnotator)&quot; @(AnnArgs, ' ') -l &quot;@(_DependencyPaths, ';')&quot;" />
+  </Target>
+
+</Project>

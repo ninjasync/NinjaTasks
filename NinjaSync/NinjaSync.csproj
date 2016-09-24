@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C47E154-1E5D-4801-97AA-AACE064DDE48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaSync</RootNamespace>
+    <AssemblyName>NinjaSync</AssemblyName>
+    <DefaultLanguage>de-DE</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>60181957</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\ProtocolViolationException.cs" />
+    <Compile Include="ISyncProgress.cs" />
+    <Compile Include="ITrackableFactory.cs" />
+    <Compile Include="Journaling\IModificationAssembler.cs" />
+    <Compile Include="Obsolete\LinqPartitionExtensions.cs" />
+    <Compile Include="Journaling\ModificationAssembler.cs" />
+    <Compile Include="MasterSlave\IUpdateAlgorithm.cs" />
+    <Compile Include="MasterSlave\ISyncWithMasterService.cs" />
+    <Compile Include="MasterSlave\LocalSlaveSyncEndpoint.cs" />
+    <Compile Include="MasterSlave\ProtectIntermediateChangesUpdateAlgorithm.cs" />
+    <Compile Include="MasterSlave\SyncBetweenSlaveAndMasterService.cs" />
+    <Compile Include="MasterSlave\SyncWithMasterService.cs" />
+    <Compile Include="MasterSlave\TrackableRemoteMasterStorage.cs" />
+    <Compile Include="MasterSlave\WrapSlaveAsMasterRemoteStorage.cs" />
+    <Compile Include="Journaling\CommitListMerger.cs" />
+    <Compile Include="Model\CommitEntry.cs" />
+    <Compile Include="Exceptions\CommitNotFoundException.cs" />
+    <Compile Include="Exceptions\SyncTryLaterException.cs" />
+    <Compile Include="Model\IdMap.cs" />
+    <Compile Include="ISyncService.cs" />
+    <Compile Include="P2P\GetMissingCommits.cs" />
+    <Compile Include="P2P\Serializing\JsonCommit.cs" />
+    <Compile Include="Storage\ISyncStoragesFactory.cs" />
+    <Compile Include="Model\JournalEntry.cs" />
+    <Compile Include="Model\Journal\Commit.cs" />
+    <Compile Include="Model\Journal\CommitList.cs" />
+    <Compile Include="Model\Journal\ITrackable.cs" />
+    <Compile Include="Model\Journal\JournaledElementBase.cs" />
+    <Compile Include="Model\Journal\TrackableId.cs" />
+    <Compile Include="Model\Journal\Modification.cs" />
+    <Compile Include="Storage\SyncStorages.cs" />
+    <None Include="Obsolete\ModificationTracker.cs" />
+    <Compile Include="Obsolete\ShouldTrackCache.cs" />
+    <Compile Include="P2P\IP2PSyncEndpoint.cs" />
+    <Compile Include="P2P\P2PServer.cs" />
+    <Compile Include="P2P\P2PSyncRemoteEndpoint.cs" />
+    <Compile Include="P2P\P2PSyncService.cs" />
+    <Compile Include="P2P\Serializing\IModificationSerializer.cs" />
+    <Compile Include="P2P\Serializing\JsonCommitList.cs" />
+    <Compile Include="P2P\Serializing\JsonModification.cs" />
+    <Compile Include="P2P\Serializing\JsonNetModificationSerializer.cs" />
+    <Compile Include="P2P\TrackableStorageP2PSyncEndpoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\IJournalStorage.cs" />
+    <Compile Include="Storage\IMappingStorage.cs" />
+    <Compile Include="Storage\ISyncStatusStorage.cs" />
+    <Compile Include="Storage\ITrackableJournalStorage.cs" />
+    <Compile Include="MasterSlave\ITrackableRemoteStorage.cs" />
+    <Compile Include="Storage\ITrackableStorage.cs" />
+    <Compile Include="Storage\TrackableJournalStorageAdapter.cs" />
+    <Compile Include="MasterSlave\TrackableRemoteDumbSlaveStorage.cs" />
+    <Compile Include="Model\SyncRemoteRepresentation.cs" />
+    <Compile Include="Model\SyncStatus.cs" />
+    <Compile Include="Model\TrackableBase.cs" />
+    <None Include="packages.config" />
+    <None Include="Synchronize.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj">
+      <Project>{8ba579b0-a7c0-4817-ae20-eda450dccdda}</Project>
+      <Name>NinjaTools.Connectivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
+      <Project>{e894d40e-6f3d-45d8-9bbd-f0d09dfc32b4}</Project>
+      <Name>NinjaTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite">
+      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\3rdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Aktivieren Sie die Wiederherstellung von NuGet-Paketen, um die fehlende Datei herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

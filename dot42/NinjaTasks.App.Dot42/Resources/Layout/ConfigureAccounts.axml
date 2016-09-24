@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/buttons"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin">
+    <Mvx.MvxListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        local:MvxBind="ItemsSource Accounts"
+        local:MvxItemTemplate="@layout/configureaccountsaccountrow" />
+  
+  <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Blueooth is currently disabled."
+       android:layout_marginLeft="12dp"
+       android:textColor="#B22222"
+       local:MvxBind="Visibility BluetoothServer.IsAvailable,Converter=TrueToVisibilityGone"
+    >
+  </TextView>
+
+  <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Add Bluetooth P2P..."
+            local:MvxBind="Click AddBluetooth; IsEnabled BluetoothServer.IsAvailableOnDevice" />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Add / Edit TaskWarrior..."
+            local:MvxBind="Click EditTaskWarrior" />
+    </LinearLayout>
+  
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+            <ToggleButton
+                android:id="@+id/zoom_full"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textOn="P2P Bluetooth Server enabled"
+                android:textOff="P2P Bluetooth Server disabled"
+                local:MvxBind="IsChecked BluetoothServer.ShouldRun; IsEnabled BluetoothServer.IsAvailableOnDevice" />
+            <ProgressBar
+                android:layout_height="24dp"
+                android:layout_width="24dp"
+                local:MvxBind="Visible BluetoothServer.IsSyncActive"
+                android:indeterminateOnly="true"
+                android:keepScreenOn="false"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Sync All"
+            local:MvxBind="Click SyncAll" />
+    </LinearLayout>
+</LinearLayout>

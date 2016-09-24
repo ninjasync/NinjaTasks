@@ -1,0 +1,46 @@
+﻿    <ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Basics.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="StarToggleButton" TargetType="ToggleButton">
+        <Setter Property="Background" Value="#01FFFFFF"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <StackPanel Orientation="Horizontal" Background="{TemplateBinding Background}">
+                        <Viewbox Height="16" Width="16" Margin="5,0" SnapsToDevicePixels="True">
+                            <Canvas Height="26" Width="26"  >
+                                <Path  StrokeThickness="3"  SnapsToDevicePixels="True"
+                                        x:Name="star" 
+                                        Data="M 5.383219 20.712666 C 5.6740432 18.813975 6.0513211 17.100764 6.2216144 16.90553 6.3919078 16.710297 5.1768413 15.163532 3.5214669 13.468274 1.8660919 11.773017 0.76887597 10.128809 1.0832079 9.8144758 1.3975399 9.5001446 3.1901929 9.03653 5.0668808 8.784223 8.0046732 8.3892578 8.7322857 7.8737837 10.30065 5.0763844 c 1.001884 -1.7870037 2.214967 -3.2490976 2.695741 -3.2490976 0.480773 0 1.693856 1.4620939 2.69574 3.2490976 1.568364 2.7973993 2.295977 3.3128734 5.233769 3.7078386 1.876688 0.252307 3.669341 0.7159216 3.983673 1.0302528 0.314332 0.3143332 -0.782884 1.9585412 -2.438259 3.6537982 -1.655375 1.695258 -2.870441 3.242023 -2.700148 3.437256 0.170293 0.195234 0.547571 1.908445 0.838396 3.807136 0.623808 4.072635 -0.240742 4.392443 -4.723781 1.747384 L 12.996391 20.755268 10.107 22.46005 C 5.6239598 25.105109 4.75941 24.785301 5.383219 20.712666 Z" />
+                            </Canvas>
+                        </Viewbox>
+                        <ContentPresenter Content="{TemplateBinding Content}"  />
+
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="star" Property="Fill" Value="#10000000"/>
+                            <Setter TargetName="star" Property="Stroke" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="star" Property="Fill" Value="#40000000"/>
+                            <Setter TargetName="star" Property="Stroke" Value="Transparent"/>
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="star" Property="Fill" Value="Firebrick"/>
+                            <Setter TargetName="star" Property="Stroke" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

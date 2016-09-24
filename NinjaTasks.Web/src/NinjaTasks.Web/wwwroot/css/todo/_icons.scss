@@ -1,0 +1,423 @@
+@import "__defs.scss";
+
+.icon {
+	background-image:url(#{$imageBaseUrl}/sprites/app.png);
+	cursor:pointer;
+	vertical-align:middle;
+	display:inline-block;
+}
+.icon.menu-down {
+	background-position:-263px -111px;
+	width:10px;
+	height:10px
+}
+.icon.menu-up {
+	background-position:-253px -111px;
+	width:10px;
+	height:10px
+}
+.icon.input-assign-delete {
+	background-position:-213px -111px;
+	width:16px;
+	height:16px
+}
+.icon.input-assign-frame {
+	background-position:-289px -34px;
+	width:26px;
+	height:26px;
+}
+.icon.input-assign-frame.selected {
+	background-position:-315px -34px;
+	width:26px;
+	height:26px
+}
+.icon.big-star {
+	background-position:0 0;
+	width:93px;
+	height:93px
+}
+.icon.invite {
+	background-position:-241px -111px;
+	width:12px;
+	height:12px
+}
+.icon.remove {
+	background-position:-241px -111px;
+	width:12px;
+	height:12px;
+	-webkit-transform:rotate(45deg);
+	-webkit-filter:grayscale(100%)
+}
+.icon.invited {
+	background-position:-229px -111px;
+	width:12px;
+	height:12px
+}
+.icon.stripe {
+	background-position:0 -227px;
+	width:322px;
+	height:4px
+}
+.icon.love-ninjatasks {
+	background-position:0 -193px;
+	width:200px;
+	height:34px
+}
+.icon.danke {
+	background-position:-197px 0;
+	width:160px;
+	height:34px
+}
+.icon.dismiss {
+	background-position:-237px -91px;
+	width:20px;
+	height:20px
+}
+.icon.facebook-small {
+	background-position:-242px -66px;
+	width:18px;
+	height:20px
+}
+.icon.twitter-small {
+	background-position:-303px -91px;
+	width:18px;
+	height:20px
+}
+.icon.alert {
+	background-position:-277px -91px;
+	width:26px;
+	height:20px
+}
+.icon.popover-accepted {
+	background-position:-260px -66px;
+	width:20px;
+	height:20px
+}
+.icon.assigned {
+	background-position:-260px -66px;
+	width:20px;
+	height:20px
+}
+.icon.settings-general {
+	background-position:-157px 0;
+	width:40px;
+	height:40px
+}
+.icon.settings-account {
+	background-position:0 -153px;
+	width:40px;
+	height:40px
+}
+.icon.settings-shortcuts {
+	background-position:-80px -153px;
+	width:40px;
+	height:40px
+}
+.icon.settings-sidebar {
+	background-position:-157px -40px;
+	width:40px;
+	height:40px
+}
+.icon.settings-notifications {
+	background-position:-60px -93px;
+	width:40px;
+	height:40px
+}
+.icon.settings-about {
+	background-position:-40px -153px;
+	width:40px;
+	height:40px
+}
+.icon.settings-group {
+	background-position:-100px -93px;
+	width:40px;
+	height:40px
+}
+.icon.ninjatasks-icon {
+	background-position:-93px 0;
+	width:64px;
+	height:64px
+}
+.icon.facebook-btn {
+	background-position:-320px -66px;
+	width:22px;
+	height:20px
+}
+.icon.facebook-icon {
+	background-position:-300px -66px;
+	width:20px;
+	height:20px
+}
+.icon.facebook {
+	background-position:-341px -34px;
+	width:14px;
+	height:22px
+}
+.icon.twitter-btn {
+	background-position:-280px -66px;
+	width:20px;
+	height:20px
+}
+.icon.google-btn {
+	background-position:-222px -66px;
+	width:20px;
+	height:20px
+}
+.icon.weibo-btn {
+	background-position:-197px -91px;
+	width:20px;
+	height:20px
+}
+.icon.sixw-btn {
+	background-position:-257px -91px;
+	width:20px;
+	height:20px
+}
+.icon.support-btn {
+	background-position:-217px -91px;
+	width:20px;
+	height:20px
+}
+.icon.pro {
+	background-position:-157px -80px;
+	width:40px;
+	height:40px
+}
+.icon.pro-small {
+	background-position:-197px -111px;
+	width:16px;
+	height:16px
+}
+.icon.pro-big {
+	background-position:0 -93px;
+	width:60px;
+	height:60px
+}
+.icon.add-pro-teammate {
+	background-position:-261px -34px;
+	width:28px;
+	height:28px
+}
+.icon.pro-teammate {
+	background-position:-260px -66px;
+	width:20px;
+	height:20px
+}
+.icon.added-pro-teammate {
+	background-position:-260px -66px;
+	width:20px;
+	height:20px
+}
+.icon.checkmark-blue {
+	background-position:-260px -66px;
+	width:20px;
+	height:20px
+}
+.icon.action-flash-cards {
+	background-position:-229px -34px;
+	width:32px;
+	height:32px;
+}
+.icon.action-flash-cards:not(.disabled):hover {
+	background-position:-197px -34px;
+	width:32px;
+	height:32px
+}
+.small-preview .icon-file.image-thumb {
+	background-position:-162px 0;
+	width:54px;
+	height:54px
+}
+.icon-file {
+	background-image:url(#{$imageBaseUrl}/sprites/files.png);
+}
+.icon-file.cancel-action,.icon-file.delete-action {
+	background-position:-88px -181px;
+	width:14px;
+	height:14px;
+}
+.icon-file.cancel-action:hover,.icon-file.delete-action:hover {
+	background-position:-32px -181px;
+	width:14px;
+	height:14px
+}
+.icon-file.cancel-action:active,.icon-file.delete-action:active {
+	background-position:-46px -181px;
+	width:14px;
+	height:14px
+}
+.icon-file.alert {
+	background-position:-130px -181px;
+	width:17px;
+	height:14px
+}
+.icon-file.document-thumb {
+	background-position:0 -54px;
+	width:54px;
+	height:54px
+}
+.icon-file.image-thumb {
+	background-position:-162px 0;
+	width:54px;
+	height:54px
+}
+.icon-file.package-thumb {
+	background-position:-54px 0;
+	width:54px;
+	height:54px
+}
+.icon-file.movie-thumb {
+	background-position:-54px -108px;
+	width:54px;
+	height:54px
+}
+.icon-file.pdf-thumb {
+	background-position:0 0;
+	width:54px;
+	height:54px
+}
+.icon-file.audio-thumb {
+	background-position:0 -108px;
+	width:54px;
+	height:54px
+}
+.icon-file.text-thumb {
+	background-position:-54px -54px;
+	width:54px;
+	height:54px
+}
+.icon-file.table-thumb {
+	background-position:-108px 0;
+	width:54px;
+	height:54px
+}
+.icon-file.presentaion-thumb {
+	background-position:-108px -54px;
+	width:54px;
+	height:54px
+}
+.icon-file.files-dropbox-small {
+	background-position:-201px -162px;
+	width:15px;
+	height:14px
+}
+.icon-file.record-audio {
+	background-position:-129px -162px;
+	width:18px;
+	height:18px
+}
+.icon-file.play-audio {
+	background-position:-75px -162px;
+	width:18px;
+	height:18px
+}
+.icon-file.clear-audio {
+	background-position:0 -162px;
+	width:19px;
+	height:19px
+}
+.icon-file.upload-audio {
+	background-position:-19px -162px;
+	width:19px;
+	height:19px
+}
+a:hover .record-audio {
+	background-position:-147px -162px
+}
+a:hover .play-audio {
+	background-position:0 -181px
+}
+a:hover .upload-audio {
+	background-position:-38px -162px
+}
+a:hover .clear-audio {
+	background-position:-181px -137px
+}
+a.recording .record-audio {
+	background-position:-183px -162px;
+	width:18px;
+	height:18px
+}
+a.recording:hover .record-audio {
+	background-position:-57px -162px
+}
+a.playing .play-audio {
+	background-position:-93px -162px;
+	width:18px;
+	height:18px
+}
+a.playing:hover .play-audio {
+	background-position:-165px -162px
+}
+a.disabled .upload-audio {
+	background-position:-162px -137px;
+	width:19px;
+	height:19px
+}
+a.disabled .play-audio {
+	background-position:-111px -162px;
+	width:18px;
+	height:18px
+}
+.audio-recorder-container a:active {
+	background-image:url(#{$imageBaseUrl}/sprites/files.png);
+	background-position:-162px -54px
+}
+.audio-recorder-container a.disabled:active {
+	background:none
+}
+.hasPreview .icon-file.delete-action {
+	z-index:9999;
+	background-position:-74px -181px;
+	width:14px;
+	height:14px;
+}
+.hasPreview .icon-file.delete-action:hover {
+	background-position:-60px -181px;
+	width:14px;
+	height:14px
+}
+.hasPreview .icon-file.delete-action:active {
+	background-position:-102px -181px;
+	width:14px;
+	height:14px
+}
+#fullscreen-note a.close span.close {
+	background-image:url(#{$imageBaseUrl}/sprites/app.png)
+}
+.webview .container a.icon.close-webview {
+	background-position:-321px -91px;
+	width:18px;
+	height:18px;
+	@include opacity(.6);
+}
+.webview .container a.icon.close-webview:hover {
+	opacity:1;
+	-ms-filter:none;
+	filter:none
+}
+.webview .container a.icon.close-webview:active {
+	background-position:-339px -91px;
+	width:18px;
+	height:18px
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5) {
+	.icon {
+		background-image:url(#{$imageBaseUrl}/sprites/app-retina.png) !important;
+		-webkit-background-size:357px;
+		-moz-background-size:357px;
+		background-size:357px
+	}
+	.icon-file {
+		background-image:url(#{$imageBaseUrl}/sprites/files-retina.png);
+		-webkit-background-size:216px;
+		-moz-background-size:216px;
+		background-size:216px
+	}
+	#fullscreen-note a.close span.close {
+		background-image:url(#{$imageBaseUrl}/sprites/app-retina.png) !important;
+		-webkit-background-size:357px;
+		-moz-background-size:357px;
+		background-size:357px
+	}
+}

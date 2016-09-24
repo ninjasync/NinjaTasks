@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:minHeight="64dp"
+        >
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        local:MvxBind="IsChecked IsCompleted"
+            />
+
+    <FrameLayout
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="match_parent"
+      >
+      <TextView
+          android:id="@+id/description_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center_vertical"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:text="one task"
+          android:textColor="@color/taskTextColor"
+          local:MvxBind="Text Task.Description;IsStrikeThrough IsCompleted" />
+
+      <EditText
+          android:id="@+id/description_edit"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:singleLine="true"
+          android:visibility="invisible"
+          local:MvxBind="Text Task.Description" />
+    </FrameLayout>
+    
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="8dp"
+        local:MvxBind="IsChecked IsPriority"
+        android:button="@drawable/star_button_drawable" />
+  </LinearLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="4dp"
+      android:background="@drawable/divider_line"
+        />
+  <!-- fill unused space -->
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"/>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_gravity="bottom"
+      android:background="#80000000"
+        />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_margin="8dp"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="?android:textColorTertiary"
+        android:text="Created 1111-11-11"
+        local:MvxBind="Text CreatedOrCompletedText"
+            />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_weight="1"/>
+    
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|right"
+        android:src="?btn_delete"
+        android:scaleType="fitCenter"
+        android:alpha="0.3"
+        android:background="@android:color/transparent"
+     />
+  </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,96 @@
+@import "__defs.scss";
+
+#ninjatasks-base .assign-to-user {
+	width:212px
+}
+#ninjatasks-base .get-pro,#ninjatasks-base .assign-to-user,#ninjatasks-base .tags,#ninjatasks-base .emojis {
+	padding:4px;
+}
+#ninjatasks-base .get-pro .header,#ninjatasks-base .assign-to-user .header,#ninjatasks-base .tags .header,#ninjatasks-base .emojis .header {
+	padding:5px 0 16px 0 !important;
+	height:14px !important;
+}
+#ninjatasks-base .get-pro .header:after,#ninjatasks-base .assign-to-user .header:after,#ninjatasks-base .tags .header:after,#ninjatasks-base .emojis .header:after {
+	content:'';
+	height:1px;
+	width:100%;
+	background-color:#dedede;
+	position:absolute;
+	left:0;
+	top:35px
+}
+#ninjatasks-base .get-pro p,#ninjatasks-base .assign-to-user p,#ninjatasks-base .tags p,#ninjatasks-base .emojis p {
+	font-size:13px;
+	padding:12px;
+	font-size:13px
+}
+#ninjatasks-base .get-pro .shared-users,#ninjatasks-base .assign-to-user .shared-users,#ninjatasks-base .tags .shared-users,#ninjatasks-base .emojis .shared-users,#ninjatasks-base .get-pro .all-tags,#ninjatasks-base .assign-to-user .all-tags,#ninjatasks-base .tags .all-tags,#ninjatasks-base .emojis .all-tags,#ninjatasks-base .get-pro .all-emojis,#ninjatasks-base .assign-to-user .all-emojis,#ninjatasks-base .tags .all-emojis,#ninjatasks-base .emojis .all-emojis {
+	position:relative;
+	max-height:297px;
+	overflow:auto;
+	-webkit-overflow-scrolling:touch;
+}
+#ninjatasks-base .get-pro .shared-users li,#ninjatasks-base .assign-to-user .shared-users li,#ninjatasks-base .tags .shared-users li,#ninjatasks-base .emojis .shared-users li,#ninjatasks-base .get-pro .all-tags li,#ninjatasks-base .assign-to-user .all-tags li,#ninjatasks-base .tags .all-tags li,#ninjatasks-base .emojis .all-tags li,#ninjatasks-base .get-pro .all-emojis li,#ninjatasks-base .assign-to-user .all-emojis li,#ninjatasks-base .tags .all-emojis li,#ninjatasks-base .emojis .all-emojis li {
+	height:33px;
+	position:relative;
+}
+#ninjatasks-base .get-pro .shared-users li:hover,#ninjatasks-base .assign-to-user .shared-users li:hover,#ninjatasks-base .tags .shared-users li:hover,#ninjatasks-base .emojis .shared-users li:hover,#ninjatasks-base .get-pro .all-tags li:hover,#ninjatasks-base .assign-to-user .all-tags li:hover,#ninjatasks-base .tags .all-tags li:hover,#ninjatasks-base .emojis .all-tags li:hover,#ninjatasks-base .get-pro .all-emojis li:hover,#ninjatasks-base .assign-to-user .all-emojis li:hover,#ninjatasks-base .tags .all-emojis li:hover,#ninjatasks-base .emojis .all-emojis li:hover {
+	cursor:pointer
+}
+#ninjatasks-base .get-pro .shared-users li .name,#ninjatasks-base .assign-to-user .shared-users li .name,#ninjatasks-base .tags .shared-users li .name,#ninjatasks-base .emojis .shared-users li .name,#ninjatasks-base .get-pro .all-tags li .name,#ninjatasks-base .assign-to-user .all-tags li .name,#ninjatasks-base .tags .all-tags li .name,#ninjatasks-base .emojis .all-tags li .name,#ninjatasks-base .get-pro .all-emojis li .name,#ninjatasks-base .assign-to-user .all-emojis li .name,#ninjatasks-base .tags .all-emojis li .name,#ninjatasks-base .emojis .all-emojis li .name {
+	position:absolute;
+	left:38px;
+	top:8px;
+	right:18px;
+	font-size:13px;
+	font-weight:bold;
+	color:#262626;
+	white-space:nowrap;
+	overflow:hidden;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis
+}
+#ninjatasks-base .get-pro .shared-users li .avatar,#ninjatasks-base .assign-to-user .shared-users li .avatar,#ninjatasks-base .tags .shared-users li .avatar,#ninjatasks-base .emojis .shared-users li .avatar,#ninjatasks-base .get-pro .all-tags li .avatar,#ninjatasks-base .assign-to-user .all-tags li .avatar,#ninjatasks-base .tags .all-tags li .avatar,#ninjatasks-base .emojis .all-tags li .avatar,#ninjatasks-base .get-pro .all-emojis li .avatar,#ninjatasks-base .assign-to-user .all-emojis li .avatar,#ninjatasks-base .tags .all-emojis li .avatar,#ninjatasks-base .emojis .all-emojis li .avatar,#ninjatasks-base .get-pro .shared-users li .unassigned,#ninjatasks-base .assign-to-user .shared-users li .unassigned,#ninjatasks-base .tags .shared-users li .unassigned,#ninjatasks-base .emojis .shared-users li .unassigned,#ninjatasks-base .get-pro .all-tags li .unassigned,#ninjatasks-base .assign-to-user .all-tags li .unassigned,#ninjatasks-base .tags .all-tags li .unassigned,#ninjatasks-base .emojis .all-tags li .unassigned,#ninjatasks-base .get-pro .all-emojis li .unassigned,#ninjatasks-base .assign-to-user .all-emojis li .unassigned,#ninjatasks-base .tags .all-emojis li .unassigned,#ninjatasks-base .emojis .all-emojis li .unassigned {
+	margin-top:4px;
+	margin-left:4px
+}
+#ninjatasks-base .get-pro .shared-users li span.assigned,#ninjatasks-base .assign-to-user .shared-users li span.assigned,#ninjatasks-base .tags .shared-users li span.assigned,#ninjatasks-base .emojis .shared-users li span.assigned,#ninjatasks-base .get-pro .all-tags li span.assigned,#ninjatasks-base .assign-to-user .all-tags li span.assigned,#ninjatasks-base .tags .all-tags li span.assigned,#ninjatasks-base .emojis .all-tags li span.assigned,#ninjatasks-base .get-pro .all-emojis li span.assigned,#ninjatasks-base .assign-to-user .all-emojis li span.assigned,#ninjatasks-base .tags .all-emojis li span.assigned,#ninjatasks-base .emojis .all-emojis li span.assigned {
+	display:none
+}
+#ninjatasks-base .get-pro .shared-users li.assigned span.assigned,#ninjatasks-base .assign-to-user .shared-users li.assigned span.assigned,#ninjatasks-base .tags .shared-users li.assigned span.assigned,#ninjatasks-base .emojis .shared-users li.assigned span.assigned,#ninjatasks-base .get-pro .all-tags li.assigned span.assigned,#ninjatasks-base .assign-to-user .all-tags li.assigned span.assigned,#ninjatasks-base .tags .all-tags li.assigned span.assigned,#ninjatasks-base .emojis .all-tags li.assigned span.assigned,#ninjatasks-base .get-pro .all-emojis li.assigned span.assigned,#ninjatasks-base .assign-to-user .all-emojis li.assigned span.assigned,#ninjatasks-base .tags .all-emojis li.assigned span.assigned,#ninjatasks-base .emojis .all-emojis li.assigned span.assigned {
+	display:block;
+	margin-top:7px;
+	margin-right:3px
+}
+#ninjatasks-base .get-pro .shared-users li.selected,#ninjatasks-base .assign-to-user .shared-users li.selected,#ninjatasks-base .tags .shared-users li.selected,#ninjatasks-base .emojis .shared-users li.selected,#ninjatasks-base .get-pro .all-tags li.selected,#ninjatasks-base .assign-to-user .all-tags li.selected,#ninjatasks-base .tags .all-tags li.selected,#ninjatasks-base .emojis .all-tags li.selected,#ninjatasks-base .get-pro .all-emojis li.selected,#ninjatasks-base .assign-to-user .all-emojis li.selected,#ninjatasks-base .tags .all-emojis li.selected,#ninjatasks-base .emojis .all-emojis li.selected {
+	font-weight:bold;
+	background:#328ad6;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+#ninjatasks-base .get-pro .shared-users li.selected .unassigned:before,#ninjatasks-base .assign-to-user .shared-users li.selected .unassigned:before,#ninjatasks-base .tags .shared-users li.selected .unassigned:before,#ninjatasks-base .emojis .shared-users li.selected .unassigned:before,#ninjatasks-base .get-pro .all-tags li.selected .unassigned:before,#ninjatasks-base .assign-to-user .all-tags li.selected .unassigned:before,#ninjatasks-base .tags .all-tags li.selected .unassigned:before,#ninjatasks-base .emojis .all-tags li.selected .unassigned:before,#ninjatasks-base .get-pro .all-emojis li.selected .unassigned:before,#ninjatasks-base .assign-to-user .all-emojis li.selected .unassigned:before,#ninjatasks-base .tags .all-emojis li.selected .unassigned:before,#ninjatasks-base .emojis .all-emojis li.selected .unassigned:before,#ninjatasks-base .get-pro .shared-users li.selected .unassigned:after,#ninjatasks-base .assign-to-user .shared-users li.selected .unassigned:after,#ninjatasks-base .tags .shared-users li.selected .unassigned:after,#ninjatasks-base .emojis .shared-users li.selected .unassigned:after,#ninjatasks-base .get-pro .all-tags li.selected .unassigned:after,#ninjatasks-base .assign-to-user .all-tags li.selected .unassigned:after,#ninjatasks-base .tags .all-tags li.selected .unassigned:after,#ninjatasks-base .emojis .all-tags li.selected .unassigned:after,#ninjatasks-base .get-pro .all-emojis li.selected .unassigned:after,#ninjatasks-base .assign-to-user .all-emojis li.selected .unassigned:after,#ninjatasks-base .tags .all-emojis li.selected .unassigned:after,#ninjatasks-base .emojis .all-emojis li.selected .unassigned:after {
+	border:none
+}
+#ninjatasks-base .get-pro .shared-users li.selected .name,#ninjatasks-base .assign-to-user .shared-users li.selected .name,#ninjatasks-base .tags .shared-users li.selected .name,#ninjatasks-base .emojis .shared-users li.selected .name,#ninjatasks-base .get-pro .all-tags li.selected .name,#ninjatasks-base .assign-to-user .all-tags li.selected .name,#ninjatasks-base .tags .all-tags li.selected .name,#ninjatasks-base .emojis .all-tags li.selected .name,#ninjatasks-base .get-pro .all-emojis li.selected .name,#ninjatasks-base .assign-to-user .all-emojis li.selected .name,#ninjatasks-base .tags .all-emojis li.selected .name,#ninjatasks-base .emojis .all-emojis li.selected .name {
+	color:#fff
+}
+#ninjatasks-base .get-pro .all-emojis li .name,#ninjatasks-base .assign-to-user .all-emojis li .name,#ninjatasks-base .tags .all-emojis li .name,#ninjatasks-base .emojis .all-emojis li .name {
+	left:30px
+}
+#ninjatasks-base .get-pro .all-emojis .emoji,#ninjatasks-base .assign-to-user .all-emojis .emoji,#ninjatasks-base .tags .all-emojis .emoji,#ninjatasks-base .emojis .all-emojis .emoji {
+	position:absolute;
+	left:7px;
+	top:12px
+}
+#ninjatasks-base .get-pro .all-tags li .name,#ninjatasks-base .assign-to-user .all-tags li .name,#ninjatasks-base .tags .all-tags li .name,#ninjatasks-base .emojis .all-tags li .name {
+	left:6px
+}
+html[dir="rtl"] #ninjatasks-base .assign-to-user li .avatar,html[dir="rtl"] #ninjatasks-base .assign-to-user li .unassigned {
+	margin-right:4px;
+	margin-left:initial
+}
+html[dir="rtl"] #ninjatasks-base .assign-to-user li .name {
+	position:absolute;
+	right:38px;
+	left:18px
+}

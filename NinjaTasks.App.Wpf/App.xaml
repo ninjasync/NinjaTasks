@@ -1,0 +1,66 @@
+﻿<Application x:Class="NinjaTasks.App.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ninja="http://schemas.ninjatools.org/winfx/xaml/wpf"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/ScrollViewerStyle.xaml"/>
+                <ResourceDictionary Source="Themes/ScrollbarStyle.xaml"/>
+                <ResourceDictionary Source="Themes/ListBoxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <ninja:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+            <ninja:BoolToVisibilityConverter x:Key="InvertBoolToVisibility" Invert="True"/>
+            <ninja:StringToVisibiltyConverter x:Key="StringToVisibility" FalseValue="Hidden"/>
+            <ninja:VisibleConverter x:Key="Visible" />
+            <ninja:BooleanNotConverter x:Key="BooleanNotConverter"  />
+
+            <!-- don't now, why these don't have VerticalAlignment=Center per default... -->
+            <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="Padding" Value="2,1"/>
+            </Style>
+            <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="2"/>
+            </Style>
+
+            <Style TargetType="ItemsControl" x:Key="ItemsControlEmptyStyle" BasedOn="{StaticResource {x:Type ItemsControl}}">
+                <Style.Triggers>
+                    <DataTrigger  Binding="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=Items.Count}" 
+                                  Value="0" >
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <TextBlock Foreground="DarkGray" 
+                                                   HorizontalAlignment="Center" 
+                                                   VerticalAlignment="Center"
+                                                   Text="No items to display">
+                                        </TextBlock>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+         
+        
+    </Application.Resources>
+</Application>

@@ -1,0 +1,6 @@
+bin/
+obj/
+*.suo
+*.user
+*.userprefs
+/3rdParty/Wpf/*.pdb

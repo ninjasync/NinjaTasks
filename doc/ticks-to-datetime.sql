@@ -1,0 +1,1 @@
+select datetime((CreatedAt-621355968000000000)/10000000, 'unixepoch'), *  from TodoTask

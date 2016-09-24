@@ -1,0 +1,25 @@
+﻿<div id="lists" role="navigation">
+    <div class="lists-inner">
+
+        <span>Search: <input ng-model="query"></span>
+
+        <div id="user-toolbar">
+            <a class="user" data-path="me" role="button" tabindex="0" aria-label="Peter Pettersson Nutzermenü" aria-expanded="false" aria-haspopup="true">
+                <span class="user-avatar">(User )</span>
+            </a>
+        </div>
+        <ul clas="lists-collection">
+
+            <li class="sidebarItem list draggable owner " ui-sref-active="active"
+                role="menuitem" tabindex="0" draggable="true"
+                ng-repeat="list in lists | filter:query">
+                
+                <a ui-sref="home({listId: list.id})">
+                    <span class="list-icon"></span>
+                    <span class="title">{{ !list.description ? 'Inbox' : list.description}}</span>
+                    <span class="count">{{ list.pendingTasksCount === 0 ? '' : list.pendingTasksCount}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
