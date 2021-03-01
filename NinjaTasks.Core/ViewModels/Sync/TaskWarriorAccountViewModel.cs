@@ -1,10 +1,11 @@
 ﻿using System.Linq;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Navigation;
+using MvvmCross.Plugin.Messenger;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Model.Sync;
 using NinjaTasks.Sync.TaskWarrior;
 using NinjaTools.Connectivity.ViewModels.Messages;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTasks.Core.ViewModels.Sync
 {
@@ -16,13 +17,15 @@ namespace NinjaTasks.Core.ViewModels.Sync
 
         private readonly ITaskWarriorAccountsStorage _storage;
         private readonly IMvxMessenger _messenger;
-
+        private readonly IMvxNavigationService _nav;
 
         public TaskWarriorAccountViewModel(ITaskWarriorAccountsStorage storage,
-                                           IMvxMessenger messenger)
+                                           IMvxMessenger messenger,
+                                           IMvxNavigationService nav)
         {
             _storage = storage;
             _messenger = messenger;
+            _nav = nav;
         }
 
         public string ClientCertificateAndKeyPfxFile
@@ -82,7 +85,7 @@ namespace NinjaTasks.Core.ViewModels.Sync
         {
              _storage.SaveAccount(Account);
             _messenger.Publish(new RemoteDeviceSelectedMessage(this, null, null));
-            Close(this);
+            _nav.Close(this);
         }
 
         public override void Start()

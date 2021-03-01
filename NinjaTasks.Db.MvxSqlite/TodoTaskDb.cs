@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
+using NinjaSync.Storage.MvxSqlite;
 using NinjaTasks.Model;
 
 namespace NinjaTasks.Db.MvxSqlite
@@ -40,8 +41,9 @@ namespace NinjaTasks.Db.MvxSqlite
 
         public DateTime? CompletedAt { get { return _base.CompletedAt; } set { _base.CompletedAt = value; } }
 
-        [Ignore]
-        public List<AdditionalProperty> AdditionalProperties { get { return _base.AdditionalProperties; } set { _base.AdditionalProperties = value; }  }
+        // WHY DOES THIS NOT WORK?
+        //[Ignore]
+        //public List<AdditionalProperty> AdditionalProperties { get { return _base.AdditionalProperties; } set { _base.AdditionalProperties = value; }  }
 
 
         public TodoTaskDb()

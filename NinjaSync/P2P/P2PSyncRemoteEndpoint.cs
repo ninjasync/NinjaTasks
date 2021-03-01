@@ -38,7 +38,7 @@ namespace NinjaSync.P2P
             {
                 return GetMissingCommitsImpl(lastCommonCommitId, myStorageId, myCommits);
             }
-            catch (CommitNotFoundException ex)
+            catch (CommitNotFoundException)
             {
                 throw;
             }

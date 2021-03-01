@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using GongSolutions.Wpf.DragDrop;
 using NinjaTasks.Core.ViewModels;
 using NinjaTasks.Model.Storage.Mocks;
@@ -92,7 +92,7 @@ namespace NinjaTasks.App.Wpf.Views
     public class MockTodoListsViewModel : TodoListsViewModel
     {
         public MockTodoListsViewModel()
-            : base(new MockTodoStorage(), null, new MvxMessengerHub())
+            : base(new MockTodoStorage(), null, new MvxMessengerHub(), null)
         {
             OnActivate();
         }

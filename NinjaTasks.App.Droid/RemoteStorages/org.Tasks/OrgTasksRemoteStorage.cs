@@ -259,7 +259,6 @@ namespace NinjaTasks.App.Droid.RemoteStorages.org.Tasks
 
         public CommitList SaveModificationsForIds(CommitList commits, IProgress progress)
         {
-            int idx = 0;
             foreach (TodoList newList in commits.Commits.SelectMany(o=>o.Modified)
                                               .OfTypeTodoList()
                                               .Where(p => p.Object.IsNew)

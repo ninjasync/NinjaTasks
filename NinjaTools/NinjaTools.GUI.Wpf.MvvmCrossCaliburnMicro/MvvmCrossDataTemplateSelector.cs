@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Views;
+using MvvmCross;
+using MvvmCross.Views;
 
 namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
 {
@@ -38,19 +38,28 @@ namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
             return template ?? base.SelectTemplate(item, container);
         }
 
-        [DebuggerNonUserCode]
-        [DebuggerStepThrough]
+        private class InvalidViewFinder : IMvxViewFinder
+        {
+            public Type GetViewType(Type viewModelType)
+            {
+                return GetType();
+            }
+        }
+
         private static Type GetViewType(Type viewModelType)
         {
-            try
-            {
-                // Not sure why they need to use exceptions...
-                return Mvx.GetSingleton<IMvxViewFinder>().GetViewType(viewModelType);
-            }
-            catch (KeyNotFoundException)
-            {
-                return null;
-            }
+            // Not sure why they need to use exceptions...
+
+            // we want to prevent the KeyNotFoundException, as they are more than 
+            // annoying during debugging in VS2015
+
+            var vf = Mvx.IoCProvider.GetSingleton<IMvxViewFinder>();
+
+            (vf as IMvxViewsContainer)?.SetLastResort(new InvalidViewFinder());
+            var ret = vf.GetViewType(viewModelType);
+            (vf as IMvxViewsContainer)?.SetLastResort(null);
+
+            return ret == typeof(InvalidViewFinder) ? null : ret;
         }
     }
 }

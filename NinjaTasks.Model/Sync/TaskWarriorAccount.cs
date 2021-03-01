@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 
 namespace NinjaTasks.Model.Sync
 {
@@ -55,7 +55,9 @@ namespace NinjaTasks.Model.Sync
                                         ;
             }
         }
-        
+
+        #pragma warning disable CS0067
         public event PropertyChangedEventHandler PropertyChanged;
+        #pragma warning restore CS0067
     }
 }

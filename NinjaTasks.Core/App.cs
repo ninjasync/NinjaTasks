@@ -1,22 +1,14 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <summary>
-//    Defines the App type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Cirrious.CrossCore.IoC;
-using Cirrious.MvvmCross.ViewModels;
+using MvvmCross.IoC;
+using MvvmCross.Navigation.EventArguments;
+using MvvmCross.ViewModels;
 using NinjaTasks.Core.ViewModels;
 
 namespace NinjaTasks.Core
 {
-    /// <summary>
-    /// Define the App type.
-    /// </summary>
     public class App : MvxApplication
     {
         public override void Initialize()
@@ -66,7 +58,7 @@ namespace NinjaTasks.Core
             // http://stackoverflow.com/questions/16723078/mvvmcross-does-showviewmodel-always-construct-new-instances/16723459#16723459
             private WeakReference<AppViewModel> _appModel;
 
-            public override IMvxViewModel Load(Type viewModelType, IMvxBundle parameterValues, IMvxBundle savedState)
+            public override IMvxViewModel Load(Type viewModelType, IMvxBundle parameterValues, IMvxBundle savedState, IMvxNavigateEventArgs args)
             {
                 if (viewModelType == typeof(AppViewModel))
                 {
@@ -74,13 +66,13 @@ namespace NinjaTasks.Core
                     // try to keep only a single instance of AppViewModel.
                     if (_appModel == null || (!_appModel.TryGetTarget(out ret)))
                     {
-                        ret = (AppViewModel)base.Load(viewModelType, parameterValues, savedState);
+                        ret = (AppViewModel)base.Load(viewModelType, parameterValues, savedState, args);
                         _appModel = new WeakReference<AppViewModel>(ret);
                     }
                     return ret;
                 }
 
-                return base.Load(viewModelType, parameterValues, savedState);
+                return base.Load(viewModelType, parameterValues, savedState, args);
             }
         }
     }

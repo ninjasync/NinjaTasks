@@ -1,59 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using Caliburn.Micro;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Exceptions;
-using Cirrious.CrossCore.Platform;
-using Cirrious.MvvmCross.ViewModels;
-using Cirrious.MvvmCross.Views;
-using Cirrious.MvvmCross.Wpf.Views;
+using MvvmCross;
+using MvvmCross.Exceptions;
+using MvvmCross.Platforms.Wpf.Presenters;
+using MvvmCross.Platforms.Wpf.Views;
+using MvvmCross.Presenters.Hints;
+using MvvmCross.ViewModels;
+using MvvmCross.Views;
+using NinjaTools.Logging;
 
 namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
 {
     public class MyWpfPresenter : IMvxWpfViewPresenter
     {
-        private readonly Window _mainWindow;
+        private readonly ContentControl _mainWindow;
+        private static ILogger Log = NinjaTools.Logging.LogManager.GetCurrentClassLogger();
 
-        public MyWpfPresenter(Window mainWindow)
+        public MyWpfPresenter(ContentControl mainWindow)
         {
             _mainWindow = mainWindow;
         }
 
-        public virtual void Show(MvxViewModelRequest request)
+        public virtual Task<bool> Show(MvxViewModelRequest request)
         {
             try
             {
                 IMvxNativeView nativeView = LoadAsNativeView(request);
-
                 if (nativeView != null)
                 {
-                    Present(nativeView);
-                    return;
+                    nativeView.Show();
+                    return Task.FromResult(true);
                 }
 
-                var loader = Mvx.Resolve<IMvxSimpleWpfViewLoader>();
+                var loader = Mvx.IoCProvider.Resolve<IMvxWpfViewLoader>();
                 var view = loader.CreateView(request);
-                Present(view);
+                return Present(view);
             }
             catch (Exception exception)
             {
-                MvxTrace.Error("Error seen during navigation request to {0} - error {1}", request.ViewModelType.Name,
+                Log.Error("Error seen during navigation request to {0} - error {1}", request.ViewModelType.Name,
                                exception.ToLongString());
                 throw;
             }
         }
 
-        private void Present(IMvxNativeView nativeView)
-        {
-            nativeView.Show();
-        }
-
         private IMvxNativeView LoadAsNativeView(MvxViewModelRequest request)
         {
-            var finder = Mvx.Resolve<IMvxViewFinder>();
+            var finder = Mvx.IoCProvider.Resolve<IMvxViewFinder>();
 
             Type viewType = finder.GetViewType(request.ViewModelType);
             if (viewType == null)
@@ -66,18 +65,35 @@ namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
             if (instance == null)
                 throw new MvxException("View not loaded for " + viewType);
 
-            IMvxViewModelLoader mvxViewModelLoader = Mvx.Resolve<IMvxViewModelLoader>();
-            instance.ViewModel = mvxViewModelLoader.LoadViewModel(request, null);
+            if (request is MvxViewModelInstanceRequest req)
+            {
+                instance.ViewModel = req.ViewModelInstance;
+            }
+            else
+            {
+                IMvxViewModelLoader mvxViewModelLoader = Mvx.IoCProvider.Resolve<IMvxViewModelLoader>();
+                instance.ViewModel = mvxViewModelLoader.LoadViewModel(request, null);
+            }
 
             return instance;
         }
 
-        public void Present(FrameworkElement view)
+        public Task<bool> Present(FrameworkElement view)
         {
             IMvxView mvxView = (IMvxView)view;
-            var showAsDialog = mvxView.GetType().Name.EndsWith("Dlg", StringComparison.Ordinal);
+            var showAsDialog = mvxView.GetType().Name.EndsWith("Dlg", StringComparison.Ordinal) || mvxView is Window;
 
-            var window = EnsureWindow(mvxView.ViewModel, mvxView, showAsDialog);
+            Window window = view as Window;
+
+            if (window == null && !_mainWindow.HasContent && _mainWindow is Window)
+            {
+                window = (Window)_mainWindow;
+                window.Content = view;
+            }
+            else
+            {
+                window = EnsureWindow(mvxView.ViewModel, mvxView, showAsDialog);
+            }
 
             var haveDisplayName = mvxView.ViewModel as MVVM.IHaveDisplayName;
             if (haveDisplayName != null && !ConventionManager.HasBinding(window, Window.TitleProperty))
@@ -93,34 +109,50 @@ namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
                 window.ShowDialog();
             else
                 _mainWindow.Content = view;
+
+            return Task.FromResult(true);
         }
 
-        public void ChangePresentation(MvxPresentationHint hint)
+        public Task<bool> ChangePresentation(MvxPresentationHint hint)
         {
-            var close = hint as MvxClosePresentationHint;
-            if (close != null)
+            if (hint is MvxClosePresentationHint close)
             {
-                var currentMainView = _mainWindow.Content as IMvxView;
-                if (currentMainView != null && currentMainView.ViewModel == close.ViewModelToClose)
+                if (_mainWindow.Content is IMvxView currentMainView
+                 && currentMainView.ViewModel == close.ViewModelToClose)
                 {
-                    _mainWindow.Close();
-                    return;
+                    if (_mainWindow is Window wnd)
+                    {
+                        wnd.Close();
+                        return Task.FromResult(true);
+                    }
                 }
 
                 foreach (var window in Application.Current.Windows.OfType<IMvxView>())
                     if (window.ViewModel == close.ViewModelToClose)
                     {
                         ((Window) window).Close();
-                        return;
+                        return Task.FromResult(true);
                     }
                 //throw new Exception("unable to close " + close.ViewModelToClose);
-                MvxTrace.Warning("unable to close " + close.ViewModelToClose);  
+                Log.Warn("unable to close " + close.ViewModelToClose);  
             }
             else
             {
-                MvxTrace.Warning("Hint ignored {0}", hint.GetType().Name);  
+                Log.Warn("Hint ignored {0}", hint.GetType().Name);  
             }
+            return Task.FromResult(false);
         }
+
+        public void AddPresentationHintHandler<THint>(Func<THint, Task<bool>> action) where THint : MvxPresentationHint
+        {
+        }
+
+        public Task<bool> Close(IMvxViewModel toClose)
+        {
+            return Task.FromResult(false);
+            //throw new NotImplementedException();
+        }
+
 
         private void ApplySizeConvention(Window window, FrameworkElement view, bool showAsDialog)
         {

@@ -1,6 +1,6 @@
-﻿using System;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
-using NinjaTasks.Model.Journal;
+﻿using NinjaTools.Sqlite;
+using NinjaSync.Model.Journal;
+using System;
 
 namespace NinjaTasks.Db.MvxSqlite
 {

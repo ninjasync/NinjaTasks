@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools" >
+
+    <group android:id="@+id/activity_menu_group" >
+        <item
+            android:id="@+id/menu_toggle_completed"
+            android:icon="?ic_action_toggle_completed"
+            android:orderInCategory="0"
+            app:showAsAction="ifRoom"
+            android:title="@string/menu_toggle_completed"/>
+    </group>
+    <group
+        android:id="@+id/activity_listslist_menu_group"
+        android:visible="false" >
+        <item
+            android:id="@+id/drawer_menu_createlist"
+            android:icon="?ic_action_add_list"
+            android:orderInCategory="997"
+            app:showAsAction="ifRoom"
+            android:title="@string/menu_createlist"/>
+    </group>
+
+    <item
+        android:id="@+id/menu_preferences"
+        android:icon="?action_settings"
+        android:orderInCategory="999"
+        app:showAsAction="never"
+        android:title="@string/menu_preferences"/>
+
+</menu>

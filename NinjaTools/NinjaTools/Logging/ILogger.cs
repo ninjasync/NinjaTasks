@@ -38,7 +38,10 @@ namespace NinjaTools.Logging
         void Error(string msg);
 
         void Error(Exception ex);
+
+        [Obsolete("use Error(ex, msg)")]
         void Error(string msg, Exception ex);
+        void Error(Exception ex, string msg);
 
         bool IsTraceEnabled { get; }
         bool IsDebugEnabled { get; }
@@ -97,46 +100,14 @@ namespace NinjaTools.Logging
         {
         }
 
+        public void Error(Exception ex, string msg)
+        {
+        }
+
         public bool IsTraceEnabled { get { return false; } }
         public bool IsDebugEnabled { get { return false; } }
         public bool IsInfoEnabled { get { return false; } }
         public bool IsWarnEnabled { get { return false; } }
         public bool IsErrorEnabled { get { return false; } }
-    }
-
-    public class LogManager : ILogManager
-    {
-        public static ILogManager Instance = new LogManager();
-
-        public static ILogger GetLogger(string name)
-        {
-            return Instance.GetLogger(name);
-        }
-
-        public static ILogger GetLogger(Type type)
-        {
-            return Instance.GetLogger(type);
-        }
-
-        public static ILogger GetCurrentClassLogger()
-        {
-            return Instance.GetCurrentClassLogger();
-        }
-
-        ILogger ILogManager.GetCurrentClassLogger()
-        {
-            return new NullLogger();
-        }
-
-
-        ILogger ILogManager.GetLogger(string name)
-        {
-            return new NullLogger();
-        }
-
-        ILogger ILogManager.GetLogger(Type type)
-        {
-            return new NullLogger();
-        }
     }
 }

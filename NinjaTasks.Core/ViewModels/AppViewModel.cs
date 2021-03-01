@@ -1,12 +1,15 @@
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross;
+using MvvmCross.Navigation;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
+using MvvmCross.ViewModels;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Core.Services;
 using NinjaTasks.Core.ViewModels.Sync;
 using NinjaTasks.Model.Storage;
 using NinjaTools;
-using NinjaTools.MVVM;
-using NinjaTools.MVVM.Services;
+using NinjaTools.GUI.MVVM;
+using NinjaTools.GUI.MVVM.Services;
 using NinjaTools.Npc;
 
 namespace NinjaTasks.Core.ViewModels
@@ -15,6 +18,7 @@ namespace NinjaTasks.Core.ViewModels
     {
         private readonly IShowMessageService _messageService;
         private readonly ISyncManager _syncManager;
+        private readonly IMvxNavigationService _nav;
 
         public TodoListsViewModel Lists { get; set; }
 
@@ -29,14 +33,16 @@ namespace NinjaTasks.Core.ViewModels
         public AppViewModel(ITodoStorage storage, 
                             IMvxMessenger messenger,
                             IShowMessageService messageService,
-                            ISyncManager syncManager
+                            ISyncManager syncManager,
+                            IMvxShareTask share,
+                            IMvxNavigationService nav
             )
         {
             _messageService = messageService;
             _syncManager = syncManager;
-
-            Lists = Mvx.IocConstruct<TodoListsViewModel>();
-            SearchViewModel = new TasksSearchViewModel(storage, Lists, messenger);
+            _nav = nav;
+            Lists = Mvx.IoCProvider.IoCConstruct<TodoListsViewModel>();
+            SearchViewModel = new TasksSearchViewModel(storage, Lists, messenger, share);
 #if !DOT42
             Lists.Subscribe(l => l.SelectedList, OnListsSelectedListChanged);
             SearchViewModel.Subscribe(l => l.SearchText, OnSearchTextChanged);
@@ -85,27 +91,29 @@ namespace NinjaTasks.Core.ViewModels
 
         public void SetupSync()
         {
-            ShowViewModel<ConfigureAccountsViewModel>();
+            _nav.Navigate<ConfigureAccountsViewModel>();
         }
 
-#if !DOT42
         public void Import()
         {
             var ttlvm = SelectedList as TaskListViewModel;
-            ShowViewModel<ImportExportViewModel>(new {SelectedListId = ttlvm == null ? null : ttlvm.List.Id, 
-                                                IsExport=false});
+            _nav.Navigate<ImportExportViewModel>(new
+            {
+                SelectedListId = ttlvm == null ? null : ttlvm.List.Id,
+                IsExport = false
+            });
         }
 
         public void Export()
         {
             var ttlvm = SelectedList as TaskListViewModel;
-            ShowViewModel<ImportExportViewModel>(new
+
+            _nav.Navigate<ImportExportViewModel>(new
             {
                 SelectedListId = ttlvm == null ? null : ttlvm.List.Id,
                 IsExport = true
             });
         }
-#endif
 
         public void Sync()
         {

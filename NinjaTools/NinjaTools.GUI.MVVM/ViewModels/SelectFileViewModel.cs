@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace NinjaTools.MVVM.ViewModels
+namespace NinjaTools.GUI.MVVM.ViewModels
 {
     public enum FileMode
     {

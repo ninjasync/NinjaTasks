@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Data;
 using System.Windows.Markup;
 
@@ -32,8 +33,9 @@ namespace NinjaTools.GUI.Wpf.Converter
                 return ((DescriptionAttribute) nAttributes.First()).Description;
 
             // If no description is found, the least we can do is replace underscores with spaces
-            TextInfo oTI = CultureInfo.CurrentCulture.TextInfo;
-            return oTI.ToTitleCase(oTI.ToLower(eValue.ToString().Replace("_", " ")));
+            //TextInfo oTI = CultureInfo.CurrentCulture.TextInfo;
+            //return oTI.ToTitleCase(oTI.ToLower(eValue.ToString().Replace("_", " ")));
+            return eValue.ToString().Replace("_", " ");
         }
 
         public static IEnumerable<KeyValuePair<Enum, string>> GetAllValuesAndDescriptions<T>() where T : struct, IConvertible, IComparable, IFormattable
@@ -45,9 +47,16 @@ namespace NinjaTools.GUI.Wpf.Converter
             if (!t.IsEnum)
                 throw new ArgumentException("T must be an enum type");
 
-            return Enum.GetValues(t)
-                       .Cast<Enum>()
-                       .Select((e) => new KeyValuePair<Enum, string>(e, Description(e))).ToList();
+            return t.GetFields()
+                   .Where(fi => fi.IsStatic)
+                   .OrderBy(fi => fi.MetadataToken)
+                   .Select(fi=>Enum.Parse(t, fi.Name))
+                   .Cast<Enum>()
+                   .Select((e) => new KeyValuePair<Enum, string>(e, Description(e))).ToList();
+
+            //return Enum.GetValues(t)
+            //       .Cast<Enum>()
+            //       .Select((e) => new KeyValuePair<Enum, string>(e, Description(e))).ToList();
         }
 
     }

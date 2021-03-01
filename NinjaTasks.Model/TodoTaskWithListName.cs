@@ -21,11 +21,7 @@ namespace NinjaTasks.Model
             ListName = listName;
         }
 
-#if !DOT42
-        public static readonly string ColListName = ExpressionHelper.GetMemberName<TodoTaskWithListName>(x => x.ListName);
-#else
-        public static readonly string ColListName = "ListName";
-#endif
+        public static readonly string ColListName = nameof(ListName);
 
         public override ITrackable Clone()
         {

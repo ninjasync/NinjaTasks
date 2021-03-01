@@ -17,7 +17,7 @@ namespace NinjaTasks.App.Droid.Services
         private readonly IAccountsStorage _account;
         private readonly ISyncManager _syncMan;
         private readonly SyncAccountType _type;
-        private readonly string _authority;
+        //private readonly string _authority;
         private int _syncRequired = 0;
 
         public AndroidSyncOnContentProviderChanged(Context ctx, 
@@ -53,7 +53,7 @@ namespace NinjaTasks.App.Droid.Services
          * Define a method that's called when data in the
          * observed content provider changes.
          */
-        public async /*override*/ void OnChange(bool selfChange, Uri changeUri)
+        public async override void OnChange(bool selfChange, Uri changeUri)
         {
             //if (selfChange) return;
             var account = _account.GetAccounts().FirstOrDefault(a => a.Type == _type);
@@ -70,7 +70,9 @@ namespace NinjaTasks.App.Droid.Services
             if (syncRequired == 0) return;
 
             // don't wait.
+            #pragma warning disable CS4014
             _syncMan.SyncNowAsync(account);
+            #pragma warning restore CS4014
         }
 
         protected override void Dispose(bool disposing)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Serialization;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 using NinjaSync.Model;
 using NinjaSync.Model.Journal;
 using NinjaTools;
@@ -52,28 +52,15 @@ namespace NinjaTasks.Model
 
         #region Initialization
 
-#if !DOT42
-        public static readonly string ColId = ExpressionHelper.GetMemberName<TodoTask>(x => x.Id);
-        public static readonly string ColDescription = ExpressionHelper.GetMemberName<TodoTask>(x => x.Description);
-        public static readonly string ColListFk = ExpressionHelper.GetMemberName<TodoTask>(x => x.ListFk);
-        public static readonly string ColStatus = ExpressionHelper.GetMemberName<TodoTask>(x => x.Status);
-        public static readonly string ColSortPosition = ExpressionHelper.GetMemberName<TodoTask>(x => x.SortPosition);
-        public static readonly string ColPriority = ExpressionHelper.GetMemberName<TodoTask>(x => x.Priority);
-        public static readonly string ColCreatedAt = ExpressionHelper.GetMemberName<TodoTask>(x => x.CreatedAt);
-        public static readonly string ColModifiedAt = ExpressionHelper.GetMemberName<TodoTask>(x => x.ModifiedAt);
-        public static readonly string ColCompletedAt = ExpressionHelper.GetMemberName<TodoTask>(x => x.CompletedAt);
-#else
-        public const string ColId = "Id";
-        public const string ColDescription = "Description";
-        public const string ColListFk = "ListFk";
-        public const string ColStatus = "Status";
-        public const string ColSortPosition = "SortPosition";
-        public const string ColPriority = "Priority";
-        public const string ColCreatedAt = "CreatedAt";
-        public const string ColModifiedAt = "ModifiedAt";
-        public const string ColCompletedAt = "CompletedAt";
-
-#endif
+        public static readonly string ColId           = nameof(Id);
+        public static readonly string ColDescription  = nameof(Description);
+        public static readonly string ColListFk       = nameof(ListFk);
+        public static readonly string ColStatus       = nameof(Status);
+        public static readonly string ColSortPosition = nameof(SortPosition);
+        public static readonly string ColPriority     = nameof(Priority);
+        public static readonly string ColCreatedAt    = nameof(CreatedAt);
+        public static readonly string ColModifiedAt   = nameof(ModifiedAt);
+        public static readonly string ColCompletedAt  = nameof(CompletedAt);
 
         protected static readonly string[] AllProperties = 
                                    {ColId, ColDescription, ColListFk, ColStatus, 

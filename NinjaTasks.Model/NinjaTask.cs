@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using Cirrious.NinjaTools.Sqlite;
 using NinjaTasks.Model.Journal;
 using NinjaTools;
 

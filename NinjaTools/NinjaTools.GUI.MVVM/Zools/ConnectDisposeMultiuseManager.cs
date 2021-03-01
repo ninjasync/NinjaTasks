@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace NinjaTools.MVVM.Zools
+namespace NinjaTools.GUI.MVVM.Zools
 {
     public class ConnectDisposeMultiuseManager : IDisposable
     {

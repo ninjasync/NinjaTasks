@@ -214,7 +214,7 @@ namespace NinjaSync.P2P
             // even those that did not change.
             // [actually, this list should only contain those value that did not change]
 
-            foreach (var del in keptFromLocal.Deleted)
+            foreach (Modification del in keptFromLocal.Deleted)
             {
                 JournalEntry e = new JournalEntry();
                 e.Type = del.Key.Type;
@@ -223,7 +223,7 @@ namespace NinjaSync.P2P
                 e.Change = ChangeType.Deleted;
                 _storage.AddOrReplaceJournalEntry(e);
             }
-            foreach (var mod in keptFromLocal.Modified)
+            foreach (Modification mod in keptFromLocal.Modified)
             {
                 JournalEntry e = new JournalEntry();
                 e.Type = mod.Key.Type;
@@ -236,7 +236,8 @@ namespace NinjaSync.P2P
                 if (props == null)
                     props = mod.Object.Properties.Select(c => new ModifiedProperty(c, mod.ModifiedAt))
                                                  .ToList();
-                foreach (var prop in props)
+                
+                foreach (ModifiedProperty prop in props)
                 {
                     e.Id = 0;
                     e.Change = ChangeType.Modified;

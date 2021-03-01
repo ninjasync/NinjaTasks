@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaSync;
 using NinjaTasks.Core.Services;
 using NinjaTasks.Core.Services.Server;
@@ -24,14 +24,17 @@ namespace NinjaTasks.App.Wpf.Views
     public class MockConfigureAccountsViewModel : ConfigureAccountsViewModel
     {
         public MockConfigureAccountsViewModel()
-            : base(new MockAccountsStorage(), new MockSyncManager(), new MvxMessengerHub(), new MockNinjaTasksConfigurationService(), null, null)
+            : base(new MockAccountsStorage(), new MockSyncManager(), new MvxMessengerHub(), new MockNinjaTasksConfigurationService(), null, null, null)
         {
             OnActivate();
         }
 
         public class MockSyncServerManager : ISyncServerManager
         {
+            #pragma warning disable CS0067
             public event PropertyChangedEventHandler PropertyChanged;
+            #pragma warning restore CS0067
+
             public void Dispose()
             {
             }
@@ -51,7 +54,10 @@ namespace NinjaTasks.App.Wpf.Views
                 throw new NotImplementedException();
             }
 
+            #pragma warning disable CS0067
             public event PropertyChangedEventHandler PropertyChanged;
+            #pragma warning restore CS0067
+
             public bool IsEnabled { get; set; }
             public int ActiveSyncs { get; private set; }
 

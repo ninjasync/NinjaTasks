@@ -2,7 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
 using NinjaTasks.Model.Storage;
 
 namespace NinjaTasks.Core.ViewModels
@@ -12,8 +13,9 @@ namespace NinjaTasks.Core.ViewModels
         private readonly TodoListsViewModel _taskLists;
         public string SearchText { get; set; }
         
-        public TasksSearchViewModel(ITodoStorage storage, TodoListsViewModel taskLists, IMvxMessenger messenger) 
-                            : base(storage, messenger)
+        public TasksSearchViewModel(ITodoStorage storage, TodoListsViewModel taskLists,
+                                    IMvxMessenger messenger, IMvxShareTask share) 
+                            : base(storage, messenger, share)
         {
             _taskLists = taskLists;
         }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -20,6 +21,7 @@ namespace NinjaTasks.App.Wpf.Controls
         public static readonly DependencyProperty MaxLengthProperty;
         public static readonly DependencyProperty IsReadOnlyProperty;
         public static readonly DependencyProperty StartEditOnFocusGainProperty;
+        public static readonly DependencyProperty AutoHyperlinksProperty;
 
         private Panel _container;
         private bool _contextMenuOpening;
@@ -27,6 +29,7 @@ namespace NinjaTasks.App.Wpf.Controls
         private TextBox _editBox;
         private Control _hiddenFocus;
         private bool _stoppingEditing;
+        private BindingExpressionBase _textBinding;
 
         static EditableLabel()
         {
@@ -45,13 +48,14 @@ namespace NinjaTasks.App.Wpf.Controls
                 new FrameworkPropertyMetadata(0));
             IsReadOnlyProperty = TextBoxBase.IsReadOnlyProperty.AddOwner(typeof (EditableLabel),
                                                                     new FrameworkPropertyMetadata(false, OnIsReadonlyChanged));
+            AutoHyperlinksProperty = DependencyProperty.RegisterAttached("AutoHyperlinks", typeof(bool),
+                                                            typeof(EditableLabel), new PropertyMetadata(false, AutoHyperlinksChanged));
 
             StartEditOnFocusGainProperty = DependencyProperty.Register("StartEditOnFocusGain", typeof(bool), typeof(EditableLabel), new PropertyMetadata(true));
 
             DefaultStyleKeyProperty.OverrideMetadata(typeof (EditableLabel),
                 new FrameworkPropertyMetadata(typeof (EditableLabel)));
         }
-
 
         public bool StartEditOnFocusGain { get { return (bool) GetValue(StartEditOnFocusGainProperty); } set { SetValue(StartEditOnFocusGainProperty, value); } }
 
@@ -79,6 +83,12 @@ namespace NinjaTasks.App.Wpf.Controls
             set { base.SetValue(TextWrappingProperty, value); }
         }
 
+        public bool AutoHyperlinks
+        {
+            get { return (bool)base.GetValue(AutoHyperlinksProperty); }
+            set { base.SetValue(AutoHyperlinksProperty, value); }
+        }
+
         [DefaultValue(0)]
         public int MaxLength
         {
@@ -98,25 +108,39 @@ namespace NinjaTasks.App.Wpf.Controls
             base.OnApplyTemplate();
             _container = this.GetTemplateChild("PART_Container") as Panel;
             //_container.SetBinding(Control.BackgroundProperty, new Binding {Source = this, Path = new PropertyPath(BackgroundProperty)});
-            _container.SetBinding(VerticalContentAlignmentProperty, new Binding {Source = this, Path = new PropertyPath(VerticalContentAlignmentProperty)});
-            
+            _container.SetBinding(VerticalContentAlignmentProperty, new Binding { Source = this, Path = new PropertyPath(VerticalContentAlignmentProperty) });
+
             _hiddenFocus = this.GetTemplateChild("PART_FocusElement") as Control;
 
             _editBox = this.GetTemplateChild("PART_Edit") as TextBox;
-            _editBox.SetBinding(TextBox.MaxLengthProperty, new Binding {Source = this, Path = new PropertyPath(MaxLengthProperty)});
+            _editBox.SetBinding(TextBox.MaxLengthProperty, new Binding { Source = this, Path = new PropertyPath(MaxLengthProperty) });
             _editBox.SetBinding(TextBoxBase.IsReadOnlyProperty, new Binding { Source = this, Path = new PropertyPath(IsReadOnlyProperty), Mode = BindingMode.OneWay });
-            _editBox.SetBinding(TextBox.TextWrappingProperty, new Binding {Source = this, Path = new PropertyPath(TextWrappingProperty)});
-            
+            _editBox.SetBinding(TextBox.TextWrappingProperty, new Binding { Source = this, Path = new PropertyPath(TextWrappingProperty) });
+
             _displayBlock = this.GetTemplateChild("PART_Display") as TextBlock;
-            _displayBlock.SetBinding(TextBlock.TextProperty, new Binding {Source = this, Path = new PropertyPath(TextProperty)});
-            _displayBlock.SetBinding(TextBlock.TextTrimmingProperty, new Binding {Source = this, Path = new PropertyPath(TextTrimmingProperty)});
-            _displayBlock.SetBinding(TextBlock.TextWrappingProperty, new Binding {Source = this, Path = new PropertyPath(TextWrappingProperty)});
+            _displayBlock.SetBinding(TextBlock.TextTrimmingProperty, new Binding { Source = this, Path = new PropertyPath(TextTrimmingProperty) });
+            _displayBlock.SetBinding(TextBlock.TextWrappingProperty, new Binding { Source = this, Path = new PropertyPath(TextWrappingProperty) });
+
+            SetTextBinding();
             SetupFocusHandling();
 
             if (IsEditing && !IsReadOnly)
             {
                 OnEnterEditMode();
             }
+        }
+
+        private void SetTextBinding()
+        {
+            if (_displayBlock == null)
+                return; // not fully initialized?
+
+            var binding = new Binding { Source = this, Path = new PropertyPath(TextProperty) };
+
+            if (!AutoHyperlinks)
+                _textBinding = _displayBlock.SetBinding(TextBlock.TextProperty, binding);
+            else
+                _textBinding = _displayBlock.SetBinding(NinjaTools.GUI.Wpf.Behaviors.AutoHyperlinks.TextProperty, binding);
         }
 
         private void SetupFocusHandling()
@@ -182,17 +206,20 @@ namespace NinjaTasks.App.Wpf.Controls
             }
 
         }
+
+        private static void AutoHyperlinksChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            (d as EditableLabel)?.SetTextBinding();
+        }
+
+
         private static void OnIsReadonlyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var editableLabel = d as EditableLabel;
-            if (editableLabel == null) return;
-            editableLabel.UpdateEditingStatus();
+            (d as EditableLabel)?.UpdateEditingStatus();
         }
         private static void IsEditingPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var editableLabel = d as EditableLabel;
-            if (editableLabel == null) return;
-            editableLabel.UpdateEditingStatus();
+            (d as EditableLabel)?.UpdateEditingStatus();
         }
 
         private void UpdateEditingStatus()

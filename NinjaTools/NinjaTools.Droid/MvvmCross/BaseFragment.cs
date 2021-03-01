@@ -1,17 +1,8 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <summary>
-//    Defines the BaseView type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using Android.App;
-using NinjaTools.MVVM;
+using AndroidX.Fragment.App;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTools.Droid.MvvmCross
 {
-    /// <summary>
-    ///    Defines the BaseView type.
-    /// </summary>
     public abstract class BaseFragment : Fragment
     {
         public object ViewModel { get; protected set; }

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Microsoft.Win32;
-using NinjaTools.MVVM.Services;
-using NinjaTools.MVVM.ViewModels;
+using NinjaTools.GUI.MVVM.Services;
+using NinjaTools.GUI.MVVM.ViewModels;
 
 namespace NinjaTools.GUI.Wpf.Services
 {

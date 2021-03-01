@@ -1,0 +1,53 @@
+﻿    <ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Basics.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="AttachmentButton" TargetType="Button">
+        <Setter Property="Background" Value="#01FFFFFF"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <StackPanel Orientation="Horizontal" Background="{TemplateBinding Background}">
+                        <Viewbox Height="16" Width="16" Margin="5,0" SnapsToDevicePixels="True">
+                            <Canvas Height="16" Width="16"  >
+                                <Path  x:Name="background"
+                                       Fill="Transparent" Stroke="Transparent"
+                                       SnapsToDevicePixels="True"
+                                       Data="F1M6.5,1.9727C8.43,1.9727,10,3.5427,10,5.4727L10,6.9727 12,6.9727 12,9.4727C12,11.9547 9.981,13.9727 7.5,13.9727 5.019,13.9727 3,11.9547 3,9.4727L3,5.4727C3,3.5427,4.57,1.9727,6.5,1.9727" 
+                                       />
+                                <Path  x:Name="foreground"
+                                       StrokeThickness="1" 
+                                       Stroke="Transparent"
+                                       SnapsToDevicePixels="True" 
+                                       Data="F1M4,9.4731L4,5.4731C4,4.0921 5.119,2.9731 6.5,2.9731 7.881,2.9731 9,4.0921 9,5.4731L9,8.9731C9,8.9731 9,10.4731 7.5,10.4731 6,10.4731 6,8.9731 6,8.9731L6,5.4731 7,5.4731 7,8.9731C7,8.9731 7,9.4731 7.5,9.4731 8,9.4731 8,8.9731 8,8.9731L8,5.4731C8,4.6441 7.329,3.9731 6.5,3.9731 5.672,3.9731 5,4.6441 5,5.4731L5,9.4731C5,10.8541 6.119,11.9731 7.5,11.9731 8.881,11.9731 10,10.8541 10,9.4731L10,7.9731 11,7.9731 11,9.4731C11,11.4061 9.433,12.9731 7.5,12.9731 5.566,12.9731 4,11.4061 4,9.4731" 
+                                       />
+                            </Canvas>
+                        </Viewbox>
+                        <ContentPresenter Content="{TemplateBinding Content}"  />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="False">
+                            <Setter TargetName="foreground" Property="Fill" Value="#40000000"/>
+                            <Setter TargetName="background" Property="Fill" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="foreground" Property="Fill" Value="#A0000000"/>
+                            <Setter TargetName="background" Property="Fill" Value="White"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="foreground" Property="Fill" Value="Black"/>
+                            <!--<Setter TargetName="foreground" Property="Stroke" Value="#A0000000"/>-->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

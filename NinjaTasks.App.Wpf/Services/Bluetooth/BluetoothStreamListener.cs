@@ -1,56 +1,67 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using InTheHand.Net.Sockets;
 using NinjaTools.Connectivity.Connections;
 using NinjaTools.Connectivity.Streams;
 
-namespace NinjaTasks.App.Wpf.Services.Bluetooth
+namespace NinjaTools.Connectivity.Bluetooth._32Feet
 {
     public class BluetoothStreamListener : IStreamListener
     {
         private readonly Guid _guid;
         private BluetoothListener _listener;
 
-        public BluetoothStreamListener(Guid guid)
+        public bool UseBufferedStream { get; set; }
+
+        public BluetoothStreamListener(Guid guid, bool useBufferedStream = true)
         {
+            UseBufferedStream = useBufferedStream;
             _guid = guid;
         }
 
         public void Dispose()
         {
-            var l = _listener;
-            if (l == null) return;
-
-            l.Stop();
+            _listener?.Stop();
             _listener = null;
         }
 
-        public async Task<Stream> ListenAsync(CancellationToken token)
+        public async Task<Stream> ListenAsync(CancellationToken cancel)
         {
-            _listener = new BluetoothListener(_guid);
+            var l = _listener = new BluetoothListener(_guid);
 
-            try
+            using (cancel.Register(Dispose))
             {
-                _listener.Start();
-                token.Register(Dispose);
-
-                var client = await Task<BluetoothClient>.Factory.FromAsync(_listener.BeginAcceptBluetoothClient,
-                    _listener.EndAcceptBluetoothClient, null);
-                if (_listener == null)
+                try
                 {
-                    client.Dispose();
-                    throw new OperationCanceledException();
-                }
+                    l.Start();
 
-                return new StreamAdapter(client.GetStream(), client);
+                    var client = await Task<BluetoothClient>.Factory.FromAsync(_listener.BeginAcceptBluetoothClient,
+                                                                      _listener.EndAcceptBluetoothClient, null);
+                    if (_listener == null || cancel.IsCancellationRequested)
+                    {
+                        client.Dispose();
+                        throw new OperationCanceledException();
+                    }
+
+                    Stream stream = client.GetStream();
+
+                    if (UseBufferedStream)
+                        return new DuplexBufferedStream(stream, client);
+
+                    return new StreamAdapter(stream, client);
+                }
+                finally
+                {
+                    l.Stop();
+                    Dispose();
+                }
             }
-            finally 
-            {
-                Dispose();
-            }
-            
         }
+
+        public bool IsAvailable => BluetoothStreamSubsystem.CheckBluetoothRadioOn();
     }
 }

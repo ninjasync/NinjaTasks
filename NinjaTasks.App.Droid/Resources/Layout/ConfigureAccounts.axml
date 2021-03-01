@@ -13,8 +13,35 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         local:MvxBind="ItemsSource Accounts"
-        local:MvxItemTemplate="@layout/accountdetails" />
+        local:MvxItemTemplate="@layout/configureaccountsaccountrow" />
+  
+  <Button
+      android:id="@+id/enableBluetooth"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Enable Bluetooth"
+       android:layout_marginLeft="12dp"
+       android:textColor="#B22222"
+       local:MvxBind="Visibility BluetoothServer.IsAvailable,Converter=TrueToVisibilityGone"
+    >
+  </Button>
+  
     <LinearLayout
+        android:id="@+id/allowToRunInBackgroundContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <Button
+        android:id="@+id/allowToRunInBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Allow Sync in Background"
+        android:layout_marginLeft="12dp"
+        android:textColor="#B22222"
+        local:MvxBind="Visibility BluetoothServer.ShouldRun,Converter=FalseToVisibilityGone"
+      />
+    </LinearLayout>
+
+  <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -25,7 +52,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Add Bluetooth P2P..."
-            local:MvxBind="Click AddBluetooth" />
+            local:MvxBind="Click AddBluetooth; Enabled BluetoothServer.IsAvailableOnDevice" />
         <Button
             android:layout_height="wrap_content"
             android:layout_width="0dp"
@@ -33,6 +60,7 @@
             android:text="Add / Edit TaskWarrior..."
             local:MvxBind="Click EditTaskWarrior" />
     </LinearLayout>
+  
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -51,7 +79,7 @@
                 android:layout_weight="1"
                 android:textOn="P2P Bluetooth Server enabled"
                 android:textOff="P2P Bluetooth Server disabled"
-                local:MvxBind="Checked BluetoothServer.ShouldRun" />
+                local:MvxBind="Checked BluetoothServer.ShouldRun; Enabled BluetoothServer.IsAvailableOnDevice" />
             <ProgressBar
                 android:layout_height="24dp"
                 android:layout_width="24dp"

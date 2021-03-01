@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 using NinjaTasks.Db.MvxSqlite;
 using NinjaTasks.Model.Sync;
 using NinjaTools.Logging;
@@ -25,12 +25,12 @@ namespace NinjaTasks.Tests
 #if !DOT42
             NinjaTools2NLog.Register();
 
-            string sqlitebin = Path.GetFullPath(Environment.Is64BitProcess ? "x64" : "x86");
-            Environment.SetEnvironmentVariable("PATH", sqlitebin + ";" + Environment.GetEnvironmentVariable("PATH"));
-            return new Cirrious.MvvmCross.Community.Plugins.Sqlite.Wpf.MvxWpfSQLiteConnectionFactory();
+            //string sqlitebin = Path.GetFullPath(Environment.Is64BitProcess ? "x64" : "x86");
+            //Environment.SetEnvironmentVariable("PATH", sqlitebin + ";" + Environment.GetEnvironmentVariable("PATH"));
+            return new NinjaTools.Sqlite.SqliteNetPCL.SqLiteNetPCLConnectionFactory();
 #else
             NinjaTools.Droid.NinjaToolsLoggerToLogCat.Register();
-            return new Cirrious.MvvmCross.Community.Plugins.Sqlite.Dot42.MvxDot42SQLiteConnectionFactory();
+            return new Cirrious.NinjaTools.Sqlite.Dot42.MvxDot42SQLiteConnectionFactory();
 #endif
         }
 

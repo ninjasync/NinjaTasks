@@ -68,12 +68,14 @@ namespace NinjaTools.Threading
                 var delay = Task.Delay(_delayMs);
                 
                 if (_scheduler != null)
-                    _scheduledTask = delay.ContinueWith(ExecuteAction, _rescheduler.Token,
+                { 
+                    _scheduledTask = delay.ContinueWith(ExecuteAction, _rescheduler?.Token ?? CancellationToken.None,
                                                TaskContinuationOptions.OnlyOnRanToCompletion,
                                                _scheduler);
+}
                 else
                 {
-                    _scheduledTask = delay.ContinueWith(ExecuteActionOnContext, _rescheduler.Token,
+                    _scheduledTask = delay.ContinueWith(ExecuteActionOnContext, _rescheduler?.Token ?? CancellationToken.None,
                                                TaskContinuationOptions.OnlyOnRanToCompletion,
                                                TaskScheduler.Default);
                 }

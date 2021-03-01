@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NinjaTools.Logging
 {
@@ -17,6 +18,8 @@ namespace NinjaTools.Logging
         public DateTime Timestamp { get; set; }
         public string Message { get; set; }
         public string Logger { get; set; }
+
+        public Dictionary<string, object> Properties { get; set; }
     }
 
     public interface ILogProvider

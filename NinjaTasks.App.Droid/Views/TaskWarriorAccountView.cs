@@ -4,7 +4,6 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Widget;
-using Cirrious.MvvmCross.Droid.FullFragging.Views;
 using Java.IO;
 using Java.Net;
 using NinjaTasks.Core.ViewModels;
@@ -33,9 +32,9 @@ namespace NinjaTasks.App.Droid.Views
             FindViewById<Button>(Resource.Id.selectserver).Click += OnSelectServerFile;
             FindViewById<Button>(Resource.Id.selectclient).Click += OnSelectClientFile;
             FindViewById<Button>(Resource.Id.import_taskdconfig).Click += OnImportTaskdConf;
-            //var presenter = (DroidPresenter)Mvx.Resolve<IMvxAndroidViewPresenter>();
+            //var presenter = (DroidPresenter)Mvx.IoCProvider.Resolve<IMvxAndroidViewPresenter>();
 
-            ////var vm = Mvx.IocConstruct<TaskWarriorAccountViewModel>();
+            ////var vm = Mvx.IoCProvider.IoCConstruct<TaskWarriorAccountViewModel>();
             //var initialFragment = new TaskWarriorAccountFragment { ViewModel = (TaskWarriorAccountViewModel)ViewModel };
 
             //presenter.RegisterFragmentManager(FragmentManager, initialFragment);

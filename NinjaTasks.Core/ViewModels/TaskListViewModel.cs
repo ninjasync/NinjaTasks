@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
 using NinjaSync.Storage;
 using NinjaTasks.Core.Reusable;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTools;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTasks.Core.ViewModels
 {
@@ -16,8 +17,6 @@ namespace NinjaTasks.Core.ViewModels
     {
         //private static readonly ILogger Log = LogManager.GetCurrentClassLogger();
 
-        private readonly ITodoStorage _storage;
-        private readonly IMvxMessenger _messenger;
         public TodoListWithCount List { get; private set; }
 
         public override int SortPosition { get { return List.SortPosition; } set { List.SortPosition = value; } }
@@ -39,11 +38,10 @@ namespace NinjaTasks.Core.ViewModels
         public override int PendingTasksCount { get; protected set; }
         public override int CompletedTasksCount { get; protected set; }
 
-        public TaskListViewModel(TodoListWithCount list, ITodoStorage storage, IMvxMessenger messenger)
-            :base(storage, messenger)
+        public TaskListViewModel(TodoListWithCount list, ITodoStorage storage, 
+                                 IMvxMessenger messenger, IMvxShareTask share)
+            :base(storage, messenger, share)
         {
-            _storage = storage;
-            _messenger = messenger;
             SetList(list);
         }
 
@@ -87,14 +85,14 @@ namespace NinjaTasks.Core.ViewModels
             PendingTasksCount += 1;
 
             //SelectedTasks = new[] {NewTask};
-            NewTask = new TodoTaskViewModel(new TodoTask(), this, Storage, _messenger) { IsNewTask = true };
+            NewTask = new TodoTaskViewModel(new TodoTask(), this, Storage, Messenger, Share) { IsNewTask = true };
         }
 
 
         public override void OnActivate()
         {
             base.OnActivate();
-            NewTask = new TodoTaskViewModel(new TodoTask(), this, Storage, _messenger) { IsNewTask = true };
+            NewTask = new TodoTaskViewModel(new TodoTask(), this, Storage, Messenger, Share) { IsNewTask = true };
             Refresh();
         }
 
@@ -234,7 +232,7 @@ namespace NinjaTasks.Core.ViewModels
             {
                 task.Task.ModifiedAt = DateTime.UtcNow;
 
-                _storage.Save(task.Task, new[]{
+                Storage.Save(task.Task, new[]{
                     TodoTask.ColListFk, 
                     TodoTask.ColSortPosition,
                     TodoTask.ColModifiedAt});
@@ -267,7 +265,7 @@ namespace NinjaTasks.Core.ViewModels
 
         private void LoadTasksCount()
         {
-            var list = _storage.GetLists(List.Id).FirstOrDefault();
+            var list = Storage.GetLists(List.Id).FirstOrDefault();
             if(list != null)
                 SetList(list);
         }

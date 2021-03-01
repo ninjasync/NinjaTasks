@@ -9,6 +9,7 @@ using NinjaTasks.Db.MvxSqlite;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Model.Sync;
+using NinjaTools.Connectivity;
 using TaskWarriorLib.Network;
 
 namespace NinjaTasks.App.Droid.Services
@@ -23,8 +24,8 @@ namespace NinjaTasks.App.Droid.Services
                                          ITaskWarriorAccountsStorage tw,
                                          ITslConnectionFactory tsl,
                                          SQLiteFactory sqlite,
-                                         IBluetoothStreamFactory bluetooth,
-                                         ITcpStreamFactory tcpip) :
+                                         IBluetoothStreamSubsystem bluetooth,
+                                         ITcpStreamSubsystem tcpip) :
             base(tw, tsl, sqlite, bluetooth, tcpip)
         {
             _ctx = ctx;

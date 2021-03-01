@@ -106,12 +106,12 @@ namespace NinjaTasks.App.Droid.Services.Tls
             }
             catch (NoSuchAlgorithmException e)
             {
-                Log.Error("RSA-Algorithm not found: {0}", e);
+                Log.Error(e, "RSA-Algorithm not found");
                 return null;
             }
             catch (NoSuchProviderException e)
             {
-                Log.Error("BC not found", e);
+                Log.Error(e, "BC not found");
                 return null;
             }
 
@@ -122,7 +122,7 @@ namespace NinjaTasks.App.Droid.Services.Tls
             }
             catch (InvalidKeySpecException e)
             {
-                Log.Error("cannot parse key", e);
+                Log.Error(e, "cannot parse key");
                 return null;
             }
         }
@@ -197,7 +197,7 @@ namespace NinjaTasks.App.Droid.Services.Tls
             }
             catch (Exception e)
             {
-                Log.Error("Cannot close Socket: {0}", e);
+                Log.Error(e, "Cannot close Socket");
             }
         }
 
@@ -211,7 +211,7 @@ namespace NinjaTasks.App.Droid.Services.Tls
             List<string> protocols = new List<string>();
             foreach (string protocol in ssl.GetSupportedProtocols())
             {
-                if (!protocol.ToUpper().Contains("SSL"))
+                if (!protocol.Contains("SSL", StringComparison.OrdinalIgnoreCase))
                     protocols.Add(protocol);
             }
 
@@ -267,7 +267,7 @@ namespace NinjaTasks.App.Droid.Services.Tls
                 }
                 catch (Java.IO.IOException e)
                 {
-                    Log.Error("cannot close socket {0}", e);
+                    Log.Error(e, "cannot close socket");
                 }
             }
             try
@@ -291,17 +291,17 @@ namespace NinjaTasks.App.Droid.Services.Tls
             }
             catch (UnknownHostException e)
             {
-                Log.Error("Unknown Host: {0}", e);
+                Log.Error(e, "Unknown Host.");
                 throw;
             }
             catch (ConnectException e)
             {
-                Log.Error("Cannot connect to Host {0}", e);
+                Log.Error(e, "Cannot connect to Host");
                 throw;
             }
             catch (SocketException e)
             {
-                Log.Error("IO Error {0}", e);
+                Log.Error(e, "IO Error");
                 throw;
             }
         }

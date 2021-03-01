@@ -1,34 +1,33 @@
 ﻿using System;
-using NinjaTasks.Core.Services;
-using NinjaTools;
+using System.Collections.Generic;
+using System.Linq;
 using NinjaTools.Connectivity.Connections;
 using NinjaTools.Connectivity.Discover;
 
-namespace NinjaTasks.App.Wpf.Services.Bluetooth
+namespace NinjaTools.Connectivity.Bluetooth._32Feet
 {
-    public class BluetoothDiscoverRemoteDevicesService : IDiscoverRemoteDevices
+    public class BluetoothDiscoverRemoteDevicesService : IDiscoverRemoteEndpoints, IDiscoverBluetoothRemoteEndpoints
     {
         private readonly Guard _scanGuard = new Guard();
 
-        private static Guid Guid { get { return SqliteSyncServiceFactory.BluetoothGuid; } }
+        private Guid _serviceGuid;
 
+        public bool IsServiceEnabled => BluetoothStreamSubsystem.CheckBluetoothRadioOn();
 
-        public bool IsServiceEnabled { get; set; }
-
-        public BluetoothDiscoverRemoteDevicesService()
+        public BluetoothDiscoverRemoteDevicesService(Guid serviceGuid)
         {
-            IsServiceEnabled = true;
+            _serviceGuid = serviceGuid;
         }
-        public IScanContext Scan(Action<RemoteDeviceInfo> deviceFound)
+        public IScanContext Scan(Action<Endpoint> deviceFound)
         {
             return new BluetoothScanContext(this);
         }
 
-        public IStreamConnector Create(RemoteDeviceInfo deviceInfo)
+        public IStreamConnector Create(Endpoint deviceInfo)
         {
-            if (deviceInfo.DeviceType != RemoteDeviceInfoType.Bluetooth)
+            if (deviceInfo.DeviceType != EndpointType.Bluetooth)
                 throw new Exception("can only create bluetooth devices.");
-            return new BluetoothFactory().GetConnector(deviceInfo);
+            return new BluetoothStreamSubsystem().GetConnector(deviceInfo);
         }
 
         public event EventHandler ServiceEnabledChanged;

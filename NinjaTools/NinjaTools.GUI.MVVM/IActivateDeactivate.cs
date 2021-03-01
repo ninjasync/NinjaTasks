@@ -1,4 +1,8 @@
-﻿namespace NinjaTools.MVVM
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace NinjaTools.GUI.MVVM
 {
     public interface IActivate
     {
@@ -11,7 +15,7 @@
     public interface IActivateByGuard
     {
         /// <summary>
-        /// this is called before an element becomes visible (again)
+        /// this is called before an element becomes visible (again), or invisible.
         /// </summary>
         Guard IsActiveGuard { get; }
     }

@@ -1,4 +1,4 @@
-﻿using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+﻿using NinjaTools.Sqlite;
 using NinjaSync;
 using NinjaSync.MasterSlave;
 using NinjaSync.Model;

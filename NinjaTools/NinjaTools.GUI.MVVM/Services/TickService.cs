@@ -1,8 +1,10 @@
 ﻿using System;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using System.Collections.Generic;
+using System.Linq;
+using MvvmCross.Plugin.Messenger;
 using NinjaTools.Threading;
 
-namespace NinjaTools.MVVM.Services
+namespace NinjaTools.GUI.MVVM.Services
 {
     public interface ITickService
     {

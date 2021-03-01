@@ -1,5 +1,5 @@
 ﻿using System;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 using NinjaSync.Model.Journal;
 
 namespace NinjaSync.Model

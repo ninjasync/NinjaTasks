@@ -14,7 +14,10 @@ namespace NinjaTasks.Tests
 
         class X<T>
         {
+            #pragma warning disable  CS0169
             private int x;
+            #pragma warning restore CS0169
+
             public virtual int XX { get; set; }
 
             public void Do(T x)

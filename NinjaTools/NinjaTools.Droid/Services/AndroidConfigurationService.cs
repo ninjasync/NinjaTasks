@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel;
 using Android.Content;
-using Android.Preferences;
-using Cirrious.CrossCore.Platform;
-using NinjaTools.MVVM.Services;
+using AndroidX.Preference;
+using MvvmCross.Base;
+using NinjaTools.GUI.MVVM.Services;
+using NinjaTools.Logging;
 
 namespace NinjaTools.Droid.Services
 {
@@ -14,7 +15,7 @@ namespace NinjaTools.Droid.Services
     public class AndroidConfigurationService<T> : NpcConfigurationServiceBase<T>, IDisposable
                                                   where T: INotifyPropertyChanged
     {
-        private readonly IMvxTrace _trace;
+        private static readonly ILogger Log = LogManager.GetCurrentClassLogger();
 
         private readonly Listener _listener;
         private readonly ISharedPreferences _pref;
@@ -25,10 +26,9 @@ namespace NinjaTools.Droid.Services
         private Guard _guard = new Guard();
 
 
-        public AndroidConfigurationService(Context ctx, IMvxJsonConverter json, IMvxTrace trace)
+        public AndroidConfigurationService(Context ctx, IMvxJsonConverter json)
         {
             _json = json;
-            _trace = trace;
             _pref = PreferenceManager.GetDefaultSharedPreferences(ctx);
 
             bool reqiresSave = base.LoadProperties(true);
@@ -40,7 +40,7 @@ namespace NinjaTools.Droid.Services
             
         }
 
-        protected override void SetConfigValue(string name, Type type, object val)
+        public override void SetConfigValue(string name, Type type, object val)
         {
             if (_edit == null)
                 _edit = _pref.Edit();
@@ -65,7 +65,7 @@ namespace NinjaTools.Droid.Services
         }
 
 
-        protected override bool GetConfigValue(string name, Type type, object defaultValue, out object value)
+        public override bool GetConfigValue(string name, Type type, object defaultValue, out object value)
         {
             value = null;
             try
@@ -93,7 +93,7 @@ namespace NinjaTools.Droid.Services
             }
             catch (Exception ex)
             {
-                _trace.Trace(MvxTraceLevel.Warning, "pref", ex.Message);
+                Log.Warn("unable to get config value", ex.Message);
                 return false;
             }
             return true;

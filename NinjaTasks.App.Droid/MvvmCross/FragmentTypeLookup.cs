@@ -3,8 +3,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cirrious.CrossCore.IoC;
-using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
+using MvvmCross.IoC;
+using MvvmCross.Platforms.Android.Views.Fragments;
 
 namespace NinjaTasks.App.Droid.MvvmCross
 {

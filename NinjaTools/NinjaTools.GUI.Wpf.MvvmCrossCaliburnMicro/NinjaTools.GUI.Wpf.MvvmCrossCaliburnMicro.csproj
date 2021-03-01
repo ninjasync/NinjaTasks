@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4218060A-FC26-4450-ACC1-27B092E6E1B4}</ProjectGuid>
+    <ProjectGuid>{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro</RootNamespace>
     <AssemblyName>NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,37 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro">
-      <HintPath>..\3rdParty\Wpf\Caliburn.Micro.dll</HintPath>
-    </Reference>
-    <Reference Include="Caliburn.Micro.Platform">
-      <HintPath>..\3rdParty\Wpf\Caliburn.Micro.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\3rdParty\MvvmCross\Wpf\Cirrious.CrossCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore.Wpf">
-      <HintPath>..\3rdParty\MvvmCross\Wpf\Cirrious.CrossCore.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Wpf">
-      <HintPath>..\3rdParty\MvvmCross\Wpf\Cirrious.MvvmCross.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rdParty\Wpf\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -71,31 +51,33 @@
     <Compile Include="IMvxNativeView.cs" />
     <Compile Include="MvvmCrossDataTemplateSelector.cs" />
     <Compile Include="MvxToCaliburnMicroWpfViewsContainer.cs" />
+    <Compile Include="MvxWindowMixin.cs" />
     <Compile Include="MyWpfPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisibleAndCloseWindowConductor.cs" />
-    <Compile Include="VisibleFrameworkElementConductor.cs" />
+    <Compile Include="SetupCaliburn.cs" />
+    <Compile Include="Shortcuts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro">
+      <Version>3.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Platforms.Wpf">
+      <Version>7.1.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj">
-      <Project>{50943d97-3b48-4660-bff7-57010c48d8ea}</Project>
+      <Project>{5a69f1c4-3a9c-45d6-a118-1af2a0052434}</Project>
       <Name>NinjaTools.GUI.MVVM</Name>
     </ProjectReference>
     <ProjectReference Include="..\NinjaTools.GUI.Wpf\NinjaTools.GUI.Wpf.csproj">
-      <Project>{688df946-6c84-4f7c-9d4e-7ad14972103c}</Project>
+      <Project>{c9525598-7e93-495d-bf35-7f57e13f87eb}</Project>
       <Name>NinjaTools.GUI.Wpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\NinjaTools\NinjaTools.csproj">
-      <Project>{e894d40e-6f3d-45d8-9bbd-f0d09dfc32b4}</Project>
+      <Project>{12980C82-8A8E-4B6F-B370-4B0241B5CEAD}</Project>
       <Name>NinjaTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

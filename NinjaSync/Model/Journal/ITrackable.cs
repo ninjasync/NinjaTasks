@@ -36,6 +36,7 @@ namespace NinjaSync.Model.Journal
         IList<string> Properties { get; }
 
         object GetProperty(string name);
+        Type GetPropertyType(string property);
         void SetProperty(string name, object value);
 
         ITrackable Clone();

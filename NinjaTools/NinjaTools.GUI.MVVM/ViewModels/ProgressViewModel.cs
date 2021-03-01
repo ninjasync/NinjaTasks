@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
-using Cirrious.MvvmCross.ViewModels;
+using MvvmCross.ViewModels;
 using NinjaTools.Progress;
 
-namespace NinjaTools.MVVM.ViewModels
+namespace NinjaTools.GUI.MVVM.ViewModels
 {
     public class ProgressViewModel : MvxNotifyPropertyChanged, IProgressFactory
     {

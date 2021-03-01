@@ -1,6 +1,6 @@
 using Android.OS;
 using Android.Views;
-using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
+using MvvmCross.Droid.FullFragging.Fragments;
 using NinjaTasks.Core.ViewModels;
 
 namespace NinjaTasks.App.Droid.Views

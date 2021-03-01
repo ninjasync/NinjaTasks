@@ -1,7 +1,9 @@
 ﻿using System;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using System.Collections.Generic;
+using System.Linq;
+using MvvmCross.Plugin.Messenger;
 
-namespace NinjaTools.MVVM
+namespace NinjaTools.GUI.MVVM
 {
     public class ErrorMessage : MvxMessage
     {

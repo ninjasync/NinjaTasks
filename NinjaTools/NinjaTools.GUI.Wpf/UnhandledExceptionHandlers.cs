@@ -44,9 +44,13 @@ namespace NinjaTools.GUI.Wpf
 
         private void TaskSchedulerUnobservedException(object sender, UnobservedTaskExceptionEventArgs e)
         {
-            // don't show.
+            // do show.
             LogToError("TaskScheduler unhandled exception:", e.Exception);
-            
+
+#if DEBUG
+            _app.Dispatcher.InvokeAsync(() => ShowUnhandledException(e.Exception));
+#endif
+            e.SetObserved();
         }
 
         private void AppDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
@@ -77,7 +81,7 @@ namespace NinjaTools.GUI.Wpf
 
         private void LogToError(string msg, Exception exception)
         {
-            Log.Error(msg, exception);
+            Log.Error(exception, msg);
         }
 
         private void ShowUnhandledException(Exception ex)

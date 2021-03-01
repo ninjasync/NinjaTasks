@@ -4,7 +4,7 @@ using NinjaSync.Model;
 namespace NinjaSync.Storage
 {
     /// <summary>
-    /// Manages a journal of changes to Individual Fields of objects. For midification of fields,
+    /// Manages a journal of changes to individual Fields of objects. For modification of fields,
     /// tracks only the last modification. For deletion/creation tracks only last last event of
     /// each type (e.g. when an object is deleted than recreated, there will be only one creation
     /// record for the object, no deletion record.)

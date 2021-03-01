@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
 using NinjaSync.Model;
 using NinjaSync.Storage;
 using NinjaSync.Storage.MvxSqlite;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Model.Sync;
+using NinjaTools.Sqlite;
 
 namespace NinjaTasks.Db.MvxSqlite
 {

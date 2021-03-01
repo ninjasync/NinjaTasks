@@ -3,40 +3,84 @@
 
   <color name="start">#00AC14</color>
   <color name="stop">#E20000</color>
+  <color name="theme_yellow">#FFED00</color>
+  <color name="taskTextColor">#404040</color>
+  <color name="taskSecondaryTextColor">#50000000</color>
 
-  <color name="actionbar_text">#000080</color>
-  <drawable name="actionbar_background">#FEF5D9</drawable>
+  <color name="mapTransLight">#E0FFFFFF</color>
+  <color name="uncheckedGrey">#aa888888</color>
 
-  <!-- general styles for the action bar -->
-  <style name="MyActionBar" parent="@android:style/Widget.ActionBar">
-      <item name="android:titleTextStyle">@style/TitleTextStyle</item>
-      <item name="android:background">@drawable/actionbar_background</item>
-      <item name="android:backgroundStacked">@drawable/actionbar_background</item>
-      <item name="android:backgroundSplit">@drawable/actionbar_background</item>
-    </style>
+  <!--<color name="actionbar_text">#000080</color>
+  <drawable name="actionbar_background">#FEF5D9</drawable>-->
 
-    <!-- action bar title text -->
-  <style name="TitleTextStyle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
-      <item name="android:textColor">@color/actionbar_text</item>
-    </style>
 
-    <!-- action bar tab text -->
-    <style name="TabTextStyle" parent="@android:style/Widget.ActionBar.TabText">
-      <item name="android:textColor">@color/actionbar_text</item>
-    </style>
-  
-  <style name="ThemeNinjaTasks" parent="@android:style/Theme.Holo.Light">
+  <style name="ThemeNinjaTasks" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
+    
+    <item name="ic_action_list">@drawable/ic_action_list_dark</item>
+    <item name="ic_action_share">@drawable/ic_action_share_dark</item>
+    <item name="ic_action_add_list">@drawable/ic_playlist_add_white_48dp_60</item>
+    <item name="ic_action_settings">@drawable/ic_settings_white_48dp_60</item>
 
-    <!--item name="android:actionBarStyle">@style/MyActionBar</item>
-    <item name="android:actionBarTabTextStyle">@style/TabTextStyle</item>
-    <item name="android:actionMenuTextColor">@color/actionbar_text</item-->
+    <item name="ic_action_toggle_completed">@drawable/ic_action_toggle_completed_dark</item>
+    <item name="btn_delete">@drawable/btn_delete_light</item>
+
+    <item name="TaskListsListStyle">@style/TaskListsListStyleLight</item>
+    <item name="TaskListsListRowStyle">@style/TaskListsListRowStyleLight</item>
+    <item name="TaskListsListRowSecondaryStyle">@style/TaskListsListRowSecondaryStyleLight</item>
+
+    <item name="TaskListStyle">@style/TaskListStyleLight</item>
+
+    <!--<item name="TaskListItem">@style/TaskListItemLight</item>-->
+    <!--<item name="ListDividerStyle">@style/ListSpaceDividerStyle</item>-->
+    <!--<item name="ListMarginStyle">@style/ListMarginStyleCard</item>-->
+
 
   </style>
-  
-  <style name="ThemeSplash" parent="android:Theme.Light">
+
+  <style name="TaskCheckBox" parent="ThemeNinjaTasks">
+    <item name="colorControlNormal">@android:color/secondary_text_light</item>
+    <item name="colorControlActivated">@android:color/secondary_text_light</item>
+  </style>
+
+  <!-- Task-Lists List (left side) -->
+  <style name="TaskListsListStyleLight">
+    <item name="android:divider">@null</item>
+    <item name="android:dividerHeight">0dp</item>
+    <item name="android:listSelector">@android:color/transparent</item>
+    <item name="android:cacheColorHint">@android:color/transparent</item>
+  </style>
+
+  <style name="TaskListsListRowStyleLight">
+    <item name="android:singleLine">true</item>
+    <item name="android:background">@android:color/transparent</item>
+    <item name="android:paddingLeft">0dp</item>
+    <item name="android:paddingRight">16dp</item>
+    <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    <item name="android:textColor">@android:color/primary_text_light</item>
+    <!--item name="android:fontFamily">sans-serif-light</item-->
+  </style>
+
+  <style name="TaskListsListRowSecondaryStyleLight" parent="@style/TaskListsListRowStyleLight">
+    <item name="android:textColor">@android:color/secondary_text_light</item>
+  </style>
+
+  <style name="TaskListStyleLight">
+    <item name="android:divider">@android:color/transparent</item>
+    <item name="android:dividerHeight">4dp</item>
+    <item name="android:listSelector">@android:color/transparent</item>
+    <item name="android:cacheColorHint">@android:color/transparent</item>
+  </style>
+
+  <style name="ListMarginStyle">
+    <item name="android:paddingLeft">@dimen/listMargins</item>
+    <item name="android:paddingRight">@dimen/listMargins</item>
+  </style>
+
+  <style name="ThemeSplash" parent="Theme.AppCompat.Light">
     <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
   </style>
+
 </resources>

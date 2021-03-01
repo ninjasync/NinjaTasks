@@ -3,11 +3,12 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Navigation;
+using MvvmCross.Plugin.Messenger;
 using NinjaTools;
 using NinjaTools.Connectivity.Discover;
 using NinjaTools.Connectivity.ViewModels.Messages;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTasks.Core.ViewModels.Sync
 {
@@ -36,9 +37,10 @@ namespace NinjaTasks.Core.ViewModels.Sync
 
         public string Id { get; private set; }
 
-        public SelectTcpIpHostViewModel(IMvxMessenger messenger)
+        public SelectTcpIpHostViewModel(IMvxMessenger messenger, IMvxNavigationService nav)
         {
             _messenger = messenger;
+            Nav = nav;
 #if !DOT42
             AddToAutoBundling(()=> Id);
             AddToAutoBundling(() => Host);
@@ -62,13 +64,13 @@ namespace NinjaTasks.Core.ViewModels.Sync
         }
 
         public bool CanSelect { get { return Port != 0 && !Host.IsNullOrWhiteSpace() && !Host.EndsWith(":"); } }
+
+        public IMvxNavigationService Nav { get; }
+
         public void Select()
         {
-            _messenger.Publish(new RemoteDeviceSelectedMessage(this, Id, new RemoteDeviceInfo(RemoteDeviceInfoType.TcpIp, Host, Host)
-            {
-                Port = Port.ToStringInvariant()
-            }));
-            Close(this);
+            _messenger.Publish(new RemoteDeviceSelectedMessage(this, Id, new Endpoint(EndpointType.TcpIp, Host, Host, Port.ToStringInvariant())));
+            Nav.Close(this);
         }
 
         public static Tuple<string, int> SplitHostAndPort(string hostAndPort)

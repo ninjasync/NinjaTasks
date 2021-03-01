@@ -1,42 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6686368A-C6A2-4D4A-B94A-51C6F0BF146E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NinjaTasks.Sync.ImportExport</RootNamespace>
-    <AssemblyName>NinjaTasks.Sync.ImportExport</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Obsolete\JournalingTodoStorageAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Obsolete\JournalingTodoStorageAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj" />
+    <ProjectReference Include="..\NinjaTasks.Model\NinjaTasks.Model.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj" />
+    <ProjectReference Include="..\TaskWarriorLib\TaskWarriorLib.csproj" />
+    <ProjectReference Include="..\3rdParty\ToDoLib\ToDoLib.csproj" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="DDay.Collections">
       <HintPath>..\3rdParty\DDay.iCal\DDay.Collections.dll</HintPath>
@@ -47,56 +25,5 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\3rdParty\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rdParty\nuget\NLog.2.0.1.2\lib\net45\NLog.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\NinjaTasks.Model\Properties\AssemblyInfoNinjaTasks.cs">
-      <Link>Properties\AssemblyInfoNinjaTasks.cs</Link>
-    </Compile>
-    <Compile Include="TodoTxtSerializer.cs" />
-    <Compile Include="IcsSerializerDDay.cs" />
-    <Compile Include="FileImportExport.cs" />
-    <Compile Include="ImportExportFactory.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\3rdParty\ToDoLib\ToDoLib.csproj">
-      <Project>{07aa9cea-4ef0-4b47-afbd-6f74ad9c4653}</Project>
-      <Name>ToDoLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj">
-      <Project>{2c47e154-1e5d-4801-97aa-aace064dde48}</Project>
-      <Name>NinjaSync</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
-      <Project>{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}</Project>
-      <Name>NinjaTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTasks.Core\NinjaTasks.Core.csproj">
-      <Project>{747706F4-ECBF-4D50-8D72-B0DDCC18395C}</Project>
-      <Name>NinjaTasks.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTasks.Model\NinjaTasks.Model.csproj">
-      <Project>{A38FBCE8-FDD3-4765-BA22-16E0A6C5CCA3}</Project>
-      <Name>NinjaTasks.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaskWarriorLib\TaskWarriorLib.csproj">
-      <Project>{beec9c42-cc15-4304-a420-f69bc7a94534}</Project>
-      <Name>TaskWarriorLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

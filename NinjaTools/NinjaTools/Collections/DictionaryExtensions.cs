@@ -4,6 +4,14 @@ namespace NinjaTools.Collections
 {
     public static class DictionaryExtensions
     {
+        public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key) where TValue : new()
+        {
+            TValue ret;
+            if (!dict.TryGetValue(key, out ret))
+                dict[key] = ret = new TValue();
+            return ret;
+        }
+
         public static bool AddWeight<TKey>(this IDictionary<TKey,int> dict, TKey key, int add = 1)
         {
             bool isNew = !dict.ContainsKey(key);

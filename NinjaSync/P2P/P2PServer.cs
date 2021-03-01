@@ -32,11 +32,11 @@ namespace NinjaSync.P2P
         private readonly string _logId;
 
 
-        public P2PServer(IStreamListener listener, IStreamFactory streamfac, 
+        public P2PServer(IStreamListener listener, IStreamSubsystem subSystem, 
                          ISyncStoragesFactory storagesFactory, 
                          IModificationSerializer serializer,
                          string logId="p2pserver")
-            : base(listener, streamfac)
+            : base(subSystem, listener)
         {
             _storagesFactory = storagesFactory;
             _serializer = serializer;

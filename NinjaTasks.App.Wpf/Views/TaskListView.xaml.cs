@@ -7,12 +7,14 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using GongSolutions.Wpf.DragDrop;
 using NinjaTasks.Core.ViewModels;
 using NinjaTasks.Model.Storage.Mocks;
 using NinjaTools;
 using NinjaTools.GUI.Wpf;
+using Microsoft.Win32;
+using System.IO;
 
 namespace NinjaTasks.App.Wpf.Views
 {
@@ -153,6 +155,45 @@ namespace NinjaTasks.App.Wpf.Views
             viewModel.MoveToPosition(tasks, dropInfo.InsertIndex, !isUpperDrop);
         }
 
+        private void OpenAttachment_Click(object sender, RoutedEventArgs e)
+        {
+            TodoTaskViewModel task = (sender as FrameworkElement).DataContext as TodoTaskViewModel;
+            if (task == null) return;
+
+            (string filename, byte[] data) = task.GetAttachment();
+
+            if (data == null)
+                return;
+
+            FileDialog dlg = new SaveFileDialog()
+            {
+                Title = "Save Attachment",
+                OverwritePrompt = true,
+                FileName = filename
+            };
+
+            if (dlg.ShowDialog() != true)
+                return;
+
+            File.WriteAllBytes(dlg.FileName, data);
+        }
+
+        private void SetAttachment_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog()
+            {
+                Title = "Select Attachment",
+                CheckFileExists = true,
+                Multiselect = false,
+            };
+
+            if (dlg.ShowDialog() != true)
+                return;
+
+            var data = File.ReadAllBytes(dlg.FileName);
+            _vm.Model.SelectedPrimaryTask.SetAttachment(Path.GetFileName(dlg.FileName), data);
+        }
+
         private T GetVisualChild<T>(DependencyObject parent) where T : Visual
         {
             T child = default(T);
@@ -173,7 +214,7 @@ namespace NinjaTasks.App.Wpf.Views
             return child;
         }
 
-     
+
     }
 
     //internal class TodoTaskViewModelSorter : IComparer
@@ -189,13 +230,13 @@ namespace NinjaTasks.App.Wpf.Views
     //        if (x.List.SortPosition < y.List.SortPosition) return -1;
     //        if (x.List.List.CreatedAt > y.List.List.CreatedAt) return 1;
     //        if (x.List.List.CreatedAt < y.List.List.CreatedAt) return -1;
-            
+
     //        if (x.IsCompleted && !y.IsCompleted) return 1;
     //        if (!x.IsCompleted && y.IsCompleted) return -1;
-            
+
     //        if (x.SortPosition > y.SortPosition) return 1;
     //        if (x.SortPosition < y.SortPosition) return -1;
-            
+
     //        if (x.IsPriority && !y.IsPriority) return -1;
     //        if (!x.IsPriority && y.IsPriority) return 1;
 
@@ -206,7 +247,7 @@ namespace NinjaTasks.App.Wpf.Views
     public class MockTaskListViewModel : TaskListViewModel
     {
         public MockTaskListViewModel()
-            : base(MockTodoStorage.Instance.GetLists().First(), MockTodoStorage.Instance, new MvxMessengerHub())
+            : base(MockTodoStorage.Instance.GetLists().First(), MockTodoStorage.Instance, new MvxMessengerHub(), null)
         {
             base.OnActivate();
         }

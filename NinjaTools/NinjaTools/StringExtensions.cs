@@ -6,8 +6,8 @@ namespace NinjaTools
     public static class StringExtensions
     {
         /// <summary>
-        /// I deem this to be quite practical, even though apperently
-        /// allowing to   call a method of a null value probalby 
+        /// I deem this to be quite practical, even though apparently
+        /// allowing to   call a method of a null value probably 
         /// violates some style rules.
         /// </summary>
         public static bool IsNullOrEmpty(this string s)
@@ -16,8 +16,8 @@ namespace NinjaTools
         }
 
         /// <summary>
-        /// I deem this to be quite practical, even though apperently
-        /// allowing to   call a method of a null value probalby 
+        /// I deem this to be quite practical, even though apparently
+        /// allowing to   call a method of a null value probably 
         /// violates some style rules.
         /// </summary>
         public static bool IsNullOrWhiteSpace(this string s)
@@ -35,5 +35,12 @@ namespace NinjaTools
             return v.ToString(CultureInfo.InvariantCulture);
         }
 
+        /// <summary>
+        /// will do an OrdinalIgnoreCase comparison.
+        /// </summary>
+        public static bool EqualsIgnoreCase(this string str1, string str2)
+        {
+            return string.Equals(str1, str2, StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

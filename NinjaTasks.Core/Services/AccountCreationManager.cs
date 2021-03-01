@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Model.Sync;
 using NinjaTools;
@@ -25,8 +25,8 @@ namespace NinjaTasks.Core.Services
         {
             if (obj.Device == null) return;
 
-            var destType = obj.Device.DeviceType == RemoteDeviceInfoType.Bluetooth?SyncAccountType.BluetoothP2P
-                          :obj.Device.DeviceType == RemoteDeviceInfoType.TcpIp?SyncAccountType.TcpIpP2P
+            var destType = obj.Device.DeviceType == EndpointType.Bluetooth?SyncAccountType.BluetoothP2P
+                          :obj.Device.DeviceType == EndpointType.TcpIp?SyncAccountType.TcpIpP2P
                           :SyncAccountType.Unknown;
 
             if (destType == SyncAccountType.Unknown)

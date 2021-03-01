@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Android.Bluetooth;
 using Android.Content;
 using NinjaTools;
@@ -10,7 +12,7 @@ namespace NinjaTasks.App.Droid.Services
     /// <summary>
     /// returns only bonded devices at the moment.
     /// </summary>
-    public class AndroidBluetoothDiscoverRemoteDevicesService : IDiscoverRemoteDevices
+    public class AndroidBluetoothDiscoverRemoteDevicesService : IDiscoverRemoteEndpoints, IDiscoverBluetoothRemoteEndpoints
     {
         private readonly Context _ctx;
         private readonly Guard _scanGuard = new Guard();
@@ -28,21 +30,21 @@ namespace NinjaTasks.App.Droid.Services
             _bluetoothAdapter = BluetoothAdapter.DefaultAdapter;
         }
 
-        public IScanContext Scan(Action<RemoteDeviceInfo> deviceFound)
+        public IScanContext Scan(Action<Endpoint> deviceFound)
         {
             if (_bluetoothAdapter == null) return new GuardBasedScanContext(this, _scanGuard);
 
-            foreach(var dev in _bluetoothAdapter.BondedDevices)
-                deviceFound(new RemoteDeviceInfo(RemoteDeviceInfoType.Bluetooth, dev.Name, dev.Address));
+            foreach (var dev in _bluetoothAdapter.BondedDevices)
+                deviceFound(new Endpoint(EndpointType.Bluetooth, dev.Name, dev.Address));
 
             return new GuardBasedScanContext(this, _scanGuard);
         }
 
-        public IStreamConnector Create(RemoteDeviceInfo deviceInfo)
+        public IStreamConnector Create(Endpoint deviceInfo)
         {
-            if (deviceInfo.DeviceType != RemoteDeviceInfoType.Bluetooth)
+            if (deviceInfo.DeviceType != EndpointType.Bluetooth)
                 throw new Exception("can only create bluetooth devices.");
-            return new AndroidBluetoothFactory(_ctx).GetConnector(deviceInfo);
+            return new AndroidBluetoothStreamSubsystem(_ctx).GetConnector(deviceInfo);
         }
 
         public event EventHandler ServiceEnabledChanged;
@@ -56,11 +58,11 @@ namespace NinjaTasks.App.Droid.Services
                 // stop scanning
                 StopScanning();
             }
-            else if(!IsScanning && _scanGuard.InUse)
+            else if (!IsScanning && _scanGuard.InUse)
             {
                 // start scanning
                 StartScanning();
-                
+
             }
         }
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaSync;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Model.Storage;
@@ -105,11 +105,9 @@ namespace NinjaTasks.Core.Services
             string syncErrorMsg = null;
 
             account.LastSyncAttempt = DateTime.UtcNow;
-#if !DOT42
-            _storage.SaveAccount(account, a=> a.LastSyncAttempt);
-#else
-            _storage.SaveAccount(account, "LastSyncAttempt");
-#endif
+            
+            _storage.SaveAccount(account, nameof(account.LastSyncAttempt));
+
             lock (_runningSyncs)
             {
                 if (_runningSyncs.Contains(account.Id))
@@ -207,11 +205,9 @@ namespace NinjaTasks.Core.Services
                 account.SyncFailureCount += 1;
                 account.LastSyncError = msg;
             }
-#if !DOT42
-            _storage.SaveAccount(account, a=>a.SyncFailureCount, a=>a.LastSyncError, a=>a.LastSuccessfulSync);
-#else
-            _storage.SaveAccount(account, "SyncFailureCount", "LastSyncError", "LastSuccessfulSync");
-#endif
+            _storage.SaveAccount(account, nameof(account.SyncFailureCount), 
+                                          nameof(account.LastSyncError), 
+                                          nameof(account.LastSuccessfulSync));
         }
 
         private async void SetEnabled(bool value)
@@ -252,8 +248,10 @@ namespace NinjaTasks.Core.Services
                 {
                     // don't wait for finish, as we don't want one blocking sync 
                     // to block all others as well
-                    // ReSharper disable once CSharpWarnings::CS4014  
+                    #pragma warning disable CS4014
                     SyncDueTasks(cancel);
+                    #pragma warning restore CS4014
+
                     await Task.Delay(TimeSpan.FromSeconds(20), cancel);
                     if (cancel.IsCancellationRequested) return;
 
@@ -278,6 +276,8 @@ namespace NinjaTasks.Core.Services
            
         }
 
+        #pragma warning disable CS0067
         public event PropertyChangedEventHandler PropertyChanged;
+        #pragma warning restore CS0067
     }
 }

@@ -1,44 +1,25 @@
-﻿using System;
-using System.Globalization;
-using System.Windows;
-using System.Windows.Data;
+﻿using System.Windows;
 
 namespace NinjaTools.GUI.Wpf.Converter
 {
-    public class ToVisibilityConverter : IValueConverter
+    public class ToVisibilityConverter : FromBooleanConverter
     {
-        public Visibility FalseValue { get; set; }
-        public Visibility TrueValue { get; set; }
+        public new Visibility FalseValue
+        {
+            get { return (Visibility)base.FalseValue; }
+            set { base.FalseValue = value; }
+        }
+
+        public new Visibility TrueValue
+        {
+            get { return (Visibility)base.TrueValue; }
+            set { base.TrueValue = value; }
+        }
 
         public ToVisibilityConverter()
         {
+            TrueValue = Visibility.Visible;
             FalseValue = Visibility.Collapsed;
-            TrueValue  = Visibility.Visible;
-
-        }
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            bool isTrue = false;
-
-            if (value is bool?)
-            {
-                isTrue = (bool?)value == true;
-            }
-            else if (value is string)
-            {
-                isTrue = !string.IsNullOrWhiteSpace((string)value);
-            }
-            else
-            {
-                isTrue = value != null;
-            }
-
-            return isTrue ? TrueValue : FalseValue;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\DeviceDetailsViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ViewModels\DeviceDetailsViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmCross" Version="7.1.2" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="7.1.2" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.3.1" PrivateAssets="All"  />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj" />
+    <ProjectReference Include="..\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools.csproj" />
+  </ItemGroup>
+  
+</Project>

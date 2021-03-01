@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
-using NinjaTools.MVVM;
+using MvvmCross;
+using MvvmCross.Navigation;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTasks.Core.ViewModels
 {
@@ -30,8 +32,8 @@ namespace NinjaTasks.Core.ViewModels
             if (IsNewList)
                 return;
 
-            if(await _lists.DeleteList(_list))
-                Close(this);
+            if(await _lists.DeleteListAsync(_list))
+                await Mvx.IoCProvider.Resolve<IMvxNavigationService>().Close(this);
         }
 
         public void Save()

@@ -33,10 +33,11 @@ namespace NinjaTools
             _references.Add(d);
         }
             
-        public static TokenBag operator +(TokenBag one, IDisposable other)
+        public static TokenBag operator +(TokenBag bag, IDisposable d)
         {
-            one._references.Add(other);
-            return one;
+            bag = bag ?? new TokenBag();
+            bag._references.Add(d);
+            return bag;
         }
 
     }

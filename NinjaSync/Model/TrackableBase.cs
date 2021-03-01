@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 using NinjaSync.Model.Journal;
 using NinjaTools;
 
@@ -58,6 +58,15 @@ namespace NinjaSync.Model
             return ret;
         }
 
+        public Type GetPropertyType(string name)
+        {
+            if (BasePropertyType.TryGetValue(new PropertyKey(GetType(), name), out var type))
+                return type;
+
+            // additional properties are only saved as string for now.
+            return typeof(string);
+        }
+
         public void SetProperty(string name, object value)
         {
             Debug.Assert(!name.IsNullOrEmpty());
@@ -69,11 +78,13 @@ namespace NinjaSync.Model
                 setter(this, value);
             else
             {
-                _additionalProperties[name] = value != null?value.ToString():null;
+                string strValue = value?.ToString();
+                if (strValue == null)
+                    _additionalProperties.Remove(name);
+                else 
+                    _additionalProperties[name] = strValue;
 
-                var h = PropertyChanged;
-                if(h != null)
-                    h(this, new PropertyChangedEventArgs(name));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             }
 
         }
@@ -121,6 +132,7 @@ namespace NinjaSync.Model
         private static readonly Dictionary<PropertyKey, Func<object, object>> BaseGetters = new Dictionary<PropertyKey, Func<object, object>>();
         private static readonly Dictionary<PropertyKey, Action<object, object>> BaseSetters = new Dictionary<PropertyKey, Action<object, object>>();
         private static readonly Dictionary<Type, string[]> BaseProperties = new Dictionary<Type, string[]>();
+        private static readonly Dictionary<PropertyKey, Type> BasePropertyType = new Dictionary<PropertyKey, Type>();
 
         /// <summary>
         /// NOTE: It is assumed that all initialization of all Inheriting classes is done 
@@ -140,6 +152,7 @@ namespace NinjaSync.Model
                 
                 BaseGetters.Add(key, getter);
                 BaseSetters.Add(key, setter);
+                BasePropertyType.Add(key, runtimeProperty.PropertyType);
             }
         }
       

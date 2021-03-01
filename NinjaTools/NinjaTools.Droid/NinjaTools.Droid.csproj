@@ -5,30 +5,31 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5F6BE86B-50B9-453C-8455-FF7B0C59416B}</ProjectGuid>
+    <ProjectGuid>{7B51555C-0C5D-4FD5-BE09-C93876D691B6}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{9ef11e43-1701-4396-8835-8392d57abb70}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NinjaTools.Droid</RootNamespace>
     <AssemblyName>NinjaTools.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>
-    </AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>1</WarningLevel>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -36,62 +37,55 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\3rdParty\MvvmCross\Droid\Cirrious.CrossCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore.Droid">
-      <HintPath>..\3rdParty\MvvmCross\Droid\Cirrious.CrossCore.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\3rdParty\MvvmCross\Droid\Cirrious.MvvmCross.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding">
-      <HintPath>..\3rdParty\MvvmCross\Droid\Cirrious.MvvmCross.Binding.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
-      <HintPath>..\3rdParty\MvvmCross\Droid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Droid">
-      <HintPath>..\3rdParty\MvvmCross\Droid\Cirrious.MvvmCross.Droid.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\NinjaTools\Properties\AssemblyInfoNinjaTools.cs">
-      <Link>Properties\AssemblyInfoNinjaTools.cs</Link>
-    </Compile>
     <Compile Include="ApplicationEx.cs" />
-    <Compile Include="DebugBreakCustomTraceListener.cs" />
-    <Compile Include="LogCatWriter.cs" />
-    <Compile Include="MvvmCross\BaseView.cs" />
     <Compile Include="BroadcastListener.cs" />
+    <Compile Include="DebugBreakCustomTraceListener.cs" />
+    <Compile Include="Extensions\ViewExtensions.cs" />
     <Compile Include="HiddenReference.cs" />
     <Compile Include="IIsAppActive.cs" />
+    <Compile Include="Logging\NLogLogCatTarget.cs" />
+    <Compile Include="Logging\LogCatWriter.cs" />
     <Compile Include="MvvmCross\BaseFragment.cs" />
-    <Compile Include="MvvmCross\LogTrace.cs" />
-    <Compile Include="NinjaToolsLoggerToLogCat.cs" />
-    <Compile Include="Performance\PerformanceStatistics.cs" />
+    <Compile Include="MvvmCross\BaseView.cs" />
+    <Compile Include="Logging\NinjaToolsLoggerToLogCat.cs" />
     <Compile Include="Performance\CpuStat.cs" />
+    <Compile Include="Performance\PerformanceStatistics.cs" />
     <Compile Include="Performance\ProcessStat.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AndroidConfigurationService.cs" />
     <Compile Include="Services\DisplayMessageService.cs" />
     <Compile Include="Services\TimeoutIsAppActiveService.cs" />
+    <Compile Include="UnhandledExceptionHandlers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
+    <PackageReference Include="MvvmCross">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.6.8</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\MvxBindingAttributes.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj">
@@ -99,12 +93,11 @@
       <Name>NinjaTools.GUI.MVVM</Name>
     </ProjectReference>
     <ProjectReference Include="..\NinjaTools\NinjaTools.csproj">
-      <Project>{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}</Project>
+      <Project>{e894d40e-6f3d-45d8-9bbd-f0d09dfc32b4}</Project>
       <Name>NinjaTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <Import Project="..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

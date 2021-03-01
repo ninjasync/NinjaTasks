@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 
 namespace NinjaSync.Model
 {

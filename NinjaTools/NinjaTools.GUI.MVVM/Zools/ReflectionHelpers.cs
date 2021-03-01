@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Cirrious.CrossCore;
+
 #if !DOT42
-namespace NinjaTools.MVVM.Zools
+namespace NinjaTools.GUI.MVVM.Zools
 {
     public static class Reflection
     {

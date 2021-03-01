@@ -1,4 +1,4 @@
-﻿using Cirrious.MvvmCross.Plugins.Messenger;
+﻿using MvvmCross.Plugin.Messenger;
 using NinjaTasks.Core.ViewModels;
 
 namespace NinjaTasks.Core.Messages

@@ -18,7 +18,7 @@ namespace NinjaTools.Logging
             LogManager.Instance = new NinjaTools2NLog();
         }
 
-        protected NinjaTools2NLog()
+        internal NinjaTools2NLog()
         {
 
         }
@@ -142,8 +142,14 @@ namespace NinjaTools.Logging
 
             public void Error(string msg, Exception ex)
             {
-                _logger.ErrorException(msg, ex);
+                _logger.Error(ex, msg);
             }
+
+            public void Error(Exception ex, string msg)
+            {
+                _logger.Error(ex, msg);
+            }
+
 
             public bool IsTraceEnabled { get { return _logger.IsTraceEnabled; } }
             public bool IsDebugEnabled { get { return _logger.IsDebugEnabled; } }

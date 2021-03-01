@@ -12,6 +12,7 @@ using Android.OS;
 using Android.Views;
 using NinjaTools.Connectivity.ViewModels.ViewModels;
 using NinjaTools.Droid.MvvmCross;
+using Android.Runtime;
 
 #if DOT42
 using Dot42.Manifest;
@@ -20,6 +21,7 @@ using Dot42.Manifest;
 
 namespace NinjaTasks.App.Droid.Views
 {
+    [Register("ninjatasks.app.droid.views.SelectRemoteDeviceView")]
     [Activity(Label = "Select Device")]
     public class SelectRemoteDeviceView : BaseView
     {
@@ -73,7 +75,7 @@ namespace NinjaTasks.App.Droid.Views
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.SelectRemoteDeviceActions, menu);
+            MenuInflater.Inflate(Resource.Menu.selectremotedeviceactions, menu);
             return base.OnCreateOptionsMenu(menu);
         }
 

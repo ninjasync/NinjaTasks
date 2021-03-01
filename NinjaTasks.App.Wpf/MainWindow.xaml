@@ -1,4 +1,4 @@
-﻿<ccl:CustomChromeWindow x:Class="NinjaTasks.App.Wpf.MainWindow"
+﻿    <ccl:CustomChromeWindow x:Class="NinjaTasks.App.Wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ccl="clr-namespace:CustomChromeLibrary;assembly=CustomChromeLibrary"
@@ -13,9 +13,4 @@
             GlassFrameThickness="0"
                       />
         </WindowChrome.WindowChrome>
-    <Grid >
-        
-        
-    </Grid>
-        
 </ccl:CustomChromeWindow>

@@ -1,29 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Sync.ImportExport", "NinjaTasks.Sync.ImportExport\NinjaTasks.Sync.ImportExport.csproj", "{6686368A-C6A2-4D4A-B94A-51C6F0BF146E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTasks.Sync.ImportExport", "NinjaTasks.Sync.ImportExport\NinjaTasks.Sync.ImportExport.csproj", "{6686368A-C6A2-4D4A-B94A-51C6F0BF146E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Tests", "NinjaTasks.Tests\NinjaTasks.Tests.csproj", "{02D092B0-3995-4639-BB42-637921261081}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{911AFBC6-3C5C-44AD-8700-9CF7752BC462}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		README.md = README.md
 		TODO.md = TODO.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Core", "NinjaTasks.Core\NinjaTasks.Core.csproj", "{747706F4-ECBF-4D50-8D72-B0DDCC18395C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTasks.Core", "NinjaTasks.Core\NinjaTasks.Core.csproj", "{747706F4-ECBF-4D50-8D72-B0DDCC18395C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.App.Wpf", "NinjaTasks.App.Wpf\NinjaTasks.App.Wpf.csproj", "{7FED5C05-20A6-4EDF-8266-3D9C86CC63CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Model", "NinjaTasks.Model\NinjaTasks.Model.csproj", "{A38FBCE8-FDD3-4765-BA22-16E0A6C5CCA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTasks.Model", "NinjaTasks.Model\NinjaTasks.Model.csproj", "{A38FBCE8-FDD3-4765-BA22-16E0A6C5CCA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NinjaTools", "NinjaTools", "{6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.GUI.MVVM", "NinjaTools\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj", "{50943D97-3B48-4660-BFF7-57010C48D8EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTools.GUI.MVVM", "NinjaTools\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj", "{50943D97-3B48-4660-BFF7-57010C48D8EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools", "NinjaTools\NinjaTools\NinjaTools.csproj", "{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTools", "NinjaTools\NinjaTools\NinjaTools.csproj", "{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.GUI.Wpf", "NinjaTools\NinjaTools.GUI.Wpf\NinjaTools.GUI.Wpf.csproj", "{688DF946-6C84-4F7C-9D4E-7AD14972103C}"
 EndProject
@@ -35,21 +36,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.App.Droid", "NinjaTasks.App.Droid\NinjaTasks.App.Droid.csproj", "{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.Droid", "NinjaTools\NinjaTools.Droid\NinjaTools.Droid.csproj", "{5F6BE86B-50B9-453C-8455-FF7B0C59416B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskWarriorLib", "TaskWarriorLib\TaskWarriorLib.csproj", "{BEEC9C42-CC15-4304-A420-F69BC7A94534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWarriorLib", "TaskWarriorLib\TaskWarriorLib.csproj", "{BEEC9C42-CC15-4304-A420-F69BC7A94534}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTasks.Sync", "NinjaTasks.Sync\NinjaTasks.Sync.csproj", "{94C51F89-EA81-4028-9103-3FEC0BBD9752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Sync", "NinjaTasks.Sync\NinjaTasks.Sync.csproj", "{94C51F89-EA81-4028-9103-3FEC0BBD9752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTasks.Db.MvxSqlite", "NinjaTasks.Db.MvxSqlite\NinjaTasks.Db.MvxSqlite.csproj", "{12082999-E512-4FBB-9ADB-CAB3C8FE9F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Db.MvxSqlite", "NinjaTasks.Db.MvxSqlite\NinjaTasks.Db.MvxSqlite.csproj", "{12082999-E512-4FBB-9ADB-CAB3C8FE9F46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaSync", "NinjaSync\NinjaSync.csproj", "{2C47E154-1E5D-4801-97AA-AACE064DDE48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.Connectivity", "NinjaTools.Connectivity\NinjaTools.Connectivity.csproj", "{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.Connectivity.ViewModels", "NinjaTools.Connectivity.ViewModels\NinjaTools.Connectivity.ViewModels.csproj", "{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaSync", "NinjaSync\NinjaSync.csproj", "{2C47E154-1E5D-4801-97AA-AACE064DDE48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaSync.Storage.MvxSqlite", "NinjaSync.Storage.MvxSqlite\NinjaSync.Storage.MvxSqlite.csproj", "{F19E717D-4D67-4FC4-BE14-DB7583331454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaSync.Storage.MvxSqlite", "NinjaSync.Storage.MvxSqlite\NinjaSync.Storage.MvxSqlite.csproj", "{F19E717D-4D67-4FC4-BE14-DB7583331454}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dot42", "dot42", "{1B6E0B98-7443-417E-99A3-2B906C2F50D8}"
 EndProject
@@ -65,13 +60,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Dot42.Core", "do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTasks.Storage.MvxSqlite.Dot42", "dot42\NinjaTasks.Storage.MvxSqlite.Dot42\NinjaTasks.Storage.MvxSqlite.Dot42.csproj", "{62E56F78-473D-4A36-8908-11CE80B6541A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xamarin.Droid", "Xamarin.Droid", "{E489A854-8E74-4785-AD13-5A0EAB8353F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.Dot42.MVVM", "NinjaTools\NinjaTools.Dot42.MVVM\NinjaTools.Dot42.MVVM.csproj", "{968F3A95-8384-4BEA-A378-4C9621CD2183}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.Dot42", "NinjaTools\NinjaTools.Dot42\NinjaTools.Dot42.csproj", "{823D48FA-5126-4FD4-8A43-8BFFB309834E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionBarPullToRefresh.Dot42", "3rdParty\Java\ActionBarPullToRefresh.Dot42\ActionBarPullToRefresh.Dot42.csproj", "{AD2BB36B-8C57-459C-99B0-801CD50FA66C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.Droid", "NinjaTools\NinjaTools.Droid\NinjaTools.Droid.csproj", "{5F6BE86B-50B9-453C-8455-FF7B0C59416B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTools.Connectivity", "NinjaTools\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj", "{2A251026-E389-452A-A6D4-F3335FCCD739}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTools.Connectivity.ViewModels", "NinjaTools\NinjaTools.Connectivity.ViewModels\NinjaTools.Connectivity.ViewModels.csproj", "{325AA3D6-2703-439D-A60A-B091BEB12699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro", "NinjaTools\NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro\NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro.csproj", "{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTools.Sqlite", "NinjaTools\NinjaTools.Sqlite\Sqlite\NinjaTools.Sqlite\NinjaTools.Sqlite.csproj", "{7EB7A397-7814-4D34-96E0-79E018FCDC99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NinjaTools.Sqlite.SQLiteNetPCL", "NinjaTools\NinjaTools.Sqlite\Sqlite\NinjaTools.Sqlite.SQLiteNetPCL\NinjaTools.Sqlite.SQLiteNetPCL.csproj", "{C4E3155F-DA1A-416A-B038-FE3F217A8621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,9 +119,11 @@ Global
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F6BE86B-50B9-453C-8455-FF7B0C59416B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F6BE86B-50B9-453C-8455-FF7B0C59416B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{BEEC9C42-CC15-4304-A420-F69BC7A94534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BEEC9C42-CC15-4304-A420-F69BC7A94534}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEEC9C42-CC15-4304-A420-F69BC7A94534}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -133,14 +136,6 @@ Global
 		{12082999-E512-4FBB-9ADB-CAB3C8FE9F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12082999-E512-4FBB-9ADB-CAB3C8FE9F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12082999-E512-4FBB-9ADB-CAB3C8FE9F46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C47E154-1E5D-4801-97AA-AACE064DDE48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C47E154-1E5D-4801-97AA-AACE064DDE48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C47E154-1E5D-4801-97AA-AACE064DDE48}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -167,18 +162,34 @@ Global
 		{62E56F78-473D-4A36-8908-11CE80B6541A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E56F78-473D-4A36-8908-11CE80B6541A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E56F78-473D-4A36-8908-11CE80B6541A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{968F3A95-8384-4BEA-A378-4C9621CD2183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{968F3A95-8384-4BEA-A378-4C9621CD2183}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{968F3A95-8384-4BEA-A378-4C9621CD2183}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{968F3A95-8384-4BEA-A378-4C9621CD2183}.Release|Any CPU.Build.0 = Release|Any CPU
-		{823D48FA-5126-4FD4-8A43-8BFFB309834E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{823D48FA-5126-4FD4-8A43-8BFFB309834E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{823D48FA-5126-4FD4-8A43-8BFFB309834E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{823D48FA-5126-4FD4-8A43-8BFFB309834E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD2BB36B-8C57-459C-99B0-801CD50FA66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AD2BB36B-8C57-459C-99B0-801CD50FA66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD2BB36B-8C57-459C-99B0-801CD50FA66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD2BB36B-8C57-459C-99B0-801CD50FA66C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6BE86B-50B9-453C-8455-FF7B0C59416B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6BE86B-50B9-453C-8455-FF7B0C59416B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6BE86B-50B9-453C-8455-FF7B0C59416B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6BE86B-50B9-453C-8455-FF7B0C59416B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A251026-E389-452A-A6D4-F3335FCCD739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A251026-E389-452A-A6D4-F3335FCCD739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A251026-E389-452A-A6D4-F3335FCCD739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A251026-E389-452A-A6D4-F3335FCCD739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325AA3D6-2703-439D-A60A-B091BEB12699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325AA3D6-2703-439D-A60A-B091BEB12699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325AA3D6-2703-439D-A60A-B091BEB12699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325AA3D6-2703-439D-A60A-B091BEB12699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB7A397-7814-4D34-96E0-79E018FCDC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB7A397-7814-4D34-96E0-79E018FCDC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB7A397-7814-4D34-96E0-79E018FCDC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB7A397-7814-4D34-96E0-79E018FCDC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E3155F-DA1A-416A-B038-FE3F217A8621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E3155F-DA1A-416A-B038-FE3F217A8621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E3155F-DA1A-416A-B038-FE3F217A8621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E3155F-DA1A-416A-B038-FE3F217A8621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -188,15 +199,20 @@ Global
 		{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
 		{688DF946-6C84-4F7C-9D4E-7AD14972103C} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653} = {D493AA28-0A12-43D5-A9AC-04036E9F4027}
-		{AEE3CDF8-F0A5-4906-ADCC-F7F7CBCD0038} = {E489A854-8E74-4785-AD13-5A0EAB8353F6}
-		{5F6BE86B-50B9-453C-8455-FF7B0C59416B} = {E489A854-8E74-4785-AD13-5A0EAB8353F6}
 		{03238F58-9B64-4EAF-98C9-E285DA1D79AE} = {1B6E0B98-7443-417E-99A3-2B906C2F50D8}
 		{0116DF77-716B-4449-81B3-059ADCFF1D08} = {1B6E0B98-7443-417E-99A3-2B906C2F50D8}
 		{C3578A7B-09A6-4444-9383-0DEAFA4958BD} = {3E47638E-5E22-4A3A-9F4C-E42AA031C477}
 		{0F968BDB-B07C-4705-83B9-3AC4DADE9FC7} = {1B6E0B98-7443-417E-99A3-2B906C2F50D8}
 		{62E56F78-473D-4A36-8908-11CE80B6541A} = {1B6E0B98-7443-417E-99A3-2B906C2F50D8}
-		{968F3A95-8384-4BEA-A378-4C9621CD2183} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
-		{823D48FA-5126-4FD4-8A43-8BFFB309834E} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
 		{AD2BB36B-8C57-459C-99B0-801CD50FA66C} = {D493AA28-0A12-43D5-A9AC-04036E9F4027}
+		{5F6BE86B-50B9-453C-8455-FF7B0C59416B} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
+		{2A251026-E389-452A-A6D4-F3335FCCD739} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
+		{325AA3D6-2703-439D-A60A-B091BEB12699} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
+		{A3DE94FF-E9D7-4E67-8D5C-E31D698DA7F3} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
+		{7EB7A397-7814-4D34-96E0-79E018FCDC99} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
+		{C4E3155F-DA1A-416A-B038-FE3F217A8621} = {6A4E9845-67E9-4C0F-A965-D4EFAE3940D6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CB7CC0E-BAAE-4AEB-AC0D-95E6A465C398}
 	EndGlobalSection
 EndGlobal

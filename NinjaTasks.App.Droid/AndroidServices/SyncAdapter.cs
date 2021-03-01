@@ -6,8 +6,6 @@ using Android.Accounts;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Droid.Platform;
 using NinjaSync;
 using NinjaSync.Exceptions;
 using NinjaTasks.App.Droid.Services;
@@ -16,6 +14,8 @@ using NinjaTasks.Core.Services;
 using NinjaTasks.Model.Sync;
 using NinjaTasks.Sync;
 using NinjaTools;
+using MvvmCross;
+using MvvmCross.Platforms.Android.Core;
 
 namespace NinjaTasks.App.Droid.AndroidServices
 {
@@ -55,7 +55,7 @@ namespace NinjaTasks.App.Droid.AndroidServices
                 _activeSyncs.Add(progress);
             
 
-            var syncManager = Mvx.Resolve<ISyncManager>();
+            var syncManager = Mvx.IoCProvider.Resolve<ISyncManager>();
             try
             {
                 SyncAccount syncAccount;
@@ -76,7 +76,7 @@ namespace NinjaTasks.App.Droid.AndroidServices
                 syncResult.DelayUntil = (int)ex.DelayRetry.TotalSeconds;
                 syncResult.Stats.NumIoExceptions += 1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 syncResult.Stats.NumIoExceptions += 1;
             }
@@ -94,7 +94,7 @@ namespace NinjaTasks.App.Droid.AndroidServices
         {
             var pendingIntent = PendingIntent.GetActivity(Context, 0, new Intent(Context, typeof (ConfigureAccountsView)), 0);
 
-            var ongoing = new Notification.Builder(Context)
+            var ongoing = new Notification.Builder(Context, "mysync")
                 .SetContentTitle("starting sync.")
                 .SetContentText("sync active")
                 .SetContentIntent(pendingIntent)

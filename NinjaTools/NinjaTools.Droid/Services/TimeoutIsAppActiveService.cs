@@ -2,8 +2,7 @@
 using System.ComponentModel;
 using System.Timers;
 using Android.Content;
-using NinjaTools.MVVM.Services;
-using NinjaTools.MVVM.Zools;
+using NinjaTools.GUI.MVVM.Services;
 using NinjaTools.Npc;
 
 namespace NinjaTools.Droid.Services
@@ -52,6 +51,8 @@ namespace NinjaTools.Droid.Services
             _timer.Enabled = false;
         }
 
+        #pragma warning disable CS0067
         public event PropertyChangedEventHandler PropertyChanged;
+        #pragma warning restore CS0067
     }
 }

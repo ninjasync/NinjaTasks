@@ -1,12 +1,10 @@
 using System;
 using System.Threading.Tasks;
 using Android.App;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid.Platform;
-
-using NinjaTools.MVVM.Services;
-using NinjaTools.MVVM.ViewModels;
-
+using MvvmCross;
+using MvvmCross.Platforms.Android;
+using NinjaTools.GUI.MVVM.Services;
+using NinjaTools.GUI.MVVM.ViewModels;
 
 namespace NinjaTools.Droid.Services
 {
@@ -23,7 +21,7 @@ namespace NinjaTools.Droid.Services
         {
             TaskCompletionSource<bool> task = new TaskCompletionSource<bool>();
 
-            var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+            var activity = Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
 
             var bld = new AlertDialog.Builder(activity);
             bld.SetMessage(model.Message);
@@ -53,6 +51,11 @@ namespace NinjaTools.Droid.Services
             
             bld.Create().Show();
             return task.Task;
+        }
+
+        public Task<bool> Show(InputViewModel vm)
+        {
+            throw new NotImplementedException();
         }
     }
 }

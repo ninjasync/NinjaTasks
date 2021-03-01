@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
-using Cirrious.CrossCore;
 
-namespace NinjaTools.MVVM.Services
+namespace NinjaTools.GUI.MVVM.Services
 {
     public abstract class NpcConfigurationServiceBase<T> : IConfigurationService<T> where T : INotifyPropertyChanged
     {

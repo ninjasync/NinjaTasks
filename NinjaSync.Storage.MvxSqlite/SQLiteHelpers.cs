@@ -1,7 +1,7 @@
+using NinjaTools.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
 
 #if DOT42
 using System.Collections.Concurrent;

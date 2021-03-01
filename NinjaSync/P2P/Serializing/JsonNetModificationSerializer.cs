@@ -172,27 +172,30 @@ namespace NinjaSync.P2P.Serializing
 
                 List<ModifiedProperty> props = new List<ModifiedProperty>();
 
-                foreach (var mod in change.Modifications)
+                foreach (Mod mod in change.Modifications)
                 {
                     props.Add(new ModifiedProperty(mod.Property, mod.ModifiedAt));
-                    var property = obj.GetType().GetRuntimeProperty(mod.Property);
 
-                    
-                    if(mod.Value==null)
-                        property.SetValue(obj, null);
+                    if (mod.Value == null)
+                    {
+                        obj.SetProperty(mod.Property, null);
+                    }
                     if (mod.Value is JToken)
                     {
                         var jsonVal = (JToken)mod.Value;
-                        var val = jsonVal.ToObject(property.PropertyType, _serializer);
-                        property.SetValue(obj, val);
+                        var val = jsonVal.ToObject(obj.GetPropertyType(mod.Property), _serializer);
+                        obj.SetProperty(mod.Property, val);
+                    }
+                    else if(mod.Value is string && obj.GetPropertyType(mod.Property) == typeof(string))
+                    {
+                        // should also handle additional properties
+                        obj.SetProperty(mod.Property, mod.Value);
                     }
                     else if(mod.Value != null)
                     {
-                        // there is probalby an easyer way, though i don't know how. 
-                        // what what should i do?
-                        var jsonVal = new JObject();
-                        jsonVal.Add(mod.Property, new JValue(mod.Value));
-                        JsonConvert.PopulateObject(jsonVal.ToString(), obj, JsonSettings);
+                        // should also handle additional properties
+                        var objValue = new JValue(mod.Value).ToObject(obj.GetPropertyType(mod.Property), _serializer);
+                        obj.SetProperty(mod.Property, objValue);
                     }
                     
                 }
@@ -205,7 +208,7 @@ namespace NinjaSync.P2P.Serializing
 
         public JsonModification ToJsonModification(Modification mod)
         {
-            JsonModification obj =new JsonModification();
+            JsonModification obj = new JsonModification();
             if (mod.IsDeletion)
             {
                 obj.Change = ChangeType.Deletion;
@@ -238,9 +241,9 @@ namespace NinjaSync.P2P.Serializing
             return obj;
         }
 
-        private static object GetPropValue(object src, string propName)
+        private static object GetPropValue(ITrackable src, string propName)
         {
-            return src.GetType().GetRuntimeProperty(propName).GetValue(src, null);
+            return src.GetProperty(propName);
         }
 
         public JsonSerializerSettings JsonSettings

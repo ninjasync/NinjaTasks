@@ -31,6 +31,7 @@ namespace NinjaTasks.Model.Storage
         }
 
 #if!DOT42
+        [Obsolete("use the SaveAccount invocation with nameof()")]
         public static void SaveAccount(this IAccountsStorage storage, SyncAccount account,
                                        params Expression<Func<SyncAccount, object>>[] selectedProperties)
         {

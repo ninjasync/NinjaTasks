@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using NinjaTools.Logging;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTasks.Core.ViewModels
 {
@@ -12,7 +12,9 @@ namespace NinjaTasks.Core.ViewModels
         public string Line { get; set; }
         public DateTime Timestamp { get; set; }
 
+        #pragma warning disable CS0067
         public event PropertyChangedEventHandler PropertyChanged;
+        #pragma warning restore CS0067
     }
 
     public class LogViewModel : BaseViewModel, IActivate, IDeactivate

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaSync.P2P;
 using NinjaSync.P2P.Serializing;
 using NinjaSync.Storage;
@@ -24,7 +24,7 @@ namespace NinjaTasks.Core.Services.Server
         public bool IsAvailable { get; private set; }
         public bool IsAvailableOnDevice { get { return _streamFactory.IsAvailableOnDevice; }}
         
-        private readonly IStreamFactory _streamFactory;
+        private readonly IStreamSubsystem _streamFactory;
         private readonly ISyncStoragesFactory _storages;
 
         private readonly IMvxMessenger _msg;
@@ -33,13 +33,13 @@ namespace NinjaTasks.Core.Services.Server
         private CancellationTokenSource _cancel = new CancellationTokenSource();
         private readonly object _sync = new object();
 
-        protected abstract RemoteDeviceInfo GetListenAddress();
+        protected abstract Endpoint GetListenAddress();
         protected bool ShouldBeActive { get; set; }
 
         private bool _isStartup;
         private TokenBag _bag = new TokenBag();
 
-        public SyncServerManager(IStreamFactory streamFactory,
+        public SyncServerManager(IStreamSubsystem streamFactory,
                                  ISyncStoragesFactory storages,
                                  IMvxMessenger msg)
         {
@@ -132,7 +132,9 @@ namespace NinjaTasks.Core.Services.Server
         }
 
 
+        #pragma warning disable CS0067
         public event PropertyChangedEventHandler PropertyChanged;
+        #pragma warning restore CS0067
 
 
         public void Dispose()

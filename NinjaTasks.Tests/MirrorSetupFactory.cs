@@ -11,8 +11,8 @@ using NinjaTasks.Db.MvxSqlite;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Sync.TaskWarrior;
 using NinjaTools;
-using NinjaTools.Connectivity.Connections;
 using TaskWarriorLib.Network;
+using NinjaTools.Connectivity.Connections;
 
 #if !DOT42
 using NinjaTasks.App.Wpf.Services.TcpIp;
@@ -79,8 +79,8 @@ namespace NinjaTasks.Tests
             var trackableSerializer = new JsonNetModificationSerializer(new TodoTrackableFactory());
 
             TokenBag keep = new TokenBag();
-            PipeStreamFactory remote1Listens = new PipeStreamFactory(1024 * 1024, "pipes1");
-            PipeStreamFactory remote2Listens = new PipeStreamFactory(1024 * 1024, "pipes2");
+            PipeStreamSubsystem remote1Listens = new PipeStreamSubsystem(1024 * 1024, "pipes1");
+            PipeStreamSubsystem remote2Listens = new PipeStreamSubsystem(1024 * 1024, "pipes2");
 
             // remote1.
             var facRemote1 = new SQLiteFactory(conFac, sync1Name + ".sqlite");

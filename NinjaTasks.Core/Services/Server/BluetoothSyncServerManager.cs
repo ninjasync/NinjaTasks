@@ -1,8 +1,9 @@
-﻿using Cirrious.MvvmCross.Plugins.Messenger;
+﻿using MvvmCross.Plugin.Messenger;
 using NinjaSync.Storage;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTools;
+using NinjaTools.Connectivity;
 using NinjaTools.Connectivity.Discover;
 using NinjaTools.Npc;
 
@@ -14,7 +15,7 @@ namespace NinjaTasks.Core.Services.Server
         private readonly TokenBag _bag = new TokenBag();
 
 
-        public BluetoothSyncServerManager(IBluetoothStreamFactory streamFactory,
+        public BluetoothSyncServerManager(IBluetoothStreamSubsystem streamFactory,
             INinjaTasksConfigurationService cfg,
             ISyncStoragesFactory storages,
             IMvxMessenger msg)
@@ -35,12 +36,10 @@ namespace NinjaTasks.Core.Services.Server
             ShouldBeActive = _cfg.Cfg.RunBluetoothServer;
         }
 
-        protected override RemoteDeviceInfo GetListenAddress()
+        protected override Endpoint GetListenAddress()
         {
-            var info = new RemoteDeviceInfo(RemoteDeviceInfoType.Bluetooth, "NinjaTasks", null)
-            {
-                Port = SqliteSyncServiceFactory.BluetoothGuid.ToString()
-            };
+            var info = new Endpoint(EndpointType.Bluetooth, "NinjaTasks", 
+                                    null, SqliteSyncServiceFactory.BluetoothGuid.ToString());
             return info;
         }
 

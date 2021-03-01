@@ -23,6 +23,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media;
 using NinjaTools.GUI.Wpf.Utils;
+using System.Windows.Threading;
 
 namespace NinjaTools.GUI.Wpf.Behaviors
 {
@@ -83,15 +84,15 @@ namespace NinjaTools.GUI.Wpf.Behaviors
                 if(control.IsLoaded)
                     UninitializeControl(control, new RoutedEventArgs());
                 else 
-                    control.Loaded -= InitializeControl;
+                    control.Loaded -= OnControlLoaded;
             }
             else if (e.OldValue == null && e.NewValue != null)
             {
-                // unload if requested.
+                // load if requested.
                 if (control.IsLoaded)
-                    InitializeControl(control, new RoutedEventArgs());
+                    InitializeControl(control);
                 else
-                    control.Loaded += InitializeControl;
+                    control.Loaded += OnControlLoaded;
 
             }
             else if(e.NewValue != null && control.IsLoaded)
@@ -102,42 +103,47 @@ namespace NinjaTools.GUI.Wpf.Behaviors
             }
         }
 
-        private static void UninitializeControl(Control control, RoutedEventArgs routedEventArgs)
+        private static void UninitializeControl(Control c, RoutedEventArgs e)
         {
-            control.Loaded -= InitializeControl;
-            control.GotKeyboardFocus -= OnCheckWatermarkStatus;
-            control.LostKeyboardFocus -= OnLostKeyboardFocusStatus;
+            c.Loaded -= OnControlLoaded;
+            c.GotKeyboardFocus -= OnCheckWatermarkStatus;
+            c.LostKeyboardFocus -= OnLostKeyboardFocusStatus;
 
-            if (control is TextBox)
-                ((TextBox)control).TextChanged -= OnCheckWatermarkStatus;
-            else if (control is ComboBox)
-                ((ComboBox)control).SelectionChanged += OnCheckWatermarkStatus;
-            else if (control is ItemsControl)
+            if (c is TextBox)
+                ((TextBox)c).TextChanged -= OnCheckWatermarkStatus;
+            else if (c is ComboBox)
+                ((ComboBox)c).SelectionChanged += OnCheckWatermarkStatus;
+            else if (c is ItemsControl)
             {
                 // not supported atm..
             }
 
-            RemoveWatermark(control);
+            RemoveWatermark(c);
         }
 
-        private static void InitializeControl(object d, RoutedEventArgs e)
+        private static void OnControlLoaded(object d, RoutedEventArgs e)
+        {
+            InitializeControl(d, true);
+        }
+
+        private static void InitializeControl(object d, bool allowRetryAfterChildsAreLoaded = false)
         {
             Control c = GetWatermarkedControl(d);
 
-            if (d is ComboBox || d is TextBox)
+            if (c is ComboBox || c is TextBox)
             {
                 c.GotKeyboardFocus += OnCheckWatermarkStatus;
                 c.LostKeyboardFocus += OnLostKeyboardFocusStatus;
 
-                if (d is TextBox)
+                if (c is TextBox)
                     ((TextBox)c).TextChanged += OnCheckWatermarkStatus;
                 else
                     ((ComboBox)c).SelectionChanged += OnCheckWatermarkStatus;
 
             }
-            else if (d is ItemsControl)
+            else if (c is ItemsControl)
             {
-                ItemsControl i = (ItemsControl)d;
+                ItemsControl i = (ItemsControl)c;
 
                 // for Items property  
                 i.ItemContainerGenerator.ItemsChanged += ItemsChanged;
@@ -148,19 +154,28 @@ namespace NinjaTools.GUI.Wpf.Behaviors
                     DependencyPropertyDescriptor.FromProperty(ItemsControl.ItemsSourceProperty, i.GetType());
                 prop.AddValueChanged(i, ItemsSourceChanged);
             }
-           
+            else if(allowRetryAfterChildsAreLoaded)
+            {
+                // try again after all children have completed loading
+                // http://stackoverflow.com/questions/567216/is-there-a-all-children-loaded-event-in-wpf
+                Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Loaded,
+                                     new Action(() => { InitializeControl(d, false); }));
+                return;
+            }
+
             OnCheckWatermarkStatus(c, new EventArgs());
         }
+
 
         private static Control GetWatermarkedControl(object o)
         {
             if (o is TextBox || o is ItemsControl)
                 return (Control)o;
 
-            var textBox = ((Control)o).GetVisualDescendent<TextBox>();
+            var textBox = ((FrameworkElement)o).GetVisualDescendent<TextBox>();
             if (textBox != null) return textBox;
 
-            var cb = ((Control)o).GetVisualDescendent<ItemsControl>();
+            var cb = ((FrameworkElement)o).GetVisualDescendent<ItemsControl>();
             if (cb != null) return cb;
 
 

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 using NinjaSync.Model;
 using NinjaSync.Model.Journal;
 
@@ -76,11 +76,11 @@ namespace NinjaSync.Storage.MvxSqlite
                     string deleteProperties = db.TableName + "_delete_properties";
                     Connection.Execute("DROP TRIGGER IF EXISTS " + deleteProperties);
                     var cmd = string.Format(
-                        "CREATE TRIGGER {0}\n" +
-                        "  AFTER DELETE ON  {1}\n" +
-                        "  BEGIN\n" +
-                        "    DELETE FROM {2} WHERE {3}=old.{3};\n" +
-                        "  END;", deleteProperties, db.TableName, db.PropertyTableName, TrackableProperties.ColId);
+                       @"CREATE TRIGGER {0}
+                          AFTER DELETE ON  {1}
+                          BEGIN
+                            DELETE FROM {2} WHERE {3}=old.{3};
+                          END;", deleteProperties, db.TableName, db.PropertyTableName, TrackableProperties.ColId);
                     Connection.Execute(cmd);
 
                 }
@@ -135,9 +135,16 @@ namespace NinjaSync.Storage.MvxSqlite
                     exists = _con.ExecuteScalar<int>(cmd, obj.Id) > 0;
                 }
 
+                IList<string> baseProperties = properties == null ? obj.Properties : properties.Intersect(obj.Properties).ToList();
+                if (obj is ITrackableWithAdditionalProperties addProp)
+                    baseProperties = baseProperties.Except(addProp.AdditionalProperties).ToList();
+
                 // store in db.
                 if (exists)
-                    _con.Update(db.TableName, obj, db.StorageType, properties);
+                {
+                    if(baseProperties.Count > 0)
+                        _con.Update(db.TableName, obj, db.StorageType, baseProperties);
+                }
                 else
                     _con.Insert(db.TableName, obj, db.StorageType);
 
@@ -145,9 +152,7 @@ namespace NinjaSync.Storage.MvxSqlite
                 if (db.PropertyTableName != null)
                 {
                     var objProp = (ITrackableWithAdditionalProperties)obj;
-                    var updateProperties = properties == null
-                                                      ? objProp.AdditionalProperties
-                                                      : objProp.AdditionalProperties.Where(properties.Contains);
+                    var updateProperties = properties?.Except(baseProperties) ?? objProp.AdditionalProperties;
 
                     var props = updateProperties.Select(a => Tuple.Create(a, (string)obj.GetProperty(a)))
                                                 .ToList();
@@ -286,7 +291,7 @@ namespace NinjaSync.Storage.MvxSqlite
                     a();
                     _con.Execute("COMMIT");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     try
                     {
@@ -303,9 +308,9 @@ namespace NinjaSync.Storage.MvxSqlite
             {
                 // we re already in a transaction. workaround to force a reserved lock.
                 string g = Guid.NewGuid().ToString();
-                _con.Execute("CREATE TEMP TABLE '" + g + "' (id);");
-                _con.Execute("INSERT INTO '" + g + "'" + " VALUES (1);");
-                _con.Execute("DROP TABLE '" + g + "'");
+                _con.Execute($"CREATE TEMP TABLE '{g}' (id);");
+                _con.Execute($"INSERT INTO '{g}' VALUES (1);");
+                _con.Execute($"DROP TABLE '{g}'");
 
                 _con.RunInTransaction(a);
             }

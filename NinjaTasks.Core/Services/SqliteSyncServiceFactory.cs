@@ -11,6 +11,7 @@ using NinjaTasks.Db.MvxSqlite;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Model.Sync;
 using NinjaTools;
+using NinjaTools.Connectivity;
 using NinjaTools.Connectivity.Discover;
 using TaskWarriorLib.Network;
 
@@ -23,15 +24,15 @@ namespace NinjaTasks.Core.Services
         private readonly ITaskWarriorAccountsStorage _twStorage;
         private readonly ITslConnectionFactory _tsl;
         private readonly SQLiteFactory _sqlite;
-        private readonly IBluetoothStreamFactory _bluetooth;
-        private readonly ITcpStreamFactory _tcpip;
+        private readonly IBluetoothStreamSubsystem _bluetooth;
+        private readonly ITcpStreamSubsystem _tcpip;
         private readonly MvxSqliteSyncServiceFactory _factory;
 
         public SqliteSyncServiceFactory(ITaskWarriorAccountsStorage twStorage, 
                                         ITslConnectionFactory tsl,
                                         SQLiteFactory sqlite,
-                                        IBluetoothStreamFactory bluetooth,
-                                        ITcpStreamFactory tcpip)
+                                        IBluetoothStreamSubsystem bluetooth,
+                                        ITcpStreamSubsystem tcpip)
         {
             _twStorage = twStorage;
             _tsl = tsl;
@@ -52,11 +53,8 @@ namespace NinjaTasks.Core.Services
             }
             if (account.Type == SyncAccountType.BluetoothP2P)
             {
-                
-                var deviceInfo = new RemoteDeviceInfo(RemoteDeviceInfoType.Bluetooth, account.Name, account.Address)
-                {
-                    Port = BluetoothGuid.ToString()
-                };
+
+                var deviceInfo = new Endpoint(EndpointType.Bluetooth, account.Name, account.Address, BluetoothGuid.ToString());
                 var connector = _bluetooth.GetConnector(deviceInfo);
                 var remote = new P2PSyncRemoteEndpoint(connector, new JsonNetModificationSerializer(new TodoTrackableFactory()));
                 var sqlite = _sqlite.Clone();
@@ -68,10 +66,7 @@ namespace NinjaTasks.Core.Services
                     throw new NotImplementedException("tcp/ip not yet supported.");
 
                 var address = SelectTcpIpHostViewModel.SplitHostAndPort(account.Address);
-                var deviceInfo = new RemoteDeviceInfo(RemoteDeviceInfoType.TcpIp, account.Name, address.Item1)
-                {
-                    Port = address.Item2.ToStringInvariant()
-                };
+                var deviceInfo = Endpoint.IpTarget(address.Item1, address.Item2).WithName(account.Name);
                 var connector = _tcpip.GetConnector(deviceInfo);
                 var remote = new P2PSyncRemoteEndpoint(connector, new JsonNetModificationSerializer(new TodoTrackableFactory()));
                 var sqlite = _sqlite.Clone();

@@ -1,14 +1,14 @@
-﻿#if !DOT42
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using System.Threading.Tasks;
+using MvvmCross.Plugin.Messenger;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Model;
 using NinjaTasks.Model.ImportExport;
 using NinjaTasks.Model.Storage;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 
 namespace NinjaTasks.Core.ViewModels.Sync
 {
@@ -47,12 +47,12 @@ namespace NinjaTasks.Core.ViewModels.Sync
             SupportedTypes = new[] {"ics", "txt"};
         }
 
-        public override void Start()
+        public override Task Initialize()
         {
-            base.Start();
-
             TodoList selectedList = _storage.GetLists(SelectedListId).FirstOrDefault();
-            SelectedListName = selectedList == null?"":selectedList.Description;
+            SelectedListName = selectedList == null ? "" : selectedList.Description;
+
+            return base.Initialize();
         }
 
         private void OnFileNameChanged()
@@ -93,4 +93,3 @@ namespace NinjaTasks.Core.ViewModels.Sync
         }
     }
 }
-#endif

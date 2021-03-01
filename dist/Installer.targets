@@ -4,7 +4,7 @@
 	<PropertyGroup>
 		<DistroPath>..\dist</DistroPath>
 		<InnoSetupScript>$(DistroPath)\NinjaTasks.iss</InnoSetupScript>
-		<InnoSetupPath>c:\Program Files (x86)\Inno Setup 5\iscc.exe</InnoSetupPath>
+		<InnoSetupPath>c:\Program Files (x86)\Inno Setup 6\iscc.exe</InnoSetupPath>
 	</PropertyGroup>
 
   

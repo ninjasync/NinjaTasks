@@ -4,15 +4,16 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
 using NinjaSync.Storage;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Core.Reusable;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTools;
-using NinjaTools.MVVM;
-using NinjaTools.MVVM.Services;
+using NinjaTools.GUI.MVVM;
+using NinjaTools.GUI.MVVM.Services;
 using NinjaTools.Npc;
 
 namespace NinjaTasks.Core.ViewModels
@@ -22,6 +23,7 @@ namespace NinjaTasks.Core.ViewModels
         private readonly ITodoStorage _storage;
         private readonly IShowMessageService _message;
         private readonly IMvxMessenger _messenger;
+        private readonly IMvxShareTask _share;
         private TokenBag _keepSaveOnChanges = new TokenBag();
 
         public ObservableCollection<ITasksViewModel> Lists { get; private set; }
@@ -30,11 +32,13 @@ namespace NinjaTasks.Core.ViewModels
 
         private int SelectedListId { get; set; }
 
-        public TodoListsViewModel(ITodoStorage storage, IShowMessageService message, IMvxMessenger messenger)
+        public TodoListsViewModel(ITodoStorage storage, IShowMessageService message, 
+                                  IMvxMessenger messenger, IMvxShareTask share)
         {
             _storage = storage;
             this._message = message;
             _messenger = messenger;
+            _share = share;
 #if !DOT42
             AddToAutoBundling(()=>SelectedListId);
 #else
@@ -60,7 +64,7 @@ namespace NinjaTasks.Core.ViewModels
                 SortPosition = Lists.Count,
             };
 
-            var listvm = new TaskListViewModel(taskList, _storage, _messenger);
+            var listvm = new TaskListViewModel(taskList, _storage, _messenger, _share);
 
             _storage.Save(taskList);
 
@@ -89,10 +93,10 @@ namespace NinjaTasks.Core.ViewModels
         public void DeleteSelectedList()
         {
             if (!CanDeleteSelectedList) return;
-            DeleteList((TaskListViewModel)SelectedList);
+            _ = DeleteListAsync((TaskListViewModel)SelectedList);
         }
 
-        public async Task<bool> DeleteList(TaskListViewModel list)
+        public async Task<bool> DeleteListAsync(TaskListViewModel list)
         {
             if (!list.AllowDeleteList) 
                 return false;
@@ -154,7 +158,7 @@ namespace NinjaTasks.Core.ViewModels
             }
             if (inboxVm == null)
             {
-                inboxVm = new TaskListInboxViewModel(inbox, _storage, _messenger);
+                inboxVm = new TaskListInboxViewModel(inbox, _storage, _messenger, _share);
                 Lists.Insert(0, inboxVm);
             }
             
@@ -162,7 +166,7 @@ namespace NinjaTasks.Core.ViewModels
             var highPriority = Lists.OfType<TaskListPriorityViewModel>().SingleOrDefault();
             if (highPriority == null)
             {
-                Lists.Insert(1, new TaskListPriorityViewModel(_storage, this, inboxVm, _messenger));    
+                Lists.Insert(1, new TaskListPriorityViewModel(_storage, this, inboxVm, _messenger, _share));    
             }
 
             foreach (var listvm in Lists.OfType<TaskListViewModel>().ToList())
@@ -194,7 +198,7 @@ namespace NinjaTasks.Core.ViewModels
                 }
                 else
                 {
-                    listvm = new TaskListViewModel(l, _storage, _messenger);
+                    listvm = new TaskListViewModel(l, _storage, _messenger, _share);
                     Lists.Insert(nextIdx, listvm);
                 }
                 ++nextIdx;

@@ -1,5 +1,6 @@
 ﻿using Android.App;
-using Cirrious.MvvmCross.Droid.Views;
+using MvvmCross.Core;
+using MvvmCross.Platforms.Android.Views;
 
 namespace NinjaTasks.App.Droid
 {
@@ -16,6 +17,11 @@ namespace NinjaTasks.App.Droid
         public SplashScreenActivity() : base(Resource.Layout.SplashScreen)
         {
             
+        }
+
+        protected override void RegisterSetup()
+        {
+            this.RegisterSetupType<Setup>();
         }
     }
 }

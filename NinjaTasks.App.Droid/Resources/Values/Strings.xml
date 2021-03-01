@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="Hello">Hello World, Click Me!</string>
   <string name="app_name">NinjaTasks</string>
   <string name="account_type">org.ninjatasks.account</string>
-  
+
+  <string name="ok">OK</string>
+
+  <string name="menu_toggle_completed">Toggle show completed tasks</string>
+  <string name="menu_createlist">Start a new list</string>
+  <string name="menu_preferences">Settings</string>
+  <string name="menu_share">Share</string>
   
   <string name="settings_general">General settings</string>
   <string name="settings_debug">Debug settings</string>

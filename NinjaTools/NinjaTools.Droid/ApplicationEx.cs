@@ -1,5 +1,4 @@
-﻿#if !DOT42
-using System;
+﻿using System;
 using System.ComponentModel;
 using Android.App;
 using Android.Content;
@@ -33,7 +32,10 @@ namespace NinjaTools.Droid
                 GC.Collect();
 
             if (level == TrimMemory.UiHidden)
+            {
                 IsInForeground = false;
+                OnPropertyChanged(nameof(IsInForeground));
+            }
 
             base.OnTrimMemory(level);
         }
@@ -48,6 +50,7 @@ namespace NinjaTools.Droid
         {
             Trace("OnActivityResumed: {0}", activity.GetType().Name);
             IsInForeground = true;
+            OnPropertyChanged(nameof(IsInForeground));
         }
 
         public void OnActivityCreated(Activity activity, Bundle savedInstanceState)
@@ -77,7 +80,7 @@ namespace NinjaTools.Droid
 
         private void Trace(string p1, params object[] format)
         {
-            //var trace = Mvx.Resolve<IMvxTrace>();
+            //var trace = Mvx.IoCProvider.Resolve<IMvxTrace>();
             //if (trace != null)
             //    trace.Trace(MvxTraceLevel.Diagnostic, "livecycle", p1, format);
         }
@@ -93,12 +96,14 @@ namespace NinjaTools.Droid
 
             public virtual void OnPropertyChanged(string propName)
             {
-                var handler = PropertyChanged;
-                if (handler != null) handler(this, new PropertyChangedEventArgs(propName));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged { add { _event.Value.PropertyChanged += value; } remove { _event.Value.PropertyChanged -= value; }}
+        public event PropertyChangedEventHandler PropertyChanged 
+        {   
+            add => _event.Value.PropertyChanged += value;
+            remove => _event.Value.PropertyChanged -= value;
+        }
     }
 }
-#endif

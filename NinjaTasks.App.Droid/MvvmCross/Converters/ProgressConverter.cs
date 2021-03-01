@@ -1,5 +1,5 @@
 ﻿using System;
-using Cirrious.CrossCore.Converters;
+using MvvmCross.Converters;
 
 namespace NinjaTasks.App.Droid.MvvmCross.Converters
 {

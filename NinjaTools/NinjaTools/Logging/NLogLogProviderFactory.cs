@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
@@ -7,13 +8,13 @@ namespace NinjaTools.Logging
 {
     public class NLogLogProviderFactory : ILogProviderFactory
     {
-        public ILogProvider Create(string loggerNameWithWildcards, LogLevel minLogLevel )
+        public ILogProvider Create(string loggerNameWithWildcards, LogLevel minLogLevel)
         {
             return new NLogLogTarget(loggerNameWithWildcards, minLogLevel);
             //return null;
         }
 
-        private class NLogLogTarget : TargetWithLayout, ILogProvider
+        private class NLogLogTarget : TargetWithContext, ILogProvider
         {
             private readonly LogLevel _minLogLevel;
             private Guid _guid;
@@ -23,6 +24,9 @@ namespace NinjaTools.Logging
             {
                 _minLogLevel = minLogLevel;
                 Register(loggerNameWithWildcards);
+                //this.IncludeGdc = true;
+                this.IncludeMdc  = true;
+                this.IncludeMdlc = true;
             }
 
             private void Register(string loggerNameWithWildcards)
@@ -66,15 +70,15 @@ namespace NinjaTools.Logging
             {
                 var h = Log;
                 if (h == null) return;
-                LogLevel level;
-                if (!Enum.TryParse(logEvent.Level.Name, true, out level))
+                if (!Enum.TryParse(logEvent.Level.Name, true, out LogLevel level))
                     level = LogLevel.Error;
 
                 h(this, new LogEventArgs
                 {
-                    Level = level,
-                    Timestamp = logEvent.TimeStamp,
-                    Message = Layout.Render(logEvent)
+                    Level      = level,
+                    Timestamp  = logEvent.TimeStamp,
+                    Message    = Layout.Render(logEvent),
+                    Properties = GetAllProperties(logEvent).ToDictionary(kv => kv.Key.ToString(), kv => kv.Value)
                 });
             }
         }

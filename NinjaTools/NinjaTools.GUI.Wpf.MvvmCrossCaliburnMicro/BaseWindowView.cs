@@ -1,6 +1,8 @@
 ﻿using System.Windows;
-using Cirrious.MvvmCross.ViewModels;
-using Cirrious.MvvmCross.Wpf.Views;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Wpf.Views;
+using MvvmCross.ViewModels;
+using NinjaTools.GUI.Wpf.Behaviors;
 
 namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
 {
@@ -22,5 +24,7 @@ namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
                 DataContext = value;
             }
         }
+
+        public IMvxBindingContext BindingContext { get; set; }
     }
 }

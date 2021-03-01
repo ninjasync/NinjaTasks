@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaSync.Storage;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Model.Storage;
@@ -69,7 +69,7 @@ namespace NinjaTasks.Core.Services
                     }
                 }
             }
-            catch (OperationCanceledException ex)
+            catch (OperationCanceledException)
             {
             }
             catch (Exception ex)

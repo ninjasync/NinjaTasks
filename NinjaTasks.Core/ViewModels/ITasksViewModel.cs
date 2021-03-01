@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Cirrious.MvvmCross.ViewModels;
+using MvvmCross.ViewModels;
 using NinjaTasks.Core.Reusable;
 
 namespace NinjaTasks.Core.ViewModels

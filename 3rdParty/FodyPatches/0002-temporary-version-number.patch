@@ -1,0 +1,25 @@
+From 422707d57840751aab092ab355c43d5acc9f55a5 Mon Sep 17 00:00:00 2001
+From: "olaf@toshiba" <olaf@toshiba>
+Date: Mon, 30 Mar 2015 21:56:03 +0200
+Subject: [PATCH 2/2] temporary version number
+
+---
+ CommonAssemblyInfo.cs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CommonAssemblyInfo.cs b/CommonAssemblyInfo.cs
+index e735b19..8e9d03f 100644
+--- a/CommonAssemblyInfo.cs
++++ b/CommonAssemblyInfo.cs
+@@ -4,6 +4,6 @@
+ [assembly: AssemblyProduct("PropertyChanged")]
+ [assembly: AssemblyCompany("Simon Cropp and Contributors")]
+ [assembly: AssemblyDescription("Fody add-in for injecting INotifyPropertyChanged code into properties.")]
+-[assembly: AssemblyVersion("1.49.0")]
+-[assembly: AssemblyFileVersion("1.49.0")]
++[assembly: AssemblyVersion("1.99.0")]
++[assembly: AssemblyFileVersion("1.99.0")]
+  
+-- 
+1.9.5.msysgit.0
+

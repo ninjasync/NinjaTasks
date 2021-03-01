@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace NinjaTools.MVVM.Services
+namespace NinjaTools.GUI.MVVM.Services
 {
     public interface IWeakTimerService
     {

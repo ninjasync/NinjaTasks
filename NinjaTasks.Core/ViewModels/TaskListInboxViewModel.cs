@@ -1,6 +1,7 @@
 ﻿
 using System.Diagnostics;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 
@@ -14,7 +15,8 @@ namespace NinjaTasks.Core.ViewModels
         public override bool AllowRename { get { return false; } }
         public override bool AllowDeleteList { get { return false; } }
 
-        public TaskListInboxViewModel(TodoListWithCount list, ITodoStorage storage, IMvxMessenger messenger) : base(list, storage, messenger)
+        public TaskListInboxViewModel(TodoListWithCount list, ITodoStorage storage, IMvxMessenger messenger, IMvxShareTask share) 
+                    : base(list, storage, messenger, share)
         {
             Debug.Assert(string.IsNullOrEmpty(list.Description));
         }

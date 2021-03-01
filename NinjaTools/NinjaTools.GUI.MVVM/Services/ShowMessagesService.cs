@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using NinjaTools.MVVM.ViewModels;
+using NinjaTools.GUI.MVVM.ViewModels;
 
-namespace NinjaTools.MVVM.Services
+namespace NinjaTools.GUI.MVVM.Services
 {
     public class ShowMessagesService : IShowMessageService
     {

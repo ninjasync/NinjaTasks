@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Caliburn.Micro;
-using Cirrious.MvvmCross.ViewModels;
-using Cirrious.MvvmCross.Wpf.Views;
+using MvvmCross.Platforms.Wpf.Views;
+using MvvmCross.ViewModels;
 
 namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
 {

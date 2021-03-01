@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTools;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 using NinjaTools.Npc;
 
 namespace NinjaTasks.Core.ViewModels
@@ -22,7 +23,9 @@ namespace NinjaTasks.Core.ViewModels
 
         private readonly TokenBag _bag = new TokenBag();
 
-        public TaskListPriorityViewModel(ITodoStorage storage, TodoListsViewModel taskLists, TaskListViewModel inbox, IMvxMessenger messenger) : base(storage, messenger)
+        public TaskListPriorityViewModel(ITodoStorage storage, TodoListsViewModel taskLists, 
+                                        TaskListViewModel inbox, IMvxMessenger messenger, IMvxShareTask share)
+                                        : base(storage, messenger, share)
         {
             _taskLists = taskLists;
 

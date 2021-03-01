@@ -1,4 +1,5 @@
-﻿using Cirrious.MvvmCross.Wpf.Views;
+﻿using MvvmCross.Platforms.Wpf.Views;
+using NinjaTools.GUI.Wpf.Behaviors;
 
 namespace NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro
 {

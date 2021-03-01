@@ -134,6 +134,11 @@ namespace NinjaTools.Logging
                 System.Diagnostics.Trace.TraceError(msg + "\n" + ex.ToString());
             }
 
+            public void Error(Exception ex, string msg)
+            {
+                System.Diagnostics.Trace.TraceError(msg + "\n" + ex.ToString());
+            }
+
             public bool IsTraceEnabled => true;
             public bool IsDebugEnabled => true;
             public bool IsInfoEnabled => true;

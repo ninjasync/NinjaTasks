@@ -1,144 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{747706F4-ECBF-4D50-8D72-B0DDCC18395C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NinjaTasks.Core</RootNamespace>
-    <AssemblyName>NinjaTasks.Core.PCL</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\NinjaTasks.Model\Properties\AssemblyInfoNinjaTasks.cs">
-      <Link>AssemblyInfoNinjaTasks.cs</Link>
-    </Compile>
-    <Compile Include="App.cs" />
-    <Compile Include="Messages\TrackableStoreModifiedMessage.cs" />
-    <Compile Include="Messages\SyncFinishedMessage.cs" />
-    <Compile Include="Messages\TaskModifiedMessage.cs" />
-    <Compile Include="MvxSqliteSyncServiceFactory.cs" />
-    <Compile Include="Reusable\ISortableElement.cs" />
-    <Compile Include="Reusable\SortableElementIdCalculator.cs" />
-    <Compile Include="Services\AccountCreationManager.cs" />
-    <Compile Include="Services\Server\BluetoothSyncServerManager.cs" />
-    <Compile Include="Services\Server\ISyncServerManager.cs" />
-    <Compile Include="Services\SyncOnDataChangedManager.cs" />
-    <Compile Include="Services\StreamFactories.cs" />
-    <Compile Include="Services\ISyncManager.cs" />
-    <Compile Include="Services\ISyncServiceFactory.cs" />
-    <Compile Include="Services\SqliteSyncServiceFactory.cs" />
-    <Compile Include="Services\SyncManager.cs" />
-    <Compile Include="Services\Server\SyncServerManager.cs" />
-    <Compile Include="Services\Server\TcpIpSyncServerManager.cs" />
-    <Compile Include="TodoTrackableFactory.cs" />
-    <Compile Include="ViewModels\EditListViewModel.cs" />
-    <Compile Include="ViewModels\Sync\ImportExportViewModel.cs" />
-    <Compile Include="ViewModels\LogViewModel.cs" />
-    <Compile Include="ViewModels\Sync\ConfigureAccountsViewModel.cs" />
-    <Compile Include="ViewModels\Sync\SelectTcpIpHostViewModel.cs" />
-    <Compile Include="ViewModels\Sync\SyncAccountViewModel.cs" />
-    <Compile Include="ViewModels\TaskListPriorityViewModel.cs" />
-    <Compile Include="ViewModels\Sync\TaskWarriorAccountViewModel.cs" />
-    <Compile Include="ViewModels\TaskListInboxViewModel.cs" />
-    <Compile Include="ViewModels\ITasksViewModel.cs" />
-    <Compile Include="ViewModels\TasksSearchViewModel.cs" />
-    <Compile Include="ViewModels\TasksViewModelBase.cs" />
-    <Compile Include="ViewModels\TodoTaskViewModel.cs" />
-    <Compile Include="ViewModels\TodoListsViewModel.cs" />
-    <Compile Include="ViewModels\TaskListViewModel.cs" />
-    <Compile Include="ViewModels\AppViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\NinjaSync.Storage.MvxSqlite\NinjaSync.Storage.MvxSqlite.csproj">
-      <Project>{f19e717d-4d67-4fc4-be14-db7583331454}</Project>
-      <Name>NinjaSync.Storage.MvxSqlite</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj">
-      <Project>{2c47e154-1e5d-4801-97aa-aace064dde48}</Project>
-      <Name>NinjaSync</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTasks.Db.MvxSqlite\NinjaTasks.Db.MvxSqlite.csproj">
-      <Project>{12082999-E512-4FBB-9ADB-CAB3C8FE9F46}</Project>
-      <Name>NinjaTasks.Db.MvxSqlite</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTasks.Sync\NinjaTasks.Sync.csproj">
-      <Project>{94c51f89-ea81-4028-9103-3fec0bbd9752}</Project>
-      <Name>NinjaTasks.Sync</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTools.Connectivity.ViewModels\NinjaTools.Connectivity.ViewModels.csproj">
-      <Project>{4DA0AB47-175C-4068-A189-B1DE57DBE4FF}</Project>
-      <Name>NinjaTools.Connectivity.ViewModels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj">
-      <Project>{8BA579B0-A7C0-4817-AE20-EDA450DCCDDA}</Project>
-      <Name>NinjaTools.Connectivity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTools\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj">
-      <Project>{50943d97-3b48-4660-bff7-57010c48d8ea}</Project>
-      <Name>NinjaTools.GUI.MVVM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj">
-      <Project>{E894D40E-6F3D-45D8-9BBD-F0D09DFC32B4}</Project>
-      <Name>NinjaTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NinjaTasks.Model\NinjaTasks.Model.csproj">
-      <Project>{A38FBCE8-FDD3-4765-BA22-16E0A6C5CCA3}</Project>
-      <Name>NinjaTasks.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TaskWarriorLib\TaskWarriorLib.csproj">
-      <Project>{beec9c42-cc15-4304-a420-f69bc7a94534}</Project>
-      <Name>TaskWarriorLib</Name>
-    </ProjectReference>
+    <PackageReference Include="MvvmCross.Plugin.Share" Version="6.4.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.CrossCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite">
-      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
-      <HintPath>..\NinjaTools\3rdParty\MvvmCross\Portable\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\3rdParty\ToDoLib\ToDoLib.csproj" />
+    <ProjectReference Include="..\NinjaSync.Storage.MvxSqlite\NinjaSync.Storage.MvxSqlite.csproj" />
+    <ProjectReference Include="..\NinjaSync\NinjaSync.csproj" />
+    <ProjectReference Include="..\NinjaTasks.Db.MvxSqlite\NinjaTasks.Db.MvxSqlite.csproj" />
+    <ProjectReference Include="..\NinjaTasks.Model\NinjaTasks.Model.csproj" />
+    <ProjectReference Include="..\NinjaTasks.Sync\NinjaTasks.Sync.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools.Connectivity.ViewModels\NinjaTools.Connectivity.ViewModels.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools.Connectivity\NinjaTools.Connectivity.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools.GUI.MVVM\NinjaTools.GUI.MVVM.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools.Sqlite\Sqlite\NinjaTools.Sqlite\NinjaTools.Sqlite.csproj" />
+    <ProjectReference Include="..\NinjaTools\NinjaTools\NinjaTools.csproj" />
+    <ProjectReference Include="..\TaskWarriorLib\TaskWarriorLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\3rdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets" Condition="Exists('..\3rdParty\nuget\Fody.1.26.4\build\Fody.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

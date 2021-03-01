@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 
 namespace NinjaTools
 {
+    [Obsolete("use nameof()")]
     public static class ExpressionHelper
     {
         public static MemberExpression FindMemberExpression<T>(Expression<Func<T>> expression)

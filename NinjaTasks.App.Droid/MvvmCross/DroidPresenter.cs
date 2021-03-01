@@ -2,9 +2,9 @@
 
 using System;
 using Android.App;
-using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
-using Cirrious.MvvmCross.Droid.Views;
-using Cirrious.MvvmCross.ViewModels;
+using MvvmCross.Droid.FullFragging.Fragments;
+using MvvmCross.Droid.Views;
+using MvvmCross.ViewModels;
 
 namespace NinjaTasks.App.Droid.MvvmCross
 {

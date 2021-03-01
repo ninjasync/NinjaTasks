@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using NinjaTools.MVVM.Services;
-using NinjaTools.MVVM.ViewModels;
+using NinjaTools.GUI.MVVM.Services;
+using NinjaTools.GUI.MVVM.ViewModels;
+using NinjaTools.GUI.Wpf.Views;
 
 namespace NinjaTools.GUI.Wpf.Services
 {
@@ -31,6 +33,13 @@ namespace NinjaTools.GUI.Wpf.Services
             model.WasCancelled = (res == MessageBoxResult.Cancel) || (res == MessageBoxResult.None);
             
             bool ret = res == MessageBoxResult.OK || res == MessageBoxResult.Yes;
+            return Task.FromResult(ret);
+        }
+
+        public Task<bool> Show(InputViewModel vm)
+        {
+            var dlg = new InputDlg { DataContext = vm, Owner = Application.Current.MainWindow };
+            bool ret = dlg.ShowDialog() == true;
             return Task.FromResult(ret);
         }
     }

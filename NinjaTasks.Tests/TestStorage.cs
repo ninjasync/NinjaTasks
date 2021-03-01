@@ -17,6 +17,7 @@ namespace NinjaTasks.Tests
         {
             var conFac = Helpers.CreateConnectionFactory();
             var fac = new SQLiteFactory(conFac, "test.sqlite");
+            
             Helpers.ClearDatabase(fac);
             var db = new MvxSqliteTodoStorage(fac.Get("tests"));
 

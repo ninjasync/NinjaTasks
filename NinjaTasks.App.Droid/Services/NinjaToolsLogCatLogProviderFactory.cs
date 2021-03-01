@@ -1,5 +1,6 @@
 using System;
 using NinjaTools.Droid;
+using NinjaTools.Droid.Logging;
 using NinjaTools.Logging;
 
 namespace NinjaTasks.App.Droid.Services

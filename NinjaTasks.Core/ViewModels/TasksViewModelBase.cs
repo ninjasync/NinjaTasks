@@ -5,12 +5,12 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using Cirrious.CrossCore.Converters;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
+using MvvmCross.Plugin.Share;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTools.Collections;
-using NinjaTools.MVVM;
+using NinjaTools.GUI.MVVM;
 using PropertyChanged;
 
 namespace NinjaTasks.Core.ViewModels
@@ -18,7 +18,8 @@ namespace NinjaTasks.Core.ViewModels
     public abstract class TasksViewModelBase : BaseViewModel, ITasksViewModel, IDeactivate, IActivate
     {
         protected readonly ITodoStorage Storage;
-        private readonly IMvxMessenger _messenger;
+        protected readonly IMvxShareTask Share;
+        protected readonly IMvxMessenger Messenger;
 
         public abstract string Description { get; set; }
         public abstract int SortPosition { get; set; }
@@ -47,17 +48,14 @@ namespace NinjaTasks.Core.ViewModels
 
         public abstract void MoveInto(IList<TodoTaskViewModel> data, ITasksViewModel previous);
 
-        public TasksViewModelBase(ITodoStorage storage, IMvxMessenger messenger)
+        public TasksViewModelBase(ITodoStorage storage, IMvxMessenger messenger, IMvxShareTask share)
         {
             Storage = storage;
-            _messenger = messenger;
+            Messenger = messenger;
+            Share = share;
 
             ShowCompletedTasks = true;
-#if !DOT42
             AddToAutoBundling(() => ShowCompletedTasks);
-#else
-            AddToAutoBundling("ShowCompletedTasks");
-#endif
             Tasks = new ObservableCollection<TodoTaskViewModel>();
         }
 
@@ -94,6 +92,18 @@ namespace NinjaTasks.Core.ViewModels
             if (nextSelection >= 0 && Tasks.Count > 0)
                 SelectedPrimaryTask = Tasks[nextSelection];
         }
+
+        public void ShareSelectedTasks()
+        {
+            if (SelectedTasks == null) return;
+            var selection = SelectedTasks.Cast<TodoTaskViewModel>()
+                                         .ToList();
+            var msg = string.Join("\n",
+                selection.Where(s => !string.IsNullOrWhiteSpace(s.Task.Description)).Select(s => s.Task.Description));
+            if(!string.IsNullOrWhiteSpace(msg))
+                Share.ShareShort(msg);
+        }
+
 
         public void RemoveTask(TodoTaskViewModel data)
         {
@@ -189,7 +199,8 @@ namespace NinjaTasks.Core.ViewModels
                 }
                 else
                 {
-                    var taskvm = new TodoTaskViewModel(todoTask, getTaskList(todoTask), Storage, _messenger);
+                    var taskvm = new TodoTaskViewModel(todoTask, getTaskList(todoTask), 
+                                                       Storage, Messenger, Share);
                     targetList.Insert(nextIdx, taskvm);
                     AttachTask(taskvm);
                 }

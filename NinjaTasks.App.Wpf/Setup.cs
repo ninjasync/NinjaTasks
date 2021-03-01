@@ -3,17 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Reflection;
-using System.Windows.Threading;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Plugins;
-using Cirrious.MvvmCross.BindingEx.WindowsShared;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
-using Cirrious.MvvmCross.Plugins.Messenger;
-using Cirrious.MvvmCross.ViewModels;
-using Cirrious.MvvmCross.Views;
-using Cirrious.MvvmCross.Wpf.Platform;
-using Cirrious.MvvmCross.Wpf.Views;
-using NinjaTasks.App.Wpf.MvvmCross;
+using MvvmCross.Plugin.Messenger;
 using NinjaTasks.Core.Messages;
 using NinjaTasks.Core.Services;
 using NinjaTasks.Core.Services.Server;
@@ -21,30 +11,30 @@ using NinjaTasks.Db.MvxSqlite;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Sync.ImportExport;
 using NinjaTools;
-using NinjaTools.Connectivity.ViewModels.ViewModels;
 using NinjaTools.GUI.Wpf.Services;
-using NinjaTools.Logging;
-using NinjaTools.MVVM.Services;
-using NinjaTools.GUI.Wpf.Utils;
+using NinjaTools.GUI.MVVM.Services;
+using System.Collections.Generic;
+using System.Windows;
+using MvvmCross.Plugin.Share;
+using MvvmCross.Platforms.Wpf.Core;
+using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Wpf.Views;
+using MvvmCross.Views;
+using MvvmCross;
+using NinjaTools.Sqlite;
+using NinjaTools.Connectivity.ViewModels.ViewModels;
+using NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro;
+using NinjaTools.Connectivity.Bluetooth._32Feet;
+using NinjaTools.Connectivity;
+using NinjaTools.Connectivity.SystemNet;
+using NinjaTools.Connectivity.Discover;
+using MvvmCross.Platforms.Wpf.Presenters;
+using System.Windows.Controls;
+using UnconventionalProxy.UI.Wpf.Views;
+using NinjaTools.Sqlite.SqliteNetPCL;
 
 namespace NinjaTasks.App.Wpf
 {
-    public class SqlitePluginBootstrap
-        : MvxPluginBootstrapAction<Cirrious.MvvmCross.Community.Plugins.Sqlite.PluginLoader>
-    {
-        public SqlitePluginBootstrap()
-        {
-            string sqlitebin = Path.GetFullPath(Environment.Is64BitProcess ? "x64" : "x86");
-            Environment.SetEnvironmentVariable("PATH",
-                    sqlitebin + ";" + Environment.GetEnvironmentVariable("PATH"));
-        }
-    }
-
-    public class MessengerPluginBootstrap
-     : MvxPluginBootstrapAction<Cirrious.MvvmCross.Plugins.Messenger.PluginLoader>
-    {
-    }
-
     public class Setup : MvxWpfSetup
     {
         private TokenBag _keep = new TokenBag();
@@ -56,10 +46,11 @@ namespace NinjaTasks.App.Wpf
 
         private SyncOnDataChangedManager _syncOnDatabaseChange;
 
-        public Setup(Dispatcher dispatcher, IMvxWpfViewPresenter presenter)
-            : base(dispatcher, presenter)
+        static Setup()
         {
-            NinjaTools2NLog.Register();
+            //string sqlitebin = Path.GetFullPath(Environment.Is64BitProcess ? "x64" : "x86");
+            //Environment.SetEnvironmentVariable("PATH", sqlitebin + ";" + Environment.GetEnvironmentVariable("PATH"));
+            //NinjaTools.Sqlite.MvxBaseSQLiteConnectionFactory(sqlitebin);
         }
 
         protected override IMvxNameMapping CreateViewToViewModelNaming()
@@ -70,13 +61,22 @@ namespace NinjaTasks.App.Wpf
         protected override IMvxWpfViewsContainer CreateWpfViewsContainer()
         {
             var ret = new MvxToCaliburnMicroWpfViewsContainer();
-            Mvx.RegisterSingleton<IMvxViewFinder>(ret);
+            ret.Add<SelectRemoteDeviceViewModel, SelectBluetoothRemoteDeviceNativeView>();
+
+            Mvx.IoCProvider.RegisterSingleton<IMvxViewFinder>(ret);
+            Mvx.IoCProvider.RegisterSingleton<IMvxViewsContainer>(ret);
+            
             return ret;
         }
-
-        protected override void InitializeIoC()
+        
+        protected override IMvxWpfViewPresenter CreateViewPresenter(ContentControl root)
         {
-            base.InitializeIoC();
+            return new MyWpfPresenter(root);
+        }
+
+        protected override void InitializeFirstChance()
+        {
+            NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro.SetupCaliburn.SetupIoC();
 
             var assemlies = new[] {
                     typeof (ImportExportFactory).Assembly,
@@ -93,34 +93,51 @@ namespace NinjaTasks.App.Wpf
             foreach (var assembly in assemlies)
                 Core.App.RegisterTypesWithIoC(assembly);
 
-            Mvx.RegisterSingleton(() => new SQLiteFactory(Mvx.Resolve<ISQLiteConnectionFactoryEx>(), DatabasePath));
-            Mvx.RegisterSingleton<ISQLiteConnection>(()=>Mvx.Resolve<SQLiteFactory>().Get("gui"));
-            Mvx.LazyConstructAndRegisterSingleton<ITodoStorage>(Mvx.IocConstruct<MvxSqliteTodoStorage>);
-            //Mvx.LazyConstructAndRegisterSingleton<ISyncService, SynchronizationService>();
+            var disoverBluetooth = new BluetoothDiscoverRemoteDevicesService(SqliteSyncServiceFactory.BluetoothGuid);
+            Mvx.IoCProvider.RegisterSingleton<IDiscoverRemoteEndpoints>(disoverBluetooth);
+            Mvx.IoCProvider.RegisterSingleton<IDiscoverBluetoothRemoteEndpoints>(disoverBluetooth);
 
-            MvxWindowsBindingBuilder bld = new MvxWindowsBindingBuilder();
-            bld.DoRegistration();
+
+            Mvx.IoCProvider.RegisterSingleton<IBluetoothStreamSubsystem>(Mvx.IoCProvider.IoCConstruct<BluetoothStreamSubsystem>);
+            Mvx.IoCProvider.RegisterSingleton<ITcpStreamSubsystem>(() => Mvx.IoCProvider.IoCConstruct<TcpStreamSubsystem>());
+
+            Mvx.IoCProvider.RegisterSingleton(Mvx.IoCProvider.IoCConstruct<BluetoothSyncServerManager>);
+            Mvx.IoCProvider.RegisterSingleton(Mvx.IoCProvider.IoCConstruct<TcpIpSyncServerManager>);
+            Mvx.IoCProvider.RegisterSingleton(Mvx.IoCProvider.IoCConstruct<SyncOnDataChangedManager>);
+
+            Mvx.IoCProvider.RegisterSingleton<ISQLiteConnectionFactoryEx>(Mvx.IoCProvider.IoCConstruct<SqLiteNetPCLConnectionFactory>);
+            Mvx.IoCProvider.RegisterSingleton(() => new SQLiteFactory(Mvx.IoCProvider.Resolve<ISQLiteConnectionFactoryEx>(), DatabasePath, UseDatabaseEncryption));
+            Mvx.IoCProvider.RegisterSingleton<ISQLiteConnection>(()=>Mvx.IoCProvider.Resolve<SQLiteFactory>().Get("gui"));
+            Mvx.IoCProvider.RegisterSingleton<ITodoStorage>(Mvx.IoCProvider.IoCConstruct<MvxSqliteTodoStorage>);
+            //Mvx.LazyConstructAndRegisterSingleton<ISyncService, SynchronizationService>();
+            Mvx.IoCProvider.RegisterSingleton<IMvxShareTask>(() => new ShareToClipboard());
+
+
+            base.InitializeFirstChance();
+
         }
 
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
-           
-            // initialize caliburn.
-            ShortcutParser.InitializeShortcuts();
 
-            IMvxMessenger m = Mvx.GetSingleton<IMvxMessenger>();
+            SQLitePCL.Batteries.Init();
+
+            // initialize caliburn.
+            NinjaTools.GUI.Wpf.MvvmCrossCaliburnMicro.ShortcutParser.InitializeShortcuts();
+
+            IMvxMessenger m = Mvx.IoCProvider.GetSingleton<IMvxMessenger>();
             _keep += m.SubscribeOnMainThread<TaskModifiedMessage>(OnTaskModified);
 
 
-            _accountsCreator = Mvx.IocConstruct<AccountCreationManager>();
-            _syncManager = Mvx.GetSingleton<ISyncManager>();
+            _accountsCreator       = Mvx.IoCProvider.IoCConstruct<AccountCreationManager>();
+            _syncManager           = Mvx.IoCProvider.GetSingleton<ISyncManager>();
             _syncManager.IsEnabled = true;
 
-            _bluetoothSyncServer = Mvx.GetSingleton<BluetoothSyncServerManager>();
-            _tcpIpSyncServer = Mvx.GetSingleton<TcpIpSyncServerManager>();
+            _bluetoothSyncServer   = Mvx.IoCProvider.GetSingleton<BluetoothSyncServerManager>();
+            _tcpIpSyncServer       = Mvx.IoCProvider.GetSingleton<TcpIpSyncServerManager>();
 
-            _syncOnDatabaseChange = Mvx.IocConstruct<SyncOnDataChangedManager>();
+            _syncOnDatabaseChange  = Mvx.IoCProvider.GetSingleton<SyncOnDataChangedManager>();
 
             //new P2PSyncServer()
         }
@@ -145,33 +162,47 @@ namespace NinjaTasks.App.Wpf
                     dir = "portable-data";
                 else
                 {
-                    dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), publisher,
-                        appname);
+                    string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    dir = Path.Combine(appdata, publisher, appname);
                     Directory.CreateDirectory(dir);
                 }
 
-                return Path.GetFullPath(Path.Combine(dir, appname + ".sqlite"));
-
+                string filename = UseDatabaseEncryption ? "config" : (appname + ".sqlite");
+                return Path.GetFullPath(Path.Combine(dir, filename));
             }
         }
 
-        protected override Assembly[] GetViewModelAssemblies()
+        public bool UseDatabaseEncryption
+        {
+            get => Directory.Exists("empty");
+        }
+
+        public override IEnumerable<Assembly> GetViewModelAssemblies()
         {
             return base.GetViewModelAssemblies()
                        .Concat(new[]{
-                                        typeof (SelectRemoteDeviceViewModel).Assembly ,
+                                        typeof (SelectRemoteDeviceViewModel).Assembly,
+                                        //GetType().Assembly,
                                     })
-                       .Distinct()
-                       .ToArray();
+                       .Distinct();
         }
 
-        /// <summary>
-        /// Creates the app.
-        /// </summary>
-        /// <returns>An instance of MvxApplication</returns>
         protected override IMvxApplication CreateApp()
         {
             return new NinjaTasks.Core.App();
+        }
+    }
+
+    public class ShareToClipboard : IMvxShareTask
+    {
+        public void ShareShort(string message)
+        {
+            Clipboard.SetText(message);
+        }
+
+        public void ShareLink(string title, string message, string link)
+        {
+            Clipboard.SetText(link);
         }
     }
 }

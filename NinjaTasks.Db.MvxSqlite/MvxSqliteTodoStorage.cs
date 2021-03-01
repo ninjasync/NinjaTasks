@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Cirrious.MvvmCross.Community.Plugins.Sqlite;
+using NinjaTools.Sqlite;
 using NinjaSync.Model;
 using NinjaSync.Model.Journal;
 using NinjaSync.Storage.MvxSqlite;
@@ -125,8 +125,6 @@ namespace NinjaTasks.Db.MvxSqlite
 
         public IEnumerable<TodoListWithCount> GetLists(params string[] id)
         {
-            IEnumerable<TodoList> results;
-
             string whereClause = id.Length == 0 ? "" : SQLiteHelpers.MakeIdWhereClause(id);
 
             string cmd = string.Format(

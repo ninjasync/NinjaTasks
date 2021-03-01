@@ -31,6 +31,7 @@ namespace NinjaTasks.Model.Storage
         }
 
 #if !DOT42
+        [Obsolete("use nameof()")]
         public static void Copy<T>(this IPropertyCopier copy, T target, T source, params Expression<Func<T, object>>[] properties)
         {
             foreach(var prop in properties)

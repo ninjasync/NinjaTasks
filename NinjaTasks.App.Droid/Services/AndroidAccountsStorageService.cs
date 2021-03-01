@@ -73,7 +73,13 @@ namespace NinjaTasks.App.Droid.Services
             if (prev == null) return;
 
             AccountManager accountManager = AccountManager.Get(_ctx);
-            accountManager.RemoveAccount(prev.Item3, null, null);
+
+            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.LollipopMr1)
+                accountManager.RemoveAccount(prev.Item3, null, null, null);
+            else
+#pragma warning disable CS0618 // Type or member is obsolete
+                accountManager.RemoveAccount(prev.Item3, null, null);
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         public void SaveAccount(SyncAccount account, IList<string> selectedProperties)

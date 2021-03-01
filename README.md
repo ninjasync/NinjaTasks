@@ -9,9 +9,7 @@ TODO: screenshot
 
   - supports Lists and Tasks  
   - P2P sync over  Bluetooth, experimental over TCP/IP
-  - syncs with [Taskwarrior Taskserver](http://taskwarrior.org) 
   - easy and fun to use
-  - lightning fast start-up time  
 
 ### Features NinjaTasks Android
 
@@ -19,7 +17,6 @@ NinjaTasks main features are
 
   - supports Lists and Tasks  
   - P2P sync over  Bluetooth
-  - syncs with [Taskwarrior Taskserver](http://taskwarrior.org)
  
 # License
 MIT

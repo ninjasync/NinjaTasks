@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -63,6 +64,7 @@ namespace NinjaTools.GUI.Wpf.Behaviors
             Rect bounds = VisualTreeHelper.GetDescendantBounds(containerElement);
             return new Rect(containerElement.TranslatePoint(bounds.TopLeft, selector), bounds.Size);
         }
+
         private static ScrollViewer GetScrollViewer(DependencyObject d)
         {
             List<DependencyObject> list = new List<DependencyObject>();
@@ -90,6 +92,8 @@ namespace NinjaTools.GUI.Wpf.Behaviors
                     if (selector is DataGrid)
                     {
                         ((DataGrid) selector).SelectedCellsChanged += DataGrid_SelectedCellsChanged;
+                        ((DataGrid)selector).PreparingCellForEdit += DataGrid_EditingBegan;
+                        ((DataGrid)selector).CellEditEnding += DataGrid_EditingEnded;
                     }
 
                     if (!selector.IsLoaded)
@@ -129,6 +133,7 @@ namespace NinjaTools.GUI.Wpf.Behaviors
             }
         }
 
+        
         private static void ProcessSelection(Selector selector)
         {
             DataGrid dataGrid = selector as DataGrid;
@@ -165,6 +170,8 @@ namespace NinjaTools.GUI.Wpf.Behaviors
             DetachAdorner(selector);
         }
 
+
+
         private static bool ProcessDataGridSelection(Selector selector, DataGrid dataGrid)
         {
             // get row and columns; for virtualized rows/columns we will get no visual info.
@@ -177,7 +184,8 @@ namespace NinjaTools.GUI.Wpf.Behaviors
                                .OrderBy(c => c.RowIndex)
                                .ToLookup(k => k.Item);
             var cells = dataGrid.SelectedCells
-                                .Select(c => new {ColumnIndex = c.Column.DisplayIndex, Row = rowByItem[c.Item].FirstOrDefault() })
+                                .Where(c=>c.Column != null)
+                                .Select(c => new {ColumnIndex = c.Column.DisplayIndex, Row = rowByItem[c.Item]?.FirstOrDefault() })
                                 .Where(c=>c.Row != null)
                                 .OrderBy(c => c.Row.RowIndex)
                                 .ThenBy(c => c.ColumnIndex)
@@ -224,6 +232,23 @@ namespace NinjaTools.GUI.Wpf.Behaviors
 
             return false;
         }
+
+        private static void DataGrid_EditingBegan(object sender, DataGridPreparingCellForEditEventArgs e)
+        {
+            AdornderBase adorner;
+            if (!Dictionary.TryGetValue(sender as Selector, out adorner))
+                return;
+            adorner.SetEditMode(true);
+        }
+
+        private static void DataGrid_EditingEnded(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            AdornderBase adorner;
+            if (!Dictionary.TryGetValue(sender as Selector, out adorner))
+                return;
+            adorner.SetEditMode(false);
+        }
+
 
         private static void ProcessRowSelection(Selector selector, IEnumerable<object> selectedItems)
         {
@@ -331,6 +356,10 @@ namespace NinjaTools.GUI.Wpf.Behaviors
                 this.InvalidateVisual();
         }
 
+        public virtual void SetEditMode(bool isEditing)
+        {
+        }
+
         public void Clear()
         {
             _adornerLayer?.Remove(this);
@@ -371,6 +400,8 @@ namespace NinjaTools.GUI.Wpf.Behaviors
 
         readonly DataGrid _dataGrid;
         private readonly Pen _pen;
+        private Pen _editPen;
+        private bool _isEditing;
 
         public override void Update(Rect bounds, bool invalidateVisual = true)
         {
@@ -435,6 +466,12 @@ namespace NinjaTools.GUI.Wpf.Behaviors
             return _visualChildren[index];
         }
 
+        public override void SetEditMode(bool isEditing)
+        {
+            _isEditing = isEditing;
+            InvalidateVisual();
+        }
+
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
@@ -470,7 +507,15 @@ namespace NinjaTools.GUI.Wpf.Behaviors
                 ctx.LineTo(p2, true, false);
             }
             geometry.Freeze();
-            drawingContext.DrawGeometry(null, _pen, geometry);
+
+            if(_isEditing && _editPen == null)
+            {
+                _editPen = new Pen(_pen.Brush, _pen.Thickness / 2);
+            }
+
+            var pen = _isEditing ? _editPen : _pen;
+
+            drawingContext.DrawGeometry(null, pen, geometry);
 
             drawingContext.Pop();
         }

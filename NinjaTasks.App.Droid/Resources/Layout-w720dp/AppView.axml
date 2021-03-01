@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ninjatasks.app.droid.views.controls.ClickThroughDrawerLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/drawerLayout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" >
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- The navigation area -->
+    <ninjatasks.app.droid.views.controls.CtrlTaskListsList
+        android:id="@+id/taskLists"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/japanese_paper_tiled"
+        local:MvxBind="ViewModel Lists"
+    />
+
+  <!-- a separator -->
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="#FFA0A0A0"
+      />
+  
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+      android:id="@+id/refresher"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+    >
+      <!-- The main content view -->
+      <ninjatasks.app.droid.views.controls.CtrlTaskList
+          android:id="@+id/taskList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            local:MvxBind="ViewModel SelectedList"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+  </LinearLayout>
+
+  <ninjatasks.app.droid.views.controls.CtrlTaskDetails
+          android:id="@+id/taskDetails"
+          android:layout_width="320dp"
+          android:layout_height="match_parent"
+          android:background="@android:color/white"
+          android:layout_gravity="end"
+          android:clickable="true"
+          local:MvxBind="ViewModel SelectedList.SelectedPrimaryTask"
+        />
+
+</ninjatasks.app.droid.views.controls.ClickThroughDrawerLayout>

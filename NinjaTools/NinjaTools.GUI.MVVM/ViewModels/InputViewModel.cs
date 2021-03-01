@@ -1,0 +1,22 @@
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace NinjaTools.GUI.MVVM.ViewModels
+{
+    public class InputViewModel : BaseViewModel
+    {
+        public InputViewModel()
+        {
+            Title = "Text eingeben...";
+
+            AddToAutoBundling(nameof(Title));
+            AddToAutoBundling(nameof(Text));
+            AddToAutoBundling(nameof(Message));
+        }
+        public string Title { get; set; }
+        public string Text { get; set; }
+        public string Message { get; set; }
+    }
+}

@@ -1,8 +1,9 @@
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaSync.Storage;
 using NinjaTasks.Model;
 using NinjaTasks.Model.Storage;
 using NinjaTools;
+using NinjaTools.Connectivity;
 using NinjaTools.Connectivity.Discover;
 using NinjaTools.Npc;
 
@@ -13,7 +14,7 @@ namespace NinjaTasks.Core.Services.Server
         private readonly INinjaTasksConfigurationService _cfg;
         private readonly TokenBag _bag = new TokenBag();
 
-        public TcpIpSyncServerManager(ITcpStreamFactory streamFactory, 
+        public TcpIpSyncServerManager(ITcpStreamSubsystem streamFactory, 
             INinjaTasksConfigurationService cfg, 
             ISyncStoragesFactory storages, 
             IMvxMessenger msg)
@@ -43,13 +44,10 @@ namespace NinjaTasks.Core.Services.Server
         }
 
 
-        protected override RemoteDeviceInfo GetListenAddress()
+        protected override Endpoint GetListenAddress()
         {
             var port = _cfg.Cfg.TcpIpServerPort == 0 ? NinjaTasksConfiguration.DefaultTcpIpPort : _cfg.Cfg.TcpIpServerPort;
-            var info = new RemoteDeviceInfo(RemoteDeviceInfoType.TcpIp, "NinjaTasks", "")
-            {
-                Port = port.ToStringInvariant()
-            };
+            var info = new Endpoint(EndpointType.TcpIp, "NinjaTasks", "", port.ToStringInvariant());
             return info;
         }
 

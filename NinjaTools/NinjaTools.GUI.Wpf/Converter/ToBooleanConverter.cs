@@ -8,6 +8,7 @@ namespace NinjaTools.GUI.Wpf.Converter
     public class ToBooleanConverter : IValueConverter
     {
         public bool NonEmptyStringIsTrue { get; set; }
+        public bool NonNullIsTrue { get; set; }
 
         public object Convert(object value, Type targetType, object parameter,
                               CultureInfo culture)
@@ -19,6 +20,9 @@ namespace NinjaTools.GUI.Wpf.Converter
             {
                 return !string.IsNullOrEmpty(value.ToString());
             }
+
+            if (NonNullIsTrue)
+                return true;
 
             try
             {

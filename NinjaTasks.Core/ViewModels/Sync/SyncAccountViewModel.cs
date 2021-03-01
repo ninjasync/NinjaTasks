@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugin.Messenger;
 using NinjaTasks.Core.Services;
 using NinjaTasks.Model.Storage;
 using NinjaTasks.Model.Sync;
@@ -27,7 +27,7 @@ namespace NinjaTasks.Core.ViewModels.Sync
                                     IAccountsStorage storage, 
                                     ISyncManager sync,
                                     IMvxMessenger messenger)
-                                :base(new RemoteDeviceInfo(RemoteDeviceInfoType.Unknown, account.Name, account.Address))
+                                :base(new Endpoint(EndpointType.Unknown, account.Name, account.Address))
         {
             _storage = storage;
             _sync = sync;
@@ -67,11 +67,8 @@ namespace NinjaTasks.Core.ViewModels.Sync
                     Account.SyncInterval = TimeSpan.Zero;
                 else
                     Account.SyncInterval = _supportedTimespans[value];
-#if !DOT42
-                _storage.SaveAccount(Account, a => a.SyncInterval);
-#else
-                _storage.SaveAccount(Account, "SyncInterval");
-#endif
+                
+                _storage.SaveAccount(Account, nameof(Account.SyncInterval));
             }
         }
 
@@ -81,11 +78,8 @@ namespace NinjaTasks.Core.ViewModels.Sync
             set
             {
                 Account.IsSyncOnDataChanged = value;
-#if !DOT42
-                _storage.SaveAccount(Account, a => a.IsSyncOnDataChanged);
-#else
-                _storage.SaveAccount(Account, "IsSyncOnDataChanged");
-#endif
+
+                _storage.SaveAccount(Account, nameof(Account.IsSyncOnDataChanged));
             }
         }
 

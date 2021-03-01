@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using Android.Graphics;
-using Cirrious.CrossCore.Converters;
 using NinjaTools.Logging;
+using MvvmCross.Converters;
 
 namespace NinjaTasks.App.Droid.MvvmCross.Converters
 {

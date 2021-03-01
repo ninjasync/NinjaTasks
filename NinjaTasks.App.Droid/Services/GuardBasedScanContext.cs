@@ -6,11 +6,11 @@ namespace NinjaTasks.App.Droid.Services
 {
     public class GuardBasedScanContext : IScanContext
     {
-        private readonly IDiscoverRemoteDevices _parent;
+        private readonly IDiscoverRemoteEndpoints _parent;
         private readonly Guard _guard;
         private IDisposable _token;
 
-        public GuardBasedScanContext(IDiscoverRemoteDevices parent, Guard guard)
+        public GuardBasedScanContext(IDiscoverRemoteEndpoints parent, Guard guard)
         {
             _parent = parent;
             _guard = guard;
